@@ -103,11 +103,14 @@
 	<!-- 메인화면 -->
 	<div class="container">
 		<div class="display">
-	  		<c:if test="${empty display}">
+	  		<c:if test="${empty display && empty display3}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
 		  	<c:if test="${not empty display}">
 		    	<jsp:include page="${display }" />
+		  	</c:if>
+		  	<c:if test="${not empty display3}">
+		    	<jsp:include page="${display3 }" />
 		  	</c:if>
 	  </div>
 	</div>

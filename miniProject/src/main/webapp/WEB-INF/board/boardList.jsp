@@ -2,17 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-    
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>커뮤니티 게시판</title>
-<link rel="stylesheet" href="/miniProject/css/board.css">
-</head>
-<body>
-	
+	<link rel="stylesheet" href="/miniProject/css/board.css">
 	 <section>
 		<article class="article">
 			<a href="#"><img src="/miniProject/img/jhhat.jpeg" class="profile-img"></a>
@@ -164,8 +154,6 @@
 	</section>
 	
 	
-</body>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<!-- <script type="text/javascript" src="../js/boardList.js"></script> -->
-</html>
+
 		

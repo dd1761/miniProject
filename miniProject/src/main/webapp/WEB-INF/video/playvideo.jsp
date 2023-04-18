@@ -1,32 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>video play</title>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
-</head>
-<body>
-<nav class="flex-div">
-		<div class="nav-left flex-div">
-			<img alt="메뉴 "src="/miniProject/image/menu.png" class="menu-icon">
-			<img alt="로고" src="/miniProject/image/logo1.png" id="logo" class="logo">
-		</div>
-		<div class="nav-middle flex-div">
-			<div class="search-box flex-div">
-				<input type="text" placeholder="검색">
-				<img alt="검색" src="/miniProject/image/search.png">
-			</div>
-			<img src="/miniProject/image/voice-search.png" class="mic-icon">
-		</div>
-		<div class="nav-right flex-div">
-			<img src="/miniProject/image/upload.png">
-			<img src="/miniProject/image/more.png">
-			<img src="/miniProject/image/notification.png">
-			<img src="/miniProject/image/dongbeen.jpg" class="user-icon">
-		</div>
-	</nav>
 
 	<div class="container play-container">
 		<div class="row">
@@ -189,7 +164,3 @@
 			</div>
 		</div>
 	</div>
-
-
-</body>
-</html>
