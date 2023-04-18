@@ -42,7 +42,7 @@
 				<nav>
 					<div class="navigation">
 						<a href="#" class="current-page">홈</a> <a href="#">동영상</a> <a
-							href="#" class="co">재생목록</a><a href="#" class="co">커뮤니티</a> <a href="">채널</a> <a
+							href="#" class="co">재생목록</a><a href="/miniProject/user/boardList" class="co">커뮤니티</a> <a href="">채널</a> <a
 							href="#">정보</a>
 						<div class="search-container">
 							<input type="text" class="search-input" placeholder="검색">
@@ -53,14 +53,12 @@
 				</nav>
 				
 			<div class="videoList">
-			    <%@ include file="/WEB-INF/board/boardList.jsp" %>
-				
-				<%-- <c:if test="${empty display2}">
+				<c:if test="${empty display2}">
 	    			<jsp:include page="../main/videoList.jsp" />
 	  			</c:if>
 	  			<c:if test="${not empty display2}">
 	    			<jsp:include page="${display2 }" />
-	  			</c:if> --%>
+	  			</c:if>
 			</div> <!-- div videoList -->
 			</div>
 		</div>
@@ -73,12 +71,12 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript">
-$('.co').click(function(){
+/* $('.co').click(function(){
 		
 		alert($(this).text());
 		if($(this).text() == '커뮤니티') {
 			alert('123');
 			$('.videoList').load('test.jsp');
 		}
-	});
+	}); */
 </script>

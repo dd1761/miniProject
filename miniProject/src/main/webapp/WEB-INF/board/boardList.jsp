@@ -15,24 +15,24 @@
 	
 	 <section>
 		<article class="article">
-			<a href="#"><img src="/youtube_test/image/jhhat.jpeg" class="profile-img"></a>
-			<a href="#"><img src="/youtube_test/image/show-more.png" class="show-more-img"></a>
+			<a href="#"><img src="/miniProject/image/jhhat.jpeg" class="profile-img"></a>
+			<a href="#"><img src="/miniProject/image/show-more.png" class="show-more-img"></a>
 			<div class="content-info">
 				<p class="subject">글 게시자<span>작성일</span></p>
 				<p class="content">게시글 내용입니다.</p>
 				<p><img src="../image/jhhat.jpeg" class="image"></p>
 				<p>
 					<a href="#">
-						<img src="/youtube_test/image/like.png" id="likeBtn">
+						<img src="/miniProject/image/like.png" id="likeBtn">
 					</a><span id="likesu">605</span>
 					<a href="#">
-						<img src="/youtube_test/image/dislike.png" id="dislikeBtn">
+						<img src="/miniProject/image/dislike.png" id="dislikeBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/share.png" id="shareBtn">
+						<img src="/miniProject/image/share.png" id="shareBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/messages.png" id="dapBtn">
+						<img src="/miniProject/image/messages.png" id="dapBtn">
 					</a><span id="dapsu">7</span>
 				</p>
 				<div class="tooltip" id="likeBtnTooltip">
@@ -41,8 +41,8 @@
 			</div>
 		</article>
 		<article>
-			<a href="#"><img src="/youtube_test/image/jhhat.jpeg" class="profile-img"></a>
-			<a href="#"><img src="/youtube_test/image/show-more.png" class="show-more-img"></a>
+			<a href="#"><img src="/miniProject/image/jhhat.jpeg" class="profile-img"></a>
+			<a href="#"><img src="/miniProject/image/show-more.png" class="show-more-img"></a>
 			<div class="content-info">
 				<p class="subject">글 게시자<span>작성일</span></p>
 				<p class="content">게시글 내용입니다.안녕하세요
@@ -59,39 +59,39 @@
 				<p></p>
 				<p>
 					<a href="#">
-						<img src="/youtube_test/image/like.png" id="likeBtn">
+						<img src="/miniProject/image/like.png" id="likeBtn">
 					</a><span id="likesu">605</span>
 					<a href="#">
-						<img src="/youtube_test/image/dislike.png" id="dislikeBtn">
+						<img src="/miniProject/image/dislike.png" id="dislikeBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/share.png" id="shareBtn">
+						<img src="/miniProject/image/share.png" id="shareBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/messages.png" id="dapBtn">
+						<img src="/miniProject/image/messages.png" id="dapBtn">
 					</a><span id="dapsu">7</span>
 				</p>
 			</div>
 		</article>
 		<article>
-			<a href="#"><img src="/youtube_test/image/jhhat.jpeg" class="profile-img"></a>
-			<a href="#"><img src="/youtube_test/image/show-more.png" class="show-more-img"></a>
+			<a href="#"><img src="/miniProject/image/jhhat.jpeg" class="profile-img"></a>
+			<a href="#"><img src="/miniProject/image/show-more.png" class="show-more-img"></a>
 			<div class="content-info">
 				<p class="subject">글 게시자<span>작성일</span></p>
 				<p class="content">게시글 내용입니다.</p>
 				<p><img src="../image/icon-1.jpg" class="image"></p>
 				<p>
 					<a href="#">
-						<img src="/youtube_test/image/like.png" id="likeBtn">
+						<img src="/miniProject/image/like.png" id="likeBtn">
 					</a><span id="likesu">605</span>
 					<a href="#">
-						<img src="/youtube_test/image/dislike.png" id="dislikeBtn">
+						<img src="/miniProject/image/dislike.png" id="dislikeBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/share.png" id="shareBtn">
+						<img src="/miniProject/image/share.png" id="shareBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/messages.png" id="dapBtn">
+						<img src="/miniProject/image/messages.png" id="dapBtn">
 					</a><span id="dapsu">7</span>
 				</p>
 				<div class="tooltip" id="likeBtnTooltip">
@@ -100,8 +100,8 @@
 			</div>
 		</article>
 		<article>
-			<a href="#"><img src="/youtube_test/image/jhhat.jpeg" class="profile-img"></a>
-			<a href="#"><img src="/youtube_test/image/show-more.png" class="show-more-img"></a>
+			<a href="#"><img src="/miniProject/image/jhhat.jpeg" class="profile-img"></a>
+			<a href="#"><img src="/miniProject/image/show-more.png" class="show-more-img"></a>
 			<div class="content-info">
 				<p class="subject">글 게시자<span>작성일</span></p>
 				<p class="content">제 채널에 놀러와 주셔서 감사드려요. 
@@ -113,39 +113,39 @@
 				<p></p>
 				<p>
 					<a href="#">
-						<img src="/youtube_test/image/like.png" id="likeBtn">
+						<img src="/miniProject/image/like.png" id="likeBtn">
 					</a><span id="likesu">605</span>
 					<a href="#">
-						<img src="/youtube_test/image/dislike.png" id="dislikeBtn">
+						<img src="/miniProject/image/dislike.png" id="dislikeBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/share.png" id="shareBtn">
+						<img src="/miniProject/image/share.png" id="shareBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/messages.png" id="dapBtn">
+						<img src="/miniProject/image/messages.png" id="dapBtn">
 					</a><span id="dapsu">7</span>
 				</p>
 			</div>
 		</article>
 		<article>
-			<a href="#"><img src="/youtube_test/image/jhhat.jpeg" class="profile-img"></a>
-			<a href="#"><img src="/youtube_test/image/show-more.png" class="show-more-img"></a>
+			<a href="#"><img src="/miniProject/image/jhhat.jpeg" class="profile-img"></a>
+			<a href="#"><img src="/miniProject/image/show-more.png" class="show-more-img"></a>
 			<div class="content-info">
 				<p class="subject">글 게시자<span>작성일</span></p>
 				<p class="content">게시글 내용입니다.</p>
 				<p><img src="../image/jh.jpeg" class="image"></p>
 				<p>
 					<a href="#">
-						<img src="/youtube_test/image/like.png" id="likeBtn">
+						<img src="/miniProject/image/like.png" id="likeBtn">
 					</a><span id="likesu">605</span>
 					<a href="#">
-						<img src="/youtube_test/image/dislike.png" id="dislikeBtn">
+						<img src="/miniProject/image/dislike.png" id="dislikeBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/share.png" id="shareBtn">
+						<img src="/miniProject/image/share.png" id="shareBtn">
 					</a>
 					<a href="#">
-						<img src="/youtube_test/image/messages.png" id="dapBtn">
+						<img src="/miniProject/image/messages.png" id="dapBtn">
 					</a><span id="dapsu">7</span>
 				</p>
 				<div class="tooltip" id="likeBtnTooltip">
