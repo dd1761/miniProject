@@ -1,0 +1,316 @@
+@charset "UTF-8";
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+		
+img {
+	cursor: pointer;
+}
+
+section {
+	margin: 60px 300px 60px 200px;
+	
+}
+
+article {
+	border: 1px solid #333333;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-bottom: 1px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	display: flex;
+	max-width: 100%; /* 최대 너비를 100%로 설정하여 부모 요소에 맞게 조절 */
+ 	overflow: hidden; /* 내용이 넘칠 경우 가려진 부분을 숨김 */
+ 	position: relative;
+}
+
+
+
+
+.profile-img {
+	width: 45px;
+	height: 45px;
+	margin-right: 10px;
+	border-radius: 50%;
+}
+
+.show-more-img {
+	display: none;
+	width: 30px;
+	height: 30px;
+ 	position: absolute;
+ 	top: 10px;
+ 	right: 15px;
+}
+
+.article:hover .show-more-img {
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 15px;
+ 	right: 30px;
+}
+
+
+
+.image {
+	width: 80%; /* 이미지의 너비를 100%로 설정하여 부모 요소에 맞게 조절 */
+ 	height: auto; /* 이미지의 높이를 자동으로 조절하여 가로 세로 비율 유지 */
+ 	object-fit: cover; /* 이미지의 가로 세로 비율을 유지하면서, 부모 요소에 꽉 채움 */
+	margin-right: 50px;
+	border-radius: 10px;
+}
+.content-info {
+	font-size: 12px;
+}
+
+.content-info p {
+	color: #000;
+	font-weight: 600;
+	display: flex;
+	margin-bottom: 3px;
+	font-size: 17px;
+}
+
+.content-info span {
+	color: #757575;
+	font-weight: 400;
+	display: flex;
+	margin-top: 2px;
+	margin-left: 7px;
+	font-size: 12px;
+}
+.content-info .subject span:hover {
+	color: #000;
+	font-weight: 400;
+	display: flex;
+	margin-top: 2px;
+	margin-left: 7px;
+	font-size: 12px;
+}
+
+#likeBtn {
+	width: 30px;
+	height: 30px;
+	margin-right: 50px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	border: none;
+	cursor: pointer;
+	
+}
+
+/* 말풍선 적절한 top 과 margin-left 로 위치조정 */
+/* .arrow_box {
+  display: hidden;
+  position: absolute;
+  width: 100px;
+  padding: 8px;
+  left: 0;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+} */
+
+/* .arrow_box:after {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -10px;
+  border: solid transparent;
+  border-color: rgba(51, 51, 51, 0);
+  border-bottom-color: #333;
+  border-width: 10px;
+  pointer-events: none;
+  content: ' ';
+} */
+
+#likeBtn:hover {
+	width: 30px;
+	height: 30px;
+	margin-right: 50px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	background-color: lightgray;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	
+}
+
+/* 추가 스타일 */
+.tooltip {
+  /* 말풍선 스타일 */
+  position: absolute;
+  bottom: -30px; /* 말풍선 위치 조절 */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+#likeBtn:hover + .tooltip {
+  /* hover 효과에 따른 말풍선 스타일 */
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+/* #likeBtn:hover{
+	
+	display: show;
+	
+	
+} */
+
+
+
+#likesu {
+	font-size: 15px;
+	margin-left: -40px;
+	margin-top: 10px;
+	display: flex;
+
+}
+#dislikeBtn {
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+	margin-right: 50px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display: flex;
+	
+}
+
+#dislikeBtn:hover {
+	width: 30px;
+	height: 30px;
+	margin-left: 10px;
+	margin-right: 50px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	display: flex;
+	background-color: lightgray;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	
+}
+#shareBtn {
+	width: 30px;
+	height: 30px;
+	margin-left: -20px;
+	margin-right: 50px;
+	margin-top: 6px;
+	margin-bottom: 5px;
+	display: flex;
+	
+}
+
+#shareBtn:hover {
+	width: 30px;
+	height: 30px;
+	margin-left: -20px;
+	margin-right: 50px;
+	margin-top: 6px;
+	margin-bottom: 5px;
+	display: flex;
+	background-color: lightgray;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	
+}
+
+#dapBtn {
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
+	margin-right: 50px;
+	margin-top: 13px;
+	margin-bottom: 10px;
+	display: flex;
+	
+}
+
+#dapBtn:hover {
+	width: 20px;
+	height: 20px;
+	margin-left: -10px;
+	margin-right: 50px;
+	margin-top: 13px;
+	margin-bottom: 10px;
+	display: flex;
+	background-color: lightgray;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	position: relative;
+	
+}
+
+
+#dapsu {
+	font-size: 15px;
+	font-weight: 500;
+	margin-left: -45px;
+	margin-top: 12px;
+	display: flex;
+
+}
+
+
+h1 {
+	font-size: 28px;
+	margin: 0;
+}
+		
+h2 {
+	font-size: 24px;
+	margin: 0;
+}
+
+.subject {
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.content {
+	white-space: pre-wrap;
+}
+
+p {
+	font-size: 18px;
+	line-height: 1.5;
+	margin: 0 0 10px 0;
+}
+		
+		
+form {
+	margin-top: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
