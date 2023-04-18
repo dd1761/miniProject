@@ -7,13 +7,13 @@ menuIcon.onclick = function(){
   container.classList.toggle("large-container");
 }
 
-//$(document).ready(function() {
-//  // user-icon 이미지를 클릭했을 때의 동작 정의
-//	$("#user-icon").click(function() {
-//			// 메뉴 항목들을 토글(show/hide)하는 동작 구현
-//			$(".menu-container").toggle();
-//	});
-//});
+$(document).ready(function() {
+  // user-icon 이미지를 클릭했을 때의 동작 정의
+	$("#user-icon").click(function() {
+			// 메뉴 항목들을 토글(show/hide)하는 동작 구현
+			$(".menu-container").toggle();
+	});
+});
 
 
 document.getElementById("search-icon").addEventListener(

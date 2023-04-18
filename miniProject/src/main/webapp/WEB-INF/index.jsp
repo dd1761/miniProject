@@ -13,7 +13,7 @@
       <div class="nav-left flex-div">
          <img alt="메뉴 " src="/miniProject/image/menu.png"
             class="menu-icon"> <img alt="로고"
-            src="/miniProject/image/logo1.png" id="logo" class="logo">
+            src="/miniProject/image/logo1.png" id="logo" class="logo" onclick="location.href='/miniProject/'">
       </div>
       <div class="nav-middle flex-div">
          <div class="search-box flex-div">
