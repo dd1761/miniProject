@@ -25,6 +25,14 @@ public class UserController {
 		model.addAttribute("display","./channel/channelForm.jsp");
 		return "index";
 	}
+	
+	@GetMapping(value="boardList")
+	public String boardList(Model model) {
+		
+		model.addAttribute("display","./channel/channelForm.jsp");
+		model.addAttribute("display2","../board/boardList.jsp");
+		return "index";
+	}
 }
 
 

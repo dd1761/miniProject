@@ -92,11 +92,11 @@
 		</div>
 		<div class="subscribed-list">
 			<h3>구독</h3>
-			<img src="/miniProject/image/dongbeen.jpg" id="channel"><a href="/miniProject/user/channelForm"><p>김동빈</p></a>
-			<img src="/miniProject/image/kwonyongjun.png"><a href=""><p>권용준</p></a>
-			<img src="/miniProject/image/tom.png"><a href=""><p>강성욱</p></a>
-			<img src="/miniProject/image/megan.png"><a href=""><p>송성근</p></a>
-			<img src="/miniProject/image/cameron.png"><a href=""><p>이지현</p></a>
+			<a href="/miniProject/user/channelForm"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
+			<a href=""><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
+			<a href=""><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
+			<a href=""><img src="/miniProject/image/megan.png"><p>송성근</p></a>
+			<a href=""><img src="/miniProject/image/cameron.png"><p>이지현</p></a>
 		</div>
 	</div>
 

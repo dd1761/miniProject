@@ -9,7 +9,7 @@
 <html>
 <head>
 <title>커뮤니티 게시판</title>
-<link rel="stylesheet" href="/youtube_test/css/board.css">
+<link rel="stylesheet" href="/miniProject/css/board.css">
 </head>
 <body>
 	

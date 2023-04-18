@@ -30,6 +30,7 @@
 	<!-- Spring Web MVC를 하기 위해서 설정해야 하는 값들을 자동으로 추가해준다. -->
 	<mvc:annotation-driven />
 	
+	<mvc:resources location="/WEB-INF/main/" mapping="/main/**" />
 	<mvc:resources location="/WEB-INF/image/" mapping="/image/**" />
 	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
