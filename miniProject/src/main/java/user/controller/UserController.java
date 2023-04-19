@@ -14,9 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 	
 	@GetMapping(value="playvideo")
-	public String playvideo() {
-		
-		return "video/playvideo";
+	public String playvideo(Model model) {
+		model.addAttribute("display","");
+		model.addAttribute("display3", "./video/playvideo.jsp");
+		return "index";
 	}
 	
 	@GetMapping(value="channelForm")
@@ -34,7 +35,6 @@ public class UserController {
 		return "index";
 	}
 }
-
 
 
 

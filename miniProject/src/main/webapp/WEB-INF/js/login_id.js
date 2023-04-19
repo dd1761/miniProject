@@ -1,0 +1,50 @@
+var loginBox = document.querySelector('.outBox');
+var loginInputBox = document.querySelector('#email');
+loginInputBox.addEventListener('keyup', function(){
+    if(loginInputBox.value != ''){
+        loginBox.classList.add('existence');   
+    }else{
+        loginBox.classList.remove('existence');   
+    }
+});
+
+$('#nextBtn').click(function(){
+	$('#emailDiv').empty();
+	
+	if($('#email').val() == ''){
+		$('#emailDiv').text('이메일을 입력하세요.');
+		$('#emailDiv').css('color', 'red');
+		$('#emailDiv').css('font-size', '14px');
+		$('#emailDiv').css('font-weight', 'bold');
+		$('input[type="text"]').css('border','2px solid red');
+		$('.inputBox label').css('color', 'red');
+	    $('#email').focus();
+	}else { 
+		$.ajax({
+			type: 'post',
+			url: '/miniProject/member/isExistEmail',
+		   	data: 'email='+$('#email').val(), 
+		   	success: function(data){
+				if(data == "") {
+					$('#emailDiv').text('잘못된 이메일 입니다.');
+					$('#emailDiv').css('color', 'red');
+					$('#emailDiv').css('font-size', '14px');
+					$('#emailDiv').css('font-weight', 'bold');
+					$('input[type="text"]').css('border','2px solid red');
+					$('.inputBox label').css('color', 'red');
+				    $('#email').focus();
+				}else {
+					location.href='/miniProject/member/login_pwd';
+				}
+		   	},
+		   	error: function(err){
+		   		console.log(err);
+		   	}
+		});
+	}
+	
+});
+
+
+
+

@@ -13,7 +13,7 @@
       <div class="nav-left flex-div">
          <img alt="메뉴 " src="/miniProject/image/menu.png"
             class="menu-icon"> <img alt="로고"
-            src="/miniProject/image/logo1.png" id="logo" class="logo">
+            src="/miniProject/image/logo1.png" id="logo" class="logo" onclick="location.href='/miniProject/'">
       </div>
       <div class="nav-middle flex-div">
          <div class="search-box flex-div">
@@ -24,11 +24,14 @@
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
-
-         <img src="/miniProject/image/upload.png"> <img
-            src="/miniProject/image/more.png"> <img
-            src="/miniProject/image/notification.png"> <img
-            src="/miniProject/image/dongbeen.jpg" id="user-icon"
+      	<div class="loginNone">
+      		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
+      	</div>
+		<div class="loginOK" style="display:none">
+         <img src="/miniProject/image/upload.png">
+         <img src="/miniProject/image/more.png">
+         <img src="/miniProject/image/notification.png"> 
+         <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
 
          <div class="menu-container">
@@ -70,6 +73,7 @@
                         <li><img src="/miniProject/image/sendcomment.png"
                            id="sendcomment"><a href="#">의견 보내기</a></li>
                         </ul>
+                     </div> <!-- menubar -->
                      </div>
                   </div>
                </ul>
@@ -103,11 +107,14 @@
 	<!-- 메인화면 -->
 	<div class="container">
 		<div class="display">
-	  		<c:if test="${empty display}">
+	  		<c:if test="${empty display && empty display3}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
 		  	<c:if test="${not empty display}">
 		    	<jsp:include page="${display }" />
+		  	</c:if>
+		  	<c:if test="${not empty display3}">
+		    	<jsp:include page="${display3 }" />
 		  	</c:if>
 	  </div>
 	</div>
