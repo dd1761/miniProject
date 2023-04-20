@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -48,8 +49,24 @@ public class SpringConfiguration {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("member/dao/memberMapper.xml"));
-		
+
+		sqlSessionFactoryBean.setMapperLocations(
+				new ClassPathResource("user/dao/userMapper.xml")
+				/*, new ClassPathResource("history/dao/videoMapper.xml")*/
+		);
+
+/*
+		sqlSessionFactoryBean.setMapperLocations(
+				new Resource[]{
+						new ClassPathResource("user/dao/userMapper.xml"),
+						new ClassPathResource("history/dao/videoMapper.xml")
+				}
+		);
+*/
+
+
+
+
 		return sqlSessionFactoryBean.getObject();
 	}
 	
