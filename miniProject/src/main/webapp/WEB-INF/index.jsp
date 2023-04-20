@@ -8,7 +8,7 @@
 <title>Baboob</title>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 </head>
-<body>
+<body> <!--  -->
    <nav class="flex-div">
       <div class="nav-left flex-div">
          <img alt="메뉴 " src="/miniProject/image/menu.png"
