@@ -33,7 +33,6 @@
          <img src="/miniProject/image/notification.png"> 
          <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
-
          <div class="menu-container">
             <ul class="menu">
                <!-- 계정 정보 -->
@@ -94,6 +93,7 @@
 			<a href=""><img src="/miniProject/image/show-more.png" ><p>더보기</p></a>
 			<hr>
 		</div>
+
 		<div class="subscribed-list">
 			<h3>구독</h3>
 			<a href="/miniProject/user/channelForm"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
