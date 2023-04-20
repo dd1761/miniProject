@@ -24,10 +24,10 @@
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
-      	<div class="loginNone">
+      	<div class="loginNone" style="display:none">
       		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
       	</div>
-		<div class="loginOK" style="display:none">
+		<div class="loginOK" >
          <img src="/miniProject/image/upload.png">
          <img src="/miniProject/image/more.png">
          <img src="/miniProject/image/notification.png"> 
@@ -88,7 +88,7 @@
 			<a href=""><img src="/miniProject/image/explore.png" ><p>인기 급상승</p></a>
 			<a href=""><img src="/miniProject/image/subscriprion.png" ><p>구독</p></a>
 			<a href=""><img src="/miniProject/image/library.png" ><p>보관함</p></a>
-			<a href="/miniProject/history/main"><img src="/miniProject/image/history.png" ><p>시청 기록</p></a>
+			<a href="/miniProject/history/historyList"><img src="/miniProject/image/history.png" ><p>시청 기록</p></a>
 			<a href=""><img src="/miniProject/image/playlist.png" ><p>홈</p></a>
 			<a href=""><img src="/miniProject/image/messages.png" ><p>메시지</p></a>
 			<a href=""><img src="/miniProject/image/show-more.png" ><p>더보기</p></a>

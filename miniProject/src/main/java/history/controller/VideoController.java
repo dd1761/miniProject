@@ -16,7 +16,7 @@ public class VideoController {
 	@Autowired
 	private VideoService videoService;
 
-	@GetMapping(value="main")
+	@GetMapping(value="historyList")
 	public String playvideo(Model model) {
 		model.addAttribute("display","");
 		model.addAttribute("display4", "./history/history.jsp");
@@ -32,7 +32,7 @@ public class VideoController {
 
 
 	// sql 을 실행시킴
-	@PostMapping(value="/getVideoHistory")
+	@PostMapping(value="getVideoHistory")
 	@ResponseBody
 	public List<VideoDTO> getVideoHistory(@RequestParam(value ="page",required=false) Integer page, @RequestParam(value ="count",required=false) Integer count) {
 		page = Optional.ofNullable(page).orElse(1);
