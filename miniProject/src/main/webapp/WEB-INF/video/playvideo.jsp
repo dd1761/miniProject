@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
-
+<link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 
 	<div class="container play-container">
 		<div class="row">
@@ -40,6 +40,8 @@
 					<p>채널 설명란입니다.</p>
 					<p>이곳은 뭘까요?</p>
 					<hr>
+
+
 					<h4>댓글 수 넣는 곳</h4>
 					
 					<div id="comment">
@@ -182,6 +184,3 @@
 			</div>
 		</div>
 	</div>
-
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="/miniProject/js/playvideo.js"></script>

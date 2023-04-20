@@ -34,8 +34,10 @@ function showButtons() {
    }
 
 
-$("#search").keydown(function(key) {
-	if (key.keyCode == 13) {
-		alert("엔터키를 눌렀습니다.");
+
+//엔터키를 눌렀을 때
+$("#searchVideo").keydown(function(key) {
+	if( key.keyCode == 13 ){
+		alert('엔터키 눌린다.');
 	}
 });

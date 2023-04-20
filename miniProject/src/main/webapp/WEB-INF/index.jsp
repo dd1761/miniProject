@@ -8,7 +8,7 @@
 <title>Baboob</title>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 </head>
-<body> <!--  -->
+<body>
    <nav class="flex-div">
       <div class="nav-left flex-div">
          <img alt="메뉴 " src="/miniProject/image/menu.png"
@@ -17,14 +17,14 @@
       </div>
       <div class="nav-middle flex-div">
          <div class="search-box flex-div">
-            <input type="text" placeholder="검색" id="search"> <img alt="검색"
+            <input type="text" placeholder="검색" id="searchVideo"> <img alt="검색"
                src="/miniProject/image/search.png">
          </div>
          <img src="/miniProject/image/voice-search.png"
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
-      	<div class="loginNone">
+      	<div class="loginNone" >
       		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
       	</div>
 		<div class="loginOK" style="display:none">
@@ -88,7 +88,7 @@
 			<a href=""><img src="/miniProject/image/explore.png" ><p>인기 급상승</p></a>
 			<a href=""><img src="/miniProject/image/subscriprion.png" ><p>구독</p></a>
 			<a href=""><img src="/miniProject/image/library.png" ><p>보관함</p></a>
-			<a href=""><img src="/miniProject/image/history.png" ><p>시청 기록</p></a>
+			<a href="/miniProject/history/historyList"><img src="/miniProject/image/history.png" ><p>시청 기록</p></a>
 			<a href=""><img src="/miniProject/image/playlist.png" ><p>홈</p></a>
 			<a href=""><img src="/miniProject/image/messages.png" ><p>메시지</p></a>
 			<a href=""><img src="/miniProject/image/show-more.png" ><p>더보기</p></a>
@@ -107,7 +107,7 @@
 	<!-- 메인화면 -->
 	<div class="container">
 		<div class="display">
-	  		<c:if test="${empty display && empty display3}">
+	  		<c:if test="${empty display && empty display3 && empty display4}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
 		  	<c:if test="${not empty display}">
@@ -116,6 +116,9 @@
 		  	<c:if test="${not empty display3}">
 		    	<jsp:include page="${display3 }" />
 		  	</c:if>
+            <c:if test="${not empty display4}">
+                <jsp:include page="${display4 }" />
+            </c:if>
 	  </div>
 	</div>
 

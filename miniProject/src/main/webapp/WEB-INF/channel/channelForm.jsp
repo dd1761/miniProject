@@ -39,7 +39,7 @@
 				</div>
 
 
-				<nav>
+				<div>
 					<div class="navigation">
 						<a href="#" class="current-page">홈</a> <a href="#">동영상</a> <a
 							href="#" class="co">재생목록</a><a href="/miniProject/user/boardList" class="co">커뮤니티</a> <a href="">채널</a> <a
@@ -50,7 +50,7 @@
 								class="search-icon">
 						</div>
 					</div>
-				</nav>
+				</div>
 				
 			<div class="videoList">
 				<c:if test="${empty display2}">

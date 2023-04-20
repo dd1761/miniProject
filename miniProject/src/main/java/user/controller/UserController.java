@@ -2,6 +2,7 @@ package user.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,13 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import comment.bean.CommentDTO;
-import comment.service.CommentService;
+import board.bean.BoardDTO;
+import community.service.CommunityService;
 
 @Controller
 @RequestMapping(value="user")
 public class UserController {
-	private CommentService commentService;
+	@Autowired
+	CommunityService communityService;
 	
 	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {
@@ -41,7 +43,11 @@ public class UserController {
 		return "index";
 	}
 	
-	
+	@PostMapping(value = "getBoardList")
+	@ResponseBody
+	public List<BoardDTO> getBoardList(){
+		return communityService.getBoardList();
+	}
 }
 
 
