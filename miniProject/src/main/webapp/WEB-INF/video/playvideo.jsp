@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
+=======
+<link rel="stylesheet" href="/miniProject/css/indexstyle.css">
+
+>>>>>>> dongbeen
 
 	<div class="container play-container">
 		<div class="row">
@@ -42,10 +45,28 @@
 					<hr>
 					<h4>댓글 수 넣는 곳</h4>
 					
-					<div class="add-comment">
-						<img src="/miniProject/image/kwonyongjun.png">
-						<input type="text" placeholder="댓글 추가...">
-					</div>
+					<div id="comment">
+                  <div id="img">
+                     <img src="/miniProject/image/kwonyongjun.png">
+                  </div>
+                  <div id="addcomment">
+                     <div id="up">
+                        <input type="text" placeholder="댓글 추가..."
+                           onclick="showButtons()">
+                     </div>
+                     <div id="down">
+                        <div id="down-left"></div>
+                        <div id="down-center"></div>
+                        <div id="down-right">
+                           <div id="commentBtn">
+                              <button id="cancel" onclick="hideButtons()">취소</button>
+                              <button id="uploadcomment">댓글</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
 					
 					<div class="old-comment">
 						<img src="/miniProject/image/Jack.png">

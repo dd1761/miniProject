@@ -26,6 +26,8 @@
 	
 	<context:component-scan base-package="main.controller" />
 	<context:component-scan base-package="user.controller" />
+	<context:component-scan base-package="member.controller" />
+
 	
 	<!-- Spring Web MVC를 하기 위해서 설정해야 하는 값들을 자동으로 추가해준다. -->
 	<mvc:annotation-driven />

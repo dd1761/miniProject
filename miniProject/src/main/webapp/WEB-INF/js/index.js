@@ -24,7 +24,15 @@ document.getElementById("search-icon").addEventListener(
 			// 검색창을 보이게 함
 			searchContainer.style.display = "block";
 		});
+		
+function showButtons() {
+     document.getElementById("down").classList.add('show');
+   }
+
+   function hideButtons() {
+     document.getElementById("down").classList.remove('show');
+   }
 
 
 
-	
+

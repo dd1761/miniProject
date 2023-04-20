@@ -24,11 +24,14 @@
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
-
-         <img src="/miniProject/image/upload.png"> <img
-            src="/miniProject/image/more.png"> <img
-            src="/miniProject/image/notification.png"> <img
-            src="/miniProject/image/dongbeen.jpg" id="user-icon"
+      	<div class="loginNone">
+      		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
+      	</div>
+		<div class="loginOK" style="display:none">
+         <img src="/miniProject/image/upload.png">
+         <img src="/miniProject/image/more.png">
+         <img src="/miniProject/image/notification.png"> 
+         <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
 
          <div class="menu-container">
@@ -70,6 +73,7 @@
                         <li><img src="/miniProject/image/sendcomment.png"
                            id="sendcomment"><a href="#">의견 보내기</a></li>
                         </ul>
+                     </div> <!-- menubar -->
                      </div>
                   </div>
                </ul>
