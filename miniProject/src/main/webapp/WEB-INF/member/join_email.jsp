@@ -4,32 +4,29 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>Login_Pwd</title>
+<title>Join_Email</title>
 <link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/login_pwd.css">
+<link rel="stylesheet" href="../css/join_email.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
-<div id="login">
+	<div id="join">
 		<div id="header">
 		<h1><img src="../img/logo2.png" alt="youtube"></h1>
-		<h1 id="name"></h1>
-		<div id="t">
-		<img src="../img/p.jpg" alt="프로필이미지" id="profile">
-		<div id="email">${email }</div>
-		</div>
-		<form action="#" method="post" id="login_pwd_form">
+		<h1>기존 이메일 사용</h1>
+		<h2>YouTube 계정에 사용할 이메일 주소를 입력하세요</h2>
+		<form action="#" method="post" id="join_email_form">
 				<div class="outBox">
 				    <div class="inputBox">
-				        <input type="password" id="password" name="">
-				        <label for="password">비밀번호 입력</label>
+				        <input type="text" id="email" name="email">
+				        <label for="email">이메일 주소</label>
 				    </div>
 				</div>
-				<div id="passwordDiv"></div>
 				
+				<div class="aaa" style="font-size:14px; margin-left:20px; ">이 이메일이 본인 소유인지 확인해야 합니다.</div>
+			
 				<div class="bottom">
-					<a href="#" class="search_password">비밀번호 찾기</a>
-					<button type="button" class="btn btn-primary" id="nextbtn" style="width: 80px">다음</button>
+					<button type="button" class="btn btn-primary" id="nextbtn" style="width: 100px">인증코드 보내기</button>
 				</div>
 		</form>
 		</div>
@@ -40,8 +37,6 @@
 			</select>
 		</footer>
 	</div>
-<script src="../js/box2.js"></script>
-<script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../js/login_pwd.js"></script>	
+<script src="../js/box1.js"></script>	
 </body>
 </html>
