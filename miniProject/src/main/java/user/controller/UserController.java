@@ -1,5 +1,7 @@
 package user.controller;
 
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +11,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import comment.bean.CommentDTO;
+import comment.service.CommentService;
+
 @Controller
 @RequestMapping(value="user")
 public class UserController {
+	private CommentService commentService;
 	
 	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {
@@ -34,6 +40,8 @@ public class UserController {
 		model.addAttribute("display2","../board/boardList.jsp");
 		return "index";
 	}
+	
+	
 }
 
 
