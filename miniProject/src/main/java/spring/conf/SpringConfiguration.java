@@ -51,8 +51,8 @@ public class SpringConfiguration {
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
 
 		sqlSessionFactoryBean.setMapperLocations(
-				new ClassPathResource("user/dao/userMapper.xml")
-				/*, new ClassPathResource("history/dao/videoMapper.xml")*/
+				new ClassPathResource("history/dao/videoMapper.xml"),
+				new ClassPathResource("member/dao/memberMapper.xml")
 		);
 
 /*
