@@ -27,4 +27,5 @@ public class VideoDAOMyBatis implements VideoDAO {
         map.put("user_id", user_id);
         return sqlSession.selectList("videoSQL.getVideoHistory",map);
     }
+    
 }
