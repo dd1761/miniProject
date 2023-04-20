@@ -20,7 +20,7 @@
 			<div class="content-info">
 				<p class="subject">글 게시자<span>작성일</span></p>
 				<p class="content">게시글 내용입니다.</p>
-				<p><img src="../img/jhhat.jpeg" class="img"></p>
+				<p><img src=".." class="img"></p>
 				<p>
 					<a href="#">
 						<img src="/miniProject/img/like.png" id="likeBtn">
