@@ -18,7 +18,7 @@ public class VideoDAOMyBatis implements VideoDAO {
 
     @Override
     public List<VideoDTO> getVideoHistory(int start, int count) {
-        int user_id = 1;
+        int user_id = 4;
         System.out.println("DAO");
 
         Map<String, Object> map = new HashMap<>();
