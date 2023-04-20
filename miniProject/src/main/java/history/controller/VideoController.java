@@ -3,6 +3,7 @@ package history.controller;
 import history.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import history.bean.VideoDTO;
 import java.util.List;
@@ -15,12 +16,20 @@ public class VideoController {
 	@Autowired
 	private VideoService videoService;
 
+	@GetMapping(value="main")
+	public String playvideo(Model model) {
+		model.addAttribute("display","");
+		model.addAttribute("display4", "./history/history.jsp");
+		return "index";
+	}
+
 	//처음 페이지
-	@GetMapping(value="/main")
+/*	@GetMapping(value="/main")
 	public String test() {
 
 		return "history/history";
-	}
+	}*/
+
 
 	// sql 을 실행시킴
 	@PostMapping(value="/getVideoHistory")

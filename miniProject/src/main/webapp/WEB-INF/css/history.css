@@ -11,8 +11,9 @@ h1 {
   margin-bottom: 20px;
 }
 
+/*
 nav {
-  position: fixed; /* 네비게이션 바 고정 */
+  position: fixed; !* 네비게이션 바 고정 *!
   top: 0;
   right: 0;
   left: 0;
@@ -27,7 +28,7 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end; /* 메뉴 오른쪽 정렬 */
+  justify-content: flex-end; !* 메뉴 오른쪽 정렬 *!
   align-items: center;
   height: 100%;
 }
@@ -44,6 +45,7 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+*/
 
 table {
   width: 70%;
