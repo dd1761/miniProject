@@ -52,7 +52,8 @@ public class SpringConfiguration {
 
 		sqlSessionFactoryBean.setMapperLocations(
 				new ClassPathResource("history/dao/videoMapper.xml"),
-				new ClassPathResource("member/dao/memberMapper.xml")
+				new ClassPathResource("member/dao/memberMapper.xml"),
+				new ClassPathResource("board/dao/boardMapper.xml")
 		);
 
 /*

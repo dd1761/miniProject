@@ -18,6 +18,13 @@
 	<context:component-scan base-package="history.bean" />
 	<context:component-scan base-package="history.dao" />
 	<context:component-scan base-package="history.service" />
+	
+	<context:component-scan base-package="board.bean" />
+	<context:component-scan base-package="board.dao" />
+	
+	<context:component-scan base-package="channel.service" />
+	<context:component-scan base-package="community.service" />
+	
 
 
 	<context:component-scan base-package="spring.conf" />
