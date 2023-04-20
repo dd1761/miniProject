@@ -38,7 +38,7 @@ $('#nextbtn').click(function(){
 					$('.inputBox label').css('color', 'red');
 				    $('#password').focus();
 				}else{
-					alert('로그인성공!');
+					location.href='/miniProject/?email='+$('#email').text()+'& password=' + $('#password').val();
 				}
 			},
 		   	error: function(err){
