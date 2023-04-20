@@ -15,6 +15,7 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public List<VideoDTO> getVideoHistory(int page, int count) {
         System.out.println("service1");
+        System.out.println("service1");
         int start = ((page-1) * count)+1;
         count = count * page;
         List<VideoDTO> list = videoDAO.getVideoHistory(start, count);

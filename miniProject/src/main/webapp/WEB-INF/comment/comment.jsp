@@ -11,7 +11,9 @@ pageEncoding="UTF-8"%>
   <body>
 
   <h4>댓글 수 넣는 곳</h4>
-
+  <h4>새론운 브랜치입니다!</h4>
+  <h4>새론운 브랜치입니다!</h4>
+  <h4>새론운 브랜치입니다!</h4>
   <div id="comment">
 	  <div id="img">
 		  <img src="/miniProject/image/kwonyongjun.png">

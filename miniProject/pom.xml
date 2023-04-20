@@ -154,7 +154,14 @@
 	    <version>1.18.24</version>
 	    <scope>provided</scope>
 	</dependency>
-	
+
+	  <!-- 서블릿 -->
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>3.0.1</version>
+		  <scope>provided</scope>
+	  </dependency>
 	<!-- 날짜 직렬화 -->
 	<dependency>
 	    <groupId>com.fasterxml.jackson.datatype</groupId>
