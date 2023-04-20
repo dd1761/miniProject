@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //SpringConfiguration은 일반 java파일이 아니다
 //applicationContext.xml와 같은 환경설정 파일이다.
 @Configuration
-@PropertySource("classpath:spring/db.properties")
+@PropertySource("classpath:/db.properties")
 @EnableTransactionManagement
 public class SpringConfiguration {
 	

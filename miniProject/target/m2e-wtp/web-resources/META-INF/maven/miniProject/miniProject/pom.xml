@@ -18,6 +18,21 @@
         <version>3.2.3</version>
       </plugin>
     </plugins>
+	  <resources>
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <includes>
+				  <include>**/*</include>
+			  </includes>
+		  </resource>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.properties</include>
+			  </includes>
+			  <filtering>true</filtering>
+		  </resource>
+	  </resources>
   </build>
   <dependencies>
   	<!-- Spring -->
@@ -82,12 +97,11 @@
 	</dependency>
 	
 	<!-- JSTL -->
-	<dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>jstl</artifactId>
-	    <version>1.2</version>
-	</dependency>
-	
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>jstl</artifactId>
+		  <version>1.2</version>
+	  </dependency>
 	<!-- JSON -->
 	<dependency>
 	    <groupId>net.sf.json-lib</groupId>

@@ -4,6 +4,8 @@
   <artifactId>miniProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+
+
   <build>
     <plugins>
       <plugin>
@@ -18,8 +20,31 @@
         <version>3.2.3</version>
       </plugin>
     </plugins>
+	  <resources>
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <includes>
+				  <include>**/*</include>
+			  </includes>
+		  </resource>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.properties</include>
+			  </includes>
+			  <filtering>true</filtering>
+		  </resource>
+	  </resources>
   </build>
   <dependencies>
+
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>3.0.1</version>
+		  <scope>provided</scope>
+	  </dependency>
+
   	<!-- Spring -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -82,12 +107,12 @@
 	</dependency>
 	
 	<!-- JSTL -->
-	<dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>jstl</artifactId>
-	    <version>1.2</version>
-	</dependency>
-	
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>jstl</artifactId>
+		  <version>1.2</version>
+	  </dependency>
+
 	<!-- JSON -->
 	<dependency>
 	    <groupId>net.sf.json-lib</groupId>
