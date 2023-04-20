@@ -17,7 +17,7 @@
       </div>
       <div class="nav-middle flex-div">
          <div class="search-box flex-div">
-            <input type="text" placeholder="검색"> <img alt="검색"
+            <input type="text" placeholder="검색" id="search"> <img alt="검색"
                src="/miniProject/image/search.png">
          </div>
          <img src="/miniProject/image/voice-search.png"

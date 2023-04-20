@@ -16,14 +16,14 @@ $(document).ready(function() {
 });
 
 
-document.getElementById("search-icon").addEventListener(
-		"click",
-		function() {
-			var searchContainer = document
-					.getElementById("search-container");
-			// 검색창을 보이게 함
-			searchContainer.style.display = "block";
-		});
+//document.getElementById("search-icon").addEventListener(
+//		"click",
+//		function() {
+//			var searchContainer = document
+//					.getElementById("search-container");
+//			// 검색창을 보이게 함
+//			searchContainer.style.display = "block";
+//		});
 		
 function showButtons() {
      document.getElementById("down").classList.add('show');
@@ -34,5 +34,8 @@ function showButtons() {
    }
 
 
-
-
+$("#search").keydown(function(key) {
+	if (key.keyCode == 13) {
+		alert("엔터키를 눌렀습니다.");
+	}
+});
