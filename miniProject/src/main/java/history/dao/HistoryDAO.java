@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface HistoryDAO {
 
-    List<HistoryDTO> getVideoHistory(int start, int count);
+    public List<HistoryDTO> getVideoHistory(int start, int count);
 }

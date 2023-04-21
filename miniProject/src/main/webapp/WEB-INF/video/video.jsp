@@ -2,6 +2,39 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
+	<div class="container play-container">
+		<div id="video-detail">
+			<%--동적 생성--%>
+		</div>
+		<%--		<div class="video-description">
+		<h4>댓글 수 넣는 곳</h4>--%>
+			<div id="comment">
+			<div id="img">
+				<img src="/miniProject/image/kwonyongjun.png">
+			</div>
+			<div id="addcomment">
+				<div id="up">
+					<input type="text" placeholder="댓글 추가..."
+						   onclick="showButtons()">
+				</div>
+				<div id="down">
+					<div id="down-left"></div>
+					<div id="down-center"></div>
+					<div id="down-right">
+							<div id="commentBtn">
+								<button id="cancel" onclick="hideButtons()">취소</button>
+								<button id="uploadcomment">댓글</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="comment-detail">
+			<%--댓글 동적 생성--%>
+			</div>
+		</div>
+	</div>
 
 	<div class="container play-container">
 		<div class="row">
@@ -43,8 +76,8 @@
 
 
 					<h4>댓글 수 넣는 곳</h4>
-					
-					<div id="comment">
+
+<%--					<div id="comment">
                   <div id="img">
                      <img src="/miniProject/image/kwonyongjun.png">
                   </div>
@@ -64,7 +97,7 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div>--%>
 
 					
 					<div class="old-comment">
@@ -184,3 +217,8 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+	<%-- 제이쿼리 --%>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+	<%--내 js --%>
+	<script type="text/javascript" src = "../js/video.js"></script>
