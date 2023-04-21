@@ -21,13 +21,13 @@ public class UserController {
 	@Autowired
 	CommunityService communityService;
 	
-	@GetMapping(value="playvideo")
+/*	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {
 		model.addAttribute("display","");
 		model.addAttribute("display3", "./video/playvideo.jsp");
 		return "index";
 	}
-	
+	*/
 	@GetMapping(value="channelForm")
 	public String channelForm(Model model) {
 		

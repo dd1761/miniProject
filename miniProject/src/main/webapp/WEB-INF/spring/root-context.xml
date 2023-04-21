@@ -14,11 +14,19 @@
 	<context:component-scan base-package="member.dao" />
 	<context:component-scan base-package="member.service" />
 
-
+	<!--히스토리 시작  -->
 	<context:component-scan base-package="history.bean" />
 	<context:component-scan base-package="history.dao" />
 	<context:component-scan base-package="history.service" />
-	
+	<!--히스토리 끝-->
+
+	<!--비디오 시작 -->
+	<context:component-scan base-package="video.bean" />
+	<context:component-scan base-package="video.dao" />
+	<context:component-scan base-package="video.service" />
+	<!--비디오 끝 -->
+
+
 	<context:component-scan base-package="board.bean" />
 	<context:component-scan base-package="board.dao" />
 	
