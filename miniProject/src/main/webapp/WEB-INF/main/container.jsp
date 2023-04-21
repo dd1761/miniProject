@@ -7,7 +7,7 @@
 		
 		<div class="list-container">
 			<div class="video-list">
-				<a href="/miniProject/video/playvideo?video_id=1">
+				<a href="/miniProject/video/main?video_id=1">
 					<img src="/miniProject/image/thumbnail1.png" class="thumbnail">
 				</a>
 				<div class="flex-div">

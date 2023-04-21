@@ -23,13 +23,6 @@ public class HistoryController {
 		return "index";
 	}
 
-	//처음 페이지
-/*	@GetMapping(value="/main")
-	public String test() {
-
-		return "history/history";
-	}*/
-
 
 	// sql 을 실행시킴
 	@PostMapping(value="getVideoHistory")

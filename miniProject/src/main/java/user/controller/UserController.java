@@ -24,7 +24,7 @@ public class UserController {
 /*	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {
 		model.addAttribute("display","");
-		model.addAttribute("display3", "./video/playvideo.jsp");
+		model.addAttribute("display3", "./video/video.jsp");
 		return "index";
 	}
 	*/
