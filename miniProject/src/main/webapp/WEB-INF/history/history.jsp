@@ -10,13 +10,14 @@ pageEncoding="UTF-8"%>
 	<div class="navbar">
 	  <ul>
 	    <li>
+			<br>
+			<br>
 	      <div class="input-group">
 	        <input type="text" class="form-control" placeholder="시청기록 검색" aria-label="시청기록 검색" id="search-input">
 	        <span class="input-group-text"><i class="bi bi-search"></i></span>
 	      </div>
 	    </li>
 	    <li><a href="#">시청기록 모두 지우기</a></li>
-
 	  </ul>
 	</div>
     <div class="content">

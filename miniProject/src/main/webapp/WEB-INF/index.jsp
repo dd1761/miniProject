@@ -34,7 +34,7 @@
          <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
 
-         <div class="menu-container">
+         <div class="menu-container" style="display:none;">
             <ul class="menu">
                <!-- 계정 정보 -->
                <div id="nav-header">
