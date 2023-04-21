@@ -72,26 +72,28 @@ $(function(){
                 for (var i = 0; i < data.length; i++) {
                     var comment_id = data[i].comment_id;
                     var comment_text = data[i].comment_text;
+
                     var comment_date = new Date(data[i].comment_date);
-                    var comment_author = data[i].comment_author;
+                    const year = upload_date.getFullYear(); // 년도
+                    const month = upload_date.getMonth() + 1; // 월 (0부터 시작하므로 1을 더해줌)
+                    const day = upload_date.getDate(); // 일
+
+                    var commenter_name = data[i].commenter_name;
+                    var profile_url = data[i].profile_url;
                     var comment_like_count = data[i].comment_like_count;
 
                     var row = `
                                     <div class="old-comment">
-                                      <img src="/miniProject/image/Jack.png">
+                                      <img src= ${profile_url}>
                                       <div>
-                                        <h3>${comment_author} <span>${comment_date.toLocaleDateString()}</span></h3>
+                                        <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
                                           <img src="/miniProject/image/like.png">
                                           <span>${comment_like_count} 좋아요 수</span>
-                                    
-                                          <span>댓글</span>
-                                          <a href="">모든 댓글</a>
                                         </div>
                                       </div>
-                                    </div>
-                                  `;
+                                    </div>`;
 
                     $("#comment-detail").append(row);
                 }

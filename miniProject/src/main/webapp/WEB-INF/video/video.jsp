@@ -68,7 +68,7 @@
 					</div>
 					<button type="button">구독</button>
 				</div>
-				
+
 				<div class="video-description">
 					<p>채널 설명란입니다.</p>
 					<p>이곳은 뭘까요?</p>
@@ -99,7 +99,7 @@
                   </div>
                </div>--%>
 
-					
+
 					<div class="old-comment">
 						<img src="/miniProject/image/Jack.png">
 						<div>

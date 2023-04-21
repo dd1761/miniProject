@@ -21,4 +21,10 @@ public class VideoDTO {
 	private int subscriber_count;
 	private String comment_text;
 	private int comment_like_count;
+
+	/*댓글쓴사람 이름*/
+	private String commenter_name;
+	private String profile_url;
+	private Timestamp comment_date;
+
 }
