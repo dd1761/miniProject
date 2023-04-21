@@ -4,10 +4,9 @@
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 	<div class="container play-container">
 		<div id="video-detail">
-			<%--동적 생성--%>
+			<%--비디오 동적 생성--%>
 		</div>
-		<%--		<div class="video-description">
-		<h4>댓글 수 넣는 곳</h4>--%>
+
 			<div id="comment">
 			<div id="img">
 				<img src="/miniProject/image/kwonyongjun.png">
@@ -33,6 +32,7 @@
 			<div id="comment-detail">
 			<%--댓글 동적 생성--%>
 			</div>
+
 		</div>
 	</div>
 
@@ -42,10 +42,7 @@
 				<video controls autoplay>
 					<source src="/miniProject/image/video.mp4" type="video/mp4">
 				</video>
-				<div class="tags"> <!-- 영상 및에 태그들 -->
-					<a href="">#한국</a> <a href="">#미국</a> 
-					<a href="">#펄럭</a> <a href="">#태극기</a>
-				</div>
+
 				<h3>비트캠프의 NC3기 Baboob팀</h3>
 				
 				<div class="play-video-info">
