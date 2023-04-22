@@ -1,11 +1,8 @@
 package channel.service;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 public interface ChannelService {
-
-	@Bean
-	public String display();
 
 }

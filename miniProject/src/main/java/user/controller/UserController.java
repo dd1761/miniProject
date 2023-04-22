@@ -28,12 +28,12 @@ public class UserController {
 		return "index";
 	}
 	*/
-	@GetMapping(value="channelForm")
+/*	@GetMapping(value="channelForm")
 	public String channelForm(Model model) {
 		
 		model.addAttribute("display","./channel/channelForm.jsp");
 		return "index";
-	}
+	}*/
 	
 	@GetMapping(value="boardList")
 	public String boardList(Model model) {

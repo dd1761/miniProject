@@ -96,7 +96,7 @@
 		</div>
 		<div class="subscribed-list">
 			<h3>구독</h3>
-			<a href="/miniProject/user/channelForm"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
+			<a href="/miniProject/channel/main?channel_id=1"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
 			<a href=""><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
 			<a href=""><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
 			<a href=""><img src="/miniProject/image/megan.png"><p>송성근</p></a>

@@ -26,6 +26,12 @@
 	<context:component-scan base-package="video.service" />
 	<!--비디오 끝 -->
 
+	<!--채널 시작 -->
+	<context:component-scan base-package="channel.bean" />
+	<context:component-scan base-package="channel.dao" />
+	<context:component-scan base-package="channel.service" />
+	<!--채널 끝 -->
+
 
 	<context:component-scan base-package="board.bean" />
 	<context:component-scan base-package="board.dao" />
