@@ -17,6 +17,19 @@ public class ChannelDAOMyBatis implements ChannelDAO {
     @Autowired
     private SqlSession sqlSession;
 
+    @Override
+    public List<ChannelDTO> getChannelForm(int user_id, int channel_id) {
+
+        System.out.println("DAO user_id+"+user_id);
+
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("user_id", user_id);
+        map.put("video_id", channel_id);
+        return sqlSession.selectList("channelSQL.getChannelForm",map);
+
+    }
+
 /*    @Override
     public List<ChannelDTO> getVideoById(int user_id, int video_id) {
 
@@ -29,5 +42,5 @@ public class ChannelDAOMyBatis implements ChannelDAO {
         map.put("video_id", video_id);
         return sqlSession.selectList("videoSQL.getVideoById",map);
     }*/
-    
+
 }

@@ -1,7 +1,5 @@
 package video.dao;
 
-import history.bean.HistoryDTO;
-import history.dao.HistoryDAO;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
