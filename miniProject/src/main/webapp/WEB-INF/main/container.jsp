@@ -5,6 +5,8 @@
 			<img alt="배너" src="/miniProject/image/banner.png">
 		</div>
 		
+		
+		<!-- 동적 처리로 전부 바꿔야 함 -->
 		<div class="list-container">
 			<div class="video-list">
 				<a href="/miniProject/user/playvideo">

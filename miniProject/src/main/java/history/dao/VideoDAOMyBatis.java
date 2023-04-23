@@ -27,5 +27,19 @@ public class VideoDAOMyBatis implements VideoDAO {
         map.put("user_id", user_id);
         return sqlSession.selectList("videoSQL.getVideoHistory",map);
     }
+
+
+	@Override
+	public List<VideoDTO> searchVideo(String video_title) {
+		
+		return sqlSession.selectList("videoSQL.searchVideo", video_title);
+	}
+
+	@Override
+	public List<VideoDTO> mainContainerVideo() {
+		
+		return sqlSession.selectList("videoSQL.mainContainerVideo");
+	}
+
     
 }

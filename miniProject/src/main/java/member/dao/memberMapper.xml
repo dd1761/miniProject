@@ -6,12 +6,26 @@
  	<select id="isExistEmail" parameterType="String" resultType="member">
  		select * from User where email=#{email}
  	</select>
- 	
- 	 <select id="getMember" resultType="member">
- 		select * from User 
+ 		
+ 	<select id="isExistPwd" parameterType="java.util.Map" resultType="member">
+ 		select * from User where email=#{email} and password=#{password}
  	</select>
  	
- 	<select id="isExistPwd" parameterType="String" resultType="member">
- 		select * from User where password=#{password}
+ 	<insert id="insertName" parameterType="String">
+ 		insert into User (name) values (#{name})
+ 	</insert>
+ 	
+ 	<select id="searchName" parameterType="String" resultType="member">
+ 		select * from User where name=#{name}
  	</select>
+ 	
+ 	<select id="isExistRrn" parameterType="java.util.Map" resultType="member">
+ 		select * from User where name=#{name} and rrn=#{rrn}
+ 	</select>
+ 	
+ 	<select id="getEmailList" parameterType="String" resultType="member">
+ 		select * from User where name=#{name}
+ 	</select>
+ 	
+ 		
  </mapper>

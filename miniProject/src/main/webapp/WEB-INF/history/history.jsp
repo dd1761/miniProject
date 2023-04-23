@@ -4,7 +4,11 @@ pageEncoding="UTF-8"%>
 <html>
   <head>
     <title>Youtube History</title>
+
     <link rel="stylesheet" href="../css/history.css">
+
+    <link rel="stylesheet" href="/miniProject/css/history.css">
+
   </head>
   <body>
 	<div class="navbar">
@@ -31,5 +35,9 @@ pageEncoding="UTF-8"%>
   <%-- 제이쿼리 --%>
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
   <%--내 js --%>
+
 <script type="text/javascript" src = "../js/history.js"></script>
+
+<script type="text/javascript" src = "/miniProject/js/history.js"></script>
+
 </html>

@@ -12,16 +12,16 @@
 <body>
 <div id="login">
 		<div id="header">
-		<h1><img src="/miniProject/image/logo1.png" alt="youtube"></h1>
+		<h1><img src="/miniProject/img/logo2.png" alt="youtube"></h1>
 		<h1 id="name"></h1>
 		<div id="t">
-		<img src="/miniProject/image/p.jpg" alt="프로필이미지" id="profile">
-		<div id="email"></div>
+		<img src="/miniProject/img/p.jpg" alt="프로필이미지" id="profile">
+		<div id="email">${email }</div>
 		</div>
 		<form action="#" method="post" id="login_pwd_form">
 				<div class="outBox">
 				    <div class="inputBox">
-				        <input type="password" id="password">
+				        <input type="password" id="password" name="">
 				        <label for="password">비밀번호 입력</label>
 				    </div>
 				</div>

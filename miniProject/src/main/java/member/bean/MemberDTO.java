@@ -11,5 +11,5 @@ public class MemberDTO {
 	private String email;
 	private String password;
 	private String profile_url;
-	private String rnn;
+	private String rrn;
 }

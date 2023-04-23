@@ -38,6 +38,44 @@ function showButtons() {
 //엔터키를 눌렀을 때
 $("#searchVideo").keydown(function(key) {
 	if( key.keyCode == 13 ){
+
 		alert('엔터키 눌린다.');
 	}
 });
+
+		$('#searchbtn').trigger('click');
+	}
+});
+
+$('#searchbtn').click(function(){
+	location.href='/miniProject/user/videosearch?videotitle=' + $('#searchVideo').val()
+});
+
+
+//index에서 main/container의 동영상리스트를 동적으로 화면에 뿌리는 작업.
+$(function() {
+	  $.ajax({
+	    type: 'post',
+	    url: '/miniProject/user/mainContainerVideo',
+	    success: function(data) {
+	    	console.log(data);
+	      // 데이터 처리 부분
+	    	$.each(data, function(index, items){
+	    		
+	    		
+	    		
+	    	});
+
+	    },
+	    error: function(err) {
+	      console.log(err);
+	    }
+	  });
+	});
+
+
+
+
+
+
+

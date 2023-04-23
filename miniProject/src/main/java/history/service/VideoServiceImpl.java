@@ -22,4 +22,18 @@ public class VideoServiceImpl implements VideoService {
         System.out.println(list);
         return list;
     }
+
+
+	@Override
+	public List<VideoDTO> searchVideo(String video_title) {
+		
+		return videoDAO.searchVideo(video_title);
+	}
+
+	@Override
+	public List<VideoDTO> mainContainerVideo() {
+		
+		return videoDAO.mainContainerVideo();
+	}
+
 }

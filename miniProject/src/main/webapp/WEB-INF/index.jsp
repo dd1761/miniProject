@@ -18,13 +18,21 @@
       <div class="nav-middle flex-div">
          <div class="search-box flex-div">
             <input type="text" placeholder="검색" id="searchVideo"> <img alt="검색"
+
                src="/miniProject/image/search.png">
+
+               src="/miniProject/image/search.png" id="searchbtn">
+
          </div>
          <img src="/miniProject/image/voice-search.png"
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
+
       	<div class="loginNone" style="display:none">
+
+      	<div class="loginNone" >
+
       		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
       	</div>
 		<div class="loginOK" >
@@ -95,7 +103,7 @@
 			<hr>
 		</div>
 		<div class="subscribed-list">
-			<h3>구독</h3>
+			<h3>${email} ${password}</h3>
 			<a href="/miniProject/user/channelForm"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
 			<a href=""><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
 			<a href=""><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
@@ -107,7 +115,11 @@
 	<!-- 메인화면 -->
 	<div class="container">
 		<div class="display">
+
 	  		<c:if test="${empty display && empty display3 && empty display4}">
+
+	  		<c:if test="${empty display && empty display3 && empty display4 && empty display5}">
+
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
 		  	<c:if test="${not empty display}">
@@ -119,6 +131,11 @@
             <c:if test="${not empty display4}">
                 <jsp:include page="${display4 }" />
             </c:if>
+
+            <c:if test="${not empty display5}">
+                <jsp:include page="${display5 }" />
+            </c:if>
+
 	  </div>
 	</div>
 
