@@ -18,8 +18,4 @@ public interface MemberService {
 
 	public List<MemberDTO> getEmailList(String name);
 
-	
-
-	
-
 }

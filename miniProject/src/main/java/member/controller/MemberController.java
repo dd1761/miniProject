@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import mail.service.MailService;
 import member.bean.MemberDTO;
 import member.service.MemberService;
 
@@ -20,17 +21,13 @@ public class MemberController {
 	@Autowired
 	private MemberService memberService;
 	
+	@Autowired
+	private MailService mailService;
+	
 	//**************login******************
 	@GetMapping(value="login_id")
 	public String login_id() {
 		return "member/login_id";
-	}
-	
-	@GetMapping(value="login_pwd2")
-	public String login_pwd2(@RequestParam String email, Model model) {
-		System.out.println(email);
-		model.addAttribute("email", email);
-		return "member/login_pwd";
 	}
 	
 	@GetMapping(value="login_pwd")
@@ -51,7 +48,7 @@ public class MemberController {
 	public MemberDTO isExistPwd(@RequestParam String password, @RequestParam String email) {
 		return memberService.isExistPwd(password, email);
 	}
-	
+
 	//**************join******************
 	@GetMapping(value="join_name")
 	public String join_name() {
@@ -67,6 +64,22 @@ public class MemberController {
 	@GetMapping(value="join_email")
 	public String join_eamil() {
 		return "member/join_email";
+	}
+	
+	@GetMapping(value="join_email2")
+	public String join_email2(@RequestParam String email, Model model) {
+		System.out.println(email);
+		model.addAttribute("email", email);
+		return "member/join_email2";
+	}
+	
+	//이메일 인증
+	@GetMapping("/mailCheck")
+	@ResponseBody
+	public String mailCheck(String email) {
+		System.out.println("이메일 인증 요청이 들어옴!");
+		System.out.println("이메일 인증 이메일 : " + email);
+		return mailService.joinEmail(email);
 	}
 	
 	//**************search******************
@@ -103,6 +116,13 @@ public class MemberController {
 	@ResponseBody
 	public List<MemberDTO> getEmailList(@RequestParam String name) {
 		return memberService.getEmailList(name);
+	}
+	
+	@GetMapping(value="login_pwd2")
+	public String login_pwd2(@RequestParam String email, Model model) {
+		System.out.println(email);
+		model.addAttribute("email", email);
+		return "member/login_pwd";
 	}
 	
 }

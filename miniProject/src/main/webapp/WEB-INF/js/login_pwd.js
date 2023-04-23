@@ -12,7 +12,7 @@ $(function(){
 	});
 });
 
-$('#nextbtn').click(function(){
+$('#nextBtn').click(function(){
 	$('#passwordDiv').empty();
 	
 	if($('#password').val() == '') {
