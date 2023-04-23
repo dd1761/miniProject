@@ -38,7 +38,7 @@ $('#nextbtn').click(function(){
 					$('.inputBox label').css('color', 'red');
 				    $('#password').focus();
 				}else{
-					location.href='/miniProject/?email='+$('#email').text()+'& password=' + $('#password').val();
+					location.href='/miniProject/';
 				}
 			},
 		   	error: function(err){

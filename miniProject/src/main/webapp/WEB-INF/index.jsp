@@ -18,7 +18,7 @@
       <div class="nav-middle flex-div">
          <div class="search-box flex-div">
             <input type="text" placeholder="검색" id="searchVideo"> <img alt="검색"
-               src="/miniProject/image/search.png">
+               src="/miniProject/image/search.png" id="searchbtn">
          </div>
          <img src="/miniProject/image/voice-search.png"
             class="mic-icon">
@@ -107,7 +107,7 @@
 	<!-- 메인화면 -->
 	<div class="container">
 		<div class="display">
-	  		<c:if test="${empty display && empty display3 && empty display4}">
+	  		<c:if test="${empty display && empty display3 && empty display4 && empty display5}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
 		  	<c:if test="${not empty display}">
@@ -118,6 +118,9 @@
 		  	</c:if>
             <c:if test="${not empty display4}">
                 <jsp:include page="${display4 }" />
+            </c:if>
+            <c:if test="${not empty display5}">
+                <jsp:include page="${display5 }" />
             </c:if>
 	  </div>
 	</div>
