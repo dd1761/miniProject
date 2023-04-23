@@ -1,5 +1,20 @@
+$(function(){
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/member/isExistEmail',
+	   	data: 'email='+$('#email').text(),
+		success: function(data){
+			$('#name').text(data.name);
+		},
+	   	error: function(err){
+	   		console.log(err);
+	   	}
+	});
+});
+
 $('#nextbtn').click(function(){
 	$('#passwordDiv').empty();
+	
 	if($('#password').val() == '') {
 		$('#passwordDiv').text('비밀번호를 입력하세요.');
 		$('#passwordDiv').css('color', 'red');
@@ -12,10 +27,8 @@ $('#nextbtn').click(function(){
 		$.ajax({
 			type: 'post',
 			url: '/miniProject/member/isExistPwd',
-		   	data: 'password='+$('#password').val(), 
+		   	data: 'password=' + $('#password').val() + '&email=' + $('#email').text(), 
 		   	success: function(data){
-				console.log(data.email);
-				console.log(data.name);
 				if(data == "") {
 					$('#passwordDiv').text('잘못된 비밀번호 입니다.');
 					$('#passwordDiv').css('color', 'red');
@@ -25,7 +38,7 @@ $('#nextbtn').click(function(){
 					$('.inputBox label').css('color', 'red');
 				    $('#password').focus();
 				}else{
-					alert('로그인성공!');
+					location.href='/miniProject/';
 				}
 			},
 		   	error: function(err){
@@ -34,4 +47,3 @@ $('#nextbtn').click(function(){
 		});
 	}
 });
-

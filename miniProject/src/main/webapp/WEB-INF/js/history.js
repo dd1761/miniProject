@@ -8,7 +8,6 @@ searchInput.addEventListener('keypress', function(event) {
     window.location.href = `/miniProject/history/main?query=${query}`;
   }
 
-
 });
 
 $(function(){
