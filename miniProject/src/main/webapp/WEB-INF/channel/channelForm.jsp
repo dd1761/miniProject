@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="/miniProject/css/channel.css">
-
 	<header>
 		<div class="channel-info">
 			<div class="channel-logo">
