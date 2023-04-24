@@ -16,8 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import board.bean.BoardDTO;
 import community.service.CommunityService;
 
-import history.bean.VideoDTO;
-import history.service.VideoService;
+
 import oracle.jdbc.proxy.annotation.Post;
 
 import video.bean.VideoDTO;
@@ -33,10 +32,7 @@ public class UserController {
 	@Autowired
 	VideoService videoService;
 
-	
-	@Autowired
-	VideoService videoService;
-	
+
 /*	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {
 		model.addAttribute("display","");
