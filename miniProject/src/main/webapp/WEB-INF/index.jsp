@@ -22,20 +22,28 @@
          </div>
          <img src="/miniProject/image/voice-search.png"
             class="mic-icon">
+            <input type="text" name="user_id" id="user_id" value="${user_id }">
       </div>
       <div class="nav-right flex-div">
+
+
       	<c:if test="${sessionScope.user_id == null}">
+
       	<div class="loginNone" >
       		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
       	</div>
       	</c:if>
       	<c:if test="${sessionScope.user_id != null}">
+      	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+		<script type="text/javascript" src="/miniProject/js/loginOk.js"></script>
+			
 		<div class="loginOK" >
          <img src="/miniProject/image/upload.png">
          <img src="/miniProject/image/more.png">
          <img src="/miniProject/image/notification.png"> 
          <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
+            
 
          <div class="menu-container" style="display:none">
             <ul class="menu">
@@ -100,11 +108,12 @@
 		</div>
 		<div class="subscribed-list">
 			<h3>${email} ${password}</h3>
-			<a href="/miniProject/user/channelForm"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
+			<a href="/miniProject/channel/main"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
 			<a href=""><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
 			<a href=""><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
 			<a href=""><img src="/miniProject/image/megan.png"><p>송성근</p></a>
 			<a href=""><img src="/miniProject/image/cameron.png"><p>이지현</p></a>
+			
 		</div>
 	</div>
 

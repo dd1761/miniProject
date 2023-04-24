@@ -125,4 +125,12 @@ public class MemberController {
 		return "member/login_pwd";
 	}
 	
+//	loginOk.js에서 index에서 로그인이 되어있는 상태라면 오른쪽 상단 user의 drop바를 뿌려줌.
+	@PostMapping(value="loginOk")
+	@ResponseBody
+	public MemberDTO loginOk(@RequestParam int user_id) {
+		System.out.println(user_id);
+		return memberService.loginOk(user_id);
+	}
+	
 }

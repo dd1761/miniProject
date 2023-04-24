@@ -55,4 +55,10 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.getEmailList(name);
 	}
 
+	@Override
+	public MemberDTO loginOk(int user_id) {
+		
+		return memberDAO.loginOk(user_id);
+	}
+
 }

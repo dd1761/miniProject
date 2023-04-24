@@ -27,5 +27,8 @@
  		select * from User where name=#{name}
  	</select>
  	
+ 	<select id="loginOk" parameterType="Int" resultType="member">
+ 		select * from user where user_id=#{user_id}
+ 	</select>
  		
  </mapper>

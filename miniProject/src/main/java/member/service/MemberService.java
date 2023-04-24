@@ -18,4 +18,6 @@ public interface MemberService {
 
 	public List<MemberDTO> getEmailList(String name);
 
+	public MemberDTO loginOk(int user_id);
+
 }

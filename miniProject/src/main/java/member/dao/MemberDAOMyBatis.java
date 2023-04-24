@@ -55,6 +55,12 @@ public class MemberDAOMyBatis implements MemberDAO {
 		return sqlSession.selectList("memberSQL.getEmailList", name);
 	}
 
+	@Override
+	public MemberDTO loginOk(int user_id) {
+		
+		return sqlSession.selectOne("memberSQL.loginOk", user_id);
+	}
+
 
 
 	
