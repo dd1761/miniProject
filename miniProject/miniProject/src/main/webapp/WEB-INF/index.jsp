@@ -24,13 +24,10 @@
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
-      	<c:if test="${sessionScope.user_id == null}">
       	<div class="loginNone" >
       		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
       	</div>
-      	</c:if>
-      	<c:if test="${sessionScope.user_id != null}">
-		<div class="loginOK" >
+		<div class="loginOK" style="display:none">
          <img src="/miniProject/image/upload.png">
          <img src="/miniProject/image/more.png">
          <img src="/miniProject/image/notification.png"> 
@@ -78,7 +75,6 @@
                         </ul>
                      </div> <!-- menubar -->
                      </div>
-                     </c:if>
                   </div>
                </ul>
             </div>
