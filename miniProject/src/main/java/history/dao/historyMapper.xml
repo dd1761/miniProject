@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="videoSQL">
+<mapper namespace="historySQL">
 
 	<!--비디오 -->
-	<select id="getVideoHistory" parameterType="java.util.Map" resultType="history.bean.VideoDTO">
+	<select id="getVideoHistory" parameterType="java.util.Map" resultType="history.bean.HistoryDTO">
 		SELECT v.*, h.*, c.channel_name, c.channel_profile_url
 		FROM (
 		SELECT ROW_NUMBER() OVER () AS rnum, h.video_id
@@ -18,17 +18,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		JOIN Channel c ON v.channel_id = c.channel_id
 		WHERE rnum BETWEEN #{start} AND #{start} + #{count} - 1 AND h.user_id =  #{user_id}
 		ORDER by watch_date desc
-	</select>
-	
-	<select id="searchVideo" parameterType="java.util.Map" resultType="history.bean.VideoDTO">
-		SELECT *
-    FROM Video
-    INNER JOIN Channel ON Video.channel_id = Channel.channel_id
-    WHERE Video.video_title LIKE '%${video_title}%' OR Channel.channel_name LIKE '%${video_title}%'
-	</select>
-	
-	<select id="mainContainerVideo" resultType="history.bean.VideoDTO">
-		select * from video
 	</select>
 
 </mapper>

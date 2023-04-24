@@ -61,7 +61,7 @@ $(function() {
 	        // 새로운 video-list 요소를 생성합니다.
 	        var videoList = $('<div>', {class: 'video-list'});
 	        // a 요소를 생성합니다.
-	        var link = $('<a>', {href: items.video_url});
+	        var link = $('<a>', {href: '/miniProject/video/main?video_id=' + items.video_id});
 	        // img 요소를 생성합니다.
 	        var thumbnail = $('<img>', {class: 'thumbnail', src: items.thumnail_url});
 	        // img 요소를 생성합니다.

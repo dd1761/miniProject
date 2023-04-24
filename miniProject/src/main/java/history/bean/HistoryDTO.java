@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class VideoDTO {
+public class HistoryDTO {
 	/*private int video_id;*/
 	// Video 테이블 칼럼
 	private String video_title;

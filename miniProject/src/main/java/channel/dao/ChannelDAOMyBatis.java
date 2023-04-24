@@ -1,10 +1,10 @@
-package video.dao;
+package channel.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import video.bean.VideoDTO;
+import channel.bean.ChannelDTO;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,13 +12,26 @@ import java.util.Map;
 
 @Repository
 @Transactional
-public class VideoDAOMyBatis implements VideoDAO {
+public class ChannelDAOMyBatis implements ChannelDAO {
 
     @Autowired
     private SqlSession sqlSession;
 
     @Override
-    public List<VideoDTO> getVideoById(int user_id, int video_id) {
+    public List<ChannelDTO> getChannelForm(int user_id, int channel_id) {
+
+        System.out.println("DAO user_id+"+user_id);
+
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("user_id", user_id);
+        map.put("video_id", channel_id);
+        return sqlSession.selectList("channelSQL.getChannelForm",map);
+
+    }
+
+/*    @Override
+    public List<ChannelDTO> getVideoById(int user_id, int video_id) {
 
         System.out.println(user_id+":"+video_id);
         System.out.println("DAO");
@@ -28,18 +41,6 @@ public class VideoDAOMyBatis implements VideoDAO {
         map.put("user_id", user_id);
         map.put("video_id", video_id);
         return sqlSession.selectList("videoSQL.getVideoById",map);
-    }
+    }*/
 
-    @Override
-	public List<VideoDTO> searchVideo(String video_title) {
-		
-		return sqlSession.selectList("videoSQL.searchVideo", video_title);
-	}
-
-	@Override
-	public List<VideoDTO> mainContainerVideo() {
-		
-		return sqlSession.selectList("videoSQL.mainContainerVideo");
-	}
-    
 }

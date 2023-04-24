@@ -6,25 +6,44 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- <bean id="userServiceImpl" class="user.service.UserServiceImpl"></bean> -->
+	<!-- board -->
+	<context:component-scan base-package="board.bean" />
+	<context:component-scan base-package="board.dao" />
 	
-	<context:component-scan base-package="user.bean" />
-	<context:component-scan base-package="user.dao" />
-	<context:component-scan base-package="user.service" />
-	<context:component-scan base-package="member.bean" />
-	<context:component-scan base-package="member.dao" />
-	<context:component-scan base-package="member.service" />
-
-
+	<!-- channel -->
+	<context:component-scan base-package="channel.dao" />
+	<context:component-scan base-package="channel.bean" />
+	<context:component-scan base-package="channel.service" />
+	
+	<!-- comment -->
+	<context:component-scan base-package="comment.bean" />
+	<context:component-scan base-package="comment.dao" />
+	<context:component-scan base-package="comment.service" />
+	
+	<!-- community -->
+	<context:component-scan base-package="community.service" />
+	
+	<!-- history -->
 	<context:component-scan base-package="history.bean" />
 	<context:component-scan base-package="history.dao" />
 	<context:component-scan base-package="history.service" />
 	
-	<context:component-scan base-package="board.bean" />
-	<context:component-scan base-package="board.dao" />
+	<!-- mail -->
+	<context:component-scan base-package="mail.service" />
 	
-	<context:component-scan base-package="channel.service" />
-	<context:component-scan base-package="community.service" />
-	<context:component-scan base-package="mail.service" /> 
+	<!-- member -->
+	<context:component-scan base-package="member.bean" />
+	<context:component-scan base-package="member.dao" />
+	<context:component-scan base-package="member.service" />
+	
+	<!-- user -->
+	<context:component-scan base-package="user.dao" />
+	<context:component-scan base-package="user.bean" />
+	
+	<!-- video -->
+	<context:component-scan base-package="video.bean" />
+	<context:component-scan base-package="video.dao" />
+	<context:component-scan base-package="video.service" />
 	
 	
 	<!-- 이메일 인증 관련 빈 등록 -->

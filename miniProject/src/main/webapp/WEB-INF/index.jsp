@@ -37,7 +37,7 @@
          <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
 
-         <div class="menu-container">
+         <div class="menu-container" style="display:none">
             <ul class="menu">
                <!-- 계정 정보 -->
                <div id="nav-header">
@@ -114,7 +114,7 @@
 	  		<c:if test="${empty display && empty display3 && empty display4 && empty display5}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
-		  	<c:if test="${not empty display}">
+		  	<c:if test="${not empty display}"> <!-- UserController -->
 		    	<jsp:include page="${display }" />
 		  	</c:if>
 		  	<c:if test="${not empty display3}">
