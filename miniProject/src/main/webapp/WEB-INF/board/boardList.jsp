@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html> 
 <head>
 <title>커뮤니티 게시판</title>
 <link rel="stylesheet" href="/miniProject/css/board.css">
