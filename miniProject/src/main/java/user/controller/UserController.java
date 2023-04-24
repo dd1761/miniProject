@@ -15,32 +15,41 @@ import org.springframework.web.servlet.ModelAndView;
 
 import board.bean.BoardDTO;
 import community.service.CommunityService;
+
 import history.bean.VideoDTO;
 import history.service.VideoService;
 import oracle.jdbc.proxy.annotation.Post;
+
+import video.bean.VideoDTO;
+import video.service.VideoService;
 
 @Controller
 @RequestMapping(value="user")
 public class UserController {
 	@Autowired
 	CommunityService communityService;
+
+	
+	@Autowired
+	VideoService videoService;
+
 	
 	@Autowired
 	VideoService videoService;
 	
-	@GetMapping(value="playvideo")
+/*	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {
 		model.addAttribute("display","");
-		model.addAttribute("display3", "./video/playvideo.jsp");
+		model.addAttribute("display3", "./video/video.jsp");
 		return "index";
 	}
-	
-	@GetMapping(value="channelForm")
+	*/
+/*	@GetMapping(value="channelForm")
 	public String channelForm(Model model) {
 		
 		model.addAttribute("display","./channel/channelForm.jsp");
 		return "index";
-	}
+	}*/
 	
 	@GetMapping(value="boardList")
 	public String boardList(Model model) {
@@ -56,7 +65,9 @@ public class UserController {
 		return communityService.getBoardList();
 	}
 	
+
 	
+
 	@GetMapping(value = "videosearch")
 	public String videosearch(@RequestParam String videotitle, Model model) {
 		

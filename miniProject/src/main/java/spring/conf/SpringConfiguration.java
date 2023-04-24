@@ -54,13 +54,22 @@ public class SpringConfiguration {
 				new ClassPathResource("history/dao/videoMapper.xml"),
 				new ClassPathResource("member/dao/memberMapper.xml"),
 				new ClassPathResource("board/dao/boardMapper.xml")
+				new ClassPathResource("history/dao/historyMapper.xml"),
+				new ClassPathResource("member/dao/memberMapper.xml"),
+				new ClassPathResource("board/dao/boardMapper.xml"),
+				new ClassPathResource("video/dao/videoMapper.xml"),
+				new ClassPathResource("channel/dao/channelMapper.xml")
 		);
 
 /*
 		sqlSessionFactoryBean.setMapperLocations(
 				new Resource[]{
 						new ClassPathResource("user/dao/userMapper.xml"),
+
 						new ClassPathResource("history/dao/videoMapper.xml")
+
+						new ClassPathResource("history/dao/channelMapper.xml")
+
 				}
 		);
 */

@@ -24,17 +24,23 @@
             class="mic-icon">
       </div>
       <div class="nav-right flex-div">
+
+
+      	<c:if test="${sessionScope.user_id == null}">
+
       	<div class="loginNone" >
       		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
       	</div>
-		<div class="loginOK" style="display:none">
+      	</c:if>
+      	<c:if test="${sessionScope.user_id != null}">
+		<div class="loginOK" >
          <img src="/miniProject/image/upload.png">
          <img src="/miniProject/image/more.png">
          <img src="/miniProject/image/notification.png"> 
          <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
             class="user-icon">
 
-         <div class="menu-container">
+         <div class="menu-container" style="display:none">
             <ul class="menu">
                <!-- 계정 정보 -->
                <div id="nav-header">
@@ -75,6 +81,7 @@
                         </ul>
                      </div> <!-- menubar -->
                      </div>
+                     </c:if>
                   </div>
                </ul>
             </div>
@@ -110,7 +117,7 @@
 	  		<c:if test="${empty display && empty display3 && empty display4 && empty display5}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>
-		  	<c:if test="${not empty display}">
+		  	<c:if test="${not empty display}"> <!-- UserController -->
 		    	<jsp:include page="${display }" />
 		  	</c:if>
 		  	<c:if test="${not empty display3}">
