@@ -26,7 +26,7 @@ public class UserController {
 		model.addAttribute("display","");
 		model.addAttribute("display3", "./video/video.jsp");
 		return "index";
-	}
+	}¤¼
 	*/
 /*	@GetMapping(value="channelForm")
 	public String channelForm(Model model) {
