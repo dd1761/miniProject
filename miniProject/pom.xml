@@ -19,7 +19,7 @@
         <version>3.2.3</version>
       </plugin>
     </plugins>
-	  <!--리소스 추가 -->
+	  <!--리소스 추가 했습니다~ -->
 	  <resources>
 		  <resource>
 			  <directory>src/main/java</directory>
