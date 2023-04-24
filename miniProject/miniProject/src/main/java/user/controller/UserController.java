@@ -15,8 +15,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import board.bean.BoardDTO;
 import community.service.CommunityService;
-import history.bean.VideoDTO;
-import history.service.VideoService;
 import oracle.jdbc.proxy.annotation.Post;
 
 @Controller

@@ -1,11 +1,10 @@
 package history.controller;
 
-import history.service.VideoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import history.bean.VideoDTO;
+
 import java.util.List;
 import java.util.Optional;
 

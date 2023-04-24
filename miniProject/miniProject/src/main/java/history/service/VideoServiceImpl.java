@@ -2,7 +2,6 @@ package history.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import history.bean.VideoDTO;
 import history.dao.VideoDAO;
 
 import java.util.List;
