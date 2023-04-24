@@ -2,8 +2,14 @@ package member.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import member.bean.MemberDTO;
@@ -13,6 +19,8 @@ import member.dao.MemberDAO;
 public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
+	@Autowired
+	private HttpSession session;
 
 	@Override
 	public MemberDTO isExistEmail(String email) {
@@ -26,7 +34,10 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public MemberDTO isExistPwd(String password, String email) {
-		return memberDAO.isExistPwd(password, email);
+		MemberDTO memberDTO = memberDAO.isExistPwd(password, email);
+		if(memberDTO != null)
+			session.setAttribute("user_id", memberDTO.getUser_id());
+		return memberDTO;
 	}
 
 	@Override
@@ -43,9 +54,5 @@ public class MemberServiceImpl implements MemberService {
 	public List<MemberDTO> getEmailList(String name) {
 		return memberDAO.getEmailList(name);
 	}
-
-
-
-	
 
 }

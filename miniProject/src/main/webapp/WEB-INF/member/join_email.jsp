@@ -22,11 +22,12 @@
 				        <label for="email">이메일 주소</label>
 				    </div>
 				</div>
+				<div id="emailDiv"></div>
 				
 				<div class="aaa" style="font-size:14px; margin-left:20px; ">이 이메일이 본인 소유인지 확인해야 합니다.</div>
 			
 				<div class="bottom">
-					<button type="button" class="btn btn-primary" id="nextbtn" style="width: 100px">인증코드 보내기</button>
+					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 100px">인증코드 보내기</button>
 				</div>
 		</form>
 		</div>
@@ -37,6 +38,8 @@
 			</select>
 		</footer>
 	</div>
+<script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>	
 <script src="../js/box1.js"></script>	
+<script src="../js/join_email.js"></script>
 </body>
 </html>
