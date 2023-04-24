@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- <bean id="userServiceImpl" class="user.service.UserServiceImpl"></bean> -->
+	
+	<context:component-scan base-package="user.bean" />
+	<context:component-scan base-package="user.dao" />
+	<context:component-scan base-package="user.service" />
+	<context:component-scan base-package="member.bean" />
+	<context:component-scan base-package="member.dao" />
+	<context:component-scan base-package="member.service" />
+
+	<!--히스토리 시작  -->
+	<context:component-scan base-package="history.bean" />
+	<context:component-scan base-package="history.dao" />
+	<context:component-scan base-package="history.service" />
+	<!--히스토리 끝-->
+
+	<!--비디오 시작 -->
+	<context:component-scan base-package="video.bean" />
+	<context:component-scan base-package="video.dao" />
+	<context:component-scan base-package="video.service" />
+	<!--비디오 끝 -->
+
+	<!--채널 시작 -->
+	<context:component-scan base-package="channel.bean" />
+	<context:component-scan base-package="channel.dao" />
+	<context:component-scan base-package="channel.service" />
+	<!--채널 끝 -->
+
+
+	<context:component-scan base-package="board.bean" />
+	<context:component-scan base-package="board.dao" />
+	
+	<context:component-scan base-package="channel.service" />
+	<context:component-scan base-package="community.service" />
+	
+
+
+	<context:component-scan base-package="spring.conf" />
+</beans>
