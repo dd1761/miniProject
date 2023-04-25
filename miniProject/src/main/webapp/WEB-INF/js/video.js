@@ -56,7 +56,7 @@ $(function(){
                         '</div>' +
                         '<hr>' +
                         '<div class="plublisher">' +
-                        '<img src="' + thumbnail_url + '">' +
+                        '<a href ="/miniProject/channel/main?channel_id='+channel_id+'"><img src="' + thumbnail_url + '"></a>' +
                         '<div>' +
                         '<p>' + channel_name + '</p>' +
                         '<span>구독자 ' + subscriber_count + '명</span>' +

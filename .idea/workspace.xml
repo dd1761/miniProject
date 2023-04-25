@@ -9,30 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="인덱스의 채널 명 링크 변경">
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/img/subscribe.png" afterDir="false" />
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="채널페이지 동적으로 수정완료">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/channel/bean/ChannelDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/channel/bean/ChannelDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/channel/dao/ChannelDAOMyBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/channel/dao/ChannelDAOMyBatis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/channel/dao/channelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/channel/dao/channelMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/videoList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/videoList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/img/subcribe.png" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/img/subscribed.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/bean/ChannelDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/bean/ChannelDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/channelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/channelMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/bean/ChannelDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/bean/ChannelDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/channelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/channelMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/img/subcribe.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/img/subcribe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/main/test.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/main/videoList.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +209,7 @@
       <workItem from="1682325123799" duration="1350000" />
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
-      <workItem from="1682382465507" duration="5905000" />
+      <workItem from="1682382465507" duration="6912000" />
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -266,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682383302506</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="채널페이지 동적으로 수정완료">
+      <created>1682388790915</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682388790915</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +274,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="리소스 추가" />
     <MESSAGE value="인덱스의 채널 명 링크 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="인덱스의 채널 명 링크 변경" />
+    <MESSAGE value="채널페이지 동적으로 수정완료" />
+    <option name="LAST_COMMIT_MESSAGE" value="채널페이지 동적으로 수정완료" />
   </component>
 </project>

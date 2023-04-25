@@ -44,7 +44,7 @@ $(function(){
                     $newVideo.find("iframe").attr("src", src);
 
                     // 제목 설정
-                    $newVideo.find("h2").text(video.video_title);
+                    $newVideo.find("h2").html("<a href='/miniProject/video/main?video_id="+video.video_id+"'>"+video.video_title+"</a>");
 
                     // 날짜 설정
                     $newVideo.find("p:first").text("조회수 " + video.views + "회 " + year + "년 " + month + "월 " + day + "일");
@@ -56,7 +56,7 @@ $(function(){
                     $("#videos-container").append($newVideo);
 
                                     /*--------------------------------채널추가------------------------*/
-
+                    var comments = data.length;
                     const html = `
                             <div id='box-left'>
                               <div class="channel-profile">
@@ -66,7 +66,7 @@ $(function(){
                             <div id='box-center'>
                               <div class="channel-details">
                                 <h1>&nbsp${data[0].channel_name}</h1>
-                                <p>&nbsp구독자 ${data[0].subscriber_count}명 동영상 ${data[0].views}개</p>
+                                <p>&nbsp구독자 ${data[0].subscriber_count}명 동영상 ${comments}개</p>
                                 <p>
                                   <a href="#">&nbsp${data[0].channel_description}</a>
                                 </p>
