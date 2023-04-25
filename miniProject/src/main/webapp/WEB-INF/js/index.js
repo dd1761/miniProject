@@ -65,13 +65,13 @@ $(function() {
 	        // img 요소를 생성합니다.
 	        var thumbnail = $('<img>', {class: 'thumbnail', src: items.thumnail_url});
 	        // img 요소를 생성합니다.
-	        var channelProfile = $('<img>', {src: items.channel_profile_url, id: 'channel'});
+	        var channelProfile = $('<img>', {src: items.profile_url, id: 'channel'});
 	        // div 요소를 생성합니다.
 	        var flexDiv = $('<div>', {class: 'flex-div'});
 	        // div 요소를 생성합니다.
 	        var videoInfo = $('<div>', {class: 'video-info'});
 	        // a 요소를 생성합니다.
-	        var title = $('<a>', {href: items.video_url, text: items.video_title});
+	        var title = $('<a>', {href: '/miniProject/video/main?video_id=' + items.video_id, text: items.video_title});
 	        // p 요소를 생성합니다.
 	        var channelName = $('<p>', {text: items.channel_name});
 	        // p 요소를 생성합니다.
@@ -117,4 +117,20 @@ $(function(){
 	$("#logout").wrap('<a href="#"></a>');
 });
 
-
+$(function(){
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/subscribe/subscribelist',
+		data: 'user_id=' + $('#user_id').val(),
+		success: function(data){
+			console.log(data);
+			$.each(data, function(index, items){
+				let channel = '<a href="/miniProject/channel/main?channel_id=' + items.channel_id + '"><img src="' + items.channel_profile_url + '" id="channel"><p>' + items.channel_name + '</p></a>';
+				$('.subscribed-list').append(channel);
+			});
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});

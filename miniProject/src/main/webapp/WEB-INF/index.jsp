@@ -21,7 +21,7 @@
 			<input type="text" placeholder="검색" id="searchVideo">
 			<img alt="검색" src="/miniProject/image/search.png" id="searchbtn">
 		</div><!-- search-box flex-div -->
-		<input type="text" name="user_id" id="user_id" value="${user_id }">
+		<input type="hidden" name="user_id" id="user_id" value="${user_id }">
 	</div><!-- nav-middel flex-div -->
 	
 	<div class="nav-right flex-div">
@@ -87,13 +87,11 @@
 			<hr>
 		</div>
 		<div class="subscribed-list">
-			<h3>${email} ${password}</h3>
 			<a href="/miniProject/channel/main"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
 			<a href=""><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
 			<a href=""><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
 			<a href=""><img src="/miniProject/image/megan.png"><p>송성근</p></a>
-			<a href=""><img src="/miniProject/image/cameron.png"><p>이지현</p></a>
-			
+			<a href=""><img src="/miniProject/image/cameron.png"><p>이지현</p></a>		
 		</div>
 	</div>
 
