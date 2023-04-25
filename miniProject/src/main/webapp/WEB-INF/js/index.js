@@ -159,9 +159,9 @@ $(document).on('click', '#subBtn', () => {
 		type: 'POST',
 		dataType: 'json',
 		data: { user_id: user_id, channel_id: channel_id },
-		success: (response) => {
-			console.log(response);
+		success: () => {
 			$('#subBtn').removeClass('subBtn').addClass('dissubBtn').text('구독취소');
+			location.reload();
 		},
 		error: (jqXHR, textStatus, errorThrown) => {
 			console.log(textStatus, errorThrown);

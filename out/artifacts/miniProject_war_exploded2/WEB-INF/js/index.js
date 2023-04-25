@@ -159,13 +159,18 @@ $(document).on('click', '#subBtn', () => {
 		type: 'POST',
 		dataType: 'json',
 		data: { user_id: user_id, channel_id: channel_id },
-		success: (response) => {
-			console.log(response);
+		success: () => {
 			$('#subBtn').removeClass('subBtn').addClass('dissubBtn').text('구독취소');
+			location.reload();
 		},
 		error: (jqXHR, textStatus, errorThrown) => {
 			console.log(textStatus, errorThrown);
 		}
+	}).done(() => {
+		// AJAX 요청이 완료되면 실행되는 콜백 함수
+		// 버튼의 속성을 변경하고 페이지를 리로드함
+		$('#subBtn').removeClass('subBtn').addClass('dissubBtn').text('구독취소');
+		location.reload();
 	});
 });
 

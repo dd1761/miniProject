@@ -16,9 +16,9 @@
 
 	</update>
 
-	<update id ="subscribeOn" parameterType="int">
-
-
+	<update id ="subscribeOn" parameterType="java.util.Map">
+		INSERT INTO Subscription(user_id, channel_id)
+		VALUES(#{user_id}, #{channel_id})
 	</update>
  		
  </mapper>

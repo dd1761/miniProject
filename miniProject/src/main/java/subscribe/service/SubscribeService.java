@@ -10,5 +10,5 @@ public interface SubscribeService {
 
     void subscribeOff(int userId);
 
-    void subscribeOn(int userId);
+    void subscribeOn(int userId ,int channelId);
 }
