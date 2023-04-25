@@ -27,4 +27,8 @@ public class VideoDTO {
 	private String profile_url;
 	private Timestamp comment_date;
 
+	//Ãß°¡
+	private String user_name;
+	private String user_profile_url;
+	private int is_subscribed;
 }

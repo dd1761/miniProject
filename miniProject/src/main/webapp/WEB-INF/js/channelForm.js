@@ -61,7 +61,7 @@ $(function(){
                             <div id='box-left'>
                               <div class="channel-profile">
                                 <!-- null 이면 기본이미지인 p.jpg -->
-                                <img src="${data[0].thumnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img.profile.png'}" alt="Profile Picture">
+                                <img src="${data[0].thumnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}" alt="Profile Picture">
                               </div>
                             </div>
                             <div id='box-center'>

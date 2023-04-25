@@ -9,15 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="a 테그로 url 링크걸기">
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="댓글 if 문걸어서 null 값 출력 방지">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/video/video.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/img/subcribe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,6 @@
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/img",
     "node.js.detected.package.eslint": "true",
@@ -214,7 +215,7 @@
       <workItem from="1682325123799" duration="1350000" />
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
-      <workItem from="1682382465507" duration="10451000" />
+      <workItem from="1682382465507" duration="14533000" />
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -265,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682389808513</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="댓글 if 문걸어서 null 값 출력 방지">
+      <created>1682393315614</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682393315614</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,6 +296,7 @@
     <MESSAGE value="인덱스의 채널 명 링크 변경" />
     <MESSAGE value="채널페이지 동적으로 수정완료" />
     <MESSAGE value="a 테그로 url 링크걸기" />
-    <option name="LAST_COMMIT_MESSAGE" value="a 테그로 url 링크걸기" />
+    <MESSAGE value="댓글 if 문걸어서 null 값 출력 방지" />
+    <option name="LAST_COMMIT_MESSAGE" value="댓글 if 문걸어서 null 값 출력 방지" />
   </component>
 </project>

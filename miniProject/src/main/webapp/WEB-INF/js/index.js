@@ -29,9 +29,9 @@ function showButtons() {
      document.getElementById("down").classList.add('show');
    }
 
-   function hideButtons() {
-     document.getElementById("down").classList.remove('show');
-   }
+function hideButtons() {
+ document.getElementById("down").classList.remove('show');
+}
 
 
 

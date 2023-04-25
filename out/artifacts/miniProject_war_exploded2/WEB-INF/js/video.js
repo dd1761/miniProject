@@ -42,7 +42,7 @@ $(function(){
                         /*비디오 동적 생성*/
 
                 $('#play-video').html(`
-                    <video controls autoplay>
+                    <video controls autoplay width="1000" height="600">
                         <source src="${video_url}" type="video/mp4">
                     </video>
                     
@@ -60,7 +60,12 @@ $(function(){
                     </div>
                     <hr>
                     <div class="plublisher">
-                        <a href="/miniProject/channel/main?channel_id=${channel_id}"><img src="${thumbnail_url}"></a>
+                        
+                        <a href="/miniProject/channel/main?channel_id=${channel_id}">
+                        <!--null 이면 기본이미지-->
+                        <img src="${data[0].thumbnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
+                        
+                        </a>
                         <div>
                             <p>${channel_name}</p>
                             <span>구독자 ${subscriber_count}명</span>
@@ -70,12 +75,13 @@ $(function(){
                     </div>
                     <div class="video-description">
                         <hr>
-                        
+                        <!--댓글이 0 개 면 댓글 0 출력 아니면 숫자출력-->
                         <h4>댓글 ${data[0].comment_text ? comments : '0'} 개</h4>
                         
                         <div id="comment">
                               <div id="img">
-                                 <img src="/miniProject/image/kwonyongjun.png">
+                                 <!--null 이면 기본이미지-->
+                                 <img src="${data[0].user_profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
                               </div>
                               <div id="addcomment">
                                  <div id="up">
@@ -99,14 +105,15 @@ $(function(){
 
                 /* 댓글 동적 생성 단 댓글이 0개일때는 생성 x */
                 if (data[0].comment_text){
+
                     for (var i = 0; i < data.length; i++) {
                         var comment_id = data[i].comment_id;
                         var comment_text = data[i].comment_text;
 
                         var comment_date = new Date(data[i].comment_date);
-                        const year = upload_date.getFullYear(); // 년도
-                        const month = upload_date.getMonth() + 1; // 월 (0부터 시작하므로 1을 더해줌)
-                        const day = upload_date.getDate(); // 일
+                        const year = comment_date.getFullYear(); // 년도
+                        const month = comment_date.getMonth() + 1; // 월 (0부터 시작하므로 1을 더해줌)
+                        const day = comment_date.getDate(); // 일
 
                         var commenter_name = data[i].commenter_name;
                         var profile_url = data[i].profile_url;
@@ -114,11 +121,13 @@ $(function(){
 
                         var row = `
                                     <div class="old-comment">
-                                      <img src= ${profile_url}>
+                                       <img src="${data[i].profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
+                                      
                                       <div>
                                         <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
+                                          
                                           <img src="/miniProject/image/like.png">
                                           <span>${comment_like_count} 좋아요 수</span>
                                         </div>

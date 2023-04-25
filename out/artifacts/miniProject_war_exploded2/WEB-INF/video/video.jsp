@@ -2,43 +2,18 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
+
 	<div class="container play-container">
-		<div id="video-detail">
-			<%--비디오 동적 생성--%>
-		</div>
-
-			<div id="comment">
-			<div id="img">
-				<img src="/miniProject/image/kwonyongjun.png">
+		<div class="row">
+			<div id="play-video">
+				<%--비디오 동적 생성--%>
 			</div>
-			<div id="addcomment">
-				<div id="up">
-					<input type="text" placeholder="댓글 추가..."
-						   onclick="showButtons()">
-				</div>
-				<div id="down">
-					<div id="down-left"></div>
-					<div id="down-center"></div>
-					<div id="down-right">
-							<div id="commentBtn">
-								<button id="cancel" onclick="hideButtons()">취소</button>
-								<button id="uploadcomment">댓글</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div id="comment-detail">
-			<%--댓글 동적 생성--%>
-			</div>
-
 		</div>
 	</div>
 
 	<div class="container play-container">
 		<div class="row">
-			<div class="play-video">
+			<%--<div class="play-video">
 				<video controls autoplay>
 					<source src="/miniProject/image/video.mp4" type="video/mp4">
 				</video>
@@ -74,7 +49,7 @@
 
 					<h4>댓글 수 넣는 곳</h4>
 
-<%--					<div id="comment">
+					<div id="comment">
                   <div id="img">
                      <img src="/miniProject/image/kwonyongjun.png">
                   </div>
@@ -94,7 +69,7 @@
                         </div>
                      </div>
                   </div>
-               </div>--%>
+               </div>
 
 
 					<div class="old-comment">
@@ -135,8 +110,8 @@
 				</div>
 				
 				
-			</div>
-			<div class="right-sidebar">
+			</div>--%>
+			<%--<div class="right-sidebar">
 			
 				<div class="side-video-list">
 				<a href="" class="small-thumbnail"><img src="/miniProject/image/thumbnail1.png"></a>
@@ -211,7 +186,7 @@
 					</div>
 				</div>
 			
-			</div>
+			</div>--%>
 		</div>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
