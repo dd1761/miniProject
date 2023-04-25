@@ -1,10 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <link rel="stylesheet" href="/miniProject/css/channel.css">
 	<header>
+
 		<div class="channel-info">
 			<div class="channel-logo">
+				<%--채널의 썸네일이 들어갈곳--%>
 				<img src="/miniProject/img/ytnheader.png" alt="Logo">
 			</div>
 		</div>
@@ -15,28 +19,38 @@
 		<div id='middle'>
 			<div id='middle-left'></div>
 			<div id='middle-right'>
+
+				<%--컨테이너 시작 --%>
 				<div id='container'>
+
 					<div id='box-left'>
+						<%--채널의 프로필사진--%>
 						<div class="channel-profile">
 							<img src="/miniProject/img/ytnprofile2.png" alt="Profile Picture">
 						</div>
 					</div>
 					<div id='box-center'>
 						<div class="channel-details">
+							<%--채널명--%>
 							<h1>&nbspYTN</h1>
+								<%--채널의 구독자수와 영상수--%>
 							<p>&nbsp구독자 387만명 동영상 66만개</p>
+								<%--채널의 세부설명--%>
 							<p>
 								<a href="#">&nbsp24시간 생중계되는 대한민국 대표 뉴스</a>
 							</p>
 						</div>
 					</div>
+					<%--구독버튼 is_suscribed 가 0이면 구독하겠습니까? 버튼 아니면 구독중 버튼 --%>
 					<div id='box-right'>
 						<div class="subcribe">
 							<img src="/miniProject/img/subcribe.png" alt="subcribe">
 						</div>
 					</div>
-				</div>
 
+
+				</div>
+				<%--컨테이너는 끝--%>
 
 				<div>
 					<div class="navigation">
@@ -53,7 +67,7 @@
 				
 			<div class="videoList">
 				<c:if test="${empty display2}">
-	    			<jsp:include page="../main/videoList.jsp" />
+	    			<jsp:include page="videoList.jsp" />
 	  			</c:if>
 	  			<c:if test="${not empty display2}">
 	    			<jsp:include page="${display2 }" />

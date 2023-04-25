@@ -52,7 +52,7 @@ $(function() {
 	    type: 'post',
 	    url: '/miniProject/user/mainContainerVideo',
 	    success: function(data) {
-	      console.log(data);
+	     /* console.log(data);*/
 	      // 리스트에 추가할 container 요소를 선택합니다.
 	      var listContainer = $('.list-container');
 
