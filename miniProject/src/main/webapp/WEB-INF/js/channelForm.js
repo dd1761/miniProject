@@ -55,12 +55,13 @@ $(function(){
                     // 페이지에 추가
                     $("#videos-container").append($newVideo);
 
-                                    /*--------------------------------채널추가------------------------*/
+                   /*--------------------------------채널 동적생성------------------------*/
                     var comments = data.length;
                     const html = `
                             <div id='box-left'>
                               <div class="channel-profile">
-                                <img src="${data[0].thumnail_url}" alt="Profile Picture">
+                                <!-- null 이면 기본이미지인 p.jpg -->
+                                <img src="${data[0].thumnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img.profile.png'}" alt="Profile Picture">
                               </div>
                             </div>
                             <div id='box-center'>
@@ -82,6 +83,11 @@ $(function(){
 
                             // #container 안에 HTML 코드 삽입
                     document.getElementById("container").innerHTML = html;
+
+                    /*썸네일 url 동적생성*/
+                    var row = `
+                                    <img src="${data[0].thumnail_url}" alt="Logo">`;
+                    $("#channel-logo").html(row);
                 });
 
 

@@ -9,10 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="채널페이지 동적으로 수정완료">
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="a 테그로 url 링크걸기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/video/video.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/img/subcribe.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +214,7 @@
       <workItem from="1682325123799" duration="1350000" />
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
-      <workItem from="1682382465507" duration="6912000" />
+      <workItem from="1682382465507" duration="10451000" />
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -253,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682388790915</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="a 테그로 url 링크걸기">
+      <created>1682389808513</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682389808513</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,6 +287,7 @@
     <MESSAGE value="리소스 추가" />
     <MESSAGE value="인덱스의 채널 명 링크 변경" />
     <MESSAGE value="채널페이지 동적으로 수정완료" />
-    <option name="LAST_COMMIT_MESSAGE" value="채널페이지 동적으로 수정완료" />
+    <MESSAGE value="a 테그로 url 링크걸기" />
+    <option name="LAST_COMMIT_MESSAGE" value="a 테그로 url 링크걸기" />
   </component>
 </project>
