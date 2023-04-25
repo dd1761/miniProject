@@ -9,90 +9,70 @@
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
 </head>
 <body>
-   <nav class="flex-div">
-      <div class="nav-left flex-div">
-         <img alt="메뉴 " src="/miniProject/image/menu.png"
-            class="menu-icon"> <img alt="로고"
-            src="/miniProject/image/logo1.png" id="logo" class="logo" onclick="location.href='/miniProject/'">
-      </div>
-      <div class="nav-middle flex-div">
-         <div class="search-box flex-div">
-            <input type="text" placeholder="검색" id="searchVideo"> <img alt="검색"
-               src="/miniProject/image/search.png" id="searchbtn">
-         </div>
-         <img src="/miniProject/image/voice-search.png"
-            class="mic-icon">
-            <input type="text" name="user_id" id="user_id" value="${user_id }">
-      </div>
-      <div class="nav-right flex-div">
-
-
-      	<c:if test="${sessionScope.user_id == null}">
-
-      	<div class="loginNone" >
-      		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
-      	</div>
-      	</c:if>
-      	<c:if test="${sessionScope.user_id != null}">
-      	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-		<script type="text/javascript" src="/miniProject/js/loginOk.js"></script>
+<!-- flex-div -->
+<nav class="flex-div">
+	<div class="nav-left flex-div">
+		<img alt="메뉴" src="/miniProject/image/menu.png" class="menu-icon">
+		<img alt="로고" src="/miniProject/image/logo1.png" id="logo" class="logo" onclick="location.href='/miniProject/'">
+	</div> <!-- flex-div -->
+	
+	<div class="nav-middle flex-div">
+		<div class="search-box flex-div">
+			<input type="text" placeholder="검색" id="searchVideo">
+			<img alt="검색" src="/miniProject/image/search.png" id="searchbtn">
+		</div><!-- search-box flex-div -->
+		<input type="text" name="user_id" id="user_id" value="${user_id }">
+	</div><!-- nav-middel flex-div -->
+	
+	<div class="nav-right flex-div">
+		<c:if test="${sessionScope.user_id == null }">
+			<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
+		</c:if> <!-- user_id == null -->
+		<c:if test="${sessionScope.user_id != null }">
+			<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+			<script type="text/javascript" src="/miniProject/js/loginOk.js"></script>
+		
+			<img src="/miniProject/image/upload.png">
+			<img src="/miniProject/image/more.png">
+			<img src="/miniProject/image/notification.png" id="noti">
+			<img src="/miniProject/image/dongbeen.jpg" class="user-icon">
 			
-		<div class="loginOK" >
-         <img src="/miniProject/image/upload.png">
-         <img src="/miniProject/image/more.png">
-         <img src="/miniProject/image/notification.png"> 
-         <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
-            class="user-icon">
-            
-
-         <div class="menu-container" style="display:none">
-            <ul class="menu">
-               <!-- 계정 정보 -->
-               <div id="nav-header">
-                  <div id="user-img">
-                     <img src="/miniProject/image/dongbeen.jpg"
-                        id="user-icon" class="user-icon">
-                  </div>
-                  <div id="user-details">
-                     <span id="user-name">이름</span> <span id="user-email">이메일계정</span>
-                     <div id="account-management-container">
-                        <a id="account-management" href="#">Google 계정 관리</a>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- 메뉴 항목들을 담을 컨테이너 -->
-                  <ul class="menu">
-                     <div id="nav-main">
-                        <div id="nav-top">
-                        <li><img src="/miniProject/image/mychannel.png"
-                           id="mychanne"> <a href="#">내 채널</a></li>
-                        <li><img src="/miniProject/image/youtubestudio.png"
-                           id="youtubestudio"><a href="#">유튜브 스튜디오</a></li>
-                        <li><img src="/miniProject/image/countchange.png"
-                           id="countchange"><a href="#">계정 전환</a></li>
-                        <li><img src="/miniProject/image/logout.png"
-                           id="logout"><a href="#">로그아웃</a></li>
-                        </div>
-                        <div id="nav-bottom">
-                        <li><img src="/miniProject/image/designtema.png"
+			<div class="menu-container">
+				<ul class="menu">
+					<div id="nav-header">
+						<div id="user-img">
+							
+						</div> <!-- user-img -->
+						
+						<div id="user-details">
+							
+							<span id="user-name"></span> <!-- user-name -->
+							<span id="user-email"></span> <!-- user-email -->
+		                    <div id="account-management-container">
+		                       <a id="account-management" href="#">Google 계정 관리</a>
+		                    </div> <!-- account-management-container -->
+						</div> <!-- user-details -->
+					</div> <!-- nav-header -->
+					
+					<div id="nav-main">
+						<div id="nav-top">
+							<li id="mychannel"><img src="/miniProject/image/mychannel.png" >내 채널</li>
+							<li id="logout"><img src="/miniProject/image/logout.png">로그아웃</li>
+						</div> <!-- nav-top -->
+						<div id="nav-bottom">
+							<li><img src="/miniProject/image/designtema.png"
                            id="designtema"><a href="#">디자인: 기기 테마</a></li>
                         <li><img src="/miniProject/image/setting.png"
                            id="setting"><a href="#">설정</a></li>
-                        <li><img src="/miniProject/image/customerservice.png"
-                           id="customerservice"><a href="#">고객센터</a></li>
-                        <li><img src="/miniProject/image/sendcomment.png"
-                           id="sendcomment"><a href="#">의견 보내기</a></li>
-                        </ul>
-                     </div> <!-- menubar -->
-                     </div>
-                     </c:if>
-                  </div>
-               </ul>
-            </div>
-         </div>
-      </nav>
-
+						</div> <!-- nav-bottom -->
+					</div><!-- nav-main -->
+				</ul> <!-- menu -->
+			</div> <!-- menu-container -->
+		</c:if> <!-- user_id != null -->
+	</div><!-- nav-right flex-div -->
+	
+</nav>
+<!-- flex-div -->
 	<!-- sidebar -->
 	<div class="sidebar">
 		<div class="shortcut-links">

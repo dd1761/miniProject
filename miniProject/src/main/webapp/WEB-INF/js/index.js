@@ -98,9 +98,23 @@ $(function() {
 	  });
 	});
 
+$('#logout').click(function(){
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/member/logout',
+		success: function(data){
+			alert('로그아웃되었습니다.');
+			location.reload();
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
 
 
-
-
+$(function(){
+	$("#logout").wrap('<a href="#"></a>');
+});
 
 

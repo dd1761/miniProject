@@ -41,8 +41,8 @@
 			</select>
 		</footer>
 	</div>
-<script src="../js/box1.js"></script>	
+<script src="/miniProject/js/box1.js"></script>	
 <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../js/login_id.js"></script>
+<script src="/miniProject/js/login_id.js"></script>
 </body>
 </html>

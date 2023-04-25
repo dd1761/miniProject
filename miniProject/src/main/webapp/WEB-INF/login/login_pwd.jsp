@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인_pwd</title>
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/design_pwd.css">
+<link rel="stylesheet" href="/miniProject/css/reset.css">
+<link rel="stylesheet" href="/miniProject/css/design_pwd.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
@@ -40,6 +40,6 @@
 			</select>
 		</footer>
 	</div>
-<script src="../js/box2.js"></script>	
+<script src="/miniProject/js/box2.js"></script>	
 </body>
 </html>
