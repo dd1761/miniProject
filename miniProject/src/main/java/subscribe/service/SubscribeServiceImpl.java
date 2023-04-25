@@ -20,4 +20,14 @@ public class SubscribeServiceImpl implements SubscribeService {
 		return subscribeDAO.subscribelist(user_id);
 	}
 
+	@Override
+	public void subscribeOff(int userId) {
+		subscribeDAO.subscribeOff(userId);
+	}
+
+	@Override
+	public void subscribeOn(int userId) {
+		subscribeDAO.subscribeOn(userId);
+	}
+
 }

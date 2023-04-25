@@ -53,7 +53,12 @@ $(function(){
                         <br>
                         ${video_description}
                         <div>
+
                             <a href="" id="likeBtn"><img src="/miniProject/image/like.png">${video_like_count}</a>
+
+                            <a href=""><img src="/miniProject/image/like.png">${video_like_count}</a>
+                 
+
                         </div>
                     </div>
                     <hr>

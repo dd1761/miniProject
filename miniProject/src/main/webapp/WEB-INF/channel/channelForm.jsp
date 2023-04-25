@@ -3,7 +3,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-<link rel="stylesheet" href="/miniProject/css/channel.css">
+	<style>
+
+		#box-right .subcribe #subBtn1 {
+			background-color: red;
+			color: #fff;
+			padding: 8px 30px;
+			border: 0;
+			outline: 0;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		#box-right .subcribe #dissubBtn1 {
+			background-color: #b2b2b2;
+			color: black;
+			padding: 8px 30px;
+			border: 0;
+			outline: 0;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+
+	</style>
+	<link rel="stylesheet" href="/miniProject/css/channel.css">
 	<header>
 
 		<div class="channel-info">
@@ -19,7 +43,7 @@
 		<div id='middle'>
 			<div id='middle-left'></div>
 			<div id='middle-right'>
-				<div id='container'>
+				<%--<div id='container'>
 					<div id='box-left'>
 						<div class="channel-profile">
 							<img src="/miniProject/img/ytnprofile2.png" alt="Profile Picture">
@@ -46,7 +70,7 @@
 							</c:if>
 						</div>
 					</div>
-				</div>
+				</div>--%>
 
 				<%--컨테이너 시작 --%>
 				<div id='container'>
