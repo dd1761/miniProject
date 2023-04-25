@@ -4,8 +4,7 @@
   <artifactId>miniProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-
-
+ 
   <build>
     <plugins>
       <plugin>
@@ -20,7 +19,20 @@
         <version>3.2.3</version>
       </plugin>
     </plugins>
+	  <!--리소스 추가 했습니다~ -->
 	  <resources>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.xml</include>
+			  </includes>
+		  </resource>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.properties</include>
+			  </includes>
+		  </resource>
 		  <resource>
 			  <directory>src/main/resources</directory>
 			  <includes>
@@ -34,6 +46,13 @@
 			  </includes>
 			  <filtering>true</filtering>
 		  </resource>
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <includes>
+				  <include>**/*.xml</include>
+			  </includes>
+		  </resource>
+
 	  </resources>
   </build>
   <dependencies>

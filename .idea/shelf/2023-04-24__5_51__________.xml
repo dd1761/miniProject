@@ -1,0 +1,214 @@
+<changelist name="2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]" date="1682326267950" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" />
+  <option name="DESCRIPTION" value="2023-04-24 오후 5:51, 업데이트 전에 커밋되지 않은 변경 내용 [변경]" />
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/channel/service/ChannelService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/channel/service/ChannelService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/history/dao/HistoryDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/history/dao/HistoryDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/HistoryDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/channel/service/ChannelServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/channel/service/ChannelServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/video/dao/VideoDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/video/dao/VideoDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/channel/dao/ChannelDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/channel/dao/ChannelDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/video/service/VideoService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/video/service/VideoService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/board/dao/BoardDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/board/dao/BoardDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/BoardDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/history/controller/HistoryController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/history/controller/HistoryController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/HistoryController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/history/bean/HistoryDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/history/bean/HistoryDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/HistoryDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/controller/MemberController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/controller/MemberController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/comment/bean/CommentDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/comment/bean/CommentDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommentDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/user/dao/UserDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/user/dao/UserDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/UserDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/dao/MemberDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/dao/MemberDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/dao/MemberDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/dao/MemberDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/main/controller/MainController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/main/controller/MainController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MainController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/spring/conf/SpringConfiguration.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/spring/conf/SpringConfiguration.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SpringConfiguration.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/service/MemberService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/service/MemberService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/mail/service/MailService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/mail/service/MailService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MailService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/channel/bean/ChannelDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/channel/bean/ChannelDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/comment/dao/CommentDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/comment/dao/CommentDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommentDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/service/MemberServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/service/MemberServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/video/controller/VideoController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/video/controller/VideoController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/user/bean/UserDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/user/bean/UserDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/UserDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/comment/dao/CommentDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/comment/dao/CommentDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommentDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/channel/controller/ChannelController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/channel/controller/ChannelController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/community/service/CommunityServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/community/service/CommunityServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommunityServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/bean/MemberDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/bean/MemberDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/video/bean/VideoDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/video/bean/VideoDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/history/service/HistoryService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/history/service/HistoryService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/HistoryService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/history/service/HistoryServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/history/service/HistoryServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/HistoryServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/board/bean/BoardDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/board/bean/BoardDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/BoardDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/community/service/CommunityService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/community/service/CommunityService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommunityService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/video/dao/VideoDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/video/dao/VideoDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/user/dao/UserDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/user/dao/UserDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/UserDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/user/controller/UserController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/user/controller/UserController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/UserController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/comment/service/CommentServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/comment/service/CommentServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommentServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/board/dao/BoardDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/board/dao/BoardDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/BoardDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/video/service/VideoServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/video/service/VideoServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/mail/service/MailSendService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/mail/service/MailSendService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MailSendService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/comment/service/CommentService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/comment/service/CommentService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/CommentService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-24_오후_5_51,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/HistoryDAOMyBatis.class" />
+  </binary>
+</changelist>

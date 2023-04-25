@@ -1,0 +1,882 @@
+Index: miniProject/src/main/java/spring/conf/SpringConfiguration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package spring.conf;\r\n\r\nimport org.apache.commons.dbcp2.BasicDataSource;\r\nimport org.apache.ibatis.session.SqlSessionFactory;\r\nimport org.mybatis.spring.SqlSessionFactoryBean;\r\nimport org.mybatis.spring.SqlSessionTemplate;\r\nimport org.springframework.beans.factory.annotation.Value;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.context.annotation.PropertySource;\r\nimport org.springframework.core.io.ClassPathResource;\r\nimport org.springframework.jdbc.datasource.DataSourceTransactionManager;\r\nimport org.springframework.transaction.annotation.EnableTransactionManagement;\r\n\r\n//SpringConfiguration은 일반 java파일이 아니다\r\n//applicationContext.xml와 같은 환경설정 파일이다.\r\n@Configuration\r\n@PropertySource(\"classpath:/db.properties\")\r\n@EnableTransactionManagement\r\npublic class SpringConfiguration {\r\n\t\r\n\tprivate @Value(\"${jdbc.driver}\") String driver;\r\n\t\r\n\tprivate @Value(\"${jdbc.url}\") String url;\r\n\t\r\n\tprivate @Value(\"${jdbc.username}\") String username;\r\n\t\r\n\tprivate @Value(\"${jdbc.password}\") String password;\r\n\t\r\n\t@Bean\r\n\tpublic BasicDataSource dataSource(){\r\n\t\tBasicDataSource basicDataSource = new BasicDataSource();\r\n\t\t\r\n//\t\tbasicDataSource.setDriverClassName(\"oracle.jdbc.driver.OracleDriver\");\r\n//\t\tbasicDataSource.setUrl(\"jdbc:oracle:thin:@localhost:1521:xe\");\r\n//\t\tbasicDataSource.setUsername(\"c##java\");\r\n//\t\tbasicDataSource.setPassword(\"1234\");\r\n\t\t\r\n\t\tbasicDataSource.setDriverClassName(driver);\r\n\t\tbasicDataSource.setUrl(url);\r\n\t\tbasicDataSource.setUsername(username);\r\n\t\tbasicDataSource.setPassword(password);\r\n\t\treturn basicDataSource;\r\n\t}\r\n\t\r\n\t@Bean\r\n\tpublic SqlSessionFactory sqlSessionFactory() throws Exception {\r\n\t\tSqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();\r\n\t\tsqlSessionFactoryBean.setDataSource(dataSource());\r\n\t\tsqlSessionFactoryBean.setConfigLocation(new ClassPathResource(\"spring/mybatis-config.xml\"));\r\n\r\n\t\tsqlSessionFactoryBean.setMapperLocations(\r\n\t\t\t\tnew ClassPathResource(\"history/dao/historyMapper.xml\"),\r\n\t\t\t\tnew ClassPathResource(\"member/dao/memberMapper.xml\"),\r\n\t\t\t\tnew ClassPathResource(\"board/dao/boardMapper.xml\"),\r\n\t\t\t\tnew ClassPathResource(\"video/dao/videoMapper.xml\"),\r\n\t\t\t\tnew ClassPathResource(\"channel/dao/channelMapper.xml\")\r\n\t\t);\r\n\r\n/*\r\n\t\tsqlSessionFactoryBean.setMapperLocations(\r\n\t\t\t\tnew Resource[]{\r\n\t\t\t\t\t\tnew ClassPathResource(\"user/dao/userMapper.xml\"),\r\n\t\t\t\t\t\tnew ClassPathResource(\"history/dao/channelMapper.xml\")\r\n\t\t\t\t}\r\n\t\t);\r\n*/\r\n\r\n\r\n\r\n\r\n\t\treturn sqlSessionFactoryBean.getObject();\r\n\t}\r\n\t\r\n\t@Bean\r\n\tpublic SqlSessionTemplate sqlSession() throws Exception {\r\n\t\tSqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory());\r\n\t\treturn sqlSessionTemplate;\r\n\t}\r\n\t\r\n\t@Bean\r\n\tpublic DataSourceTransactionManager transactionManager() {\r\n\t\treturn  new DataSourceTransactionManager(dataSource());\r\n\t}\r\n}\r\n\r\n/*\r\n만약에 mapper.xml이 여러개일 경우\r\n\r\n1.\r\nsqlSessionFactoryBean.setMapperLocations(new ClassPathResource(\"user/dao/userMapper.xml\"),\r\n\t\t\t\t\t\t\t\t\t\t new ClassPathResource(\"member/dao/memberMapper.xml\"),\r\n\t\t\t\t\t\t\t\t\t\t new ClassPathResource(\"board/dao/boardMapper.xml\"),\r\n\t\t\t\t\t\t\t\t\t\t ...);\r\n2.\r\n필드\t\r\n@Autowired\r\nprivate ApplicationContext context;\r\n*/\r\n\r\n//sqlSessionFactoryBean.setMapperLocations(context.getResources(\"classpath:*/dao/*Mapper.xml\"));\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/src/main/java/spring/conf/SpringConfiguration.java b/miniProject/src/main/java/spring/conf/SpringConfiguration.java
+--- a/miniProject/src/main/java/spring/conf/SpringConfiguration.java	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/src/main/java/spring/conf/SpringConfiguration.java	(date 1682325715132)
+@@ -47,7 +47,7 @@
+ 	public SqlSessionFactory sqlSessionFactory() throws Exception {
+ 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+ 		sqlSessionFactoryBean.setDataSource(dataSource());
+-		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
++		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+ 
+ 		sqlSessionFactoryBean.setMapperLocations(
+ 				new ClassPathResource("history/dao/historyMapper.xml"),
+Index: miniProject/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n  <groupId>miniProject</groupId>\r\n  <artifactId>miniProject</artifactId>\r\n  <version>0.0.1-SNAPSHOT</version>\r\n  <packaging>war</packaging>\r\n\r\n\r\n  <build>\r\n    <plugins>\r\n      <plugin>\r\n        <artifactId>maven-compiler-plugin</artifactId>\r\n        <version>3.8.1</version>\r\n        <configuration>\r\n          <release>11</release>\r\n        </configuration>\r\n      </plugin>\r\n      <plugin>\r\n        <artifactId>maven-war-plugin</artifactId>\r\n        <version>3.2.3</version>\r\n      </plugin>\r\n    </plugins>\r\n\t  <resources>\r\n\t\t  <resource>\r\n\t\t\t  <directory>src/main/resources</directory>\r\n\t\t\t  <includes>\r\n\t\t\t\t  <include>**/*</include>\r\n\t\t\t  </includes>\r\n\t\t  </resource>\r\n\t\t  <resource>\r\n\t\t\t  <directory>src/main/java</directory>\r\n\t\t\t  <includes>\r\n\t\t\t\t  <include>**/*.properties</include>\r\n\t\t\t  </includes>\r\n\t\t\t  <filtering>true</filtering>\r\n\t\t  </resource>\r\n\t  </resources>\r\n  </build>\r\n  <dependencies>\r\n\r\n\t  <dependency>\r\n\t\t  <groupId>javax.servlet</groupId>\r\n\t\t  <artifactId>javax.servlet-api</artifactId>\r\n\t\t  <version>3.0.1</version>\r\n\t\t  <scope>provided</scope>\r\n\t  </dependency>\r\n\r\n  \t<!-- Spring -->\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-context</artifactId>\r\n\t    <version>5.3.23</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- JDBC -->\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-jdbc</artifactId>\r\n\t    <version>5.3.23</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-webmvc</artifactId>\r\n\t    <version>5.3.23</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- Connection Pool  -->\r\n\t<dependency>\r\n\t    <groupId>org.apache.commons</groupId>\r\n\t    <artifactId>commons-collections4</artifactId>\r\n\t    <version>4.4</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>org.apache.commons</groupId>\r\n\t    <artifactId>commons-dbcp2</artifactId>\r\n\t    <version>2.9.0</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- Oracle -->\r\n\t<dependency>\r\n\t    <groupId>com.oracle.database.jdbc</groupId>\r\n\t    <artifactId>ojdbc8</artifactId>\r\n\t    <version>21.7.0.0</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- mysql -->\r\n\t<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->\r\n\t  <dependency>\r\n\t\t  <groupId>com.mysql</groupId>\r\n\t\t  <artifactId>mysql-connector-j</artifactId>\r\n\t\t  <version>8.0.32</version>\r\n\t  </dependency>\r\n\t\r\n\t<!-- MyBatis -->\r\n\t<dependency>\r\n\t    <groupId>org.mybatis</groupId>\r\n\t    <artifactId>mybatis</artifactId>\r\n\t    <version>3.5.11</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>org.mybatis</groupId>\r\n\t    <artifactId>mybatis-spring</artifactId>\r\n\t    <version>2.0.7</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- JSTL -->\r\n\t  <dependency>\r\n\t\t  <groupId>javax.servlet</groupId>\r\n\t\t  <artifactId>jstl</artifactId>\r\n\t\t  <version>1.2</version>\r\n\t  </dependency>\r\n\r\n\t<!-- JSON -->\r\n\t<dependency>\r\n\t    <groupId>net.sf.json-lib</groupId>\r\n\t    <artifactId>json-lib</artifactId>\r\n\t    <version>2.4</version>\r\n\t    <classifier>jdk15</classifier>\r\n\t</dependency>\r\n\t\r\n\t<!-- Jacson -->\r\n\t<dependency>\r\n\t    <groupId>com.fasterxml.jackson.core</groupId>\r\n\t    <artifactId>jackson-core</artifactId>\r\n\t    <version>2.14.1</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>com.fasterxml.jackson.core</groupId>\r\n\t    <artifactId>jackson-databind</artifactId>\r\n\t    <version>2.14.1</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- 파일 업로드 -->\r\n\t<dependency>\r\n\t    <groupId>commons-io</groupId>\r\n\t    <artifactId>commons-io</artifactId>\r\n\t    <version>2.11.0</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>commons-fileupload</groupId>\r\n\t    <artifactId>commons-fileupload</artifactId>\r\n\t    <version>1.4</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- Lombok -->\r\n\t<dependency>\r\n\t    <groupId>org.projectlombok</groupId>\r\n\t    <artifactId>lombok</artifactId>\r\n\t    <version>1.18.24</version>\r\n\t    <scope>provided</scope>\r\n\t</dependency>\r\n\t\r\n\t<!-- 날짜 직렬화 -->\r\n\t<dependency>\r\n\t    <groupId>com.fasterxml.jackson.datatype</groupId>\r\n\t    <artifactId>jackson-datatype-jsr310</artifactId>\r\n\t    <version>2.13.0</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- https://mvnrepository.com/artifact/javax.mail/mail -->\r\n\t<dependency>\r\n\t    <groupId>javax.mail</groupId>\r\n\t    <artifactId>mail</artifactId>\r\n\t    <version>1.4.7</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-context-support</artifactId>\r\n\t    <version>5.3.9</version>\r\n\t</dependency>\r\n\r\n  </dependencies>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/pom.xml b/miniProject/pom.xml
+--- a/miniProject/pom.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/pom.xml	(date 1682325708727)
+@@ -34,6 +34,12 @@
+ 			  </includes>
+ 			  <filtering>true</filtering>
+ 		  </resource>
++		  <resource>
++			  <directory>src/main/resources</directory>
++			  <includes>
++				  <include>**/*.xml</include>
++			  </includes>
++		  </resource>
+ 	  </resources>
+   </build>
+   <dependencies>
+Index: miniProject/target/classes/comment/dao/commentMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/comment/dao/commentMapper.xml b/miniProject/target/classes/comment/dao/commentMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/comment/dao/commentMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+- PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+- "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+- <mapper namespace="commentSQL">
+- 	<select id="isExistEmail" parameterType="String" resultType="member">
+- 		select * from User where email=#{email}
+- 	</select>
+- 	
+- </mapper>
+\ No newline at end of file
+Index: miniProject/.idea/.gitignore
+===================================================================
+diff --git a/miniProject/.idea/.gitignore b/miniProject/.idea/.gitignore
+deleted file mode 100644
+--- a/miniProject/.idea/.gitignore	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,8 +0,0 @@
+-# 디폴트 무시된 파일
+-/shelf/
+-/workspace.xml
+-# 에디터 기반 HTTP 클라이언트 요청
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+Index: miniProject/.idea/webContexts.xml
+===================================================================
+diff --git a/miniProject/.idea/webContexts.xml b/miniProject/.idea/webContexts.xml
+deleted file mode 100644
+--- a/miniProject/.idea/webContexts.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="WebContextManager">
+-    <option name="state">
+-      <map>
+-        <entry key="file://$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/index.jsp" value="file://$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF" />
+-      </map>
+-    </option>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: miniProject/.idea/miniProject.iml
+===================================================================
+diff --git a/miniProject/.idea/miniProject.iml b/miniProject/.idea/miniProject.iml
+deleted file mode 100644
+--- a/miniProject/.idea/miniProject.iml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="AdditionalModuleElements">
+-    <content url="file://$MODULE_DIR$" />
+-  </component>
+-  <component name="FacetManager">
+-    <facet type="Spring" name="Spring">
+-      <configuration />
+-    </facet>
+-  </component>
+-</module>
+\ No newline at end of file
+Index: miniProject/target/classes/history/dao/historyMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/history/dao/historyMapper.xml b/miniProject/target/classes/history/dao/historyMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/history/dao/historyMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,23 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+-<mapper namespace="historySQL">
+-
+-	<!--비디오 -->
+-	<select id="getVideoHistory" parameterType="java.util.Map" resultType="history.bean.HistoryDTO">
+-		SELECT v.*, h.*, c.channel_name, c.channel_profile_url
+-		FROM (
+-		SELECT ROW_NUMBER() OVER () AS rnum, h.video_id
+-		FROM History h
+-		WHERE user_id = #{user_id}
+-		ORDER BY h.history_id DESC
+-		) AS numbered
+-		JOIN Video v ON numbered.video_id = v.video_id
+-		JOIN History h ON numbered.video_id = h.video_id
+-		JOIN Channel c ON v.channel_id = c.channel_id
+-		WHERE rnum BETWEEN #{start} AND #{start} + #{count} - 1 AND h.user_id =  #{user_id}
+-		ORDER by watch_date desc
+-	</select>
+-
+-</mapper>
+\ No newline at end of file
+Index: miniProject/target/classes/video/dao/userMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/video/dao/userMapper.xml b/miniProject/target/classes/video/dao/userMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/video/dao/userMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+-<mapper namespace="userSQL">
+-	
+-	
+-	
+-	
+-</mapper>
+\ No newline at end of file
+Index: miniProject/target/classes/spring/mybatis-config.xml
+===================================================================
+diff --git a/miniProject/target/classes/spring/mybatis-config.xml b/miniProject/target/classes/spring/mybatis-config.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/spring/mybatis-config.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,19 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE configuration
+- PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+- "https://mybatis.org/dtd/mybatis-3-config.dtd">
+-<configuration>
+-	<typeAliases>
+-		<typeAlias type="member.bean.MemberDTO" alias="member"/>
+-		<typeAlias type="board.bean.BoardDTO" alias="board"/>
+-	</typeAliases>
+-	
+-	
+-	
+-	<!-- 	
+-	<mappers>
+-		<mapper resource="user/dao/userMapper.xml" />
+-	</mappers> 
+-	-->
+-</configuration>
+- 
+\ No newline at end of file
+Index: miniProject/target/classes/member/dao/memberMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/member/dao/memberMapper.xml b/miniProject/target/classes/member/dao/memberMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/member/dao/memberMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,34 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+- PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+- "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+- <mapper namespace="memberSQL">
+- 	<select id="isExistEmail" parameterType="String" resultType="member">
+- 		select * from User where email=#{email}
+- 	</select>
+- 		
+- 	<select id="isExistPwd" parameterType="java.util.Map" resultType="member">
+- 		select * from User where email=#{email} and password=#{password}
+- 	</select>
+- 	
+- 	<insert id="insertName" parameterType="String">
+- 		insert into User (name) values (#{name})
+- 	</insert>
+- 	
+- 	<select id="searchName" parameterType="String" resultType="member">
+- 		select * from User where name=#{name}
+- 	</select>
+- 	
+- 	<select id="isExistRrn" parameterType="java.util.Map" resultType="member">
+- 		select * from User where name=#{name} and rrn=#{rrn}
+- 	</select>
+- 	
+- 	<select id="getEmailList" parameterType="String" resultType="member">
+- 		select * from User where name=#{name}
+- 	</select>
+- 	
+- 	<select id="loginOk" parameterType="Int" resultType="member">
+- 		select * from user where user_id=#{user_id}
+- 	</select>
+- 		
+- </mapper>
+\ No newline at end of file
+Index: miniProject/target/classes/board/dao/boardMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/board/dao/boardMapper.xml b/miniProject/target/classes/board/dao/boardMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/board/dao/boardMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,39 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+-<mapper namespace="userSQL">
+-
+-	<select id="getBoardList" resultType="board">
+-		SELECT
+-		    c.channel_name,
+-		    b.board_text,
+-		    COUNT(DISTINCT l.like_id) AS like_count,
+-		    COUNT(DISTINCT cm.comment_id) AS comment_count,
+-		    b.upload_date,
+-		    ch.channel_profile_url,
+-		    u.user_id
+-		FROM
+-   		    Community_Board b
+-		JOIN
+-   			Like_count l ON b.board_id = l.board_id
+-		JOIN
+-   			Comment cm ON b.board_id = cm.board_id
+-		JOIN
+-   			Channel c ON b.channel_id = c.channel_id
+-		JOIN
+-   			Channel ch ON b.channel_id = ch.channel_id
+-		JOIN
+-   			User u ON ch.user_id = u.user_id
+-		WHERE
+-   			c.channel_id = 1 -- 수정된 부분: channel_id가 1인 것만 조회
+-		GROUP BY
+-		    c.channel_name,
+-		    b.board_text,
+-		    b.upload_date,
+-		    ch.channel_profile_url,
+-		    u.user_id;
+-	</select>
+-
+-
+-</mapper>
+\ No newline at end of file
+Index: miniProject/target/classes/user/dao/userMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/user/dao/userMapper.xml b/miniProject/target/classes/user/dao/userMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/user/dao/userMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,9 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+-<mapper namespace="userSQL">
+-	
+-	
+-	
+-</mapper>
+\ No newline at end of file
+Index: miniProject/target/classes/channel/dao/channelMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/channel/dao/channelMapper.xml b/miniProject/target/classes/channel/dao/channelMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/channel/dao/channelMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,13 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+-<mapper namespace="channelSQL">
+-
+-	<!--비디오 -->
+-	<select id="getChannelForm" parameterType="java.util.Map" resultType="channel.bean.ChannelDTO">
+-
+-		select * from Channel;
+-	</select>
+-
+-</mapper>
+\ No newline at end of file
+Index: miniProject/.idea/uiDesigner.xml
+===================================================================
+diff --git a/miniProject/.idea/uiDesigner.xml b/miniProject/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/miniProject/.idea/uiDesigner.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: miniProject/target/classes/video/dao/videoMapper.xml
+===================================================================
+diff --git a/miniProject/target/classes/video/dao/videoMapper.xml b/miniProject/target/classes/video/dao/videoMapper.xml
+deleted file mode 100644
+--- a/miniProject/target/classes/video/dao/videoMapper.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,36 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<!DOCTYPE mapper
+-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+-<mapper namespace="videoSQL">
+-
+-	<!--비디오 -->
+-	<select id="getVideoById" parameterType="java.util.Map" resultType="video.bean.VideoDTO">
+-		SELECT Video.*,
+-		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
+-		Comment.comment_text, Comment.upload_date AS comment_date,
+-		(SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
+-		Channel.channel_name,
+-		(SELECT COUNT(*) FROM Subscription WHERE channel_id = Channel.channel_id) AS subscriber_count,
+-		CASE WHEN EXISTS (SELECT * FROM Subscription WHERE user_id = #{user_id} AND channel_id = Channel.channel_id) THEN 1 ELSE 0 END AS is_subscribed,
+-		User.name as commenter_name, User.profile_url
+-		FROM Video
+-		LEFT JOIN Comment ON Video.video_id = Comment.video_id
+-		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
+-		LEFT JOIN User ON Comment.user_id = User.user_id
+-		WHERE Video.video_id = #{video_id};
+-
+-	</select>
+-	
+-	<select id="searchVideo" parameterType="java.util.Map" resultType="video.bean.VideoDTO">
+-		SELECT *
+-    FROM Video
+-    INNER JOIN Channel ON Video.channel_id = Channel.channel_id
+-    WHERE Video.video_title LIKE '%${video_title}%' OR Channel.channel_name LIKE '%${video_title}%'
+-	</select>
+-	
+-	<select id="mainContainerVideo" resultType="video.bean.VideoDTO">
+-		select * from video
+-	</select>
+-
+-</mapper>
+\ No newline at end of file
+Index: miniProject/.idea/encodings.xml
+===================================================================
+diff --git a/miniProject/.idea/encodings.xml b/miniProject/.idea/encodings.xml
+deleted file mode 100644
+--- a/miniProject/.idea/encodings.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ /dev/null	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Encoding">
+-    <file url="file://$PROJECT_DIR$/miniProject/src/main/java/history/bean/VideoDTO.java" charset="x-windows-949" />
+-    <file url="file://$PROJECT_DIR$/miniProject/src/main/java/history/controller/UserController2.java" charset="x-windows-949" />
+-    <file url="file://$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/history.css" charset="x-windows-949" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: miniProject/.idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/.idea/modules.xml b/.idea/modules.xml
+rename from miniProject/.idea/modules.xml
+rename to .idea/modules.xml
+--- a/miniProject/.idea/modules.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/.idea/modules.xml	(date 1682325357937)
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ProjectModuleManager">
+     <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/miniProject.iml" filepath="$PROJECT_DIR$/.idea/miniProject.iml" />
++      <module fileurl="file://$PROJECT_DIR$/miniProject/miniProject.iml" filepath="$PROJECT_DIR$/miniProject/miniProject.iml" />
+     </modules>
+   </component>
+ </project>
+\ No newline at end of file
+Index: miniProject/src/main/webapp/WEB-INF/board/boardList.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n\tpageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\"%>\r\n<%@ taglib prefix=\"fmt\" uri=\"http://java.sun.com/jsp/jstl/fmt\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>커뮤니티 게시판</title>\r\n<link rel=\"stylesheet\" href=\"/miniProject/css/board.css\">\r\n</head>\r\n<body>\r\n\r\n\t<div class=\"write\">\r\n\t\t<section>\r\n\t\t\t<article>\r\n\t\t\t\t<div class=\"write_head\">\r\n\t\t\t\t\t<img src=\"/miniProject/img/jhhat.jpeg\" class=\"profile-img\">\r\n\t\t\t\t\t<p class=\"subject\">글 게시자</p>\r\n\t\t\t\t\t<span>공개 상태 공개</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"write_main\">\r\n\t\t\t\t\t<textarea placeholder=\"팬을 위해 새로운 소식을 올려보세요.\" id=\"dialog\"></textarea>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"write_footer\">\r\n\t\t\t\t\t<div id=\"write_reset\">취소</div>\r\n\t\t\t\t\t<div id=\"write_post\">게시</div>\r\n\t\t\t\t</div>\r\n\t\t\t</article>\r\n\t\t</section>\r\n\r\n\t</div> <!-- write div -->\r\n\r\n\t<div>\r\n\t\t<div class=\"board_navigation\">\r\n\t\t\t<a href=\"#\" class=\"current-page\">게시됨</a>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\r\n\t<div class=\"list\">\r\n\t\t<section id=\"section\">\r\n\t\t\t<%-- <article class=\"article\">\r\n\t\t\t\t<div class=\"board_head\">\r\n\t\t\t\t\t<img src=\"/miniProject/img/jhhat.jpeg\" class=\"profile-img\"> <a\r\n\t\t\t\t\t\thref=\"#\"><img src=\"/miniProject/img/show-more.png\"\r\n\t\t\t\t\t\tclass=\"show-more-img\"></a>\r\n\t\t\t\t\t<p class=\"subject\">글 게시자</p>\r\n\t\t\t\t\t<span>작성일</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"content-info\">\r\n\t\t\t\t\t<p class=\"content-1\">게시글 내용입니다.</p>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"btn\">\r\n\t\t\t\t\t\t<a href=\"#\"> <img src=\"/miniProject/img/like.png\" id=\"likeBtn\">\r\n\t\t\t\t\t\t</a><span id=\"likesu\">605</span> <a href=\"#\"> <img\r\n\t\t\t\t\t\t\tsrc=\"/miniProject/img/dislike.png\" id=\"dislikeBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/share.png\"\r\n\t\t\t\t\t\t\tid=\"shareBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/messages.png\"\r\n\t\t\t\t\t\t\tid=\"dapBtn\">\r\n\t\t\t\t\t\t</a><span id=\"dapsu\">7</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t</article>\r\n\t\t\t<article class=\"article\">\r\n\t\t\t\t<div class=\"board_head\">\r\n\t\t\t\t\t<img src=\"/miniProject/img/jhhat.jpeg\" class=\"profile-img\"> <a\r\n\t\t\t\t\t\thref=\"#\"><img src=\"/miniProject/img/show-more.png\"\r\n\t\t\t\t\t\tclass=\"show-more-img\"></a>\r\n\t\t\t\t\t<p class=\"subject\">글 게시자</p>\r\n\t\t\t\t\t<span>작성일</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"content-info\">\r\n\r\n\t\t\t\t\t<p class=\"content-1\">게시글 내용입니다.</p>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\t<a href=\"#\"> <img src=\"/miniProject/img/like.png\" id=\"likeBtn\">\r\n\t\t\t\t\t\t</a><span id=\"likesu\">605</span> <a href=\"#\"> <img\r\n\t\t\t\t\t\t\tsrc=\"/miniProject/img/dislike.png\" id=\"dislikeBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/share.png\"\r\n\t\t\t\t\t\t\tid=\"shareBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/messages.png\"\r\n\t\t\t\t\t\t\tid=\"dapBtn\">\r\n\t\t\t\t\t\t</a><span id=\"dapsu\">7</span>\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"tooltip\" id=\"likeBtnTooltip\">\r\n\t\t\t\t\t\t<p>좋아요</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</article>\r\n\t\t\t<article>\r\n\t\t\t\t<div class=\"board_head\">\r\n\t\t\t\t\t<img src=\"/miniProject/img/jhhat.jpeg\" class=\"profile-img\"> <a\r\n\t\t\t\t\t\thref=\"#\"><img src=\"/miniProject/img/show-more.png\"\r\n\t\t\t\t\t\tclass=\"show-more-img\"></a>\r\n\t\t\t\t\t<p class=\"subject\">글 게시자</p>\r\n\t\t\t\t\t<span>작성일</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"content-info\">\r\n\r\n\t\t\t\t\t<p class=\"content-1\">게시글 내용입니다.</p>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\t<a href=\"#\"> <img src=\"/miniProject/img/like.png\" id=\"likeBtn\">\r\n\t\t\t\t\t\t</a><span id=\"likesu\">605</span> <a href=\"#\"> <img\r\n\t\t\t\t\t\t\tsrc=\"/miniProject/img/dislike.png\" id=\"dislikeBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/share.png\"\r\n\t\t\t\t\t\t\tid=\"shareBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/messages.png\"\r\n\t\t\t\t\t\t\tid=\"dapBtn\">\r\n\t\t\t\t\t\t</a><span id=\"dapsu\">7</span>\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"tooltip\" id=\"likeBtnTooltip\">\r\n\t\t\t\t\t\t<p>좋아요</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</article>\r\n\t\t\t<article>\r\n\t\t\t\t<div class=\"board_head\">\r\n\t\t\t\t\t<img src=\"/miniProject/img/jhhat.jpeg\" class=\"profile-img\"> <a\r\n\t\t\t\t\t\thref=\"#\"><img src=\"/miniProject/img/show-more.png\"\r\n\t\t\t\t\t\tclass=\"show-more-img\"></a>\r\n\t\t\t\t\t<p class=\"subject\">글 게시자</p>\r\n\t\t\t\t\t<span>작성일</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"content-info\">\r\n\r\n\t\t\t\t\t<p class=\"content-1\">게시글 내용입니다.</p>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\t<a href=\"#\"> <img src=\"/miniProject/img/like.png\" id=\"likeBtn\">\r\n\t\t\t\t\t\t</a><span id=\"likesu\">605</span> <a href=\"#\"> <img\r\n\t\t\t\t\t\t\tsrc=\"/miniProject/img/dislike.png\" id=\"dislikeBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/share.png\"\r\n\t\t\t\t\t\t\tid=\"shareBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/messages.png\"\r\n\t\t\t\t\t\t\tid=\"dapBtn\">\r\n\t\t\t\t\t\t</a><span id=\"dapsu\">7</span>\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"tooltip\" id=\"likeBtnTooltip\">\r\n\t\t\t\t\t\t<p>좋아요</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t</article>\r\n\t\t\t<article>\r\n\t\t\t\t<div class=\"board_head\">\r\n\t\t\t\t\t<img src=\"/miniProject/img/jhhat.jpeg\" class=\"profile-img\"> <a\r\n\t\t\t\t\t\thref=\"#\"><img src=\"/miniProject/img/show-more.png\"\r\n\t\t\t\t\t\tclass=\"show-more-img\"></a>\r\n\t\t\t\t\t<p class=\"subject\">글 게시자</p>\r\n\t\t\t\t\t<span>작성일</span>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"content-info\">\r\n\r\n\t\t\t\t\t<p class=\"content-1\">게시글 내용입니다.</p>\r\n\t\t\t\t\t<p>\r\n\t\t\t\t\t\t<a href=\"#\"> <img src=\"/miniProject/img/like.png\" id=\"likeBtn\">\r\n\t\t\t\t\t\t</a><span id=\"likesu\">605</span> <a href=\"#\"> <img\r\n\t\t\t\t\t\t\tsrc=\"/miniProject/img/dislike.png\" id=\"dislikeBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/share.png\"\r\n\t\t\t\t\t\t\tid=\"shareBtn\">\r\n\t\t\t\t\t\t</a> <a href=\"#\"> <img src=\"/miniProject/img/messages.png\"\r\n\t\t\t\t\t\t\tid=\"dapBtn\">\r\n\t\t\t\t\t\t</a><span id=\"dapsu\">7</span>\r\n\t\t\t\t\t</p>\r\n\t\t\t\t\t<div class=\"tooltip\" id=\"likeBtnTooltip\">\r\n\t\t\t\t\t\t<p>좋아요</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t</article> -->\r\n\t\t\t<!-- <form>\r\n\t\t\t<h2>게시글 작성</h2>\r\n\t\t\t<label for=\"title\">제목</label>\r\n\t\t\t<input type=\"text\" id=\"title\" name=\"title\" placeholder=\"제목을 입력하세요\">\r\n\t\t\t<label for=\"content\">내용</label>\r\n\t\t\t<textarea id=\"content\" name=\"content\" rows=\"10\" placeholder=\"내용을 입력하세요\"></textarea>\r\n\t\t\t<input type=\"submit\" value=\"작성\">\r\n\t\t</form> -->\r\n\t\t</section>\r\n\t</div> <!-- list --%>\r\n\r\n</body>\r\n<script type=\"text/javascript\"\r\n\tsrc=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script type=\"text/javascript\" src=\"../js/boardList.js\"></script>\r\n<!-- <script type=\"text/javascript\" src=\"../js/boardList.js\"></script> -->\r\n<script type=\"text/javascript\">\r\ndocument.getElementById('dialog').addEventListener('input', function() {\r\n    this.style.height = '20px'; // 초기 높이 설정\r\n    this.style.height = (this.scrollHeight) + 'px'; // 입력된 텍스트의 높이에 따라 높이 조정\r\n});\r\n\r\n</script>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/src/main/webapp/WEB-INF/board/boardList.jsp b/miniProject/src/main/webapp/WEB-INF/board/boardList.jsp
+--- a/miniProject/src/main/webapp/WEB-INF/board/boardList.jsp	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/src/main/webapp/WEB-INF/board/boardList.jsp	(date 1682322308519)
+@@ -3,7 +3,7 @@
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+ <!DOCTYPE html>
+-<html>
++<html> 
+ <head>
+ <title>커뮤니티 게시판</title>
+ <link rel="stylesheet" href="/miniProject/css/board.css">
+Index: miniProject/src/main/webapp/web/WEB-INF/web.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/src/main/webapp/web/WEB-INF/web.xml b/miniProject/src/main/webapp/web/WEB-INF/web.xml
+new file mode 100644
+--- /dev/null	(date 1682325347778)
++++ b/miniProject/src/main/webapp/web/WEB-INF/web.xml	(date 1682325347778)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
++         version="4.0">
++</web-app>
+\ No newline at end of file
+Index: miniProject/.idea/artifacts/miniProject_war_exploded2.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/.idea/artifacts/miniProject_war_exploded2.xml b/.idea/artifacts/miniProject_war_exploded2.xml
+rename from miniProject/.idea/artifacts/miniProject_war_exploded2.xml
+rename to .idea/artifacts/miniProject_war_exploded2.xml
+--- a/miniProject/.idea/artifacts/miniProject_war_exploded2.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/.idea/artifacts/miniProject_war_exploded2.xml	(date 1682325926579)
+@@ -37,6 +37,10 @@
+           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.14.1" />
+           <element id="library" level="project" name="Maven: commons-io:commons-io:2.11.0" />
+           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
++          <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0" />
++          <element id="library" level="project" name="Maven: javax.mail:mail:1.4.7" />
++          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
++          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:5.3.9" />
+         </element>
+       </element>
+       <element id="javaee-facet-resources" facet="miniProject/web/Web" />
+Index: miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>#Generated by Maven Integration for Eclipse\r\n#Mon Apr 24 15:40:51 KST 2023\r\nm2e.projectLocation=C\\:\\\\miniProject\\\\miniProject\r\nm2e.projectName=miniProject\r\ngroupId=miniProject\r\nartifactId=miniProject\r\nversion=0.0.1-SNAPSHOT\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties b/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties
+--- a/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties	(date 1682325882461)
+@@ -1,6 +1,6 @@
+ #Generated by Maven Integration for Eclipse
+-#Mon Apr 24 15:40:51 KST 2023
+-m2e.projectLocation=C\:\\miniProject\\miniProject
++#Mon Apr 24 17:44:42 KST 2023
++m2e.projectLocation=D\:\\miniProject\\miniProject
+ m2e.projectName=miniProject
+ groupId=miniProject
+ artifactId=miniProject
+Index: miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n  <modelVersion>4.0.0</modelVersion>\r\n  <groupId>miniProject</groupId>\r\n  <artifactId>miniProject</artifactId>\r\n  <version>0.0.1-SNAPSHOT</version>\r\n  <packaging>war</packaging>\r\n\r\n\r\n  <build>\r\n    <plugins>\r\n      <plugin>\r\n        <artifactId>maven-compiler-plugin</artifactId>\r\n        <version>3.8.1</version>\r\n        <configuration>\r\n          <release>11</release>\r\n        </configuration>\r\n      </plugin>\r\n      <plugin>\r\n        <artifactId>maven-war-plugin</artifactId>\r\n        <version>3.2.3</version>\r\n      </plugin>\r\n    </plugins>\r\n\t  <resources>\r\n\t\t  <resource>\r\n\t\t\t  <directory>src/main/resources</directory>\r\n\t\t\t  <includes>\r\n\t\t\t\t  <include>**/*</include>\r\n\t\t\t  </includes>\r\n\t\t  </resource>\r\n\t\t  <resource>\r\n\t\t\t  <directory>src/main/java</directory>\r\n\t\t\t  <includes>\r\n\t\t\t\t  <include>**/*.properties</include>\r\n\t\t\t  </includes>\r\n\t\t\t  <filtering>true</filtering>\r\n\t\t  </resource>\r\n\t  </resources>\r\n  </build>\r\n  <dependencies>\r\n\r\n\t  <dependency>\r\n\t\t  <groupId>javax.servlet</groupId>\r\n\t\t  <artifactId>javax.servlet-api</artifactId>\r\n\t\t  <version>3.0.1</version>\r\n\t\t  <scope>provided</scope>\r\n\t  </dependency>\r\n\r\n  \t<!-- Spring -->\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-context</artifactId>\r\n\t    <version>5.3.23</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- JDBC -->\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-jdbc</artifactId>\r\n\t    <version>5.3.23</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-webmvc</artifactId>\r\n\t    <version>5.3.23</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- Connection Pool  -->\r\n\t<dependency>\r\n\t    <groupId>org.apache.commons</groupId>\r\n\t    <artifactId>commons-collections4</artifactId>\r\n\t    <version>4.4</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>org.apache.commons</groupId>\r\n\t    <artifactId>commons-dbcp2</artifactId>\r\n\t    <version>2.9.0</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- Oracle -->\r\n\t<dependency>\r\n\t    <groupId>com.oracle.database.jdbc</groupId>\r\n\t    <artifactId>ojdbc8</artifactId>\r\n\t    <version>21.7.0.0</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- mysql -->\r\n\t<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->\r\n\t  <dependency>\r\n\t\t  <groupId>com.mysql</groupId>\r\n\t\t  <artifactId>mysql-connector-j</artifactId>\r\n\t\t  <version>8.0.32</version>\r\n\t  </dependency>\r\n\t\r\n\t<!-- MyBatis -->\r\n\t<dependency>\r\n\t    <groupId>org.mybatis</groupId>\r\n\t    <artifactId>mybatis</artifactId>\r\n\t    <version>3.5.11</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>org.mybatis</groupId>\r\n\t    <artifactId>mybatis-spring</artifactId>\r\n\t    <version>2.0.7</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- JSTL -->\r\n\t  <dependency>\r\n\t\t  <groupId>javax.servlet</groupId>\r\n\t\t  <artifactId>jstl</artifactId>\r\n\t\t  <version>1.2</version>\r\n\t  </dependency>\r\n\r\n\t<!-- JSON -->\r\n\t<dependency>\r\n\t    <groupId>net.sf.json-lib</groupId>\r\n\t    <artifactId>json-lib</artifactId>\r\n\t    <version>2.4</version>\r\n\t    <classifier>jdk15</classifier>\r\n\t</dependency>\r\n\t\r\n\t<!-- Jacson -->\r\n\t<dependency>\r\n\t    <groupId>com.fasterxml.jackson.core</groupId>\r\n\t    <artifactId>jackson-core</artifactId>\r\n\t    <version>2.14.1</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>com.fasterxml.jackson.core</groupId>\r\n\t    <artifactId>jackson-databind</artifactId>\r\n\t    <version>2.14.1</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- 파일 업로드 -->\r\n\t<dependency>\r\n\t    <groupId>commons-io</groupId>\r\n\t    <artifactId>commons-io</artifactId>\r\n\t    <version>2.11.0</version>\r\n\t</dependency>\r\n\t\r\n\t<dependency>\r\n\t    <groupId>commons-fileupload</groupId>\r\n\t    <artifactId>commons-fileupload</artifactId>\r\n\t    <version>1.4</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- Lombok -->\r\n\t<dependency>\r\n\t    <groupId>org.projectlombok</groupId>\r\n\t    <artifactId>lombok</artifactId>\r\n\t    <version>1.18.24</version>\r\n\t    <scope>provided</scope>\r\n\t</dependency>\r\n\t\r\n\t<!-- 날짜 직렬화 -->\r\n\t<dependency>\r\n\t    <groupId>com.fasterxml.jackson.datatype</groupId>\r\n\t    <artifactId>jackson-datatype-jsr310</artifactId>\r\n\t    <version>2.13.0</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- https://mvnrepository.com/artifact/javax.mail/mail -->\r\n\t<dependency>\r\n\t    <groupId>javax.mail</groupId>\r\n\t    <artifactId>mail</artifactId>\r\n\t    <version>1.4.7</version>\r\n\t</dependency>\r\n\t\r\n\t<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->\r\n\t<dependency>\r\n\t    <groupId>org.springframework</groupId>\r\n\t    <artifactId>spring-context-support</artifactId>\r\n\t    <version>5.3.9</version>\r\n\t</dependency>\r\n\r\n  </dependencies>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml b/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml
+--- a/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml	(date 1682325882461)
+@@ -34,6 +34,12 @@
+ 			  </includes>
+ 			  <filtering>true</filtering>
+ 		  </resource>
++		  <resource>
++			  <directory>src/main/resources</directory>
++			  <includes>
++				  <include>**/*.xml</include>
++			  </includes>
++		  </resource>
+ 	  </resources>
+   </build>
+   <dependencies>
+Index: miniProject/miniProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/miniProject.iml b/miniProject/miniProject.iml
+new file mode 100644
+--- /dev/null	(date 1682326008569)
++++ b/miniProject/miniProject.iml	(date 1682326008569)
+@@ -0,0 +1,24 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module version="4">
++  <component name="EclipseModuleManager">
++    <conelement value="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0" />
++    <conelement value="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER" />
++    <src_description expected_position="2">
++      <src_folder value="file://$MODULE_DIR$/src/main/java" expected_position="1" />
++      <src_folder value="file://$MODULE_DIR$/src/test/java" expected_position="3" />
++    </src_description>
++  </component>
++  <component name="FacetManager">
++    <facet type="Spring" name="Spring">
++      <configuration>
++        <fileset id="fileset" name="Spring 애플리케이션 컨텍스트" removed="false">
++          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml</file>
++          <file>file://$MODULE_DIR$/out/artifacts/miniProject__2__war_exploded/WEB-INF/spring/root-context.xml</file>
++          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</file>
++          <file>file://$MODULE_DIR$/out/artifacts/miniProject__2__war_exploded/WEB-INF/spring/appServlet/servlet-context.xml</file>
++          <file>file://$MODULE_DIR$/src/main/java/spring/conf/SpringConfiguration.java</file>
++        </fileset>
++      </configuration>
++    </facet>
++  </component>
++</module>
+\ No newline at end of file
+Index: miniProject/.idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/.idea/workspace.xml b/miniProject/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1682324826573)
++++ b/miniProject/.idea/workspace.xml	(date 1682324826573)
+@@ -0,0 +1,112 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ChangeListManager">
++    <list default="true" id="cd5e0981-04ec-44f1-9aaa-d7caa0b1019f" name="변경" comment="">
++      <change afterPath="$PROJECT_DIR$/../.idea/miniProject.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/artifacts/miniProject_war_exploded2.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/miniProject.iml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/webContexts.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/board/boardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/board/boardList.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/board/bean/BoardDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/board/bean/BoardDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/board/dao/BoardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/board/dao/BoardDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/board/dao/BoardDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/board/dao/BoardDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/board/dao/boardMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/bean/ChannelDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/bean/ChannelDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/controller/ChannelController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/dao/channelMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/service/ChannelService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/channel/service/ChannelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/service/ChannelServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/comment/bean/CommentDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/bean/CommentDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/comment/dao/commentMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/comment/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/service/CommentService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/comment/service/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/service/CommentServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/community/service/CommunityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/community/service/CommunityService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/community/service/CommunityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/community/service/CommunityServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/bean/HistoryDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/bean/HistoryDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/controller/HistoryController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/dao/historyMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/service/HistoryService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/mail/service/MailSendService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mail/service/MailSendService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/mail/service/MailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mail/service/MailService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/main/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/controller/MainController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/bean/MemberDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/bean/MemberDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/controller/MemberController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/dao/MemberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/dao/MemberDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/dao/MemberDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/dao/MemberDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/dao/memberMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/service/MemberService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/member/service/MemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/service/MemberServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/spring/conf/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/conf/SpringConfiguration.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/spring/mybatis-config.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/user/bean/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/bean/UserDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/controller/UserController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/user/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/dao/UserDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/user/dao/UserDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/dao/UserDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/user/dao/userMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/bean/VideoDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/controller/VideoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/controller/VideoController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/VideoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/dao/VideoDAO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/VideoDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/dao/VideoDAOMyBatis.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/userMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/videoMapper.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/service/VideoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/service/VideoService.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/video/service/VideoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/service/VideoServiceImpl.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++  </component>
++  <component name="MarkdownSettingsMigration">
++    <option name="stateVersion" value="1" />
++  </component>
++  <component name="ProjectId" id="2Orhj1ixDMH0xGTmZfUpSWC8OPn" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "last_opened_file_path": "D:/miniProject/miniProject",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="디폴트 작업">
++      <changelist id="cd5e0981-04ec-44f1-9aaa-d7caa0b1019f" name="변경" comment="" />
++      <created>1682324739549</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1682324739549</updated>
++      <workItem from="1682324741152" duration="86000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++</project>
+\ No newline at end of file
+Index: miniProject/.idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/miniProject/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/.idea/misc.xml b/miniProject/.idea/misc.xml
+--- a/miniProject/.idea/misc.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/.idea/misc.xml	(date 1682324826579)
+@@ -1,14 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/miniProject/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/classes" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: miniProject/.idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/miniProject/.idea/vcs.xml b/miniProject/.idea/vcs.xml
+--- a/miniProject/.idea/vcs.xml	(revision 3d0be9bda9d3658fd6c5cc38c31f4b174270492c)
++++ b/miniProject/.idea/vcs.xml	(date 1682324826596)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="" vcs="Git" />
++    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1682325249082)
++++ b/.idea/misc.xml	(date 1682325249082)
+@@ -0,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ExternalStorageConfigurationManager" enabled="true" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/miniProject/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1682325249092)
++++ b/.idea/vcs.xml	(date 1682325249092)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+diff --git a/miniProject/.idea/compiler.xml b/.idea/compiler.xml
+rename from miniProject/.idea/compiler.xml
+rename to .idea/compiler.xml
+diff --git a/miniProject/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+rename from miniProject/.idea/jarRepositories.xml
+rename to .idea/jarRepositories.xml
+diff --git a/miniProject/src/main/java/spring/mybatis-config.xml b/miniProject/src/main/resources/mybatis-config.xml
+rename from miniProject/src/main/java/spring/mybatis-config.xml
+rename to miniProject/src/main/resources/mybatis-config.xml

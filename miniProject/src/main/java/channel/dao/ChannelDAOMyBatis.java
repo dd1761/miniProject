@@ -20,12 +20,12 @@ public class ChannelDAOMyBatis implements ChannelDAO {
     @Override
     public List<ChannelDTO> getChannelForm(int user_id, int channel_id) {
 
-        System.out.println("DAO user_id+"+user_id);
+        System.out.println("DAO user_id : "+user_id);
 
         Map<String, Object> map = new HashMap<>();
 
         map.put("user_id", user_id);
-        map.put("video_id", channel_id);
+        map.put("channel_id", channel_id);
         return sqlSession.selectList("channelSQL.getChannelForm",map);
 
     }

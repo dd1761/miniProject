@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <link rel="stylesheet" href="/miniProject/css/channel.css">
 	<header>
+
 		<div class="channel-info">
 			<div class="channel-logo">
-				<img src="/miniProject/img/ytnheader.png" alt="Logo">
+				<%--채널의 썸네일 동적처리 --%>
+				<%--<img src="/miniProject/img/ytnheader.png" alt="Logo">--%>
 			</div>
 		</div>
 
@@ -44,6 +48,11 @@
 					</div>
 				</div>
 
+				<%--컨테이너 시작 --%>
+				<div id='container'>
+						<%--동적 생성--%>
+				</div>
+				<%--컨테이너는 끝--%>
 
 				<div>
 					<div class="navigation">
@@ -60,7 +69,7 @@
 				
 			<div class="videoList">
 				<c:if test="${empty display2}">
-	    			<jsp:include page="../main/videoList.jsp" />
+	    			<jsp:include page="videoList.jsp" />
 	  			</c:if>
 	  			<c:if test="${not empty display2}">
 	    			<jsp:include page="${display2 }" />

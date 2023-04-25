@@ -47,7 +47,7 @@ public class SpringConfiguration {
 	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource());
-		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
+		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
 
 		sqlSessionFactoryBean.setMapperLocations(
 				new ClassPathResource("history/dao/historyMapper.xml"),
