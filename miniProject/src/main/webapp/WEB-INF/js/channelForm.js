@@ -57,7 +57,7 @@ $(function(){
 
                    /*--------------------------------채널 동적생성------------------------*/
                     var comments = data.length;
-                    const html = `
+                    const html = ` 
                             <div id='box-left'>
                               <div class="channel-profile">
                                 <!-- null 이면 기본이미지인 p.jpg -->
