@@ -1,6 +1,7 @@
 package member.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -57,21 +58,19 @@ public class MemberController {
 		return "member/join_name";
 	}
 	
-	@PostMapping(value="insertName")
-	@ResponseBody 
-	public void insertName(@RequestParam String name) {
-		memberService.insertName(name);
-	}
-	
-	@GetMapping(value="join_email")
-	public String join_eamil() {
+	//이름 입력
+	@PostMapping(value="join_email")
+	//public String insertName(@RequestParam String last_name, @RequestParam String first_name, Model model) {
+	public String join_email(@RequestParam Map<String, String> map, Model model) {
+		//model.addAttribute("last_name", map.get("last_name"));
+		//model.addAttribute("first_name", map.get("first_name"));
+		model.addAttribute("map", map);
 		return "member/join_email";
 	}
 	
-	@GetMapping(value="join_email2")
-	public String join_email2(@RequestParam String email, Model model) {
-		System.out.println(email);
-		model.addAttribute("email", email);
+	@PostMapping(value="join_email2")
+	public String join_email2(@RequestParam Map<String, String> map, Model model) {
+		model.addAttribute("map", map);
 		return "member/join_email2";
 	}
 	
@@ -83,6 +82,32 @@ public class MemberController {
 		System.out.println("이메일 인증 이메일 : " + email);
 		return mailService.joinEmail(email);
 	}
+	
+	@PostMapping(value="join_privacy")
+	public String join_privacy(@RequestParam Map<String, String> map, Model model) {
+		model.addAttribute("map", map);
+		return "member/join_privacy";
+	}
+	
+	@PostMapping(value="join_privacy2")
+	public String join_privacy2(@RequestParam Map<String, String> map, Model model) {
+		model.addAttribute("map", map);
+		return "member/join_privacy2";
+	}
+	
+	@PostMapping(value="join_pwd")
+	public String join_pwd(@RequestParam Map<String, String> map, Model model) {
+		model.addAttribute("map", map);
+		return "member/join_pwd";
+	}
+	
+	@PostMapping(value="insertMember")
+	@ResponseBody 
+	public void insertMember(@RequestParam Map<String, Object> map) {
+		System.out.println(map);
+		memberService.insertMember(map);
+	}
+	
 	
 	//**************search******************
 	@GetMapping(value="search_email1")
@@ -127,7 +152,40 @@ public class MemberController {
 		return "member/login_pwd";
 	}
 	
-//	loginOk.js에서 index에서 로그인이 되어있는 상태라면 오른쪽 상단 user의 drop바를 뿌려줌.
+	@GetMapping(value="search_pwd1")
+	public String search_pwd1(@RequestParam String email, Model model) {
+		System.out.println(email);
+		model.addAttribute("email", email);
+		return "member/search_pwd1";
+	}
+	
+	@GetMapping(value="search_pwd2")
+	public String search_pwd2(@RequestParam String email, Model model) {
+		System.out.println(email);
+		model.addAttribute("email", email);
+		return "member/search_pwd2";
+	}
+	
+	@GetMapping(value="search_pwd3")
+	public String search_pwd3(@RequestParam String email, Model model) {
+		System.out.println(email);
+		model.addAttribute("email", email);
+		return "member/search_pwd3";
+	}
+	
+	@PostMapping(value="isExistPwd2")
+	@ResponseBody
+	public MemberDTO isExistPwd2(@RequestParam String email) {
+		return memberService.isExistPwd2(email);
+	}
+	
+	@PostMapping(value="UpdatePwd")
+	@ResponseBody
+	public void UpdatePwd(@RequestParam String email, @RequestParam String password) {
+		memberService.UpdatePwd(email, password);
+	}
+
+	//	loginOk.js에서 index에서 로그인이 되어있는 상태라면 오른쪽 상단 user의 drop바를 뿌려줌.
 	@PostMapping(value="loginOk")
 	@ResponseBody
 	public MemberDTO loginOk(@RequestParam int user_id) {
@@ -140,4 +198,5 @@ public class MemberController {
 		session.invalidate();
 		return "index";
 	}
+	
 }

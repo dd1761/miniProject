@@ -12,7 +12,7 @@
 #search h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}
 #search h1 img {width:120px; height: 35px}
 #search h2 {margin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;}
-#search #search_name_form .bottom {
+#search .bottom {
 	display:flex; flex-flow:row nowrap;
 	justify-content:space-between;
 	align-items:center;
@@ -20,15 +20,10 @@
 	padding-right: 20px;
 	margin-top: 50px;
 }
-#search #search_name_form #nameDiv{
-	padding-top: 1xp;
+#search #nameDiv{
+	padding-top: 1px;
 	margin-top: 1px;
 	margin-left: 30px;
-}
-#search footer {
-	margin-top:20px;
-	display:flex; flex-flow:row nowrap;
-	justify-content:space-between;
 }
 .outBox1 {margin:20px auto; padding:1px; width:400px;}
 .outBox1 .inputBox1 {position:relative; height:50px;}

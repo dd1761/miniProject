@@ -28,7 +28,7 @@ $(function(){
 		    $('#codeDiv').focus();
 		}else {
 			if($('#email_code').val() == code) {
-				$('#join_email2_form').submit();
+				location.href='/miniProject/member/search_pwd2?email='+$('#email').text();
 			}else {
 				$('#codeDiv').text('코드번호가 불일치 합니다.');
 				$('#codeDiv').css('color', 'red');
@@ -40,5 +40,14 @@ $(function(){
 			}
 		}
 	});
+});
 
+$('.email').click(function(){
+	location.href='/miniProject/member/login_pwd?email='+$('#email').text();
+});
+
+$("#search").keydown(function(key) {
+	   if( key.keyCode == 13 ){
+	      $('#nextBtn').trigger('click');
+	   }
 });

@@ -60,5 +60,24 @@ public class MemberServiceImpl implements MemberService {
 		
 		return memberDAO.loginOk(user_id);
 	}
+	
+	@Override
+	public void insertMember(Map<String, Object> map) {
+		 memberDAO.insertMember(map);
+	}
+
+	@Override
+	public MemberDTO isExistPwd2(String email) {
+		MemberDTO memberDTO = memberDAO.isExistPwd2(email);
+		if(memberDTO != null)
+			session.setAttribute("user_id", memberDTO.getUser_id());
+		return memberDTO;
+	}
+
+	@Override
+	public void UpdatePwd(String email, String password) {
+		memberDAO.UpdatePwd(email, password);	
+	}
+
 
 }

@@ -61,7 +61,24 @@ public class MemberDAOMyBatis implements MemberDAO {
 		return sqlSession.selectOne("memberSQL.loginOk", user_id);
 	}
 
+	@Override
+	public void insertMember(Map<String, Object> map) {
+		sqlSession.insert("memberSQL.insertMember", map);
+		
+	}
 
+	@Override
+	public MemberDTO isExistPwd2(String email) {
+		return sqlSession.selectOne("memberSQL.isExistPwd2", email);
+	}
 
+	@Override
+	public void UpdatePwd(String email, String password) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("password", password);
+		map.put("email", email);
+		sqlSession.update("memberSQL.UpdatePwd", map);
+	}
+	
 	
 }

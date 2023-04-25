@@ -14,7 +14,7 @@ $(function(){
 
 $('#nextBtn').click(function(){
 	$('#passwordDiv').empty();
-	
+		
 	if($('#password').val() == '') {
 		$('#passwordDiv').text('비밀번호를 입력하세요.');
 		$('#passwordDiv').css('color', 'red');
@@ -48,8 +48,13 @@ $('#nextBtn').click(function(){
 	}
 });
 
-$("#password").keydown(function(key) {
-	if( key.keyCode == 13 ){
-		$('#nextBtn').trigger('click');
-	}
+$("#login").keydown(function(key) {
+	   if( key.keyCode == 13 ){
+	      $('#nextBtn').trigger('click');
+	   }
+});
+
+
+$('#search_password').click(function(){
+	location.href='/miniProject/member/search_pwd1?email='+$('#email').text();
 });

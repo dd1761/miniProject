@@ -28,7 +28,19 @@
  	</select>
  	
  	<select id="loginOk" parameterType="Int" resultType="member">
- 		select * from user where user_id=#{user_id}
+ 		select * from User where user_id=#{user_id}
  	</select>
+ 	
+ 	<insert id="insertMember" parameterType="java.util.Map">
+ 		insert into User(name, email, password, rrn, year, gender, phone) values(#{name}, #{email}, #{password}, #{rrn}, #{year}, #{gender}, #{phone})
+ 	</insert>
+ 	
+ 	<select id="isExistPwd2" parameterType="String" resultType="member">
+ 		select * from User where email=#{email}
+ 	</select>
+ 	
+ 	<update id="UpdatePwd" parameterType="java.util.Map">
+ 		update User set password=#{password} where email=#{email}
+ 	</update>
  		
  </mapper>

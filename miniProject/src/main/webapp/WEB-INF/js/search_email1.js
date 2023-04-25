@@ -33,3 +33,9 @@ $('#nextBtn').click(function(){
 		});
 	}
 });
+
+$("#search").keydown(function(key) {
+	   if( key.keyCode == 13 ){
+	      $('#nextBtn').trigger('click');
+	   }
+});

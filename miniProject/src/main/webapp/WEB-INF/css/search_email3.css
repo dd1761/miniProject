@@ -27,8 +27,3 @@
 	line-height:1.5;
 	text-decoration:none;
 }
-#search footer {
-	margin-top:20px;
-	display:flex; flex-flow:row nowrap;
-	justify-content:space-between;
-}

@@ -35,7 +35,7 @@ $('#nextBtn').click(function(){
 });
 
 $("#login").keydown(function(key) {
-	if( key.keyCode == 13 ){
-		$('#nextBtn').trigger('click');
-	}
+	   if( key.keyCode == 13 ){
+	      $('#nextBtn').trigger('click');
+	   }
 });

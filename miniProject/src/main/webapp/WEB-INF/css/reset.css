@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 *{box-sizing: border-box;}
 html,body,div,h1,h2,h3,h4,p,form,fieldset,legend,ul,li,input,button,a,img,select,option,footer{
 	margin:0; padding:0;

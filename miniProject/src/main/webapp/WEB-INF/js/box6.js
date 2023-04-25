@@ -1,5 +1,5 @@
-var loginBox1 = document.querySelector('.box .outBox1');
-var loginInputBox1 = document.querySelector('#rrn_1');
+var loginBox1 = document.querySelector('.outBox1');
+var loginInputBox1 = document.querySelector('#password');
 if (loginBox1 && loginInputBox1) {
   loginInputBox1.addEventListener('keyup', function(){
     if(loginInputBox1.value != ''){
@@ -10,8 +10,8 @@ if (loginBox1 && loginInputBox1) {
   });
 }
 
-var loginBox2 = document.querySelector('.box .outBox2');
-var loginInputBox2 = document.querySelector('#rrn_2');
+var loginBox2 = document.querySelector('.outBox2');
+var loginInputBox2 = document.querySelector('#repwd');
 if (loginBox2 && loginInputBox2) {
   loginInputBox2.addEventListener('keyup', function(){
     if(loginInputBox2.value != ''){

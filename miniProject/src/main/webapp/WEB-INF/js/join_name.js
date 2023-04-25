@@ -10,17 +10,13 @@ $('#nextBtn').click(function(){
 		$('.inputBox2 label').css('color', 'red');
 	    $('#first_name').focus();
 	}else {
-		$.ajax({
-			type: 'post',
-			url: '/miniProject/member/insertName',
-			data: 'name=' + $('#last_name').val() + $('#first_name').val(),
-			success: function(data){
-				location.href='/miniProject/member/join_email';
-			},
-			error: function(err){
-		   		console.log(err);
-		   	}
-		});
+		$('#join_name_form').submit();
 	}
+});
+
+$("#join").keydown(function(key) {
+   if( key.keyCode == 13 ){
+      $('#nextBtn').trigger('click');
+   }
 });
 

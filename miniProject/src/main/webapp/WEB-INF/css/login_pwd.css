@@ -1,4 +1,4 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 #login {width:500px; margin:0 auto;}
 #header{
 	border:1px solid #aaa; width:100%; height:550px;
@@ -33,28 +33,23 @@
 	font-weight:500;
 	padding: 5px;
 }
-#login #login_pwd_form #passwordDiv{
-	padding-top: 1xp;
+#login #passwordDiv{
+	padding-top: 1px;
 	margin-top: 1px;
 	margin-left: 30px;
 }
-#login #login_pwd_form {margin-bottom:30px;}
-#login #login_pwd_form .bottom {
+#login .bottom {
 	display:flex; flex-flow:row nowrap;
 	justify-content:space-between;
 	align-items:center;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: 25px;
+	padding-right: 25px;
 	margin-top: 70px;
 }
-#login #login_pwd_form .bottom .search_password {
+#login .bottom .search_password {
+	cursor: pointer;
 	color:#1a73e8;
 	text-decoration: none;
-}
-#login footer {
-	margin-top:20px;
-	display:flex; flex-flow:row nowrap;
-	justify-content:space-between;
 }
 .outBox {margin-top:30px;
 		 margin-bottom:5px;
