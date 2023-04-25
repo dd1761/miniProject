@@ -75,7 +75,11 @@ $(function(){
                             </div>
                             <div id='box-right'>
                               <div class="subcribe">
-                                <img src="${data[0].is_subscribed ? '/miniProject/img/subscribed.png' : '/miniProject/img/subscribe.png'}" alt="subcribe">
+                              
+                                <button id="${data[0].is_subscribed ? 'dissubBtn' : 'subBtn'}">
+                                  ${data[0].is_subscribed ? '구독중' : '구독'}
+                                </button>
+
                               </div>
                             </div>
        

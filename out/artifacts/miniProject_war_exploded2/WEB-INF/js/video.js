@@ -54,8 +54,7 @@ $(function(){
                         ${video_description}
                         <div>
                             <a href=""><img src="/miniProject/image/like.png">${video_like_count}</a>
-                            <a href=""><img src="/miniProject/image/share.png">공유하기</a>
-                            <a href=""><img src="/miniProject/image/save.png">Save</a>
+                 
                         </div>
                     </div>
                     <hr>

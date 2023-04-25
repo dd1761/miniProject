@@ -45,6 +45,12 @@
 	<context:component-scan base-package="video.dao" />
 	<context:component-scan base-package="video.service" />
 	
+	<!-- subscribe -->
+	<context:component-scan base-package="subscribe.bean" />
+	<context:component-scan base-package="subscribe.dao" />
+	<context:component-scan base-package="subscribe.service" />
+	
+	
 	
 	<!-- 이메일 인증 관련 빈 등록 -->
    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
