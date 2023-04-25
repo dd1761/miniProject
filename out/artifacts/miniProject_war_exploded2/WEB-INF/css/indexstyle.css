@@ -41,7 +41,7 @@ nav {
    margin-right: 0;
 }
 
-.nav-right .loginNone #loginbtn{
+.nav-right #loginbtn{
 	padding-top: 10px;
 	width: 120px;
 }
@@ -557,9 +557,4 @@ transition: border-color 0.2s ease-in-out;
       margin-top: 15px;
    }
 }
-
-
-
-
-
 

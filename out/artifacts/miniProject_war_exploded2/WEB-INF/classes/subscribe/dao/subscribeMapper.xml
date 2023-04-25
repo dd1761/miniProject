@@ -10,5 +10,15 @@
 		INNER JOIN Subscription s ON s.channel_id = c.channel_id
 		WHERE s.user_id = #{user_id};
  	</select>
+
+	<update id ="subscribeOff" parameterType="int">
+
+
+	</update>
+
+	<update id ="subscribeOn" parameterType="int">
+
+
+	</update>
  		
  </mapper>

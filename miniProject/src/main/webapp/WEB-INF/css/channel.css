@@ -81,24 +81,24 @@
 	background-image: url('image/hoversubcribe.png');
 }
 
-.subcribe #subBtn{
-   background: red;
-   color: #fff;
-   padding: 8px 30px;
-   border: 0;
-   outline: 0;
-   border-radius: 4px;
-   cursor: pointer;
+.subcribe #subBtn {
+	background-color: red;
+	color: #fff;
+	padding: 8px 30px;
+	border: 0;
+	outline: 0;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
-.subcribe #dissubBtn{
-   background: "b2b2b2";
-   color: black;
-   padding: 8px 30px;
-   border: 0;
-   outline: 0;
-   border-radius: 4px;
-   cursor: pointer;
+.subcribe #dissubBtn {
+	background-color: #b2b2b2;
+	color: black;
+	padding: 8px 30px;
+	border: 0;
+	outline: 0;
+	border-radius: 4px;
+	cursor: pointer;
 }
 
 /* -navigation */

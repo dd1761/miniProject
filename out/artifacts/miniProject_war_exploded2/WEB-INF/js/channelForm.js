@@ -1,6 +1,16 @@
 $(function(){
     console.log("this is channel.js");
-    var user_id = 1;
+
+    /* 로그인 했을때*/
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    /* 로그인 이 안되어있을때 디폴트 유저아이디를 0 으로 했음*/
+    else {
+        var user_id = 0;
+    }
+
+
     var query_string = window.location.search;
 // 쿼리 스트링을 파싱하여 객체로 변환합니다.
     var query_params = new URLSearchParams(query_string);
@@ -75,8 +85,16 @@ $(function(){
                             </div>
                             <div id='box-right'>
                               <div class="subcribe">
-                                <img src="${data[0].is_subscribed ? '/miniProject/img/subscribed.png' : '/miniProject/img/subscribe.png'}" alt="subcribe">
+                                
+                                <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
+                                  ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
+                                </button>
+
                               </div>
+                            </div>
+                            <!--히든-->
+                            <div id="hiddenDiv" style="display: none;">
+                              <input type="hidden" name="channel_id" id="channel_id" value="${data[0].channel_id}">
                             </div>
        
                             `;
