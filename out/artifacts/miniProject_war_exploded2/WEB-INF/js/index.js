@@ -135,6 +135,8 @@ $(function(){
 	});
 });
 
+
+
 /* 구독 버튼 클릭*/
 $(document).on('click', '#subBtn', () => {
 	/* 로그인 했을때*/
@@ -183,3 +185,4 @@ $(document).on('click', '#dissubBtn', () => {
 		}
 	});
 });
+

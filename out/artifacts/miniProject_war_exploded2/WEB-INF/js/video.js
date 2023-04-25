@@ -53,8 +53,12 @@ $(function(){
                         <br>
                         ${video_description}
                         <div>
+
+                            <a href="" id="likeBtn"><img src="/miniProject/image/like.png">${video_like_count}</a>
+
                             <a href=""><img src="/miniProject/image/like.png">${video_like_count}</a>
                  
+
                         </div>
                     </div>
                     <hr>
@@ -151,4 +155,19 @@ $(function(){
         });
     }
 
+});
+
+
+$('#likeBtn').click(function(){
+	$.ajax({
+		type:'post',
+		url: '/miniProject/like/likePlus',
+		data: 'user_id=' + user_id + 'video_id=' + video_id,
+		success: function(data){
+			console.log(data);
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
 });
