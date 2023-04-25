@@ -10,80 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb6ef9e1-d860-457c-8238-50226988bad2" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/miniProject_war_exploded2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/artifacts/miniProject_war_exploded2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/miniProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/conf/SpringConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/conf/SpringConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/board/boardList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/board/boardList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/board/bean/BoardDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/board/bean/BoardDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/board/dao/BoardDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/board/dao/BoardDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/board/dao/BoardDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/board/dao/BoardDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/board/dao/boardMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/bean/ChannelDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/bean/ChannelDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/controller/ChannelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/dao/channelMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/service/ChannelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/channel/service/ChannelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/channel/service/ChannelServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comment/bean/CommentDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/bean/CommentDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/dao/CommentDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comment/dao/commentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comment/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/service/CommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/comment/service/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/comment/service/CommentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/community/service/CommunityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/community/service/CommunityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/community/service/CommunityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/community/service/CommunityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/bean/HistoryDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/bean/HistoryDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/controller/HistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/dao/historyMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/service/HistoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mail/service/MailSendService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mail/service/MailSendService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mail/service/MailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mail/service/MailService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/bean/MemberDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/bean/MemberDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/controller/MemberController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/dao/MemberDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/dao/MemberDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/dao/MemberDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/dao/MemberDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/dao/memberMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/service/MemberService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/member/service/MemberServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/member/service/MemberServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/conf/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/conf/SpringConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/bean/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/bean/UserDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/dao/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/dao/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/dao/UserDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/user/dao/UserDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/user/dao/userMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/bean/VideoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/controller/VideoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/controller/VideoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/VideoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/dao/VideoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/VideoDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/dao/VideoDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/userMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/dao/videoMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/service/VideoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/service/VideoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/video/service/VideoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/video/service/VideoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/m2e-wtp/web-resources/META-INF/maven/miniProject/miniProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +162,7 @@
       <updated>1682326515460</updated>
       <workItem from="1682326516477" duration="8000" />
       <workItem from="1682326847250" duration="627000" />
-      <workItem from="1682328207839" duration="735000" />
+      <workItem from="1682328207839" duration="1005000" />
     </task>
     <servers />
   </component>

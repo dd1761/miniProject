@@ -10,13 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="리소스 추가">
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/main/test.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/main/videoList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/videoList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/historyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/historyMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/web/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -80,7 +98,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDK",
+    "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.16015625",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
@@ -93,6 +111,7 @@
       <recent name="D:\miniProject\miniProject\src\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\channel" />
       <recent name="D:\miniProject\miniProject\src\main\resources" />
     </key>
   </component>
@@ -196,7 +215,8 @@
       <updated>1682325122767</updated>
       <workItem from="1682325123799" duration="1350000" />
       <workItem from="1682326830835" duration="1328000" />
-      <workItem from="1682328614994" duration="539000" />
+      <workItem from="1682328614994" duration="759000" />
+      <workItem from="1682382465507" duration="816000" />
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -212,7 +232,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682329137377</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="리소스 추가">
+      <created>1682329161482</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682329161482</updated>
+    </task>
+    <task id="LOCAL-00004" summary="리소스 추가">
+      <created>1682329325413</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682329325413</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

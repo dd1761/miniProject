@@ -53,7 +53,7 @@
 				
 			<div class="videoList">
 				<c:if test="${empty display2}">
-	    			<jsp:include page="../main/videoList.jsp" />
+	    			<jsp:include page="videoList.jsp" />
 	  			</c:if>
 	  			<c:if test="${not empty display2}">
 	    			<jsp:include page="${display2 }" />
