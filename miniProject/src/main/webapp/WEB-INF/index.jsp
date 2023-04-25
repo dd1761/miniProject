@@ -21,7 +21,7 @@
 			<input type="text" placeholder="검색" id="searchVideo">
 			<img alt="검색" src="/miniProject/image/search.png" id="searchbtn">
 		</div><!-- search-box flex-div -->
-		<input type="text" name="user_id" id="user_id" value="${user_id }" style="display:none">
+		<input type="text" name="user_id" id="user_id" value="${user_id }" >
 	</div><!-- nav-middel flex-div -->
 	
 	<div class="nav-right flex-div">
