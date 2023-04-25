@@ -18,7 +18,7 @@ public class SubscribeController {
 
 	@Autowired
 	SubscribeService subscribeService;
-	
+
 	@PostMapping(value="subscribelist")
 	@ResponseBody
 	public List<SubscribeDTO> subscribelist(@RequestParam int user_id){
@@ -26,14 +26,16 @@ public class SubscribeController {
 	}
 
 	@PostMapping(value="subscribeOn")
-	public void subscribeOn(@RequestParam int user_id){
-
+	public void subscribeOn(@RequestParam int user_id,@RequestParam int channel_id){
+		System.out.println("userid : "+user_id);
+		System.out.println("channelid : "+channel_id);
 		subscribeService.subscribeOn(user_id);
 	}
+
 	@PostMapping(value="subscribeOff")
 	public void subscribeOff(@RequestParam int user_id){
 
 		subscribeService.subscribeOff(user_id);
 	}
-	
+
 }
