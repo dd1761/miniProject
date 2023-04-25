@@ -32,7 +32,14 @@
 					</div>
 					<div id='box-right'>
 						<div class="subcribe">
-							<img src="/miniProject/img/subcribe.png" alt="subcribe">
+							<!-- 로그인이 안되어있으면 구독버튼이 나타나지 않는다. -->
+							<!-- 구독이 되어있다면 구독중버튼이 나오고 구독이 안되어있다면 구독버튼이 나온다. -->
+							<c:if test="${not empty user_id && channel_id != data.channel_id}">
+								<button type="button" id="subBtn">구독</button>
+							</c:if>
+							<c:if test="${ not empty user_id && channel_id == data.channel_id}">
+							  	<button type="button" id="dissubBtn">구독중</button>
+							</c:if>
 						</div>
 					</div>
 				</div>
@@ -69,13 +76,4 @@
 	</footer>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="text/javascript">
-/* $('.co').click(function(){
-		
-		alert($(this).text());
-		if($(this).text() == '커뮤니티') {
-			alert('123');
-			$('.videoList').load('test.jsp');
-		}
-	}); */
-</script>
+<script type="text/javascript" src="/miniProject/js/channel.js"></script>
