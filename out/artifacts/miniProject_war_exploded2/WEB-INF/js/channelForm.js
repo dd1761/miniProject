@@ -1,6 +1,6 @@
 $(function(){
     console.log("this is channel.js");
-    var user_id = 1;
+    var user_id =  $('#user_id').val();
     var query_string = window.location.search;
 // 쿼리 스트링을 파싱하여 객체로 변환합니다.
     var query_params = new URLSearchParams(query_string);
@@ -75,9 +75,9 @@ $(function(){
                             </div>
                             <div id='box-right'>
                               <div class="subcribe">
-                              
-                                <button id="${data[0].is_subscribed ? 'dissubBtn' : 'subBtn'}">
-                                  ${data[0].is_subscribed ? '구독중' : '구독'}
+                                
+                                <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
+                                  ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
                                 </button>
 
                               </div>

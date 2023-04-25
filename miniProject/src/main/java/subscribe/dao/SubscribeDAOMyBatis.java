@@ -22,4 +22,14 @@ public class SubscribeDAOMyBatis implements SubscribeDAO {
 		return sqlSession.selectList("subscribeSQL.subscribelist", user_id);
 	}
 
+	@Override
+	public void subscribeOff(int userId) {
+		sqlSession.update("subscribeSQL.subscribeOff", userId);
+	}
+
+	@Override
+	public void subscribeOn(int userId) {
+		sqlSession.update("subscribeSQL.subscribeOn", userId);
+	}
+
 }

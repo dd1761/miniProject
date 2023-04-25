@@ -22,8 +22,18 @@ public class SubscribeController {
 	@PostMapping(value="subscribelist")
 	@ResponseBody
 	public List<SubscribeDTO> subscribelist(@RequestParam int user_id){
-		
 		return subscribeService.subscribelist(user_id);
+	}
+
+	@PostMapping(value="subscribeOn")
+	public void subscribeOn(@RequestParam int user_id){
+
+		subscribeService.subscribeOn(user_id);
+	}
+	@PostMapping(value="subscribeOff")
+	public void subscribeOff(@RequestParam int user_id){
+
+		subscribeService.subscribeOff(user_id);
 	}
 	
 }

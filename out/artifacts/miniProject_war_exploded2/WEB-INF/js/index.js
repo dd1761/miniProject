@@ -135,38 +135,38 @@ $(function(){
 	});
 });
 
-/*구독버튼 클릭*/
+/* 구독 버튼 클릭*/
+$(document).on('click', '#subBtn', () => {
+	console.log("구독 ON");
 
-$(document).on('click', '#subBtn', function() {
-	$('#subBtn').click(function() {
-		console.log("구독 ON")
-		$.ajax({
-			url: '/miniProject/subscribe/subscribeOn',
-			type: 'POST',
-			data: 'user_id=' + $('#user_id').val(),
-			success: function(response) {
-				console.log(response);
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				console.log(textStatus, errorThrown);
-			}
-		});
+	console.log($('#user_id').val());
+	$.ajax({
+		url: '/miniProject/subscribe/subscribeOn',
+		type: 'POST',
+		data: 'user_id=' + $('#user_id').val(),
+		success: (response) => {
+			console.log(response);
+			$('#subBtn').removeClass('subBtn').addClass('dissubBtn').text('구독취소');
+		},
+		error: (jqXHR, textStatus, errorThrown) => {
+			console.log(textStatus, errorThrown);
+		}
 	});
 });
 
-$(document).on('click', '#subBtn', function() {
-	$('#dissubBtn').click(function() {
-		console.log("구독 Off")
-		$.ajax({
-			url: '/miniProject/subscribe/subscribeOff',
-			type: 'POST',
-			data: 'user_id=' + $('#user_id').val(),
-			success: function(response) {
-				console.log(response);
-			},
-			error: function(jqXHR, textStatus, errorThrown) {
-				console.log(textStatus, errorThrown);
-			}
-		});
+/* 구독 취소 */
+$(document).on('click', '#dissubBtn', () => {
+	console.log("구독 Off");
+	$.ajax({
+		url: '/miniProject/subscribe/subscribeOff',
+		type: 'POST',
+		data: 'user_id=' + $('#user_id').val(),
+		success: (response) => {
+			console.log(response);
+			$('#dissubBtn').removeClass('dissubBtn').addClass('subBtn').text('구독');
+		},
+		error: (jqXHR, textStatus, errorThrown) => {
+			console.log(textStatus, errorThrown);
+		}
 	});
 });
