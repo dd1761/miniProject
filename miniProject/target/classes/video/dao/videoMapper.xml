@@ -48,4 +48,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from Video
 	</select>
 
+	<update id="addVideoView" parameterType="int">
+		UPDATE Video
+		SET views = views + 1
+		WHERE video_id = #{video_id}
+	</update>
 </mapper>

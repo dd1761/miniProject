@@ -27,19 +27,20 @@ public class SubscribeController {
 	}
 
 	@PostMapping(value="subscribeOn")
-	public ResponseEntity<String> subscribeOn(@RequestParam int user_id, @RequestParam int channel_id){
+	@ResponseBody
+	public void subscribeOn(@RequestParam int user_id, @RequestParam int channel_id){
 		System.out.println("userid : "+user_id);
 		System.out.println("channelid : "+channel_id);
 		subscribeService.subscribeOn(user_id,channel_id);
-		return ResponseEntity.ok("Subscription successful");
 	}
 
 
 	@PostMapping(value="subscribeOff")
-	public ResponseEntity<String> subscribeOff(@RequestParam int user_id, @RequestParam int channel_id){
+	@ResponseBody
+	public void subscribeOff(@RequestParam int user_id, @RequestParam int channel_id){
 		System.out.println("userid : "+user_id);
 		System.out.println("channelid : "+channel_id);
 		subscribeService.subscribeOff(user_id,channel_id);
-		return ResponseEntity.ok("Desubscription successful");
+
 	}
 }

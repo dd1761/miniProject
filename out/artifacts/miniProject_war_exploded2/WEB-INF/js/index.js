@@ -157,12 +157,13 @@ $(document).on('click', '#subBtn', () => {
 	$.ajax({
 		url: '/miniProject/subscribe/subscribeOn',
 		type: 'POST',
-		dataType: 'json',
+
 		data: { user_id: user_id, channel_id: channel_id },
 		success: () => {
-			$('#subBtn').removeClass('subBtn').addClass('dissubBtn').text('구독취소');
+
+			$('#subBtn').prop('id', 'dissubBtn').removeClass('subBtn').text('구독중');
 			/*리로드 작동 안함 */
-			location.reload();
+			/*location.href = "/miniProject/channel/main?channel_id="+channel_id;*/
 		},
 		error: function(err){
 			console.log(err);
@@ -180,13 +181,13 @@ $(document).on('click', '#dissubBtn', () => {
 	$.ajax({
 		url: '/miniProject/subscribe/subscribeOff',
 		type: 'POST',
-		dataType: 'json',
 		data: { user_id: user_id, channel_id: channel_id },
-		success: (response) => {
-			console.log(response);
-			$('#dissubBtn').removeClass('dissubBtn').addClass('subBtn').text('구독');
+		success: () => {
+
+			$('#dissubBtn').prop('id', 'subBtn').removeClass('dissubBtn').text('구독');
+
 			/*리로드 작동 안함 */
-			location.reload();
+			/*location.href = "/miniProject/channel/main?channel_id="+channel_id;*/
 		},
 		error: function(err){
 			console.log(err);
