@@ -41,7 +41,6 @@
 			<img src="/miniProject/image/dongbeen.jpg" id="user-icon" class="user-icon">
 
 			
- 			<img id="user-icon" src="/miniProject/image/dongbeen.jpg" class="user-icon"> 
 			
 			<div class="menu-container" id="menu-container">
 				<ul class="menu">
