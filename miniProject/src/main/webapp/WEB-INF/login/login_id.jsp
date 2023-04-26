@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>로그인_id</title>
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/design_id.css">
+<link rel="stylesheet" href="/miniProject/css/reset.css">
+<link rel="stylesheet" href="/miniProject/css/design_id.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body>
 	<div id="login">
 		<div id="header">
-		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+		<h1><img src="/miniProject/img/logo2.png" alt="youtube"></h1>
 		<h1>로그인</h1>
 		<h2>YouTube로 이동</h2>
 		<form action="#" method="post" id="login_id_form">
@@ -41,6 +41,6 @@
 			</select>
 		</footer>
 	</div>
-<script src="../js/box.js"></script>	
+<script src="/miniProject/js/box.js"></script>	
 </body>
 </html>

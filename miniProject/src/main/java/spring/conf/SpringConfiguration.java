@@ -12,93 +12,93 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Configuration //환경설정 파일 - xml과 같은 취급을 받는 환경설정 파일이다.
-@PropertySource("classpath:spring/db.properties")	//클래스 파일의 경로
-@EnableTransactionManagement // <tx:annotation-driven transaction-manager="transactionManager" /> 와 같은 문장
+//SpringConfiguration은 일반 java파일이 아니다
+//applicationContext.xml와 같은 환경설정 파일이다.
+@Configuration
+@PropertySource("classpath:/db.properties")
+@EnableTransactionManagement
 public class SpringConfiguration {
-	@Value("${jdbc.driver}") //롬복 아님!! 아래만 아니면 어디다가 정의하던 상관없음.
-	private String driver;
 	
+	private @Value("${jdbc.driver}") String driver;
 	
 	private @Value("${jdbc.url}") String url;
 	
-	@Value("${jdbc.username}")
-	private String username;
+	private @Value("${jdbc.username}") String username;
 	
-	@Value("${jdbc.password}")
-	private String password;
-	
-	
-	
+	private @Value("${jdbc.password}") String password;
 	
 	@Bean
 	public BasicDataSource dataSource(){
 		BasicDataSource basicDataSource = new BasicDataSource();
 		
-		//basicDataSource.setDriverClassName("oralce.jdbc.driver.ORacleDriver");
-		// 이렇게 사용해도 된다.
+//		basicDataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+//		basicDataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
+//		basicDataSource.setUsername("c##java");
+//		basicDataSource.setPassword("1234");
 		
 		basicDataSource.setDriverClassName(driver);
 		basicDataSource.setUrl(url);
 		basicDataSource.setUsername(username);
 		basicDataSource.setPassword(password);
-		
 		return basicDataSource;
 	}
 	
 	@Bean
-	public SqlSessionFactory sqlSessionFactory() throws Exception{
-		
-		SqlSessionFactoryBean sqlSessionFacotryBean = new SqlSessionFactoryBean();
-		
-		sqlSessionFacotryBean.setDataSource(dataSource());
-		sqlSessionFacotryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		//setConfigLocation()함수는 resource를 넣어주어야 하기 때문에 ClassPathResource를 사용
-		sqlSessionFacotryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"));
-		//ClassPathResource()함수는 한개의 경로밖에 넣어주지 못한다.
-		
-		return sqlSessionFacotryBean.getObject();
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+		sqlSessionFactoryBean.setDataSource(dataSource());
+		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("mybatis-config.xml"));
+
+		sqlSessionFactoryBean.setMapperLocations(
+				new ClassPathResource("history/dao/historyMapper.xml"),
+				new ClassPathResource("member/dao/memberMapper.xml"),
+				new ClassPathResource("board/dao/boardMapper.xml"),
+				new ClassPathResource("video/dao/videoMapper.xml"),
+				new ClassPathResource("channel/dao/channelMapper.xml"),
+				new ClassPathResource("subscribe/dao/subscribeMapper.xml")
+		);
+
+/*
+		sqlSessionFactoryBean.setMapperLocations(
+				new Resource[]{
+						new ClassPathResource("user/dao/userMapper.xml"),
+						new ClassPathResource("history/dao/channelMapper.xml")
+				}
+		);
+*/
+
+
+
+
+		return sqlSessionFactoryBean.getObject();
 	}
 	
 	@Bean
-	public SqlSessionTemplate sqlSession() throws Exception{
-		
+	public SqlSessionTemplate sqlSession() throws Exception {
 		SqlSessionTemplate sqlSessionTemplate = new SqlSessionTemplate(sqlSessionFactory());
-		
-		
 		return sqlSessionTemplate;
 	}
 	
 	@Bean
-	public DataSourceTransactionManager transactionManager(){
-		return new DataSourceTransactionManager(dataSource());
-		
+	public DataSourceTransactionManager transactionManager() {
+		return  new DataSourceTransactionManager(dataSource());
 	}
-	
 }
 
-//SpringConfiguration은 일반 자바 파일이 아니다
-//applicationContext.xml과 같은 취급을 받는 환경설정 파일이다.
-
 /*
+만약에 mapper.xml이 여러개일 경우
 
 1.
-만약에 mapper.xml이 여러개일 경우
-sqlSessionFacotryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"),
+sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"),
 										 new ClassPathResource("member/dao/memberMapper.xml"),
 										 new ClassPathResource("board/dao/boardMapper.xml"),
-										 ...
-);
-
-
+										 ...);
 2.
-필드
+필드	
 @Autowired
 private ApplicationContext context;
+*/
 
- */
-//sqlSessionFacotryBean.setMapperLocations(context.getResources("classpath:*/dao/*Mapper.xml"));
-
-
+//sqlSessionFactoryBean.setMapperLocations(context.getResources("classpath:*/dao/*Mapper.xml"));
 
 

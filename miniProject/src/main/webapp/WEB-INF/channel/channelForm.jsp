@@ -1,12 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="/miniProject/css/channel.css">
 
+
+	<style>
+
+		#box-right .subcribe #subBtn1 {
+			background-color: red;
+			color: #fff;
+			padding: 8px 30px;
+			border: 0;
+			outline: 0;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		#box-right .subcribe #dissubBtn1 {
+			background-color: #b2b2b2;
+			color: black;
+			padding: 8px 30px;
+			border: 0;
+			outline: 0;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+
+	</style>
+	<link rel="stylesheet" href="/miniProject/css/channel.css">
 	<header>
+
 		<div class="channel-info">
 			<div class="channel-logo">
-				<img src="/miniProject/img/ytnheader.png" alt="Logo">
+				<%--채널의 썸네일 동적처리 --%>
+				<%--<img src="/miniProject/img/ytnheader.png" alt="Logo">--%>
 			</div>
 		</div>
 
@@ -16,7 +43,7 @@
 		<div id='middle'>
 			<div id='middle-left'></div>
 			<div id='middle-right'>
-				<div id='container'>
+				<%--<div id='container'>
 					<div id='box-left'>
 						<div class="channel-profile">
 							<img src="/miniProject/img/ytnprofile2.png" alt="Profile Picture">
@@ -33,13 +60,25 @@
 					</div>
 					<div id='box-right'>
 						<div class="subcribe">
-							<img src="/miniProject/img/subcribe.png" alt="subcribe">
+							<!-- 로그인이 안되어있으면 구독버튼이 나타나지 않는다. -->
+							<!-- 구독이 되어있다면 구독중버튼이 나오고 구독이 안되어있다면 구독버튼이 나온다. -->
+							<c:if test="${not empty user_id && channel_id != data.channel_id}">
+								<button type="button" id="subBtn">구독</button>
+							</c:if>
+							<c:if test="${ not empty user_id && channel_id == data.channel_id}">
+							  	<button type="button" id="dissubBtn">구독중</button>
+							</c:if>
 						</div>
 					</div>
+				</div>--%>
+
+				<%--컨테이너 시작 --%>
+				<div id='container'>
+						<%--동적 생성--%>
 				</div>
+				<%--컨테이너는 끝--%>
 
-
-				<nav>
+				<div>
 					<div class="navigation">
 						<a href="#" class="current-page">홈</a> <a href="#">동영상</a> <a
 							href="#" class="co">재생목록</a><a href="/miniProject/user/boardList" class="co">커뮤니티</a> <a href="">채널</a> <a
@@ -50,11 +89,11 @@
 								class="search-icon">
 						</div>
 					</div>
-				</nav>
+				</div>
 				
 			<div class="videoList">
 				<c:if test="${empty display2}">
-	    			<jsp:include page="../main/videoList.jsp" />
+	    			<jsp:include page="videoList.jsp" />
 	  			</c:if>
 	  			<c:if test="${not empty display2}">
 	    			<jsp:include page="${display2 }" />
@@ -70,13 +109,4 @@
 	</footer>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="text/javascript">
-/* $('.co').click(function(){
-		
-		alert($(this).text());
-		if($(this).text() == '커뮤니티') {
-			alert('123');
-			$('.videoList').load('test.jsp');
-		}
-	}); */
-</script>
+<script type="text/javascript" src="/miniProject/js/channel.js"></script>

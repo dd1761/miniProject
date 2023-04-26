@@ -1,32 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>video play</title>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
-</head>
-<body>
-<nav class="flex-div">
-		<div class="nav-left flex-div">
-			<img alt="메뉴 "src="/miniProject/image/menu.png" class="menu-icon">
-			<img alt="로고" src="/miniProject/image/logo1.png" id="logo" class="logo">
-		</div>
-		<div class="nav-middle flex-div">
-			<div class="search-box flex-div">
-				<input type="text" placeholder="검색">
-				<img alt="검색" src="/miniProject/image/search.png">
-			</div>
-			<img src="/miniProject/image/voice-search.png" class="mic-icon">
-		</div>
-		<div class="nav-right flex-div">
-			<img src="/miniProject/image/upload.png">
-			<img src="/miniProject/image/more.png">
-			<img src="/miniProject/image/notification.png">
-			<img src="/miniProject/image/dongbeen.jpg" class="user-icon">
-		</div>
-	</nav>
 
 	<div class="container play-container">
 		<div class="row">
@@ -65,12 +39,32 @@
 					<p>채널 설명란입니다.</p>
 					<p>이곳은 뭘까요?</p>
 					<hr>
+
+
 					<h4>댓글 수 넣는 곳</h4>
 					
-					<div class="add-comment">
-						<img src="/miniProject/image/kwonyongjun.png">
-						<input type="text" placeholder="댓글 추가...">
-					</div>
+					<div id="comment">
+                  <div id="img">
+                     <img src="/miniProject/image/kwonyongjun.png">
+                  </div>
+                  <div id="addcomment">
+                     <div id="up">
+                        <input type="text" placeholder="댓글 추가..."
+                           onclick="showButtons()">
+                     </div>
+                     <div id="down">
+                        <div id="down-left"></div>
+                        <div id="down-center"></div>
+                        <div id="down-right">
+                           <div id="commentBtn">
+                              <button id="cancel" onclick="hideButtons()">취소</button>
+                              <button id="uploadcomment">댓글</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
 					
 					<div class="old-comment">
 						<img src="/miniProject/image/Jack.png">
@@ -189,7 +183,3 @@
 			</div>
 		</div>
 	</div>
-
-
-</body>
-</html>

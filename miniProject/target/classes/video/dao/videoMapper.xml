@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="videoSQL">
+
+	<!--비디오 -->
+	<select id="getVideoById" parameterType="java.util.Map" resultType="video.bean.VideoDTO">
+<!--		SELECT Video.*,
+		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
+		Comment.comment_text, Comment.upload_date AS comment_date,
+		(SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
+		Channel.channel_name,
+		(SELECT COUNT(*) FROM Subscription WHERE channel_id = Channel.channel_id) AS subscriber_count,
+		CASE WHEN EXISTS (SELECT * FROM Subscription WHERE user_id = #{user_id} AND channel_id = Channel.channel_id) THEN 1 ELSE 0 END AS is_subscribed,
+		User.name as commenter_name, User.profile_url
+		FROM Video
+		LEFT JOIN Comment ON Video.video_id = Comment.video_id
+		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
+		LEFT JOIN User ON Comment.user_id = User.user_id
+		WHERE Video.video_id = #{video_id};-->
+
+		SELECT Video.*,
+		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
+		Comment.comment_text, Comment.upload_date AS comment_date,
+		(SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
+		Channel.channel_name,
+		(SELECT COUNT(*) FROM Subscription WHERE channel_id = Channel.channel_id) AS subscriber_count,
+		CASE WHEN EXISTS (SELECT * FROM Subscription WHERE user_id = #{user_id} AND channel_id = Channel.channel_id) THEN 1 ELSE 0 END AS is_subscribed,
+		(SELECT name FROM User WHERE user_id = #{user_id}) AS user_name,(SELECT profile_url FROM User WHERE user_id = #{user_id}) AS user_profile_url,
+		User.name AS commenter_name, User.profile_url
+		FROM Video
+		LEFT JOIN Comment ON Video.video_id = Comment.video_id
+		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
+		LEFT JOIN User ON Comment.user_id = User.user_id
+		WHERE Video.video_id = #{video_id}
+
+	</select>
+	
+	<select id="searchVideo" parameterType="java.util.Map" resultType="video.bean.VideoDTO">
+		SELECT *
+    FROM Video
+    INNER JOIN Channel ON Video.channel_id = Channel.channel_id
+    WHERE Video.video_title LIKE '%${video_title}%' OR Channel.channel_name LIKE '%${video_title}%'
+	</select>
+	
+	<select id="mainContainerVideo" resultType="video.bean.VideoDTO">
+		select * from Video
+	</select>
+
+</mapper>
