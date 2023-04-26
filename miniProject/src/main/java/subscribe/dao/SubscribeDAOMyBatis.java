@@ -25,10 +25,16 @@ public class SubscribeDAOMyBatis implements SubscribeDAO {
 	}
 
 	@Override
-	public void subscribeOff(int userId) {
-		sqlSession.update("subscribeSQL.subscribeOff", userId);
-	}
+	public void subscribeOff(int userId,int channelId){
 
+		int user_id = userId;
+		int channel_id = channelId;
+		Map<String, Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("channel_id", channel_id);
+
+		sqlSession.delete("subscribeSQL.subscribeOff", map);
+	}
 	@Override
 	public void subscribeOn(int userId,int channelId){
 
