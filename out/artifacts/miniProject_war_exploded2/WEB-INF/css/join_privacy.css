@@ -1,0 +1,80 @@
+@charset "UTF-8";
+#join {width:500px; margin:0 auto;}
+#header{
+	border:1px solid #aaa; width:100%; height:550px;
+	padding:15px 30px;
+	border-radius:5px; 
+	margin-bottom:20px;
+	margin-top: 150px
+}
+#join h1, #join h2 {text-align:center;}
+#join h1 {margin-top:20px;}
+#join h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}
+#join h1 img {width:120px; height: 35px}
+#join h2 {margin-top:20px; margin-bottom:50px;  font-size:22px; font-weight:500;}
+#join #join_privacy_form ul li{margin-bottom:5px;}
+#join #join_privacy_form ul li input[name=year] {
+	border:1px solid #aaa;
+	border-radius: 4px;
+    color: #202124;
+    font-size: 17px;
+    height: 55px;
+    width: 110px;
+    margin-bottom:10px;
+    margin-right:8px;
+    padding: 13px 15px;
+    z-index: 1;
+}
+#join #join_privacy_form ul li select[name=month] {
+	border:1px solid #aaa;
+	border-radius: 4px;
+    color: #202124;
+    font-size: 17px;
+    height: 55px;
+    width: 110px;
+    margin-bottom:10px;
+    margin-right:8px;
+    padding: 13px 15px;
+    z-index: 1;
+}
+#join #join_privacy_form ul li input[name=date] {
+	border:1px solid #aaa;
+	border-radius: 4px;
+    color: #202124;
+    font-size: 17px;
+    height: 55px;
+    width: 110px;
+    margin-bottom:10px;
+    padding: 13px 15px;
+    z-index: 1;
+}
+#join #join_privacy_form ul li select[name=gender] {
+	border:1px solid #aaa; width:30%; height: 55px;
+	padding:15px 10px;
+	border-radius:5px; 
+	margin-right: 10px;
+	margin-bottom:10px;
+	margin-top:1px;
+	z-index: 1;
+}
+#join #join_privacy_form ul li input[name=phone] {
+	border:1px solid #aaa; width:62%; height: 55px;
+	padding:15px 10px;
+	border-radius:5px; 
+	margin-right: 10px;
+	margin-bottom:10px;
+	margin-top:1px;
+	z-index: 1;
+}
+#join #join_privacy_form ul li:nth-child(2) {margin-bottom:20px;}
+#join #join_privacy_form ul li {
+	line-height:1.3;
+	padding-right: 35px;
+}
+#join #join_privacy_form .bottom {
+	display:flex; flex-flow:row nowrap;
+	justify-content:space-between;
+	align-items:center;
+	padding-left: 320px;
+	margin-top: 10px;
+}

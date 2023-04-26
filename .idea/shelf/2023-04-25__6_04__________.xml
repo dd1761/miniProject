@@ -1,0 +1,124 @@
+<changelist name="2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]" date="1682413496252" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" />
+  <option name="DESCRIPTION" value="2023-04-25 오후 6:04, 업데이트 전에 커밋되지 않은 변경 내용 [변경]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/bean/ChannelDTO.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/bean/ChannelDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/controller/MemberController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/controller/MemberController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/dao/MemberDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/dao/MemberDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/dao/MemberDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/dao/MemberDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDAO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/service/MemberService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/service/MemberService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SpringConfiguration.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/member/service/MemberServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/member/service/MemberServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/subscribe/controller/SubscribeController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/subscribe/controller/SubscribeController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SubscribeController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/ChannelDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/service/MemberService.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/service/MemberService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberService1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/like/controller/LikeController.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/like/controller/LikeController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/LikeController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/MemberDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/MemberDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDAOMyBatis1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/subscribe/service/SubscribeService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/subscribe/service/SubscribeService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SubscribeService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/controller/MemberController.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/controller/MemberController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberController1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/service/MemberServiceImpl.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/service/MemberServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberServiceImpl1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/like/bean/LikeDTO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/like/bean/LikeDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/LikeDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/subscribe/dao/SubscribeDAOMyBatis.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/subscribe/dao/SubscribeDAOMyBatis.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SubscribeDAOMyBatis.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/mail/service/MailService.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/mail/service/MailService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MailService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/subscribe/service/SubscribeServiceImpl.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/subscribe/service/SubscribeServiceImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SubscribeServiceImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/MemberDAO.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/MemberDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MemberDAO1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/VideoDTO.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/mail/service/MailSendService.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/mail/service/MailSendService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MailSendService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/mail/service/MailSendService.class" />
+    <option name="AFTER_PATH" value="out/artifacts/miniProject_war_exploded2/WEB-INF/classes/mail/service/MailSendService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/MailSendService1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="miniProject/target/classes/subscribe/dao/SubscribeDAO.class" />
+    <option name="AFTER_PATH" value="miniProject/target/classes/subscribe/dao/SubscribeDAO.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/2023-04-25_오후_6_04,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/SubscribeDAO.class" />
+  </binary>
+</changelist>

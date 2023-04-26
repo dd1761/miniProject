@@ -1,0 +1,1818 @@
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=EUC-KR\"\r\n    pageEncoding=\"EUC-KR\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"EUC-KR\">\r\n<title>Join_Email</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/join_email.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n\t<div id=\"join\">\r\n\t\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1>���� �̸��� ���</h1>\r\n\t\t<h2>YouTube ������ ����� �̸��� �ּҸ� �Է��ϼ���</h2>\r\n\t\t<form action=\"#\" method=\"post\" id=\"join_email_form\">\r\n\t\t\t\t<div class=\"outBox\">\r\n\t\t\t\t    <div class=\"inputBox\">\r\n\t\t\t\t        <input type=\"text\" id=\"email\" name=\"email\">\r\n\t\t\t\t        <label for=\"email\">�̸��� �ּ�</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div id=\"emailDiv\"></div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"aaa\" style=\"font-size:14px; margin-left:20px; \">�� �̸����� ���� �������� Ȯ���ؾ� �մϴ�.</div>\r\n\t\t\t\r\n\t\t\t\t<div class=\"bottom\">\r\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"nextBtn\" style=\"width: 100px\">�����ڵ� ������</button>\r\n\t\t\t\t</div>\r\n\t\t</form>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">�ѱ���</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\t\r\n<script src=\"../js/box1.js\"></script>\t\r\n<script src=\"../js/join_email.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email.jsp	(date 1682413257184)
+@@ -1,45 +1,48 @@
+-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+-    pageEncoding="EUC-KR"%>
++<%@ page language="java" contentType="text/html; charset=UTF-8"
++    pageEncoding="UTF-8"%>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="EUC-KR">
+-<title>Join_Email</title>
+-<link rel="stylesheet" href="../css/reset.css">
+-<link rel="stylesheet" href="../css/join_email.css">
++<title>Join_Email_2</title>
++<link rel="stylesheet" href="/miniProject/css/reset.css">
++<link rel="stylesheet" href="/miniProject/css/join_email.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+ </head>
+ <body>
+ 	<div id="join">
+ 		<div id="header">
+-		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+-		<h1>���� �̸��� ���</h1>
+-		<h2>YouTube ������ ����� �̸��� �ּҸ� �Է��ϼ���</h2>
+-		<form action="#" method="post" id="join_email_form">
++			<h1><img src="/miniProject/img/logo2.png" alt="youtube"></h1>
++			<h1>기존 이메일 사용</h1>
++			<h2>YouTube 계정에 사용할 이메일 주소를 입력하세요</h2>
++			<form action="/miniProject/member/join_email2" method="post" id="join_email_form">
+ 				<div class="outBox">
+ 				    <div class="inputBox">
+-				        <input type="text" id="email" name="email">
+-				        <label for="email">�̸��� �ּ�</label>
++				        <input type="email" id="email" name="email" value="">
++				        <label for="email">이메일 주소</label>
+ 				    </div>
+ 				</div>
+-				<div id="emailDiv"></div>
++				<div id="emailDiv" class="result-email result-check"></div>
+ 				
+-				<div class="aaa" style="font-size:14px; margin-left:20px; ">�� �̸����� ���� �������� Ȯ���ؾ� �մϴ�.</div>
++				<div class="aaa" style="font-size:14px; margin-left:20px; ">이 이메일이 본인 소유인지 확인해야 합니다.</div>
+ 			
+ 				<div class="bottom">
+-					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 100px">�����ڵ� ������</button>
++					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 100px">인증코드 보내기</button>
+ 				</div>
+-		</form>
++				
++				<input type="hidden" name="last_name" value="${map.last_name }"> 
++				<input type="hidden" name="first_name" value="${map.first_name }"> 
++			</form>
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">�ѱ���</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+ 	</div>
++	
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>	
+-<script src="../js/box1.js"></script>	
+-<script src="../js/join_email.js"></script>
++<script src="/miniProject/js/box1.js"></script>	
++<script src="/miniProject/js/join_email.js"></script>
++<script>
++$(function(){
++	$('#email').focus();
++});
++</script>
+ </body>
+ </html>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n<link rel=\"stylesheet\" href=\"/miniProject/css/indexstyle.css\">\r\n<link rel=\"stylesheet\" href=\"/miniProject/css/indexstyle.css\">\r\n\r\n\t<div class=\"container play-container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<div id=\"play-video\">\r\n\t\t\t\t<%--비디오 동적 생성--%>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"container play-container\">\r\n\t\t<div class=\"row\">\r\n\t\t\t<%--<div class=\"play-video\">\r\n\t\t\t\t<video controls autoplay>\r\n\t\t\t\t\t<source src=\"/miniProject/image/video.mp4\" type=\"video/mp4\">\r\n\t\t\t\t</video>\r\n\r\n\t\t\t\t<h3>비트캠프의 NC3기 Baboob팀</h3>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"play-video-info\">\r\n\t\t\t\t\t<p>1225만 &bull; 2일전</p>\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<a href=\"\"><img src=\"/miniProject/image/like.png\">1000</a>\r\n\t\t\t\t\t\t<a href=\"\"><img src=\"/miniProject/image/dislike.png\">2</a>\r\n\t\t\t\t\t\t<a href=\"\"><img src=\"/miniProject/image/share.png\">공유하기</a>\r\n\t\t\t\t\t\t<a href=\"\"><img src=\"/miniProject/image/save.png\">Save</a>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t<hr>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"plublisher\">\r\n\t\t\t\t\t<img src=\"/miniProject/image/Jack.png\">\r\n\t\t\t\t\t<div>\r\n\t\t\t\t\t\t<p>싱생송성근</p>\r\n\t\t\t\t\t\t<span>구독자 50만명</span>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<button type=\"button\">구독</button>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"video-description\">\r\n\t\t\t\t\t<p>채널 설명란입니다.</p>\r\n\t\t\t\t\t<p>이곳은 뭘까요?</p>\r\n\t\t\t\t\t<hr>\r\n\r\n\r\n\t\t\t\t\t<h4>댓글 수 넣는 곳</h4>\r\n\r\n\t\t\t\t\t<div id=\"comment\">\r\n                  <div id=\"img\">\r\n                     <img src=\"/miniProject/image/kwonyongjun.png\">\r\n                  </div>\r\n                  <div id=\"addcomment\">\r\n                     <div id=\"up\">\r\n                        <input type=\"text\" placeholder=\"댓글 추가...\"\r\n                           onclick=\"showButtons()\">\r\n                     </div>\r\n                     <div id=\"down\">\r\n                        <div id=\"down-left\"></div>\r\n                        <div id=\"down-center\"></div>\r\n                        <div id=\"down-right\">\r\n                           <div id=\"commentBtn\">\r\n                              <button id=\"cancel\" onclick=\"hideButtons()\">취소</button>\r\n                              <button id=\"uploadcomment\">댓글</button>\r\n                           </div>\r\n                        </div>\r\n                     </div>\r\n                  </div>\r\n               </div>\r\n\r\n\r\n\t\t\t\t\t<div class=\"old-comment\">\r\n\t\t\t\t\t\t<img src=\"/miniProject/image/Jack.png\">\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<h3>송성근 <span>2일전</span></h3>\r\n\t\t\t\t\t\t\t<p>내이름은 송성근 비트캠프 학생이죠!</p>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div class=\"acomment-action\">\r\n\t\t\t\t\t\t\t\t<img src=\"/miniProject/image/like.png\">\r\n\t\t\t\t\t\t\t\t<span>244 좋아요 수</span>\r\n\t\t\t\t\t\t\t\t<img alt=\"싫어요\" src=\"/miniProject/image/dislike.png\">\r\n\t\t\t\t\t\t\t\t<span>싫어요 수</span>\r\n\t\t\t\t\t\t\t\t<span>댓글</span>\r\n\t\t\t\t\t\t\t\t<a href=\"\">모든 댓글</a>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t<div class=\"old-comment\">\r\n\t\t\t\t\t\t<img src=\"/miniProject/image/Jack.png\">\r\n\t\t\t\t\t\t<div>\r\n\t\t\t\t\t\t\t<h3>송성근 <span>2일전</span></h3>\r\n\t\t\t\t\t\t\t<p>내이름은 송성근 비트캠프 학생이죠!</p>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t\t<div class=\"acomment-action\">\r\n\t\t\t\t\t\t\t\t<img src=\"/miniProject/image/like.png\">\r\n\t\t\t\t\t\t\t\t<span>244 좋아요 수</span>\r\n\t\t\t\t\t\t\t\t<img alt=\"싫어요\" src=\"/miniProject/image/dislike.png\">\r\n\t\t\t\t\t\t\t\t<span>싫어요 수</span>\r\n\t\t\t\t\t\t\t\t<span>댓글</span>\r\n\t\t\t\t\t\t\t\t<a href=\"\">모든 댓글</a>\r\n\t\t\t\t\t\t\t</div>\r\n\t\t\t\t\t\t\t\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t\t\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t\r\n\t\t\t</div>--%>\r\n\t\t\t<%--<div class=\"right-sidebar\">\r\n\t\t\t\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail1.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail2.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail3.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail4.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail5.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail6.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail7.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail8.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div class=\"side-video-list\">\r\n\t\t\t\t<a href=\"\" class=\"small-thumbnail\"><img src=\"/miniProject/image/thumbnail1.png\"></a>\r\n\t\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t\t<a href=\"\">미국이 놀라고 중국이 부러워하며 일본이 질투하는 한국의 그것!</a>\r\n\t\t\t\t\t\t<p>Baboob</p>\r\n\t\t\t\t\t\t<p>15만</p>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\r\n\t\t\t</div>--%>\r\n\t\t</div>\r\n\t</div>\r\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js\"></script>\r\n\t<%-- 제이쿼리 --%>\r\n\t<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n\t<%--내 js --%>\r\n\t<script type=\"text/javascript\" src = \"../js/video.js\"></script>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp	(date 1682413257188)
+@@ -193,4 +193,4 @@
+ 	<%-- 제이쿼리 --%>
+ 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+ 	<%--내 js --%>
+-	<script type="text/javascript" src = "../js/video.js"></script>
++	<script type="text/javascript" src = "/miniProject/js/video.js"></script>
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_pwd.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=EUC-KR\"\r\n    pageEncoding=\"EUC-KR\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"EUC-KR\">\r\n<title>Login_Pwd</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/login_pwd.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div id=\"login\">\r\n\t\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1 id=\"name\"></h1>\r\n\t\t<div id=\"t\">\r\n\t\t<img src=\"../img/p.jpg\" alt=\"프로필이미지\" id=\"profile\">\r\n\t\t<div id=\"email\">${email }</div>\r\n\t\t</div>\r\n\t\t<form action=\"#\" method=\"post\" id=\"login_pwd_form\">\r\n\t\t\t\t<div class=\"outBox\">\r\n\t\t\t\t    <div class=\"inputBox\">\r\n\t\t\t\t        <input type=\"password\" id=\"password\" name=\"\">\r\n\t\t\t\t        <label for=\"password\">비밀번호 입력</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div id=\"passwordDiv\"></div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"bottom\">\r\n\t\t\t\t\t<a href=\"#\" class=\"search_password\">비밀번호 찾기</a>\r\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"nextBtn\" style=\"width: 80px\">다음</button>\r\n\t\t\t\t</div>\r\n\t\t</form>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">한국어</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n<script src=\"../js/box2.js\"></script>\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script src=\"../js/login_pwd.js\"></script>\t\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>EUC-KR
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_pwd.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_pwd.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_pwd.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_pwd.jsp	(date 1682413257186)
+@@ -4,7 +4,7 @@
+ <html>
+ <head>
+ <meta charset="EUC-KR">
+-<title>Login_Pwd</title>
++<title>Login_Password</title>
+ <link rel="stylesheet" href="../css/reset.css">
+ <link rel="stylesheet" href="../css/login_pwd.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+@@ -14,34 +14,29 @@
+ 		<div id="header">
+ 		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+ 		<h1 id="name"></h1>
++		
+ 		<div id="t">
+-		<img src="../img/p.jpg" alt="프로필이미지" id="profile">
+-		<div id="email">${email }</div>
++			<img src="../img/p.jpg" alt="프로필이미지" id="profile">
++			<div id="email">${email }</div>
+ 		</div>
+-		<form action="#" method="post" id="login_pwd_form">
+-				<div class="outBox">
+-				    <div class="inputBox">
+-				        <input type="password" id="password" name="">
+-				        <label for="password">비밀번호 입력</label>
+-				    </div>
+-				</div>
+-				<div id="passwordDiv"></div>
+-				
+-				<div class="bottom">
+-					<a href="#" class="search_password">비밀번호 찾기</a>
+-					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
+-				</div>
+-		</form>
+-		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">한국어</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+-	</div>
+-<script src="../js/box2.js"></script>
+-<script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
++		
++		<div class="outBox">
++		    <div class="inputBox">
++		        <input type="password" id="password" name="">
++		        <label for="password">비밀번호 입력</label>
++		    </div>
++		</div>
++		
++		<div id="passwordDiv"></div>
++			
++		<div class="bottom">
++			<div class="search_password" id="search_password">비밀번호 찾기</div>
++			<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
++		</div>
++	</div>
++</div>
++<script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>	
++<script src="../js/box2.js"></script>
+ <script src="../js/login_pwd.js"></script>	
+ </body>
+ </html>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_id.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=EUC-KR\"\r\n    pageEncoding=\"EUC-KR\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"EUC-KR\">\r\n<title>Login_Id</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/login_id.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\t\r\n</head>\r\n<body>\r\n\t<div id=\"login\">\r\n\t\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1>로그인</h1>\r\n\t\t<h2>YouTube로 이동</h2>\r\n\t\t<form id=\"login_id_form\">\r\n\t\t\t\t<div class=\"outBox\">\r\n\t\t\t\t    <div class=\"inputBox\">\r\n\t\t\t\t        <input type=\"text\" id=\"email\" name=\"email\">\r\n\t\t\t\t        <label for=\"email\">이메일 입력</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div id=\"emailDiv\"></div>\r\n\t\t\t\t\r\n\t\t\t\t<div id=\"a\">\r\n\t\t\t\t<a href=\"/miniProject/member/search_email1\"  style=\"display:flex; text-decoration: none; margin-left: 20px; margin-top: 30px;\">이메일을 잊으셨나요?</a>\r\n\t\t\t\t</div>\r\n\r\n\t\t\t\t<div class=\"bottom\">\r\n\t\t\t\t\t<a href=\"/miniProject/member/join_name\" class=\"join\">계정 만들기</a>\r\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"nextBtn\" style=\"width: 80px\">다음</button>\r\n\t\t\t\t</div>\r\n\t\t</form>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">한국어</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n<script src=\"../js/box1.js\"></script>\t\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script src=\"../js/login_id.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>EUC-KR
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_id.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_id.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_id.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/login_id.jsp	(date 1682413257186)
+@@ -4,7 +4,7 @@
+ <html>
+ <head>
+ <meta charset="EUC-KR">
+-<title>Login_Id</title>
++<title>Login_Email</title>
+ <link rel="stylesheet" href="../css/reset.css">
+ <link rel="stylesheet" href="../css/login_id.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">	
+@@ -15,34 +15,27 @@
+ 		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+ 		<h1>로그인</h1>
+ 		<h2>YouTube로 이동</h2>
+-		<form id="login_id_form">
+-				<div class="outBox">
+-				    <div class="inputBox">
+-				        <input type="text" id="email" name="email">
+-				        <label for="email">이메일 입력</label>
+-				    </div>
+-				</div>
+-				<div id="emailDiv"></div>
+-				
+-				<div id="a">
+-				<a href="/miniProject/member/search_email1"  style="display:flex; text-decoration: none; margin-left: 20px; margin-top: 30px;">이메일을 잊으셨나요?</a>
+-				</div>
++			<div class="outBox">
++			    <div class="inputBox">
++			        <input type="text" id="email" name="email">
++			        <label for="email">이메일 입력</label>
++			    </div>
++			</div>
++			
++			<div id="emailDiv"></div>
++			
++			<div id="a">
++			<a href="/miniProject/member/search_email1"  style="display:flex; text-decoration: none; margin-left: 20px; margin-top: 30px;">이메일을 잊으셨나요?</a>
++			</div>
+ 
+-				<div class="bottom">
+-					<a href="/miniProject/member/join_name" class="join">계정 만들기</a>
+-					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
+-				</div>
+-		</form>
++			<div class="bottom">
++				<a href="/miniProject/member/join_name" class="join">계정 만들기</a>
++				<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
++			</div>
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">한국어</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+ 	</div>
+-<script src="../js/box1.js"></script>	
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
++<script src="../js/box1.js"></script>
+ <script src="../js/login_id.js"></script>
+ </body>
+ </html>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_name.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=EUC-KR\"\r\n    pageEncoding=\"EUC-KR\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"EUC-KR\">\r\n<title>Join_Name</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/join_name.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<body>\r\n\t<div id=\"join\">\r\n\t\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1>YouTube ���� �����</h1>\r\n\t\t<h2>�̸��� �Է��ϼ���.</h2>\r\n\t\t<form id=\"join_name_form\">\r\n\t\t\t\t<div class=\"outBox1\">\r\n\t\t\t\t    <div class=\"inputBox1\">\r\n\t\t\t\t        <input type=\"text\" id=\"last_name\" name=\"last_name\">\r\n\t\t\t\t        <label for=\"last_name\">��(���û���)</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"outBox2\">\r\n\t\t\t\t    <div class=\"inputBox2\">\r\n\t\t\t\t        <input type=\"text\" id=\"first_name\" name=\"first_name\">\r\n\t\t\t\t        <label for=\"first_name\">�̸�</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div id=\"nameDiv\"></div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"bottom\">\r\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"nextBtn\" style=\"width: 80px\">����</button>\r\n\t\t\t\t</div>\r\n\t\t</form>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">�ѱ���</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n<script src=\"../js/box3.js\"></script>\t\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script src=\"../js/join_name.js\"></script>\t\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_name.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_name.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_name.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_name.jsp	(date 1682413257185)
+@@ -1,51 +1,45 @@
+-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+-    pageEncoding="EUC-KR"%>
++<%@ page language="java" contentType="text/html; charset=UTF-8"
++    pageEncoding="UTF-8"%>
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <meta charset="EUC-KR">
+-<title>Join_Name</title>
+-<link rel="stylesheet" href="../css/reset.css">
+-<link rel="stylesheet" href="../css/join_name.css">
++<title>Join_Name_1</title>
++<link rel="stylesheet" href="/miniProject/css/reset.css">
++<link rel="stylesheet" href="/miniProject/css/join_name.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+ </head>
+ <body>
+ <body>
+ 	<div id="join">
+ 		<div id="header">
+-		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+-		<h1>YouTube ���� �����</h1>
+-		<h2>�̸��� �Է��ϼ���.</h2>
+-		<form id="join_name_form">
+-				<div class="outBox1">
+-				    <div class="inputBox1">
+-				        <input type="text" id="last_name" name="last_name">
+-				        <label for="last_name">��(���û���)</label>
+-				    </div>
+-				</div>
+-				
+-				<div class="outBox2">
+-				    <div class="inputBox2">
+-				        <input type="text" id="first_name" name="first_name">
+-				        <label for="first_name">�̸�</label>
+-				    </div>
+-				</div>
+-				<div id="nameDiv"></div>
+-				
+-				<div class="bottom">
+-					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">����</button>
+-				</div>
++		<h1><img src="/miniProject/img/logo2.png" alt="youtube"></h1>
++		<h1>YouTube 계정 만들기</h1>
++		<h2>이름을 입력하세요.</h2>
++		<form id="join_name_form" action="/miniProject/member/join_email" method="post">
++			<div class="outBox1">
++			    <div class="inputBox1">
++			        <input type="text" id="last_name" name="last_name">
++			        <label for="last_name">성(선택사항)</label>
++			    </div>
++			</div>
++			
++			<div class="outBox2">
++			    <div class="inputBox2">
++			        <input type="text" id="first_name" name="first_name">
++			        <label for="first_name">이름</label>
++			    </div>
++			</div>
++			<div id="nameDiv"></div>
++			
++			<div class="bottom">
++				<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
++			</div>
+ 		</form>
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">�ѱ���</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+ 	</div>
+-<script src="../js/box3.js"></script>	
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+-<script src="../js/join_name.js"></script>	
++<script src="/miniProject/js/box3.js"></script>	
++<script src="/miniProject/js/join_name.js"></script>	
+ </body>
+ </html>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email2.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<title>Join_Email2</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/join_email2.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div id=\"join\">\r\n\t\t<div id=\"header\">\r\n\t\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t\t<h1>이메일 주소 인증</h1>\r\n\t\t\t<h2 id=\"email\" style=\"font-size:15px; margin-right:50xp; margin-left:50xp;\">\r\n\t\t\t${email }\r\n\t\t\t</h2>\r\n\t\t\r\n\t\t\t<div class=\"outBox\">\r\n\t\t\t    <div class=\"inputBox\">\r\n\t\t\t        <input type=\"text\" id=\"email_code\" name=\"email_code\" disabled=\"disabled\">\r\n\t\t\t        <label for=\"email_code\">코드 입력</label>\r\n\t\t\t    </div>\r\n\t\t\t</div>\r\n\t\t\t<div id=\"mail-check-warn\"></div>\r\n\t\t\t\r\n\t\t\t<div class=\"bottom\">\r\n\t\t\t\t<a href=\"/miniProject/member/join_email\" class=\"back\">뒤로</a>\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"next btn\" style=\"width: 80px\">다음</button>\r\n\t\t\t</div>\r\n\t\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">한국어</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\t\r\n<script src=\"../js/box5.js\"></script>\t\r\n<script src=\"../js/join_email2.js\"></script>\t\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email2.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email2.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email2.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/join_email2.jsp	(date 1682413257184)
+@@ -4,7 +4,7 @@
+ <html>
+ <head>
+ <meta charset="UTF-8">
+-<title>Join_Email2</title>
++<title>Join_Email2_3</title>
+ <link rel="stylesheet" href="../css/reset.css">
+ <link rel="stylesheet" href="../css/join_email2.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+@@ -14,31 +14,35 @@
+ 		<div id="header">
+ 			<h1><img src="../img/logo2.png" alt="youtube"></h1>
+ 			<h1>이메일 주소 인증</h1>
+-			<h2 id="email" style="font-size:15px; margin-right:50xp; margin-left:50xp;">
+-			${email }
+-			</h2>
+-		
+-			<div class="outBox">
+-			    <div class="inputBox">
+-			        <input type="text" id="email_code" name="email_code" disabled="disabled">
+-			        <label for="email_code">코드 입력</label>
+-			    </div>
+-			</div>
+-			<div id="mail-check-warn"></div>
++			
++			<form action="/miniProject/member/join_privacy" method="post" id="join_email2_form">
++				<div id="aaa" style="font-size:16px;">
++				<span id="email">
++				${map.email }
++				</span>
++				(으)로 전송한 인증 코드를 입력하세요. 표시되지 않으면 스팸 폴더를 확인해 보세요.
++				</div>
++				
++				<div class="outBox">
++				    <div class="inputBox">
++				        <input type="text" id="email_code" name="email_code" disabled="disabled" maxlength="6" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
++				        <label for="email_code">코드 입력</label>
++				    </div>
++				</div>
++				
++				<div id="codeDiv"></div>
++				
++				<input type="hidden" id="last_name" name="last_name" value="${map.last_name }"> 
++				<input type="hidden" id="first_name" name="first_name" value="${map.first_name }">
++				<input type="hidden" id="email" name="email" value="${map.email }">
++			</form>
+ 			
+ 			<div class="bottom">
+-				<a href="/miniProject/member/join_email" class="back">뒤로</a>
+-				<button type="button" class="btn btn-primary" id="next btn" style="width: 80px">다음</button>
++				<a href="javascript:history.back()" class="back">뒤로</a>
++				<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
+ 			</div>
+-	
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">한국어</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+-	</div>
++	</div>	
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>	
+ <script src="../js/box5.js"></script>	
+ <script src="../js/join_email2.js"></script>	
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/box4.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var loginBox1 = document.querySelector('.outBox1');\r\nvar loginInputBox1 = document.querySelector('#rrn_1');\r\nif (loginBox1 && loginInputBox1) {\r\n  loginInputBox1.addEventListener('keyup', function(){\r\n    if(loginInputBox1.value != ''){\r\n      loginBox1.classList.add('existence');   \r\n    }else{\r\n      loginBox1.classList.remove('existence');   \r\n    }\r\n  });\r\n}\r\n\r\nvar loginBox2 = document.querySelector('.outBox2');\r\nvar loginInputBox2 = document.querySelector('#rrn_2');\r\nif (loginBox2 && loginInputBox2) {\r\n  loginInputBox2.addEventListener('keyup', function(){\r\n    if(loginInputBox2.value != ''){\r\n      loginBox2.classList.add('existence');   \r\n    }else{\r\n      loginBox2.classList.remove('existence');   \r\n    }\r\n  });\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/box4.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/box4.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/box4.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/box4.js	(date 1682413257175)
+@@ -1,4 +1,4 @@
+-var loginBox1 = document.querySelector('.outBox1');
++var loginBox1 = document.querySelector('.box .outBox1');
+ var loginInputBox1 = document.querySelector('#rrn_1');
+ if (loginBox1 && loginInputBox1) {
+   loginInputBox1.addEventListener('keyup', function(){
+@@ -10,7 +10,7 @@
+   });
+ }
+ 
+-var loginBox2 = document.querySelector('.outBox2');
++var loginBox2 = document.querySelector('.box .outBox2');
+ var loginInputBox2 = document.querySelector('#rrn_2');
+ if (loginBox2 && loginInputBox2) {
+   loginInputBox2.addEventListener('keyup', function(){
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email3.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<title>Search_Email3</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/search_email3.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<body>\r\n\t<div id=\"search\">\r\n\t\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1>이메일 확인</h1>\r\n\t\t\t<table id=\"emailListTable\">\r\n\r\n\t\t\t</table>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">한국어</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n\t<input type=\"hidden\" id=\"name\" name=\"name\" value=\"${name }\" />\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script src=\"../js/search_email3.js\"></script>\t\t\r\n</body>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email3.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email3.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email3.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email3.jsp	(date 1682413257187)
+@@ -19,12 +19,6 @@
+ 
+ 			</table>
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">한국어</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+ 	</div>
+ 	<input type="hidden" id="name" name="name" value="${name }" />
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email2.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"EUC-KR\">\r\n<title>Search_Email2</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/search_email2.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n\t<div id=\"search\">\r\n\t\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1>이메일 찾기</h1>\r\n\t\t<h2>주민번호를 입력하세요.</h2>\r\n\t\t<form action=\"#\" method=\"post\" id=\"search_email_form\">\r\n\t\t\t\t<div class=\"box\">\r\n\t\t\t\t\t<div class=\"outBox1\">\r\n\t\t\t\t\t    <div class=\"inputBox1\">\r\n\t\t\t\t\t        <input type=\"text\" id=\"rrn_1\" name=\"rrn_1\">\r\n\t\t\t\t\t        <label for=\"rrn_1\">앞(6자리)</label>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\t\r\n\t\t\t\t\t-\r\n\t\t\t\t\t<div class=\"outBox2\">\r\n\t\t\t\t\t    <div class=\"inputBox2\">\r\n\t\t\t\t\t        <input type=\"password\" id=\"rrn_2\" name=\"rrn_2\">\r\n\t\t\t\t\t        <label for=\"rrn_2\">뒤(7자리)</label>\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\t\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div id=\"rrnDiv\"></div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"bottom\">\r\n\t\t\t\t\t<a href=\"/miniProject/member/search_email1\" class=\"back\">뒤로</a>\r\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"nextBtn\" style=\"width: 80px\">다음</button>\r\n\t\t\t\t</div>\r\n\r\n\t\t</form>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">한국어</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n\t<input type=\"hidden\" id=\"name\" name=\"name\" value=\"${name }\" />\r\n<script src=\"../js/box4.js\"></script>\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script src=\"../js/search_email2.js\"></script>\t\t\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email2.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email2.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email2.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email2.jsp	(date 1682413257187)
+@@ -15,42 +15,34 @@
+ 		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+ 		<h1>이메일 찾기</h1>
+ 		<h2>주민번호를 입력하세요.</h2>
+-		<form action="#" method="post" id="search_email_form">
+-				<div class="box">
+-					<div class="outBox1">
+-					    <div class="inputBox1">
+-					        <input type="text" id="rrn_1" name="rrn_1">
+-					        <label for="rrn_1">앞(6자리)</label>
+-						</div>
+-					</div>	
+-					-
+-					<div class="outBox2">
+-					    <div class="inputBox2">
+-					        <input type="password" id="rrn_2" name="rrn_2">
+-					        <label for="rrn_2">뒤(7자리)</label>
+-						</div>
+-					</div>	
+-				</div>
+-				
+-				<div id="rrnDiv"></div>
+-				
+-				<div class="bottom">
+-					<a href="/miniProject/member/search_email1" class="back">뒤로</a>
+-					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
+-				</div>
+-
+-		</form>
++			<div class="box">
++				<div class="outBox1">
++				    <div class="inputBox1">
++				        <input type="text" id="rrn_1" name="rrn_1" maxlength="6" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
++				        <label for="rrn_1">앞(6자리)</label>
++					</div>
++				</div>	
++				-
++				<div class="outBox2">
++				    <div class="inputBox2">
++				        <input type="password" id="rrn_2" name="rrn_2" maxlength="7" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
++				        <label for="rrn_2">뒤(7자리)</label>
++					</div>
++				</div>	
++			</div>
++			
++			<div id="rrnDiv"></div>
++			
++			<div class="bottom">
++				<a href="/miniProject/member/search_email1" class="back">뒤로</a>
++				<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
++			</div>
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">한국어</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+ 	</div>
++	
+ 	<input type="hidden" id="name" name="name" value="${name }" />
+-<script src="../js/box4.js"></script>
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
++<script src="../js/box4.js"></script>
+ <script src="../js/search_email2.js"></script>		
+ </body>
+ </html>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email1.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"EUC-KR\">\r\n<title>Search_Email1</title>\r\n<link rel=\"stylesheet\" href=\"../css/reset.css\">\r\n<link rel=\"stylesheet\" href=\"../css/search_email1.css\">\r\n<link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp\" crossorigin=\"anonymous\">\r\n</head>\r\n<body>\r\n<div id=\"search\">\r\n\t<div id=\"header\">\r\n\t\t<h1><img src=\"../img/logo2.png\" alt=\"youtube\"></h1>\r\n\t\t<h1>이름을 입력하세요.</h1>\r\n\t\t<h2>YouTube 계정 이름 입력</h2>\r\n\t\t<form id=\"search_name_form\">\r\n\t\t\t\t<div class=\"outBox1\">\r\n\t\t\t\t    <div class=\"inputBox1\">\r\n\t\t\t\t        <input type=\"text\" id=\"last_name\" name=\"last_name\">\r\n\t\t\t\t        <label for=\"last_name\">성</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"outBox2\">\r\n\t\t\t\t    <div class=\"inputBox2\">\r\n\t\t\t\t        <input type=\"text\" id=\"first_name\" name=\"first_name\">\r\n\t\t\t\t        <label for=\"first_name\">이름</label>\r\n\t\t\t\t    </div>\r\n\t\t\t\t</div>\r\n\t\t\t\t<div id=\"nameDiv\"></div>\r\n\t\t\t\t\r\n\t\t\t\t<div class=\"bottom\">\r\n\t\t\t\t\t<a href=\"/miniProject/member/login_id\" class=\"back\">뒤로</a>\r\n\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" id=\"nextBtn\" style=\"width: 80px\">다음</button>\r\n\t\t\t\t</div>\r\n\t\t</form>\r\n\t\t</div>\r\n\t\t<footer>\r\n\t\t\t<select name=\"lang_select\" id=\"lang_select\">\r\n\t\t\t\t<option value=\"korean\">한국어</option>\r\n\t\t\t\t<option value=\"english\">English</option>\r\n\t\t\t</select>\r\n\t\t</footer>\r\n\t</div>\r\n<script src=\"../js/box3.js\"></script>\r\n<script src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script src=\"../js/search_email1.js\"></script>\t\t\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email1.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email1.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email1.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/member/search_email1.jsp	(date 1682413257186)
+@@ -15,34 +15,27 @@
+ 		<h1><img src="../img/logo2.png" alt="youtube"></h1>
+ 		<h1>이름을 입력하세요.</h1>
+ 		<h2>YouTube 계정 이름 입력</h2>
+-		<form id="search_name_form">
+-				<div class="outBox1">
+-				    <div class="inputBox1">
+-				        <input type="text" id="last_name" name="last_name">
+-				        <label for="last_name">성</label>
+-				    </div>
+-				</div>
+-				
+-				<div class="outBox2">
+-				    <div class="inputBox2">
+-				        <input type="text" id="first_name" name="first_name">
+-				        <label for="first_name">이름</label>
+-				    </div>
+-				</div>
+-				<div id="nameDiv"></div>
+-				
+-				<div class="bottom">
+-					<a href="/miniProject/member/login_id" class="back">뒤로</a>
+-					<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
+-				</div>
+-		</form>
++			<div class="outBox1">
++			    <div class="inputBox1">
++			        <input type="text" id="last_name" name="last_name">
++			        <label for="last_name">성</label>
++			    </div>
++			</div>
++			
++			<div class="outBox2">
++			    <div class="inputBox2">
++			        <input type="text" id="first_name" name="first_name">
++			        <label for="first_name">이름</label>
++			    </div>
++			</div>
++			
++			<div id="nameDiv"></div>
++			
++			<div class="bottom">
++				<a href="/miniProject/member/login_id" class="back">뒤로</a>
++				<button type="button" class="btn btn-primary" id="nextBtn" style="width: 80px">다음</button>
++			</div>
+ 		</div>
+-		<footer>
+-			<select name="lang_select" id="lang_select">
+-				<option value="korean">한국어</option>
+-				<option value="english">English</option>
+-			</select>
+-		</footer>
+ 	</div>
+ <script src="../js/box3.js"></script>
+ <script src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\" %>\r\n<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"UTF-8\">\r\n<title>Baboob</title>\r\n<link rel=\"stylesheet\" href=\"/miniProject/css/indexstyle.css\">\r\n</head>\r\n<body>\r\n   <nav class=\"flex-div\">\r\n      <div class=\"nav-left flex-div\">\r\n         <img alt=\"메뉴 \" src=\"/miniProject/image/menu.png\"\r\n            class=\"menu-icon\"> <img alt=\"로고\"\r\n            src=\"/miniProject/image/logo1.png\" id=\"logo\" class=\"logo\" onclick=\"location.href='/miniProject/'\">\r\n      </div>\r\n      <div class=\"nav-middle flex-div\">\r\n         <div class=\"search-box flex-div\">\r\n            <input type=\"text\" placeholder=\"검색\" id=\"searchVideo\"> <img alt=\"검색\"\r\n               src=\"/miniProject/image/search.png\" id=\"searchbtn\">\r\n         </div>\r\n         <img src=\"/miniProject/image/voice-search.png\"\r\n            class=\"mic-icon\">\r\n            <input type=\"text\" name=\"user_id\" id=\"user_id\" value=\"${user_id }\">\r\n      </div>\r\n      <div class=\"nav-right flex-div\">\r\n\r\n\r\n      \t<c:if test=\"${sessionScope.user_id == null}\">\r\n\r\n      \t<div class=\"loginNone\" >\r\n      \t\t<img src=\"/miniProject/image/loginbtn.png\" id=\"loginbtn\" onclick=\"location.href='/miniProject/member/login_id'\">\r\n      \t</div>\r\n      \t</c:if>\r\n      \t<c:if test=\"${sessionScope.user_id != null}\">\r\n      \t<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n\t\t<script type=\"text/javascript\" src=\"/miniProject/js/loginOk.js\"></script>\r\n\t\t\t\r\n\t\t<div class=\"loginOK\" >\r\n         <img src=\"/miniProject/image/upload.png\">\r\n         <img src=\"/miniProject/image/more.png\">\r\n         <img src=\"/miniProject/image/notification.png\"> \r\n         <img src=\"/miniProject/image/dongbeen.jpg\" id=\"user-icon\"\r\n            class=\"user-icon\">\r\n            \r\n\r\n         <div class=\"menu-container\" style=\"display:none\">\r\n            <ul class=\"menu\">\r\n               <!-- 계정 정보 -->\r\n               <div id=\"nav-header\">\r\n                  <div id=\"user-img\">\r\n                     <img src=\"/miniProject/image/dongbeen.jpg\"\r\n                        id=\"user-icon\" class=\"user-icon\">\r\n                  </div>\r\n                  <div id=\"user-details\">\r\n                     <span id=\"user-name\">이름</span> <span id=\"user-email\">이메일계정</span>\r\n                     <div id=\"account-management-container\">\r\n                        <a id=\"account-management\" href=\"#\">Google 계정 관리</a>\r\n                     </div>\r\n                  </div>\r\n               </div>\r\n\r\n               <!-- 메뉴 항목들을 담을 컨테이너 -->\r\n                  <ul class=\"menu\">\r\n                     <div id=\"nav-main\">\r\n                        <div id=\"nav-top\">\r\n                        <li><img src=\"/miniProject/image/mychannel.png\"\r\n                           id=\"mychanne\"> <a href=\"#\">내 채널</a></li>\r\n                        <li><img src=\"/miniProject/image/youtubestudio.png\"\r\n                           id=\"youtubestudio\"><a href=\"#\">유튜브 스튜디오</a></li>\r\n                        <li><img src=\"/miniProject/image/countchange.png\"\r\n                           id=\"countchange\"><a href=\"#\">계정 전환</a></li>\r\n                        <li><img src=\"/miniProject/image/logout.png\"\r\n                           id=\"logout\"><a href=\"#\">로그아웃</a></li>\r\n                        </div>\r\n                        <div id=\"nav-bottom\">\r\n                        <li><img src=\"/miniProject/image/designtema.png\"\r\n                           id=\"designtema\"><a href=\"#\">디자인: 기기 테마</a></li>\r\n                        <li><img src=\"/miniProject/image/setting.png\"\r\n                           id=\"setting\"><a href=\"#\">설정</a></li>\r\n                        <li><img src=\"/miniProject/image/customerservice.png\"\r\n                           id=\"customerservice\"><a href=\"#\">고객센터</a></li>\r\n                        <li><img src=\"/miniProject/image/sendcomment.png\"\r\n                           id=\"sendcomment\"><a href=\"#\">의견 보내기</a></li>\r\n                        </ul>\r\n                     </div> <!-- menubar -->\r\n                     </div>\r\n                     </c:if>\r\n                  </div>\r\n               </ul>\r\n            </div>\r\n         </div>\r\n      </nav>\r\n\r\n\t<!-- sidebar -->\r\n\t<div class=\"sidebar\">\r\n\t\t<div class=\"shortcut-links\">\r\n\t\t\t<a href=\"/miniProject/\"><img src=\"/miniProject/image/home.png\" ><p>홈</p></a>\r\n\t\t\t<a href=\"\"><img src=\"/miniProject/image/explore.png\" ><p>인기 급상승</p></a>\r\n\t\t\t<a href=\"\"><img src=\"/miniProject/image/subscriprion.png\" ><p>구독</p></a>\r\n\t\t\t<a href=\"\"><img src=\"/miniProject/image/library.png\" ><p>보관함</p></a>\r\n\t\t\t<a href=\"/miniProject/history/historyList\"><img src=\"/miniProject/image/history.png\" ><p>시청 기록</p></a>\r\n\t\t\t<a href=\"\"><img src=\"/miniProject/image/playlist.png\" ><p>홈</p></a>\r\n\t\t\t<a href=\"\"><img src=\"/miniProject/image/messages.png\" ><p>메시지</p></a>\r\n\t\t\t<a href=\"\"><img src=\"/miniProject/image/show-more.png\" ><p>더보기</p></a>\r\n\t\t\t<hr>\r\n\t\t</div>\r\n\t\t<div class=\"subscribed-list\">\r\n\t\t\t<h3>${email} ${password}</h3>\r\n\t\t\t<a href=\"/miniProject/channel/main?channel_id=1\"><img src=\"/miniProject/image/dongbeen.jpg\" id=\"channel\"><p>김동빈</p></a>\r\n\t\t\t<a href=\"/miniProject/channel/main?channel_id=2\"><img src=\"/miniProject/image/kwonyongjun.png\"><p>권용준</p></a>\r\n\t\t\t<a href=\"/miniProject/channel/main?channel_id=3\"><img src=\"/miniProject/image/tom.png\"><p>강성욱</p></a>\r\n\t\t\t<a href=\"/miniProject/channel/main?channel_id=4\"><img src=\"/miniProject/image/megan.png\"><p>송성근</p></a>\r\n\t\t\t<a href=\"/miniProject/channel/main?channel_id=5\"><img src=\"/miniProject/image/cameron.png\"><p>이지현</p></a>\r\n\t\t\t\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<!-- 메인화면 -->\r\n\t<div class=\"container\">\r\n\t\t<div class=\"display\">\r\n\t  \t\t<c:if test=\"${empty display && empty display3 && empty display4 && empty display5}\">\r\n\t    \t\t<jsp:include page=\"./main/container.jsp\" />\r\n\t  \t\t</c:if>\r\n\t\t  \t<c:if test=\"${not empty display}\"> <!-- UserController -->\r\n\t\t    \t<jsp:include page=\"${display }\" />\r\n\t\t  \t</c:if>\r\n\t\t  \t<c:if test=\"${not empty display3}\">\r\n\t\t    \t<jsp:include page=\"${display3 }\" />\r\n\t\t  \t</c:if>\r\n            <c:if test=\"${not empty display4}\">\r\n                <jsp:include page=\"${display4 }\" />\r\n            </c:if>\r\n            <c:if test=\"${not empty display5}\">\r\n                <jsp:include page=\"${display5 }\" />\r\n            </c:if>\r\n\t  </div>\r\n\t</div>\r\n\r\n\t\r\n<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script type=\"text/javascript\" src=\"/miniProject/js/index.js\"></script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp	(date 1682413257175)
+@@ -9,90 +9,70 @@
+ <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
+ </head>
+ <body>
+-   <nav class="flex-div">
+-      <div class="nav-left flex-div">
+-         <img alt="메뉴 " src="/miniProject/image/menu.png"
+-            class="menu-icon"> <img alt="로고"
+-            src="/miniProject/image/logo1.png" id="logo" class="logo" onclick="location.href='/miniProject/'">
+-      </div>
+-      <div class="nav-middle flex-div">
+-         <div class="search-box flex-div">
+-            <input type="text" placeholder="검색" id="searchVideo"> <img alt="검색"
+-               src="/miniProject/image/search.png" id="searchbtn">
+-         </div>
+-         <img src="/miniProject/image/voice-search.png"
+-            class="mic-icon">
+-            <input type="text" name="user_id" id="user_id" value="${user_id }">
+-      </div>
+-      <div class="nav-right flex-div">
+-
+-
+-      	<c:if test="${sessionScope.user_id == null}">
+-
+-      	<div class="loginNone" >
+-      		<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
+-      	</div>
+-      	</c:if>
+-      	<c:if test="${sessionScope.user_id != null}">
+-      	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+-		<script type="text/javascript" src="/miniProject/js/loginOk.js"></script>
+-			
+-		<div class="loginOK" >
+-         <img src="/miniProject/image/upload.png">
+-         <img src="/miniProject/image/more.png">
+-         <img src="/miniProject/image/notification.png"> 
+-         <img src="/miniProject/image/dongbeen.jpg" id="user-icon"
+-            class="user-icon">
+-            
+-
+-         <div class="menu-container" style="display:none">
+-            <ul class="menu">
+-               <!-- 계정 정보 -->
+-               <div id="nav-header">
+-                  <div id="user-img">
+-                     <img src="/miniProject/image/dongbeen.jpg"
+-                        id="user-icon" class="user-icon">
+-                  </div>
+-                  <div id="user-details">
+-                     <span id="user-name">이름</span> <span id="user-email">이메일계정</span>
+-                     <div id="account-management-container">
+-                        <a id="account-management" href="#">Google 계정 관리</a>
+-                     </div>
+-                  </div>
+-               </div>
+-
+-               <!-- 메뉴 항목들을 담을 컨테이너 -->
+-                  <ul class="menu">
+-                     <div id="nav-main">
+-                        <div id="nav-top">
+-                        <li><img src="/miniProject/image/mychannel.png"
+-                           id="mychanne"> <a href="#">내 채널</a></li>
+-                        <li><img src="/miniProject/image/youtubestudio.png"
+-                           id="youtubestudio"><a href="#">유튜브 스튜디오</a></li>
+-                        <li><img src="/miniProject/image/countchange.png"
+-                           id="countchange"><a href="#">계정 전환</a></li>
+-                        <li><img src="/miniProject/image/logout.png"
+-                           id="logout"><a href="#">로그아웃</a></li>
+-                        </div>
+-                        <div id="nav-bottom">
+-                        <li><img src="/miniProject/image/designtema.png"
++<!-- flex-div -->
++<nav class="flex-div">
++	<div class="nav-left flex-div">
++		<img alt="메뉴" src="/miniProject/image/menu.png" class="menu-icon">
++		<img alt="로고" src="/miniProject/image/logo1.png" id="logo" class="logo" onclick="location.href='/miniProject/'">
++	</div> <!-- flex-div -->
++	
++	<div class="nav-middle flex-div">
++		<div class="search-box flex-div">
++			<input type="text" placeholder="검색" id="searchVideo">
++			<img alt="검색" src="/miniProject/image/search.png" id="searchbtn">
++		</div><!-- search-box flex-div -->
++		<input type="text" name="user_id" id="user_id" value="${user_id }" >
++	</div><!-- nav-middel flex-div -->
++	
++	<div class="nav-right flex-div">
++		<c:if test="${sessionScope.user_id == null }">
++			<img src="/miniProject/image/loginbtn.png" id="loginbtn" onclick="location.href='/miniProject/member/login_id'">
++		</c:if> <!-- user_id == null -->
++		<c:if test="${sessionScope.user_id != null }">
++			<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
++			<script type="text/javascript" src="/miniProject/js/loginOk.js"></script>
++		
++			<img src="/miniProject/image/upload.png">
++			<img src="/miniProject/image/more.png">
++			<img src="/miniProject/image/notification.png" id="noti">
++			<img src="/miniProject/image/dongbeen.jpg" class="user-icon">
++			
++			<div class="menu-container">
++				<ul class="menu">
++					<div id="nav-header">
++						<div id="user-img">
++							
++						</div> <!-- user-img -->
++						
++						<div id="user-details">
++							
++							<span id="user-name"></span> <!-- user-name -->
++							<span id="user-email"></span> <!-- user-email -->
++		                    <div id="account-management-container">
++		                       <a id="account-management" href="#">Google 계정 관리</a>
++		                    </div> <!-- account-management-container -->
++						</div> <!-- user-details -->
++					</div> <!-- nav-header -->
++					
++					<div id="nav-main">
++						<div id="nav-top">
++							<li id="mychannel"><img src="/miniProject/image/mychannel.png" >내 채널</li>
++							<li id="logout"><img src="/miniProject/image/logout.png">로그아웃</li>
++						</div> <!-- nav-top -->
++						<div id="nav-bottom">
++							<li><img src="/miniProject/image/designtema.png"
+                            id="designtema"><a href="#">디자인: 기기 테마</a></li>
+                         <li><img src="/miniProject/image/setting.png"
+                            id="setting"><a href="#">설정</a></li>
+-                        <li><img src="/miniProject/image/customerservice.png"
+-                           id="customerservice"><a href="#">고객센터</a></li>
+-                        <li><img src="/miniProject/image/sendcomment.png"
+-                           id="sendcomment"><a href="#">의견 보내기</a></li>
+-                        </ul>
+-                     </div> <!-- menubar -->
+-                     </div>
+-                     </c:if>
+-                  </div>
+-               </ul>
+-            </div>
+-         </div>
+-      </nav>
+-
++						</div> <!-- nav-bottom -->
++					</div><!-- nav-main -->
++				</ul> <!-- menu -->
++			</div> <!-- menu-container -->
++		</c:if> <!-- user_id != null -->
++	</div><!-- nav-right flex-div -->
++	
++</nav>
++<!-- flex-div -->
+ 	<!-- sidebar -->
+ 	<div class="sidebar">
+ 		<div class="shortcut-links">
+@@ -107,6 +87,13 @@
+ 			<hr>
+ 		</div>
+ 		<div class="subscribed-list">
++
++			<!-- <a href="/miniProject/channel/main"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
++			<a href=""><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
++			<a href=""><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
++			<a href=""><img src="/miniProject/image/megan.png"><p>송성근</p></a>
++			<a href=""><img src="/miniProject/image/cameron.png"><p>이지현</p></a> -->	<!-- index.js에서 동적처리함 -->	
++
+ 			<h3>${email} ${password}</h3>
+ 			<a href="/miniProject/channel/main?channel_id=1"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
+ 			<a href="/miniProject/channel/main?channel_id=2"><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
+@@ -114,6 +101,7 @@
+ 			<a href="/miniProject/channel/main?channel_id=4"><img src="/miniProject/image/megan.png"><p>송성근</p></a>
+ 			<a href="/miniProject/channel/main?channel_id=5"><img src="/miniProject/image/cameron.png"><p>이지현</p></a>
+ 			
++
+ 		</div>
+ 	</div>
+ 
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$('#nextBtn').click(function(){\r\n\t$('#emailDiv').empty();\r\n\t\r\n\tif($('#email').val() == '') {\r\n\t\t$('#emailDiv').text('이메일을 입력하세요.');\r\n\t\t$('#emailDiv').css('color', 'red');\r\n\t\t$('#emailDiv').css('font-size', '14px');\r\n\t\t$('#emailDiv').css('font-weight', 'bold');\r\n\t\t$('.inputBox input[type=\"text\"]').css('border','2px solid red');\r\n\t\t$('.inputBox label').css('color', 'red');\r\n\t    $('#email').focus();\r\n\t}else {\r\n\t\tlocation.href='/miniProject/member/join_email2?email='+$('#email').val();\r\n\t}\r\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email.js	(date 1682413257176)
+@@ -1,15 +1,51 @@
+ $('#nextBtn').click(function(){
+ 	$('#emailDiv').empty();
+ 	
++	var email_rule =  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
++	var mail =$("#email").val();
++	
+ 	if($('#email').val() == '') {
+ 		$('#emailDiv').text('이메일을 입력하세요.');
+ 		$('#emailDiv').css('color', 'red');
+ 		$('#emailDiv').css('font-size', '14px');
+ 		$('#emailDiv').css('font-weight', 'bold');
+-		$('.inputBox input[type="text"]').css('border','2px solid red');
++		$('.inputBox input[type="email"]').css('border','2px solid red');
++		$('.inputBox label').css('color', 'red');
++	    $('#email').focus();
++	}else if(!email_rule.test(mail)){
++		$('#emailDiv').text('이메일 형식에 맞게 입력하세요.');
++		$('#emailDiv').css('color', 'red');
++		$('#emailDiv').css('font-size', '14px');
++		$('#emailDiv').css('font-weight', 'bold');
++		$('.inputBox input[type="email"]').css('border','2px solid red');
+ 		$('.inputBox label').css('color', 'red');
+ 	    $('#email').focus();
+ 	}else {
+-		location.href='/miniProject/member/join_email2?email='+$('#email').val();
++		$.ajax({
++			type: 'post',
++			url: '/miniProject/member/isExistEmail',
++		   	data: 'email='+$('#email').val(),
++		   	success: function(data){
++				if(data != "") {
++					$('#emailDiv').text('이미 존재하는 이메일 입니다');
++					$('#emailDiv').css('color', 'red');
++					$('#emailDiv').css('font-size', '14px');
++					$('#emailDiv').css('font-weight', 'bold');
++					$('.inputBox input[type="email"]').css('border','2px solid red');
++					$('.inputBox label').css('color', 'red');
++				    $('#email').focus();
++				}else {
++					$('#join_email_form').submit();
++				}
++			},
++		   	error: function(err){
++		   		console.log(err);
++		   	}
++		});
+ 	}
++});
++$("#join").keydown(function(key) {
++	   if( key.keyCode == 13 ){
++	      $('#nextBtn').trigger('click');
++	   }
+ });
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/channel/videoList.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n    pageEncoding=\"UTF-8\"%>\r\n\r\n\r\n\t\t\t<div id=\"videos-container\">\r\n\r\n\t\t\t\t<%-- 동적처리 --%>\r\n\t\t\t</div>\r\n\r\n<%--\t\t\t<div class=\"video\">\r\n\t\t\t\t<iframe width=\"250\" height=\"150\"\r\n\t\t\t\t\tsrc=\"https://www.youtube.com/embed/ZgDx1WUNWwA\" frameborder=\"0\"\r\n\t\t\t\t\tallow=\"autoplay; encrypted-media\" allowfullscreen></iframe>\r\n\t\t\t\t<div class=\"video-info\">\r\n\t\t\t\t\t<h2>부산서 벌어진 '난투극'…말리키는커녕 '환호'하는 구경꾼 / SBS / 오클릭</h2>\r\n\t\t\t\t\t<p>조회수 46,168회 2023. 4. 11.</p>\r\n\t\t\t\t\t<p> #SBS뉴스 #오클릭 #부산 SNS를 통해 오늘(11일) 하루\r\n\t\t\t\t\t\t관심사와 누리꾼들의 반응을 알아보는 〈오! 클릭〉 시간입니다. 부산의 한 길거리에서 술에 취한 성인들이 싸움을\r\n\t\t\t\t\t\t했는데, 주변 시민들이 말리기는커녕 격투경기를 보듯 환호성을 치며 구경해 공분이 일고 있습니다.</p>\r\n\t\t\t\t</div>\r\n\t\t\t</div>--%>\r\n\r\n\r\n\t\t\t<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n\t\t\t<script type=\"text/javascript\" src=\"../js/channelForm.js\"></script>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/videoList.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/videoList.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/videoList.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/videoList.jsp	(date 1682413257171)
+@@ -22,4 +22,4 @@
+ 
+ 
+ 			<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+-			<script type="text/javascript" src="../js/channelForm.js"></script>
++			<script type="text/javascript" src="/miniProject/js/channelForm.js"></script>
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>var menuIcon = document.querySelector(\".menu-icon\");\r\nvar sidebar = document.querySelector(\".sidebar\");\r\nvar container= document.querySelector(\".container\");\r\n\r\nmenuIcon.onclick = function(){\r\n  sidebar.classList.toggle(\"small-sidebar\");\r\n  container.classList.toggle(\"large-container\");\r\n}\r\n\r\n$(document).ready(function() {\r\n  // user-icon 이미지를 클릭했을 때의 동작 정의\r\n\t$(\"#user-icon\").click(function() {\r\n\t\t\t// 메뉴 항목들을 토글(show/hide)하는 동작 구현\r\n\t\t\t$(\".menu-container\").toggle();\r\n\t});\r\n});\r\n\r\n\r\n//document.getElementById(\"search-icon\").addEventListener(\r\n//\t\t\"click\",\r\n//\t\tfunction() {\r\n//\t\t\tvar searchContainer = document\r\n//\t\t\t\t\t.getElementById(\"search-container\");\r\n//\t\t\t// 검색창을 보이게 함\r\n//\t\t\tsearchContainer.style.display = \"block\";\r\n//\t\t});\r\n\t\t\r\nfunction showButtons() {\r\n     document.getElementById(\"down\").classList.add('show');\r\n   }\r\n\r\nfunction hideButtons() {\r\n document.getElementById(\"down\").classList.remove('show');\r\n}\r\n\r\n\r\n\r\n//엔터키를 눌렀을 때\r\n$(\"#searchVideo\").keydown(function(key) {\r\n\tif( key.keyCode == 13 ){\r\n\t\t$('#searchbtn').trigger('click');\r\n\t}\r\n});\r\n\r\n$('#searchbtn').click(function(){\r\n\tlocation.href='/miniProject/user/videosearch?videotitle=' + $('#searchVideo').val()\r\n});\r\n\r\n\r\n$(function() {\r\n\t  $.ajax({\r\n\t    type: 'post',\r\n\t    url: '/miniProject/user/mainContainerVideo',\r\n\t    success: function(data) {\r\n\t     /* console.log(data);*/\r\n\t      // 리스트에 추가할 container 요소를 선택합니다.\r\n\t      var listContainer = $('.list-container');\r\n\r\n\t      // 데이터 처리 부분\r\n\t      $.each(data, function(index, items){\r\n\t        // 새로운 video-list 요소를 생성합니다.\r\n\t        var videoList = $('<div>', {class: 'video-list'});\r\n\t        // a 요소를 생성합니다.\r\n\t        var link = $('<a>', {href: '/miniProject/video/main?video_id=' + items.video_id});\r\n\t        // img 요소를 생성합니다.\r\n\t        var thumbnail = $('<img>', {class: 'thumbnail', src: items.thumnail_url});\r\n\t        // img 요소를 생성합니다.\r\n\t        var channelProfile = $('<img>', {src: items.channel_profile_url, id: 'channel'});\r\n\t        // div 요소를 생성합니다.\r\n\t        var flexDiv = $('<div>', {class: 'flex-div'});\r\n\t        // div 요소를 생성합니다.\r\n\t        var videoInfo = $('<div>', {class: 'video-info'});\r\n\t        // a 요소를 생성합니다.\r\n\t        var title = $('<a>', {href: items.video_url, text: items.video_title});\r\n\t        // p 요소를 생성합니다.\r\n\t        var channelName = $('<p>', {text: items.channel_name});\r\n\t        // p 요소를 생성합니다.\r\n\t        var views = $('<p>', {text: '조회수 ' + items.views + ' &bull; ' + items.upload_date});\r\n\r\n\t        // 생성한 요소들을 조합합니다.\r\n\t        link.append(thumbnail);\r\n\t        flexDiv.append(channelProfile);\r\n\t        videoInfo.append(title);\r\n\t        videoInfo.append(channelName);\r\n\t        videoInfo.append(views);\r\n\t        flexDiv.append(videoInfo);\r\n\t        videoList.append(link);\r\n\t        videoList.append(flexDiv);\r\n\r\n\t        // 리스트에 새로운 요소를 추가합니다.\r\n\t        listContainer.append(videoList);\r\n\t      });\r\n\r\n\t    },\r\n\t    error: function(err) {\r\n\t      console.log(err);\r\n\t    }\r\n\t  });\r\n\t});\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js	(date 1682413257175)
+@@ -65,13 +65,13 @@
+ 	        // img 요소를 생성합니다.
+ 	        var thumbnail = $('<img>', {class: 'thumbnail', src: items.thumnail_url});
+ 	        // img 요소를 생성합니다.
+-	        var channelProfile = $('<img>', {src: items.channel_profile_url, id: 'channel'});
++	        var channelProfile = $('<img>', {src: items.profile_url, id: 'channel'});
+ 	        // div 요소를 생성합니다.
+ 	        var flexDiv = $('<div>', {class: 'flex-div'});
+ 	        // div 요소를 생성합니다.
+ 	        var videoInfo = $('<div>', {class: 'video-info'});
+ 	        // a 요소를 생성합니다.
+-	        var title = $('<a>', {href: items.video_url, text: items.video_title});
++	        var title = $('<a>', {href: '/miniProject/video/main?video_id=' + items.video_id, text: items.video_title});
+ 	        // p 요소를 생성합니다.
+ 	        var channelName = $('<p>', {text: items.channel_name});
+ 	        // p 요소를 생성합니다.
+@@ -97,10 +97,46 @@
+ 	    }
+ 	  });
+ 	});
++
++$('#logout').click(function(){
++	$.ajax({
++		type: 'post',
++		url: '/miniProject/member/logout',
++		success: function(data){
++			alert('로그아웃되었습니다.');
++			location.reload();
++		},
++		error: function(err){
++			console.log(err);
++		}
++	});
++});
++
++
++$(function(){
++	$("#logout").wrap('<a href="#"></a>');
++});
++
++$(function(){
++	$.ajax({
++		type: 'post',
++		url: '/miniProject/subscribe/subscribelist',
++		data: 'user_id=' + $('#user_id').val(),
++		success: function(data){
++			console.log(data);
++			$.each(data, function(index, items){
++				let channel = '<a href="/miniProject/channel/main?channel_id=' + items.channel_id + '"><img src="' + items.channel_profile_url + '" id="channel"><p>' + items.channel_name + '</p></a>';
++				$('.subscribed-list').append(channel);
++			});
++		},
++		error: function(err){
++			console.log(err);
++		}
++	});
++});
+ 
+ 
+ 
+ 
+ 
+ 
+-
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\"\r\n\tpageEncoding=\"UTF-8\"%>\r\n<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\" %>\r\n\r\n\r\n<link rel=\"stylesheet\" href=\"/miniProject/css/channel.css\">\r\n\t<header>\r\n\r\n\t\t<div class=\"channel-info\">\r\n\t\t\t<div class=\"channel-logo\">\r\n\t\t\t\t<%--채널의 썸네일 동적처리 --%>\r\n\t\t\t\t<%--<img src=\"/miniProject/img/ytnheader.png\" alt=\"Logo\">--%>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t</header>\r\n\r\n\t<section>\r\n\t\t<div id='middle'>\r\n\t\t\t<div id='middle-left'></div>\r\n\t\t\t<div id='middle-right'>\r\n\r\n\t\t\t\t<%--컨테이너 시작 --%>\r\n\t\t\t\t<div id='container'>\r\n\t\t\t\t\t\t<%--동적 생성--%>\r\n\t\t\t\t</div>\r\n\t\t\t\t<%--컨테이너는 끝--%>\r\n\r\n\t\t\t\t<div>\r\n\t\t\t\t\t<div class=\"navigation\">\r\n\t\t\t\t\t\t<a href=\"#\" class=\"current-page\">홈</a> <a href=\"#\">동영상</a> <a\r\n\t\t\t\t\t\t\thref=\"#\" class=\"co\">재생목록</a><a href=\"/miniProject/user/boardList\" class=\"co\">커뮤니티</a> <a href=\"\">채널</a> <a\r\n\t\t\t\t\t\t\thref=\"#\">정보</a>\r\n\t\t\t\t\t\t<div class=\"search-container\">\r\n\t\t\t\t\t\t\t<input type=\"text\" class=\"search-input\" placeholder=\"검색\">\r\n\t\t\t\t\t\t\t<img src=\"/miniProject/img/search.png\" id=\"search-icon\" alt=\"검색\"\r\n\t\t\t\t\t\t\t\tclass=\"search-icon\">\r\n\t\t\t\t\t\t</div>\r\n\t\t\t\t\t</div>\r\n\t\t\t\t</div>\r\n\t\t\t\t\r\n\t\t\t<div class=\"videoList\">\r\n\t\t\t\t<c:if test=\"${empty display2}\">\r\n\t    \t\t\t<jsp:include page=\"videoList.jsp\" />\r\n\t  \t\t\t</c:if>\r\n\t  \t\t\t<c:if test=\"${not empty display2}\">\r\n\t    \t\t\t<jsp:include page=\"${display2 }\" />\r\n\t  \t\t\t</c:if>\r\n\t\t\t</div> <!-- div videoList -->\r\n\t\t\t</div>\r\n\t\t</div>\r\n\r\n\t</section>\r\n\r\n\t<footer>\r\n\t\t<p>© 2023 My Channel. All rights reserved.</p>\r\n\t</footer>\r\n\r\n<script type=\"text/javascript\" src=\"http://code.jquery.com/jquery-3.6.4.min.js\"></script>\r\n<script type=\"text/javascript\">\r\n/* $('.co').click(function(){\r\n\t\t\r\n\t\talert($(this).text());\r\n\t\tif($(this).text() == '커뮤니티') {\r\n\t\t\talert('123');\r\n\t\t\t$('.videoList').load('test.jsp');\r\n\t\t}\r\n\t}); */\r\n</script>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp b/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp	(date 1682413247901)
+@@ -19,6 +19,34 @@
+ 		<div id='middle'>
+ 			<div id='middle-left'></div>
+ 			<div id='middle-right'>
++				<div id='container'>
++					<div id='box-left'>
++						<div class="channel-profile">
++							<img src="/miniProject/img/ytnprofile2.png" alt="Profile Picture">
++						</div>
++					</div>
++					<div id='box-center'>
++						<div class="channel-details">
++							<h1>&nbspYTN</h1>
++							<p>&nbsp구독자 387만명 동영상 66만개</p>
++							<p>
++								<a href="#">&nbsp24시간 생중계되는 대한민국 대표 뉴스</a>
++							</p>
++						</div>
++					</div>
++					<div id='box-right'>
++						<div class="subcribe">
++							<!-- 로그인이 안되어있으면 구독버튼이 나타나지 않는다. -->
++							<!-- 구독이 되어있다면 구독중버튼이 나오고 구독이 안되어있다면 구독버튼이 나온다. -->
++							<c:if test="${not empty user_id && channel_id != data.channel_id}">
++								<button type="button" id="subBtn">구독</button>
++							</c:if>
++							<c:if test="${ not empty user_id && channel_id == data.channel_id}">
++							  	<button type="button" id="dissubBtn">구독중</button>
++							</c:if>
++						</div>
++					</div>
++				</div>
+ 
+ 				<%--컨테이너 시작 --%>
+ 				<div id='container'>
+@@ -57,13 +85,4 @@
+ 	</footer>
+ 
+ <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+-<script type="text/javascript">
+-/* $('.co').click(function(){
+-		
+-		alert($(this).text());
+-		if($(this).text() == '커뮤니티') {
+-			alert('123');
+-			$('.videoList').load('test.jsp');
+-		}
+-	}); */
+-</script>
+\ No newline at end of file
++<script type="text/javascript" src="/miniProject/js/channel.js"></script>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_id.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$('#nextBtn').click(function(){\r\n\t$('#emailDiv').empty();\r\n\t\r\n\tif($('#email').val() == ''){\r\n\t\t$('#emailDiv').text('이메일을 입력하세요.');\r\n\t\t$('#emailDiv').css('color', 'red');\r\n\t\t$('#emailDiv').css('font-size', '14px');\r\n\t\t$('#emailDiv').css('font-weight', 'bold');\r\n\t\t$('input[type=\"text\"]').css('border','2px solid red');\r\n\t\t$('.inputBox label').css('color', 'red');\r\n\t    $('#email').focus();\r\n\t}else {\r\n\t\t$.ajax({\r\n\t\t\ttype: 'post',\r\n\t\t\turl: '/miniProject/member/isExistEmail',\r\n\t\t   \tdata: 'email='+$('#email').val(), \r\n\t\t   \tsuccess: function(data){\r\n\t\t\t\tif(data == \"\") {\r\n\t\t\t\t\t$('#emailDiv').text('잘못된 이메일 입니다.');\r\n\t\t\t\t\t$('#emailDiv').css('color', 'red');\r\n\t\t\t\t\t$('#emailDiv').css('font-size', '14px');\r\n\t\t\t\t\t$('#emailDiv').css('font-weight', 'bold');\r\n\t\t\t\t\t$('input[type=\"text\"]').css('border','2px solid red');\r\n\t\t\t\t\t$('.inputBox label').css('color', 'red');\r\n\t\t\t\t    $('#email').focus();\r\n\t\t\t\t}else {\r\n\t\t\t\t\tlocation.href='/miniProject/member/login_pwd?email='+$('#email').val();\r\n\t\t\t\t}\r\n\t\t   \t},\r\n\t\t   \terror: function(err){\r\n\t\t   \t\tconsole.log(err);\r\n\t\t   \t}\r\n\t\t});\r\n\t}\t\r\n});\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_id.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_id.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_id.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_id.js	(date 1682413257183)
+@@ -33,3 +33,9 @@
+ 		});
+ 	}	
+ });
++
++$("#login").keydown(function(key) {
++	   if( key.keyCode == 13 ){
++	      $('#nextBtn').trigger('click');
++	   }
++});
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_name.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$('#nextBtn').click(function(){\r\n\t$('#nameDiv').empty();\r\n\t\r\n\tif($('#first_name').val() == ''){\r\n\t\t$('#nameDiv').text('이름을 입력하세요.');\r\n\t\t$('#nameDiv').css('color', 'red');\r\n\t\t$('#nameDiv').css('font-size', '14px');\r\n\t\t$('#nameDiv').css('font-weight', 'bold');\r\n\t\t$('.inputBox2 input[type=\"text\"]').css('border','2px solid red');\r\n\t\t$('.inputBox2 label').css('color', 'red');\r\n\t    $('#first_name').focus();\r\n\t}else {\r\n\t\t$.ajax({\r\n\t\t\ttype: 'post',\r\n\t\t\turl: '/miniProject/member/insertName',\r\n\t\t\tdata: 'name=' + $('#last_name').val() + $('#first_name').val(),\r\n\t\t\tsuccess: function(data){\r\n\t\t\t\tlocation.href='/miniProject/member/join_email';\r\n\t\t\t},\r\n\t\t\terror: function(err){\r\n\t\t   \t\tconsole.log(err);\r\n\t\t   \t}\r\n\t\t});\r\n\t}\r\n});\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_name.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_name.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_name.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_name.js	(date 1682413257176)
+@@ -10,17 +10,13 @@
+ 		$('.inputBox2 label').css('color', 'red');
+ 	    $('#first_name').focus();
+ 	}else {
+-		$.ajax({
+-			type: 'post',
+-			url: '/miniProject/member/insertName',
+-			data: 'name=' + $('#last_name').val() + $('#first_name').val(),
+-			success: function(data){
+-				location.href='/miniProject/member/join_email';
+-			},
+-			error: function(err){
+-		   		console.log(err);
+-		   	}
+-		});
+-	}
++		$('#join_name_form').submit();
++	}
++});
++
++$("#join").keydown(function(key) {
++   if( key.keyCode == 13 ){
++      $('#nextBtn').trigger('click');
++   }
+ });
+ 
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email2.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$(function(){\r\n\tconst eamil = $('#email').text(); // 이메일 주소값 얻어오기!\r\n\tconsole.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인\r\n\tconst checkInput = $('#email_code') // 인증번호 입력하는곳 \r\n\t\r\n\t$.ajax({\r\n\t\ttype : 'get',\r\n\t\turl : '/miniProject/member/mailCheck',\r\n\t\tdata: 'email='+$('#email').text(),\r\n\t\tsuccess : function (data) {\r\n\t\t\tconsole.log(\"data : \" +  data);\r\n\t\t\tcheckInput.attr('disabled',false);\r\n\t\t\tcode =data;\r\n\t\t\talert('인증번호가 전송되었습니다.')\r\n\t\t}\t\t\t\r\n\t}); // end ajax\r\n\t\r\n\t// 인증번호 비교 \r\n\t// blur -> focus가 벗어나는 경우 발생\r\n\t$('.inputBox').blur(function () {\r\n\t\tconst inputCode = $(this).val();\r\n\t\tconst $resultMsg = $('#mail-check-warn');\r\n\t\t\r\n\t\tif(inputCode === code){\r\n\t\t\t$resultMsg.html('인증번호가 일치합니다.');\r\n\t\t}else{\r\n\t\t\t$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');\r\n\t\t\t$resultMsg.css('color','red');\r\n\t\t}\r\n\t});\r\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email2.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email2.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email2.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/join_email2.js	(date 1682413257176)
+@@ -8,24 +8,37 @@
+ 		url : '/miniProject/member/mailCheck',
+ 		data: 'email='+$('#email').text(),
+ 		success : function (data) {
+-			console.log("data : " +  data);
++			//console.log("data : " +  data);
+ 			checkInput.attr('disabled',false);
+ 			code =data;
+-			alert('인증번호가 전송되었습니다.')
++			alert('인증코드가 전송되었습니다.')
+ 		}			
+ 	}); // end ajax
+ 	
+-	// 인증번호 비교 
+-	// blur -> focus가 벗어나는 경우 발생
+-	$('.inputBox').blur(function () {
+-		const inputCode = $(this).val();
+-		const $resultMsg = $('#mail-check-warn');
++	$('#nextBtn').click(function(){
++		$('#codeDiv').empty();
+ 		
+-		if(inputCode === code){
+-			$resultMsg.html('인증번호가 일치합니다.');
+-		}else{
+-			$resultMsg.html('인증번호가 불일치 합니다. 다시 확인해주세요!.');
+-			$resultMsg.css('color','red');
++		if($('#email_code').val() == '') {
++			$('#codeDiv').text('코드를 입력하세요.');
++			$('#codeDiv').css('color', 'red');
++			$('#codeDiv').css('font-size', '14px');
++			$('#codeDiv').css('font-weight', 'bold');
++			$('input[type="text"]').css('border','2px solid red');
++			$('.inputBox label').css('color', 'red');
++		    $('#codeDiv').focus();
++		}else {
++			if($('#email_code').val() == code) {
++				$('#join_email2_form').submit();
++			}else {
++				$('#codeDiv').text('코드번호가 불일치 합니다.');
++				$('#codeDiv').css('color', 'red');
++				$('#codeDiv').css('font-size', '14px');
++				$('#codeDiv').css('font-weight', 'bold');
++				$('input[type="text"]').css('border','2px solid red');
++				$('.inputBox label').css('color', 'red');
++			    $('#codeDiv').focus();
++			}
+ 		}
+ 	});
++
+ });
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email1.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$('#nextBtn').click(function(){\r\n\t$('#nameDiv').empty();\r\n\t\r\n\tif($('#first_name').val() == '') {\r\n\t\t$('#nameDiv').text('이름을 입력하세요.');\r\n\t\t$('#nameDiv').css('color', 'red');\r\n\t\t$('#nameDiv').css('font-size', '14px');\r\n\t\t$('#nameDiv').css('font-weight', 'bold');\r\n\t\t$('.inputBox2 input[type=\"text\"]').css('border','2px solid red');\r\n\t\t$('.inputBox2 label').css('color', 'red');\r\n\t    $('#first_name').focus();\r\n\t}else {\r\n\t\t$.ajax({\r\n\t\t\ttype: 'post',\r\n\t\t\turl: '/miniProject/member/searchName',\r\n\t\t\tdata: 'name=' + $('#last_name').val() + $('#first_name').val(),\r\n\t\t\tsuccess: function(data){\r\n\t\t\t\tif(data == \"\") {\r\n\t\t\t\t\t$('#nameDiv').text('이름이 존재하지 않습니다.');\r\n\t\t\t\t\t$('#nameDiv').css('color', 'red');\r\n\t\t\t\t\t$('#nameDiv').css('font-size', '14px');\r\n\t\t\t\t\t$('#nameDiv').css('font-weight', 'bold');\r\n\t\t\t\t\t$('.inputBox2 input[type=\"text\"]').css('border','2px solid red');\r\n\t\t\t\t\t$('.inputBox2 label').css('color', 'red');\r\n\t\t\t\t    $('#first_name').focus();\r\n\t\t\t\t}else {\r\n\t\t\t\t\tlocation.href='/miniProject/member/search_email2?name='+ $('#last_name').val() + $('#first_name').val();\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\terror: function(err){\r\n\t\t   \t\tconsole.log(err);\r\n\t\t   \t}\r\n\t\t});\r\n\t}\r\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email1.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email1.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email1.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email1.js	(date 1682413257183)
+@@ -32,4 +32,10 @@
+ 		   	}
+ 		});
+ 	}
++});
++
++$("#search").keydown(function(key) {
++	   if( key.keyCode == 13 ){
++	      $('#nextBtn').trigger('click');
++	   }
+ });
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE mapper\r\n PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\r\n \"https://mybatis.org/dtd/mybatis-3-mapper.dtd\">\r\n <mapper namespace=\"memberSQL\">\r\n \t<select id=\"isExistEmail\" parameterType=\"String\" resultType=\"member\">\r\n \t\tselect * from User where email=#{email}\r\n \t</select>\r\n \t\t\r\n \t<select id=\"isExistPwd\" parameterType=\"java.util.Map\" resultType=\"member\">\r\n \t\tselect * from User where email=#{email} and password=#{password}\r\n \t</select>\r\n \t\r\n \t<insert id=\"insertName\" parameterType=\"String\">\r\n \t\tinsert into User (name) values (#{name})\r\n \t</insert>\r\n \t\r\n \t<select id=\"searchName\" parameterType=\"String\" resultType=\"member\">\r\n \t\tselect * from User where name=#{name}\r\n \t</select>\r\n \t\r\n \t<select id=\"isExistRrn\" parameterType=\"java.util.Map\" resultType=\"member\">\r\n \t\tselect * from User where name=#{name} and rrn=#{rrn}\r\n \t</select>\r\n \t\r\n \t<select id=\"getEmailList\" parameterType=\"String\" resultType=\"member\">\r\n \t\tselect * from User where name=#{name}\r\n \t</select>\r\n \t\r\n \t<select id=\"loginOk\" parameterType=\"Int\" resultType=\"member\">\r\n \t\tselect * from user where user_id=#{user_id}\r\n \t</select>\r\n \t\t\r\n </mapper>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml b/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml	(date 1682413257170)
+@@ -28,7 +28,19 @@
+  	</select>
+  	
+  	<select id="loginOk" parameterType="Int" resultType="member">
+- 		select * from user where user_id=#{user_id}
++ 		select * from User where user_id=#{user_id}
+  	</select>
++ 	
++ 	<insert id="insertMember" parameterType="java.util.Map">
++ 		insert into User(name, email, password, rrn, year, gender, phone) values(#{name}, #{email}, #{password}, #{rrn}, #{year}, #{gender}, #{phone})
++ 	</insert>
++ 	
++ 	<select id="isExistPwd2" parameterType="String" resultType="member">
++ 		select * from User where email=#{email}
++ 	</select>
++ 	
++ 	<update id="UpdatePwd" parameterType="java.util.Map">
++ 		update User set password=#{password} where email=#{email}
++ 	</update>
+  		
+  </mapper>
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_pwd.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$(function(){\r\n\t$.ajax({\r\n\t\ttype: 'post',\r\n\t\turl: '/miniProject/member/isExistEmail',\r\n\t   \tdata: 'email='+$('#email').text(),\r\n\t\tsuccess: function(data){\r\n\t\t\t$('#name').text(data.name);\r\n\t\t},\r\n\t   \terror: function(err){\r\n\t   \t\tconsole.log(err);\r\n\t   \t}\r\n\t});\r\n});\r\n\r\n$('#nextBtn').click(function(){\r\n\t$('#passwordDiv').empty();\r\n\t\r\n\tif($('#password').val() == '') {\r\n\t\t$('#passwordDiv').text('비밀번호를 입력하세요.');\r\n\t\t$('#passwordDiv').css('color', 'red');\r\n\t\t$('#passwordDiv').css('font-size', '14px');\r\n\t\t$('#passwordDiv').css('font-weight', 'bold');\r\n\t\t$('input[type=\"password\"]').css('border','2px solid red');\r\n\t\t$('.inputBox label').css('color', 'red');\r\n\t    $('#password').focus();\r\n\t}else {\r\n\t\t$.ajax({\r\n\t\t\ttype: 'post',\r\n\t\t\turl: '/miniProject/member/isExistPwd',\r\n\t\t   \tdata: 'password=' + $('#password').val() + '&email=' + $('#email').text(), \r\n\t\t   \tsuccess: function(data){\r\n\t\t\t\tif(data == \"\") {\r\n\t\t\t\t\t$('#passwordDiv').text('잘못된 비밀번호 입니다.');\r\n\t\t\t\t\t$('#passwordDiv').css('color', 'red');\r\n\t\t\t\t\t$('#passwordDiv').css('font-size', '14px');\r\n\t\t\t\t\t$('#passwordDiv').css('font-weight', 'bold');\r\n\t\t\t\t\t$('input[type=\"password\"]').css('border','2px solid red');\r\n\t\t\t\t\t$('.inputBox label').css('color', 'red');\r\n\t\t\t\t    $('#password').focus();\r\n\t\t\t\t}else{\r\n\t\t\t\t\tlocation.href='/miniProject/';\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t   \terror: function(err){\r\n\t\t   \t\tconsole.log(err);\r\n\t\t   \t}\r\n\t\t});\r\n\t}\r\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_pwd.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_pwd.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_pwd.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/login_pwd.js	(date 1682413257183)
+@@ -14,7 +14,7 @@
+ 
+ $('#nextBtn').click(function(){
+ 	$('#passwordDiv').empty();
+-	
++		
+ 	if($('#password').val() == '') {
+ 		$('#passwordDiv').text('비밀번호를 입력하세요.');
+ 		$('#passwordDiv').css('color', 'red');
+@@ -46,4 +46,15 @@
+ 		   	}
+ 		});
+ 	}
++});
++
++$("#login").keydown(function(key) {
++	   if( key.keyCode == 13 ){
++	      $('#nextBtn').trigger('click');
++	   }
++});
++
++
++$('#search_password').click(function(){
++	location.href='/miniProject/member/search_pwd1?email='+$('#email').text();
+ });
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n$(function(){\r\n    var user_id= 1;\r\n    var query_string = window.location.search;\r\n// 쿼리 스트링을 파싱하여 객체로 변환합니다.\r\n    var query_params = new URLSearchParams(query_string);\r\n// video_id 파라미터 값을 가져옵니다.\r\n    var video_id = query_params.get(\"video_id\");\r\n    console.log(\"video_id : \"+video_id);\r\n    console.log(\"user_id : \"+user_id);\r\n\r\n    getVideoById(user_id, video_id);\r\n\r\n    function getVideoById(user_id, video_id) {\r\n        $.ajax({\r\n            type: 'post',\r\n            url: '/miniProject/video/getVideoById',\r\n            dataType: 'json',\r\n            data: { user_id: user_id, video_id: video_id },\r\n            success: function(data) {\r\n                    console.log(JSON.stringify(data));\r\n                    // 동영상 정보 가져오기\r\n                    var comments = data.length;\r\n                    var video = data[0];\r\n                    var video_id = video.video_id;\r\n                    var video_title = video.video_title;\r\n                    var video_description = video.video_description;\r\n\r\n                    var upload_date = new Date(video.upload_date);\r\n                    const year = upload_date.getFullYear(); // 년도\r\n                    const month = upload_date.getMonth() + 1; // 월 (0부터 시작하므로 1을 더해줌)\r\n                    const day = upload_date.getDate(); // 일\r\n\r\n                    var channel_id = video.channel_id;\r\n                    var video_url = video.video_url;\r\n                    var thumbnail_url = video.thumbnail_url;\r\n                    var views = video.views;\r\n                    var video_like_count = video.video_like_count;\r\n                    var channel_name = video.channel_name;\r\n                    var subscriber_count = video.subscriber_count;\r\n\r\n                        /*비디오 동적 생성*/\r\n\r\n                $('#play-video').html(`\r\n                    <video controls autoplay width=\"1000\" height=\"600\">\r\n                        <source src=\"${video_url}\" type=\"video/mp4\">\r\n                    </video>\r\n                    \r\n                    <h3>${video_title}</h3>\r\n                    \r\n                    <div class=\"play-video-info\">\r\n                        <p>조회수 ${views} &bull; ${year}년 ${month}월 ${day}일</p>\r\n                        <br>\r\n                        ${video_description}\r\n                        <div>\r\n                            <a href=\"\"><img src=\"/miniProject/image/like.png\">${video_like_count}</a>\r\n                            <a href=\"\"><img src=\"/miniProject/image/share.png\">공유하기</a>\r\n                            <a href=\"\"><img src=\"/miniProject/image/save.png\">Save</a>\r\n                        </div>\r\n                    </div>\r\n                    <hr>\r\n                    <div class=\"plublisher\">\r\n                        \r\n                        <a href=\"/miniProject/channel/main?channel_id=${channel_id}\">\r\n                        <!--null 이면 기본이미지-->\r\n                        <img src=\"${data[0].thumbnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}\">\r\n                        \r\n                        </a>\r\n                        <div>\r\n                            <p>${channel_name}</p>\r\n                            <span>구독자 ${subscriber_count}명</span>\r\n                        </div>\r\n                        \r\n                        <button type=\"button\">구독</button>\r\n                    </div>\r\n                    <div class=\"video-description\">\r\n                        <hr>\r\n                        <!--댓글이 0 개 면 댓글 0 출력 아니면 숫자출력-->\r\n                        <h4>댓글 ${data[0].comment_text ? comments : '0'} 개</h4>\r\n                        \r\n                        <div id=\"comment\">\r\n                              <div id=\"img\">\r\n                                 <!--null 이면 기본이미지-->\r\n                                 <img src=\"${data[0].user_profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}\">\r\n                              </div>\r\n                              <div id=\"addcomment\">\r\n                                 <div id=\"up\">\r\n                                    <input type=\"text\" placeholder=\"댓글 추가...\"\r\n                                       onclick=\"showButtons()\">\r\n                                 </div>\r\n                                 <div id=\"down\">\r\n                                    <div id=\"down-left\"></div>\r\n                                    <div id=\"down-center\"></div>\r\n                                    <div id=\"down-right\">\r\n                                       <div id=\"commentBtn\">\r\n                                          <button id=\"cancel\" onclick=\"hideButtons()\">취소</button>\r\n                                          <button id=\"uploadcomment\">댓글</button>\r\n                                       </div>\r\n                                    </div>\r\n                                 </div>\r\n                              </div>\r\n                           </div>                  \r\n                    </div>\r\n                `);\r\n\r\n                /* 댓글 동적 생성 단 댓글이 0개일때는 생성 x */\r\n                if (data[0].comment_text){\r\n\r\n                    for (var i = 0; i < data.length; i++) {\r\n                        var comment_id = data[i].comment_id;\r\n                        var comment_text = data[i].comment_text;\r\n\r\n                        var comment_date = new Date(data[i].comment_date);\r\n                        const year = comment_date.getFullYear(); // 년도\r\n                        const month = comment_date.getMonth() + 1; // 월 (0부터 시작하므로 1을 더해줌)\r\n                        const day = comment_date.getDate(); // 일\r\n\r\n                        var commenter_name = data[i].commenter_name;\r\n                        var profile_url = data[i].profile_url;\r\n                        var comment_like_count = data[i].comment_like_count;\r\n\r\n                        var row = `\r\n                                    <div class=\"old-comment\">\r\n                                       <img src=\"${data[i].profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}\">\r\n                                      \r\n                                      <div>\r\n                                        <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>\r\n                                        <p>${comment_text}</p>\r\n                                        <div class=\"acomment-action\">\r\n                                          \r\n                                          <img src=\"/miniProject/image/like.png\">\r\n                                          <span>${comment_like_count} 좋아요 수</span>\r\n                                        </div>\r\n                                      </div>\r\n                                    </div>`;\r\n\r\n                        $(\"#play-video\").append(row);\r\n                    }\r\n                }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n            }\r\n            ,error: function(err){\r\n                console.log(err);\r\n            }\r\n        });\r\n    }\r\n\r\n});\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js	(date 1682413257184)
+@@ -53,9 +53,7 @@
+                         <br>
+                         ${video_description}
+                         <div>
+-                            <a href=""><img src="/miniProject/image/like.png">${video_like_count}</a>
+-                            <a href=""><img src="/miniProject/image/share.png">공유하기</a>
+-                            <a href=""><img src="/miniProject/image/save.png">Save</a>
++                            <a href="" id="likeBtn"><img src="/miniProject/image/like.png">${video_like_count}</a>
+                         </div>
+                     </div>
+                     <hr>
+@@ -152,4 +150,19 @@
+         });
+     }
+ 
++});
++
++
++$('#likeBtn').click(function(){
++	$.ajax({
++		type:'post',
++		url: '/miniProject/like/likePlus',
++		data: 'user_id=' + user_id + 'video_id=' + video_id,
++		success: function(data){
++			console.log(data);
++		},
++		error: function(err){
++			console.log(err);
++		}
++	});
+ });
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email2.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$('#nextBtn').click(function(){\r\n\t$('#rrnDiv').empty();\r\n\t\r\n\tif($('#rrn_2').val() == '') {\r\n\t\t$('#rrnDiv').text('주민번호를 입력하세요.');\r\n\t\t$('#rrnDiv').css('color', 'red');\r\n\t\t$('#rrnDiv').css('font-size', '14px');\r\n\t\t$('#rrnDiv').css('font-weight', 'bold');\r\n\t\t$('input[type=\"text\"]').css('border','2px solid red');\r\n\t\t$('.inputBox1 label').css('color', 'red');\r\n\t\t$('input[type=\"password\"]').css('border','2px solid red');\r\n\t\t$('.inputBox2 label').css('color', 'red');\r\n\t    $('#rrn_1').focus();\r\n\t}else {\r\n\t\t$.ajax({\r\n\t\t\ttype: 'post',\r\n\t\t\turl: '/miniProject/member/isExistRrn',\r\n\t\t\tdata: 'rrn=' + $('#rrn_1').val() + $('#rrn_2').val() + '&name=' + $('#name').val(),\r\n\t\t\tsuccess: function(data){\r\n\t\t\t\tif(data == \"\") {\r\n\t\t\t\t\t$('#rrnDiv').text('주민번호가 존재하지 않습니다.');\r\n\t\t\t\t\t$('#rrnDiv').css('color', 'red');\r\n\t\t\t\t\t$('#rrnDiv').css('font-size', '14px');\r\n\t\t\t\t\t$('#rrnDiv').css('font-weight', 'bold');\r\n\t\t\t\t\t$('input[type=\"text\"]').css('border','2px solid red');\r\n\t\t\t\t\t$('.inputBox1 label').css('color', 'red');\r\n\t\t\t\t\t$('input[type=\"password\"]').css('border','2px solid red');\r\n\t\t\t\t\t$('.inputBox2 label').css('color', 'red');\r\n\t\t\t\t    $('#rrn_1').focus();\r\n\t\t\t\t}else {\r\n\t\t\t\t\tlocation.href='/miniProject/member/search_email3?name='+ $('#name').val();\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t   \terror: function(err){\r\n\t\t   \t\tconsole.log(err);\r\n\t\t   \t}\r\n\t\t});\r\n\t}\r\n});
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email2.js b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email2.js
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email2.js	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/js/search_email2.js	(date 1682413257183)
+@@ -1,16 +1,22 @@
+ $('#nextBtn').click(function(){
+ 	$('#rrnDiv').empty();
+ 	
+-	if($('#rrn_2').val() == '') {
++	if($('#rrn_1').val() == '') {
+ 		$('#rrnDiv').text('주민번호를 입력하세요.');
+ 		$('#rrnDiv').css('color', 'red');
+ 		$('#rrnDiv').css('font-size', '14px');
+ 		$('#rrnDiv').css('font-weight', 'bold');
+ 		$('input[type="text"]').css('border','2px solid red');
+ 		$('.inputBox1 label').css('color', 'red');
++	    $('#rrn_1').focus();
++	}else if($('#rrn_2').val() == ''){
++		$('#rrnDiv').text('주민번호를 입력하세요.');
++		$('#rrnDiv').css('color', 'red');
++		$('#rrnDiv').css('font-size', '14px');
++		$('#rrnDiv').css('font-weight', 'bold');
+ 		$('input[type="password"]').css('border','2px solid red');
+ 		$('.inputBox2 label').css('color', 'red');
+-	    $('#rrn_1').focus();
++	    $('#rrn_2').focus();
+ 	}else {
+ 		$.ajax({
+ 			type: 'post',
+@@ -36,4 +42,10 @@
+ 		   	}
+ 		});
+ 	}
++});
++
++$("#search").keydown(function(key) {
++	   if( key.keyCode == 13 ){
++	      $('#nextBtn').trigger('click');
++	   }
+ });
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"UTF-8\";\r\n\r\n*{\r\n   margin: 0;\r\n   padding: 0;\r\n   font-family: 'poppins', sans-serif;\r\n   box-sizing: border-box;\r\n}\r\n\r\na{\r\n   text-decoration: none;\r\n   color: #5a5a5a;\r\n}\r\nimg{\r\n   cursor: pointer;\r\n}\r\n\r\n.flex-div{\r\n   display: flex;\r\n   align-items: center;\r\n}\r\n\r\nnav {\r\n   padding: 10px 2%;\r\n   justify-content: space-between;\r\n   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);\r\n   background: #fff;\r\n   position: sticky;\r\n   top: 0;\r\n   z-index: 10;\r\n}\r\n\r\n.nav-right img{\r\n   width: 25px;\r\n   margin-right: 25px;\r\n}\r\n\r\n.nav-right .user-icon{\r\n   width: 35px;\r\n   border-radius: 50%;\r\n   margin-right: 0;\r\n}\r\n\r\n.nav-right .loginNone #loginbtn{\r\n\tpadding-top: 10px;\r\n\twidth: 120px;\r\n}\r\n\r\n\r\n.nav-left .menu-icon{\r\n   width: 22px;\r\n   margin-right: 25px;\r\n}\r\n\r\n.nav-left .logo{\r\n   width: 130px;\r\n   \r\n}\r\n\r\n.nav-middle .mic-icon{\r\n   width: 16px;\r\n}\r\n\r\n.nav-middle .search-box{\r\n   border: 1px solid #ccc;\r\n   margin-right: 15px;\r\n   padding: 8px 12px;\r\n   border-radius: 25px;\r\n}\r\n\r\n.nav-middle .search-box input{\r\n   width: 400px;\r\n   border: 0;\r\n   outline: 0;\r\n   background: transparent;\r\n}\r\n\r\n.nav-middle .search-box img{\r\n   width: 15px;\r\n}\r\n\r\n\r\n/* 사이드바 */\r\n\r\n.sidebar{\r\n   background: #fff;\r\n   width: 15%;\r\n   height: 100vh;\r\n   position: fixed;\r\n   top: 0;\r\n   padding-left: 2%;\r\n   padding-top: 80px;\r\n}\r\n\r\n.shortcut-links a img{\r\n   width: 20px;\r\n   margin-right: 20px;   \r\n   \r\n}\r\n\r\n\r\n.shortcut-links a{\r\n   display: felx;\r\n   align-items: center;\r\n   margin-bottom: 20px;\r\n   width: fit-content;\r\n   flex-wrap: wrap;\r\n}\r\n\r\n.shortcut-links a:first-child {\r\n   color: #ed3833;\r\n}\r\n\r\n.sidebar hr{\r\n   border: 0;\r\n   height: 1px;\r\n   background: #ccc;\r\n   width: 85%;\r\n}\r\n\r\n.subscribed-list h3{\r\n   font-size: 13px;\r\n   margin: 20px 0;\r\n   color: #5a5a5a;\r\n}\r\n\r\n.subscribed-list a{\r\n   display: flex;\r\n   align-items: center;\r\n   margin-bottom: 20px;\r\n   width: fit-content;\r\n   flex-wrap: wrap;\r\n}\r\n\r\n.subscribed-list a img{\r\n   width: 25px;\r\n   border-radius: 50%;\r\n   margin-right: 20px;\r\n}\r\n\r\n.small-sidebar{\r\n   width: 5%;\r\n}\r\n\r\n.small-sidebar a p{\r\n   display: none;\r\n}\r\n\r\n.small-sidebar h3{\r\n   display: none;\r\n}\r\n\r\n.small-sidebar hr{\r\n   width: 50%;\r\n   margin-bottom: 25px;\r\n}\r\n\r\n/* 메인 */\r\n.container{\r\n   background: #f9f9f9;\r\n   padding-left: 17%;\r\n   padding-right: 2%;\r\n   padding-top: 20px;\r\n   padding-bottom: 20px;\r\n}\r\n\r\n.large-container{\r\n   padding-left: 7%;\r\n}\r\n\r\n.banner{\r\n   width: 100%;\r\n}\r\n\r\n.banner img{\r\n   width: 100%;\r\n   border-radius: 8px;\r\n}\r\n\r\n.list-container{\r\n   display: grid;\r\n   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\r\n   grid-column-gap: 16px;\r\n   grid-row-gap: 30;\r\n   margin-top: 15px;\r\n}\r\n\r\n.video-list .thumbnail{\r\n   width: 100%;\r\n   border-radius: 5px;\r\n}\r\n\r\n.video-list .flex-div{\r\n   align-items: flex-start;\r\n   margin-top: 7px;\r\n}\r\n\r\n.video-list .flex-div img{\r\n   width: 35px;\r\n   margin-right: 10px;\r\n   border-radius: 50%;\r\n}\r\n\r\n.video-info{\r\n   color: #5a5a5a;\r\n   font-size: 13px;\r\n}\r\n\r\n.video-info a{\r\n   color: #000;\r\n   font-weight: 600;\r\n   display: block;\r\n   margin-bottom: 5px;\r\n}\r\n\r\n/* 모바일 화면 */\r\n@media (max-width: 900px){\r\n   .menu-icon{\r\n      display: none;\r\n   }\r\n   .sidebar{\r\n      display: none;\r\n   }\r\n   \r\n   .container, .large-container{\r\n      padding-left: 5%;\r\n      padding-right: 5%;\r\n   }\r\n   \r\n   .nav-right img {\r\n      display: none;\r\n   }\r\n   \r\n   \r\n   \r\n   .nav-right .user-icon{\r\n      display: block;\r\n      width: 30px;\r\n   }\r\n   \r\n   .nav-middle .search-box input{\r\n      width: 100px;\r\n   }\r\n   \r\n   .nav-middle .mic-icon{\r\n      display: none;\r\n   }\r\n   \r\n   .logo{\r\n      width: 90px;\r\n   }\r\n}\r\n\r\n/* play video page */\r\n.play-container{\r\n   padding-left: 2%;\r\n}\r\n\r\n.row{\r\n   display: flex;\r\n   justify-content: space-between;\r\n   flex-wrap: wrap;\r\n}\r\n\r\n.play-video{\r\n   flex-basis: 69%;\r\n}\r\n\r\n.right-sidebar{\r\n   flex-basis: 30%;\r\n}\r\n\r\n.play-video video{\r\n   width: 100%;\r\n}\r\n\r\n.side-video-list{\r\n   display: flex;\r\n   justify-content: space-between;\r\n   margin-bottom: 8px;\r\n}\r\n\r\n.side-video-list img{\r\n   width: 100%;\r\n}\r\n\r\n.side-video-list .small-thumbnail{\r\n   flex-basis: 49%;\r\n}\r\n\r\n.side-video-list .video-info{\r\n   flex-basis: 49%;\r\n}\r\n\r\n.play-video .tags a{\r\n   color: #0000ff;\r\n   font-size: 13px;\r\n}\r\n\r\n.play-video h3{\r\n   font-weight: 600;\r\n   font-size: 22px;\r\n}\r\n\r\n.play-video .play-video-info{\r\n   display: flex;\r\n   align-items: center;\r\n   justify-content: space-between;\r\n   flex-wrap: wrap;\r\n   margin-top: 10px;\r\n   font-size: 14px;\r\n   color: #5a5a5a;\r\n}\r\n\r\n.play-video .play-video-info a img{\r\n   width: 20px;\r\n   margin-right: 8px;\r\n}\r\n\r\n.play-video .play-video-info a{\r\n   display: inline-flex;\r\n   align-items: center;\r\n   margin-left: 15px;\r\n}\r\n\r\n.play-video hr{\r\n   border: 0;\r\n   height: 1px;\r\n   background: #ccc;\r\n   margin: 20px 0;\r\n}\r\n\r\n.plublisher{\r\n   display: flex;\r\n   align-items: center;\r\n   margin-top: 20px;\r\n}\r\n\r\n.plublisher div{\r\n   flex: 1;\r\n   line-height: 18px;\r\n}\r\n\r\n.plublisher img{\r\n   width: 40px;\r\n   border-radius: 50%;\r\n   margin-left: 15px;\r\n}\r\n\r\n.plublisher div p{\r\n   color: #000;\r\n   font-weight: 600;\r\n   font-size: 18px;\r\n}\r\n\r\n.plublisher div span{\r\n   font-size: 13px;\r\n   color: #5a5a5a;\r\n}\r\n\r\n.plublisher button{\r\n   background: red;\r\n   color: #fff;\r\n   padding: 8px 30px;\r\n   border: 0;\r\n   outline: 0;\r\n   border-radius: 4px;\r\n   cursor: pointer;\r\n}\r\n\r\n.video-description{\r\n   padding-left: 55px;\r\n   margin: 15px 0;\r\n}\r\n\r\n.video-description p{\r\n   font-size: 14px;\r\n   margin-bottom: 5px;\r\n   color: #5a5a5a;\r\n}\r\n\r\n.video-description h4{\r\n   font-size: 14px;\r\n   color: #5a5a5a;\r\n   margin-top: 15px;\r\n}\r\n\r\n/* 댓글추가 start */\r\n\r\n/*-------댓글 입력창 시작---------*/\r\n#comment {\r\n  margin-top: 15px;\r\n  height: 80px;\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\n#addcomment {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n  width: 200px;\r\n}\r\n#img {\r\n  margin-right: 15px;\r\n}\r\n\r\n#img img {\r\n  width: 50px;\r\n  height: 50px;\r\n  margin-bottom:10px;\r\n  border-radius: 50%;\r\n}\r\n\r\n\r\n/*-------------------- */\r\n\r\n#up {\r\n  margin-bottom: 30px;\r\n  width: 80%;\r\n}\r\n\r\n#up input {\r\nborder: 0;\r\noutline: 0;\r\nborder-bottom: 1px solid #ccc;\r\nwidth: 100%;\r\npadding-top: 10px;\r\nbackground: transparent;\r\ntransition: border-color 0.2s ease-in-out;\r\n}\r\n#up input:focus {\r\n   border-color: #333;\r\n}\r\n\r\n/*-------------------*/\r\n\r\n#down {\r\n  width: 80%;\r\n  visibility: hidden;\r\n  opacity: 0;\r\n}\r\n\r\n#down.show {\r\n  visibility: visible;\r\n  opacity: 1;\r\n}\r\n#down-center {\r\n  flex: 3;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n}\r\n\r\n#down-center {\r\n  flex: 3;\r\n  margin: 0 50px; /* 좌우 여백을 10px로 지정 */\r\n}\r\n\r\n#down-right {\r\n  margin-top: -30px;\r\n  flex: 1;\r\n  text-align: right;\r\n}\r\n#commentBtn button {\r\n  margin: 5px;\r\n  padding: 8px 16px;\r\n  background-color: #f2f2f2;\r\n  color: #333;\r\n  border: none;\r\n  border-radius: 999px;\r\n  cursor: pointer;\r\n  transition: background-color 0.2s ease-in-out;\r\n}\r\n\r\n#commentBtn #cancel {\r\n  border-radius: 999px;\r\n  background-color: white;\r\n}\r\n\r\n#commentBtn #cancel:hover {\r\n  background-color: #e6e6e6;\r\n}\r\n\r\n#commentBtn #uploadcomment:hover {\r\n  background-color: lightblue;\r\n}\r\n\r\n/*-------댓글 입력창 끝---------*/\r\n/* 댓글추가 end */\r\n.old-comment{\r\n   display: flex;\r\n   align-items: center;\r\n   margin: 20px 0;\r\n}\r\n\r\n.old-comment img{\r\n   width: 35px;\r\n   border-radius: 50%;\r\n   margin-right: 15px;\r\n}\r\n\r\n.old-comment h3{\r\n   font-size: 14px;\r\n   margin-bottom: 2px;\r\n}\r\n\r\n.old-comment h3 span{\r\n   font-size: 12px;\r\n   color: #5a5a5a;\r\n   font-weight: 500;\r\n   margin-left: 8px;\r\n}\r\n\r\n.old-comment .acomment-action{\r\n   display: flex;\r\n   align-items: center;\r\n   margin: 8px 0;\r\n   font-size: 14px;\r\n}\r\n\r\n.old-comment .acomment-action img{\r\n   border-radius: 0;\r\n   width: 20px;\r\n   margin-right: 5px; \r\n}\r\n\r\n.old-comment .acomment-action span{\r\n   margin-right: 20px;\r\n   color: #5a5a5a;\r\n}\r\n\r\n.old-comment .acomment-action a{\r\n   color: #0000ff;\r\n}\r\n\r\n@media(max-width:900px){\r\n   .play-video{\r\n      flex-basis: 100%;\r\n   }\r\n   \r\n   .right-sidebar{\r\n      flex-basis: 100%;\r\n   }\r\n   \r\n   .play-container{\r\n      padding-left: 5%;\r\n   }\r\n   \r\n   .video-description{\r\n      padding-left: 0;\r\n   }\r\n   \r\n   .play-video .play-video-info a{\r\n      margin-left: 0;\r\n      margin-right: 15px;\r\n      margin-top: 15px;\r\n   }\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css	(date 1682413247901)
+@@ -41,7 +41,7 @@
+    margin-right: 0;
+ }
+ 
+-.nav-right .loginNone #loginbtn{
++.nav-right #loginbtn{
+ 	padding-top: 10px;
+ 	width: 120px;
+ }
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/channel.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"UTF-8\";\r\n\r\n#container {\r\n\tdisplay: flex;\r\n\twidth: 100%;\r\n\theight: 170px;\r\n}\r\n\r\n#box-left {\r\n\tbackground: white;\r\n\tflex: 1;\r\n\tdisplay: flex;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n}\r\n\r\n#box-center {\r\n\tbackground: white;\r\n\tflex: 3;\r\n\tdisplay: flex;\r\n\talign-items: flex-start;\r\n\ttext-align: left;\r\n\t\r\n}\r\n\r\n#box-right {\r\n\tbackground: white;\r\n\tflex: 1;\r\n\tdisplay: flex;\r\n\tjustify-content: center;\r\n\talign-items: center;\r\n\tflex-direction: column;\r\n}\r\n\r\n.channel-logo {\r\n\twidth: 100%;\r\n\tmax-height: 180px;\r\n\toverflow: hidden;\r\n\ttransition: max-height 0.5s ease;\r\n}\r\n\r\n.channel-logo img {\r\n\twidth: 100%;\r\n\theight: auto;\r\n\tobject-fit: cover;\r\n}\r\n\r\n.channel-profile {\r\n\twidth: 115px;\r\n\theight: 115px;\r\n\tborder-radius: 50%;\r\n\toverflow: hidden;\r\n}\r\n\r\n.channel-profile img {\r\n\twidth: 100%;\r\n\theight: auto;\r\n\tdisplay: block;\r\n\tmargin: 0 auto;\r\n\ttransform: scale(1.4); /* 이미지를 140% 크기로 확대합니다 */\r\n}\r\n\r\n.subcribe img {\r\n\twidth: 125px;\r\n\theight: 30px;\r\n\tdisplay: block;\r\n\t/* 초기 이미지 설정 */\r\n\tbackground-image: url('image/subcribe.png');\r\n\t/* 다른 이미지로 변경할 때의 설정 */\r\n\ttransition: background-image 0.3s ease;\r\n\t/* 커서 변경 */\r\n\tcursor: pointer;\r\n\t/* 왼쪽 위로 약간 이동 */\r\n\tposition: relative;\r\n\ttop: -20px;\r\n\tleft: -10px;\r\n}\r\n\r\n/* 호버 상태일 때 이미지 변경 */\r\n.subcribe img:hover {\r\n\tbackground-image: url('image/hoversubcribe.png');\r\n}\r\n\r\n/* -navigation */\r\n.navigation {\r\n\tdisplay: flex;\r\n\talign-items: center;\r\n\tjustify-content: space-between;\r\n\tbackground: white;\r\n\tpadding: 10px;\r\n\tborder-bottom: none;\r\n\tborder-bottom: 1px #000;\r\n\tbox-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.navigation a {\r\n\tcolor: #666;\r\n\ttext-decoration: none;\r\n\tmargin-right: 10px;\r\n\tposition: relative; /* 상대 위치 설정 */\r\n\ttransition: color 0.3s ease;\r\n}\r\n\r\n.navigation a::before {\r\n\tcontent: \"\";\r\n\tposition: absolute;\r\n\tbottom: -2px; /* 아래쪽으로 2px만큼 위치 */\r\n\tleft: 0;\r\n\tright: 0;\r\n\theight: 2px;\r\n\tbackground-color: #888; /* 선 색상 설정 (변경) */\r\n\ttransform: scaleX(0); /* 초기에 선을 가로로 0으로 설정 */\r\n\ttransition: transform 0.3s ease-in-out;\r\n}\r\n\r\n.navigation a:hover {\r\n\tcolor: #666;\r\n\tfont-weight: bold;\r\n}\r\n\r\n.navigation a:hover::before {\r\n\ttransform: scaleX(1); /* 마우스 호버 시 선 가로로 펴지도록 설정 */\r\n}\r\n\r\n/* 현재페이지 */\r\n.navigation .current-page {\r\n\tfont-weight: bold; /* 폰트 굵게 변경 */\r\n}\r\n\r\n/* 이미지에 마우스 포인터를 변경 */\r\n.search-icon {\r\n\tcursor: pointer;\r\n}\r\n\r\n/* section */\r\nsection {\r\n\tmargin-top: 20px; /* 섹션과의 간격 조정 */\r\n\tdisplay: flex; /* 동영상 섹션 내의 요소들을 가로로 배열 */\r\n\tjustify-content: center; /* 가로 방향으로 중앙 정렬 */\r\n\tflex-direction: column; /* 요소들을 세로로 배열 */\r\n}\r\n\r\nsection .video {\r\n\tdisplay: flex; /* 동영상과 정보를 가로로 배열 */\r\n\talign-items: center; /* 세로 방향으로 중앙 정렬 */\r\n\tmargin-bottom: 20px; /* 동영상과 정보 사이의 간격 조정 */\r\n\tmargin-top: 30px; /* 동영상의 상단 간격을 30px로 조정 */\r\n}\r\n\r\nsection .video iframe {\r\n\tmargin-right: 25px; /* 동영상과 정보 사이의 간격 조정 */\r\n}\r\n\r\n#middle {\r\n\tdisplay: flex;\r\n}\r\n\r\n#middle-left {\r\n\tbackground: white;\r\n\tflex-basis: 300px;\r\n}\r\n\r\n#middle-right {\r\n\ttext-align: center;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/channel.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/channel.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/channel.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/channel.css	(date 1682413247901)
+@@ -81,6 +81,26 @@
+ 	background-image: url('image/hoversubcribe.png');
+ }
+ 
++.subcribe #subBtn{
++   background: red;
++   color: #fff;
++   padding: 8px 30px;
++   border: 0;
++   outline: 0;
++   border-radius: 4px;
++   cursor: pointer;
++}
++
++.subcribe #dissubBtn{
++   background: "b2b2b2";
++   color: black;
++   padding: 8px 30px;
++   border: 0;
++   outline: 0;
++   border-radius: 4px;
++   cursor: pointer;
++}
++
+ /* -navigation */
+ .navigation {
+ 	display: flex;
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ArtifactsWorkspaceSettings\">\r\n    <artifacts-to-build>\r\n      <artifact name=\"miniProject:war exploded2\" />\r\n    </artifacts-to-build>\r\n  </component>\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4\" name=\"변경\" comment=\"댓글 if 문걸어서 null 값 출력 방지\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <excluded-from-favorite>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"LOCAL\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"main\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </excluded-from-favorite>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"sunguk04-24\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"LogFilters\">\r\n    <option name=\"FILTER_ERRORS\" value=\"false\" />\r\n    <option name=\"FILTER_WARNINGS\" value=\"false\" />\r\n    <option name=\"FILTER_INFO\" value=\"true\" />\r\n    <option name=\"FILTER_DEBUG\" value=\"true\" />\r\n    <option name=\"CUSTOM_FILTER\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OriUmLZV1cUiHEmVZTZj7WUxiG\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"ASKED_ADD_EXTERNAL_FILES\": \"true\",\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"last_opened_file_path\": \"D:/miniProject/miniProject/src/main/webapp/WEB-INF/img\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"모듈\",\r\n    \"project.structure.proportion\": \"0.16015625\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"reference.settings.project.maven.importing\",\r\n    \"spring.configuration.checksum\": \"d5e314dc8cb8182f28d9b62435538297\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\miniProject\\miniProject\\src\\main\\webapp\\WEB-INF\\img\" />\r\n      <recent name=\"D:\\miniProject\\miniProject\\src\\main\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\miniProject\\miniProject\\src\\main\\webapp\\WEB-INF\\img\" />\r\n      <recent name=\"D:\\miniProject\\miniProject\\src\\main\\webapp\\WEB-INF\\image\" />\r\n      <recent name=\"D:\\miniProject\\miniProject\\src\\main\\webapp\\WEB-INF\\channel\" />\r\n      <recent name=\"D:\\miniProject\\miniProject\\src\\main\\resources\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Tomcat 9.0.73\" type=\"#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory\" factoryName=\"Local\" APPLICATION_SERVER_NAME=\"Tomcat 9.0.73\" ALTERNATIVE_JRE_ENABLED=\"true\" ALTERNATIVE_JRE_PATH=\"11\" nameIsGenerated=\"true\">\r\n      <option name=\"BROWSER_ID\" value=\"98ca6316-2f89-46d9-a9e5-fa9e2b0625b3\" />\r\n      <option name=\"UPDATING_POLICY\" value=\"update-resources\" />\r\n      <deployment>\r\n        <artifact name=\"miniProject:war exploded2\">\r\n          <settings>\r\n            <option name=\"CONTEXT_PATH\" value=\"/miniProject\" />\r\n          </settings>\r\n        </artifact>\r\n      </deployment>\r\n      <server-settings>\r\n        <option name=\"BASE_DIRECTORY_NAME\" value=\"3abbedd2-7c06-4015-9597-e315e918bb74\" />\r\n      </server-settings>\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat\" />\r\n      <predefined_log_file enabled=\"true\" id=\"Tomcat Catalina\" />\r\n      <predefined_log_file id=\"Tomcat Manager\" />\r\n      <predefined_log_file id=\"Tomcat Host Manager\" />\r\n      <predefined_log_file id=\"Tomcat Localhost Access\" />\r\n      <RunnerSettings RunnerId=\"Debug\">\r\n        <option name=\"DEBUG_PORT\" value=\"14529\" />\r\n      </RunnerSettings>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Cover\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Debug\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Profile\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <ConfigurationWrapper VM_VAR=\"JAVA_OPTS\" RunnerId=\"Run\">\r\n        <option name=\"USE_ENV_VARIABLES\" value=\"true\" />\r\n        <STARTUP>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </STARTUP>\r\n        <SHUTDOWN>\r\n          <option name=\"USE_DEFAULT\" value=\"true\" />\r\n          <option name=\"SCRIPT\" value=\"\" />\r\n          <option name=\"VM_PARAMETERS\" value=\"\" />\r\n          <option name=\"PROGRAM_PARAMETERS\" value=\"\" />\r\n        </SHUTDOWN>\r\n      </ConfigurationWrapper>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n        <option name=\"BuildArtifacts\" enabled=\"true\">\r\n          <artifact name=\"miniProject:war exploded2\" />\r\n        </option>\r\n      </method>\r\n    </configuration>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"애플리케이션 수준\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"디폴트 작업\">\r\n      <changelist id=\"5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4\" name=\"변경\" comment=\"\" />\r\n      <created>1682325122767</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1682325122767</updated>\r\n      <workItem from=\"1682325123799\" duration=\"1350000\" />\r\n      <workItem from=\"1682326830835\" duration=\"1328000\" />\r\n      <workItem from=\"1682328614994\" duration=\"759000\" />\r\n      <workItem from=\"1682382465507\" duration=\"14533000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"리소스 추가\">\r\n      <created>1682329100565</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682329100565</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"리소스 추가\">\r\n      <created>1682329137377</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682329137377</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"리소스 추가\">\r\n      <created>1682329161482</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682329161482</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"리소스 추가\">\r\n      <created>1682329325413</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682329325413</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"인덱스의 채널 명 링크 변경\">\r\n      <created>1682383302506</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682383302506</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"채널페이지 동적으로 수정완료\">\r\n      <created>1682388790915</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682388790915</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"a 테그로 url 링크걸기\">\r\n      <created>1682389808513</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682389808513</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"댓글 if 문걸어서 null 값 출력 방지\">\r\n      <created>1682393315614</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682393315614</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"9\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"리소스 추가\" />\r\n    <MESSAGE value=\"인덱스의 채널 명 링크 변경\" />\r\n    <MESSAGE value=\"채널페이지 동적으로 수정완료\" />\r\n    <MESSAGE value=\"a 테그로 url 링크걸기\" />\r\n    <MESSAGE value=\"댓글 if 문걸어서 null 값 출력 방지\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"댓글 if 문걸어서 null 값 출력 방지\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/.idea/workspace.xml	(date 1682413263205)
+@@ -9,18 +9,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="댓글 if 문걸어서 null 값 출력 방지">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/channelForm.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/spring/conf/SpringConfiguration.class" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" afterDir="false" />
+-    </list>
++    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="댓글 if 문걸어서 null 값 출력 방지" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -79,29 +68,29 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "ASKED_ADD_EXTERNAL_FILES": "true",
+-    "Downloaded.Files.Path.Enabled": "false",
+-    "Repository.Attach.Annotations": "false",
+-    "Repository.Attach.JavaDocs": "false",
+-    "Repository.Attach.Sources": "false",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/img",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "모듈",
+-    "project.structure.proportion": "0.16015625",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+-    "spring.configuration.checksum": "d5e314dc8cb8182f28d9b62435538297",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/miniProject/miniProject/src/main/webapp/WEB-INF/img&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.16015625&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
++    &quot;spring.configuration.checksum&quot;: &quot;d5e314dc8cb8182f28d9b62435538297&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\img" />
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_id.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"EUC-KR\";\r\n#login {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n}\r\n#login h1, #login h2 {text-align:center;}\r\n#login h1 {margin-top:20px;}\r\n#login h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#login h1 img {width:120px; height: 35px}\r\n#login h2 {margin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;}\r\n#login #login_id_form {margin-bottom:30px;}\r\n#login #login_id_form #emailDiv{\r\n\tpadding-top: 1xp;\r\n\tmargin-top: 1px;\r\n\tmargin-left: 30px;\r\n}\r\n#login #login_id_form #a {\r\n\tcolor: #1a73e8;\r\n}\r\n#login #login_id_form .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 30px;\r\n\tpadding-right: 30px;\r\n\tmargin-top: 70px;\r\n}\r\n#login #login_id_form .bottom .join {\r\n\tcolor:#1a73e8;\r\n\ttext-decoration: none;\r\n}\r\n#login footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n\r\n.outBox {margin:5px auto; padding:1px; width:400px;}\r\n.outBox .inputBox {position:relative; height:50px;}\r\n.outBox .inputBox input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox .inputBox label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox .inputBox input[type=\"text\"]:focus,\r\n.outBox.existence .inputBox input[type=\"text\"] {border:2px solid blue;}\r\n.outBox .inputBox input[type=\"text\"]:focus + label,\r\n.outBox.existence .inputBox label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_id.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_id.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_id.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_id.css	(date 1682413257172)
+@@ -1,4 +1,4 @@
+-@charset "EUC-KR";
++@charset "UTF-8";
+ #login {width:500px; margin:0 auto;}
+ #header{
+ 	border:1px solid #aaa; width:100%; height:550px;
+@@ -12,16 +12,12 @@
+ #login h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}
+ #login h1 img {width:120px; height: 35px}
+ #login h2 {margin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;}
+-#login #login_id_form {margin-bottom:30px;}
+-#login #login_id_form #emailDiv{
+-	padding-top: 1xp;
++#login #emailDiv{
++	padding-top: 1px;
+ 	margin-top: 1px;
+ 	margin-left: 30px;
+ }
+-#login #login_id_form #a {
+-	color: #1a73e8;
+-}
+-#login #login_id_form .bottom {
++#login .bottom {
+ 	display:flex; flex-flow:row nowrap;
+ 	justify-content:space-between;
+ 	align-items:center;
+@@ -29,16 +25,10 @@
+ 	padding-right: 30px;
+ 	margin-top: 70px;
+ }
+-#login #login_id_form .bottom .join {
++#login .bottom .join {
+ 	color:#1a73e8;
+ 	text-decoration: none;
+ }
+-#login footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+-
+ .outBox {margin:5px auto; padding:1px; width:400px;}
+ .outBox .inputBox {position:relative; height:50px;}
+ .outBox .inputBox input[type="text"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_name.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"EUC-KR\";\r\n#join {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n}\r\n#join h1, #join h2 {text-align:center;}\r\n#join h1 {margin-top:20px;}\r\n#join h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#join h1 img {width:120px; height: 35px}\r\n#join h2 {margin-top:20px; margin-bottom:50px;  font-size:22px; font-weight:500;}\r\n\r\n#join #join_name_form .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 340px;\r\n\tmargin-top: 30px;\r\n}\r\n#join #join_name_form #nameDiv{\r\n\tpadding-top: 1xp;\r\n\tmargin-top: 1px;\r\n\tmargin-left: 30px;\r\n}\r\n#join footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n.outBox1 {margin:20px auto; padding:1px; width:400px;}\r\n.outBox1 .inputBox1 {position:relative; height:50px;}\r\n.outBox1 .inputBox1 input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox1 .inputBox1 label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox1 .inputBox1 input[type=\"text\"]:focus,\r\n.outBox1.existence .inputBox1 input[type=\"text\"] {border:2px solid blue;}\r\n.outBox1 .inputBox1 input[type=\"text\"]:focus + label,\r\n.outBox1.existence .inputBox1 label {color:blue; transform:scale(.85) translate(-10px, -48px);}\r\n\r\n.outBox2 {margin-top:auto;\r\n\t\t margin-bottom:5px;\r\n\t\t margin-right:auto;\r\n\t\t margin-left:auto;\t\r\n\t\t padding:1px; \r\n\t\t width:400px;}\r\n.outBox2 .inputBox2 {position:relative; height:50px;}\r\n.outBox2 .inputBox2 input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox2 .inputBox2 label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox2 .inputBox2 input[type=\"text\"]:focus,\r\n.outBox2.existence .inputBox2 input[type=\"text\"] {border:2px solid blue;}\r\n.outBox2 .inputBox2 input[type=\"text\"]:focus + label,\r\n.outBox2.existence .inputBox2 label {color:blue; transform:scale(.85) translate(-10px, -48px);}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_name.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_name.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_name.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_name.css	(date 1682413257172)
+@@ -1,4 +1,4 @@
+-@charset "EUC-KR";
++@charset "UTF-8";
+ #join {width:500px; margin:0 auto;}
+ #header{
+ 	border:1px solid #aaa; width:100%; height:550px;
+@@ -12,7 +12,6 @@
+ #join h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}
+ #join h1 img {width:120px; height: 35px}
+ #join h2 {margin-top:20px; margin-bottom:50px;  font-size:22px; font-weight:500;}
+-
+ #join #join_name_form .bottom {
+ 	display:flex; flex-flow:row nowrap;
+ 	justify-content:space-between;
+@@ -21,15 +20,10 @@
+ 	margin-top: 30px;
+ }
+ #join #join_name_form #nameDiv{
+-	padding-top: 1xp;
++	padding-top: 1px;
+ 	margin-top: 1px;
+ 	margin-left: 30px;
+ }
+-#join footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+ .outBox1 {margin:20px auto; padding:1px; width:400px;}
+ .outBox1 .inputBox1 {position:relative; height:50px;}
+ .outBox1 .inputBox1 input[type="text"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email2.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"UTF-8\";\r\n#join {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n\t\r\n}\r\n#join h1{\r\ntext-align:center;\r\nmargin-top:20px;\r\n}\r\n#join h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#join h1 img {width:120px; height: 35px}\r\n#join h2 {\r\nmargin-top:20px; \r\nmargin-bottom:20px; \r\nmargin-right:30px;\r\nmargin-left:30px;\r\nfont-weight:500;}\r\n#join .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 20px;\r\n\tpadding-right: 20px;\r\n\tmargin-top: 70px;\r\n}\r\n#join .bottom .back {\r\n\tcolor:#1a73e8;\r\n}\r\n#join footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n\r\n.outBox {margin:20px auto; padding:1px; width:400px;}\r\n.outBox .inputBox {position:relative; height:50px;}\r\n.outBox .inputBox input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox .inputBox label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox .inputBox input[type=\"text\"]:focus,\r\n.outBox.existence .inputBox input[type=\"text\"] {border:2px solid blue;}\r\n.outBox .inputBox input[type=\"text\"]:focus + label,\r\n.outBox.existence .inputBox label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email2.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email2.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email2.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email2.css	(date 1682413257171)
+@@ -6,7 +6,6 @@
+ 	border-radius:5px; 
+ 	margin-bottom:20px;
+ 	margin-top: 150px
+-	
+ }
+ #join h1{
+ text-align:center;
+@@ -14,12 +13,19 @@
+ }
+ #join h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}
+ #join h1 img {width:120px; height: 35px}
+-#join h2 {
+-margin-top:20px; 
++#join #header #aaa {
++margin-top:18px; 
+ margin-bottom:20px; 
+ margin-right:30px;
+ margin-left:30px;
+-font-weight:500;}
++font-weight:500;
++line-height: 20px
++}
++#join #header #codeDiv{
++	padding-top: 1px;
++	margin-top: 1px;
++	margin-left: 30px;
++}	
+ #join .bottom {
+ 	display:flex; flex-flow:row nowrap;
+ 	justify-content:space-between;
+@@ -28,16 +34,12 @@
+ 	padding-right: 20px;
+ 	margin-top: 70px;
+ }
+-#join .bottom .back {
+-	color:#1a73e8;
+-}
+-#join footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+-
+-.outBox {margin:20px auto; padding:1px; width:400px;}
++.outBox {margin-top:30px;
++		 margin-bottom:5px;
++		 margin-right:auto;
++		 margin-left:auto;	
++		 padding:1px; 
++		 width:400px;}
+ .outBox .inputBox {position:relative; height:50px;}
+ .outBox .inputBox input[type="text"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}
+ .outBox .inputBox label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"EUC-KR\";\r\n#join {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n}\r\n#join h1, #join h2 {text-align:center;}\r\n#join h1 {margin-top:20px;}\r\n#join h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#join h1 img {width:120px; height: 35px}\r\n#join h2 {margin-top:20px; margin-bottom:40px;  font-size:18px; font-weight:500;}\r\n#join #join_email_form #emailDiv{\r\n\tpadding-top: 1xp;\r\n\tmargin-top: 1px;\r\n\tmargin-left: 30px;\r\n\tmargin-bottom:7px; \r\n}\r\n#join #join_email_form .aaa{\t\r\nmargin-bottom:50px; \r\nfont-size:0.8rem;\r\ncolor: #aaa;\r\n}\r\n#join #join_email_form .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 320px;\r\n\tmargin-top: 10px;\r\n}\r\n#join footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n\r\n.outBox {margin-top:auto;\r\n\t\t margin-bottom:5px;\r\n\t\t margin-right:auto;\r\n\t\t margin-left:auto;\t\r\n\t\t padding:1px; \r\n\t\t width:400px;\r\n}\r\n.outBox .inputBox {position:relative; height:50px;}\r\n.outBox .inputBox input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox .inputBox label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox .inputBox input[type=\"text\"]:focus,\r\n.outBox.existence .inputBox input[type=\"text\"] {border:2px solid blue;}\r\n.outBox .inputBox input[type=\"text\"]:focus + label,\r\n.outBox.existence .inputBox label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/join_email.css	(date 1682413257171)
+@@ -1,4 +1,4 @@
+-@charset "EUC-KR";
++@charset "UTF-8";
+ #join {width:500px; margin:0 auto;}
+ #header{
+ 	border:1px solid #aaa; width:100%; height:550px;
+@@ -13,7 +13,7 @@
+ #join h1 img {width:120px; height: 35px}
+ #join h2 {margin-top:20px; margin-bottom:40px;  font-size:18px; font-weight:500;}
+ #join #join_email_form #emailDiv{
+-	padding-top: 1xp;
++	padding-top: 1px;
+ 	margin-top: 1px;
+ 	margin-left: 30px;
+ 	margin-bottom:7px; 
+@@ -30,12 +30,6 @@
+ 	padding-left: 320px;
+ 	margin-top: 10px;
+ }
+-#join footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+-
+ .outBox {margin-top:auto;
+ 		 margin-bottom:5px;
+ 		 margin-right:auto;
+@@ -44,9 +38,9 @@
+ 		 width:400px;
+ }
+ .outBox .inputBox {position:relative; height:50px;}
+-.outBox .inputBox input[type="text"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}
++.outBox .inputBox input[type="email"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}
+ .outBox .inputBox label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}
+-.outBox .inputBox input[type="text"]:focus,
+-.outBox.existence .inputBox input[type="text"] {border:2px solid blue;}
+-.outBox .inputBox input[type="text"]:focus + label,
++.outBox .inputBox input[type="email"]:focus,
++.outBox.existence .inputBox input[type="email"] {border:2px solid blue;}
++.outBox .inputBox input[type="email"]:focus + label,
+ .outBox.existence .inputBox label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+\ No newline at end of file
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email2.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"UTF-8\";\r\n#search {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n}\r\n#search h1, #search h2 {text-align:center;}\r\n#search h1 {margin-top:20px;}\r\n#search h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#search h1 img {width:120px; height: 35px}\r\n#search h2 {\r\nmargin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;\r\n}\r\n#search #search_email_form #rrnDiv{\r\n\tpadding-top: 1xp;\r\n\tmargin-top: 1px;\r\n\tmargin-left: 40px;\r\n}\r\n#search #search_email_form .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 40px;\r\n\tpadding-right: 40px;\r\n\tmargin-top: 50px;\r\n}\r\n#search footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n.box{\r\n\tmargin-left:40px;\r\n\tmargin-left:40px;\r\n}\r\n\r\n.outBox1 {width:170px; display:inline-block;}\r\n.outBox1 .inputBox1 {position:relative; height:50px;}\r\n.outBox1 .inputBox1 input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox1 .inputBox1 label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox1 .inputBox1 input[type=\"text\"]:focus,\r\n.outBox1.existence .inputBox1 input[type=\"text\"] {border:2px solid blue;}\r\n.outBox1 .inputBox1 input[type=\"text\"]:focus + label,\r\n.outBox1.existence .inputBox1 label {color:blue; transform:scale(.85) translate(-10px, -48px);}\r\n\r\n.outBox2 {margin-top:auto;\r\n\t\t margin-bottom:5px;\r\n\t\t margin-right:auto;\r\n\t\t margin-left:auto;\t\r\n\t\t padding:1px; \r\n\t\t width:170px; \r\n\t\t display:inline-block;\r\n}\r\n.outBox2 .inputBox2 {position:relative; height:50px;}\r\n.outBox2 .inputBox2 input[type=\"password\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox2 .inputBox2 label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox2 .inputBox2 input[type=\"password\"]:focus,\r\n.outBox2.existence .inputBox2 input[type=\"password\"] {border:2px solid blue;}\r\n.outBox2 .inputBox2 input[type=\"password\"]:focus + label,\r\n.outBox2.existence .inputBox2 label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email2.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email2.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email2.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email2.css	(date 1682413257174)
+@@ -14,12 +14,12 @@
+ #search h2 {
+ margin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;
+ }
+-#search #search_email_form #rrnDiv{
+-	padding-top: 1xp;
++#search #rrnDiv{
++	padding-top: 1px;
+ 	margin-top: 1px;
+ 	margin-left: 40px;
+ }
+-#search #search_email_form .bottom {
++#search .bottom {
+ 	display:flex; flex-flow:row nowrap;
+ 	justify-content:space-between;
+ 	align-items:center;
+@@ -27,11 +27,6 @@
+ 	padding-right: 40px;
+ 	margin-top: 50px;
+ }
+-#search footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+ .box{
+ 	margin-left:40px;
+ 	margin-left:40px;
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email1.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"UTF-8\";\r\n#search {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n}\r\n#search h1, #search h2 {text-align:center;}\r\n#search h1 {margin-top:20px;}\r\n#search h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#search h1 img {width:120px; height: 35px}\r\n#search h2 {margin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;}\r\n#search #search_name_form .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 20px;\r\n\tpadding-right: 20px;\r\n\tmargin-top: 50px;\r\n}\r\n#search #search_name_form #nameDiv{\r\n\tpadding-top: 1xp;\r\n\tmargin-top: 1px;\r\n\tmargin-left: 30px;\r\n}\r\n#search footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n.outBox1 {margin:20px auto; padding:1px; width:400px;}\r\n.outBox1 .inputBox1 {position:relative; height:50px;}\r\n.outBox1 .inputBox1 input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox1 .inputBox1 label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox1 .inputBox1 input[type=\"text\"]:focus,\r\n.outBox1.existence .inputBox1 input[type=\"text\"] {border:2px solid blue;}\r\n.outBox1 .inputBox1 input[type=\"text\"]:focus + label,\r\n.outBox1.existence .inputBox1 label {color:blue; transform:scale(.85) translate(-10px, -48px);}\r\n\r\n.outBox2 {margin-top:auto;\r\n\t\t margin-bottom:5px;\r\n\t\t margin-right:auto;\r\n\t\t margin-left:auto;\t\r\n\t\t padding:1px; \r\n\t\t width:400px;\r\n}\r\n.outBox2 .inputBox2 {position:relative; height:50px;}\r\n.outBox2 .inputBox2 input[type=\"text\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox2 .inputBox2 label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox2 .inputBox2 input[type=\"text\"]:focus,\r\n.outBox2.existence .inputBox2 input[type=\"text\"] {border:2px solid blue;}\r\n.outBox2 .inputBox2 input[type=\"text\"]:focus + label,\r\n.outBox2.existence .inputBox2 label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email1.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email1.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email1.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email1.css	(date 1682413257173)
+@@ -12,7 +12,7 @@
+ #search h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}
+ #search h1 img {width:120px; height: 35px}
+ #search h2 {margin-top:20px; margin-bottom:30px;  font-size:22px; font-weight:500;}
+-#search #search_name_form .bottom {
++#search .bottom {
+ 	display:flex; flex-flow:row nowrap;
+ 	justify-content:space-between;
+ 	align-items:center;
+@@ -20,16 +20,11 @@
+ 	padding-right: 20px;
+ 	margin-top: 50px;
+ }
+-#search #search_name_form #nameDiv{
+-	padding-top: 1xp;
++#search #nameDiv{
++	padding-top: 1px;
+ 	margin-top: 1px;
+ 	margin-left: 30px;
+ }
+-#search footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+ .outBox1 {margin:20px auto; padding:1px; width:400px;}
+ .outBox1 .inputBox1 {position:relative; height:50px;}
+ .outBox1 .inputBox1 input[type="text"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/reset.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"EUC-KR\";\r\n*{box-sizing: border-box;}\r\nhtml,body,div,h1,h2,h3,h4,p,form,fieldset,legend,ul,li,input,button,a,img,select,option,footer{\r\n\tmargin:0; padding:0;\r\n\tfont-size:1.0rem; font-weight:normal; font-style:normal;\r\n\tline-height:1.0;\r\n}\r\nfieldset{border:0;}\r\nlegend{display:none;}\r\na{color:#000; text-decoration:none;}\r\nbutton{border:0; background:none; cursor:pointer;}\r\ninput{border:0;}\r\nselect{border:0;}\r\nul, li{list-style:none;}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/reset.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/reset.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/reset.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/reset.css	(date 1682413257173)
+@@ -1,4 +1,4 @@
+-@charset "EUC-KR";
++@charset "UTF-8";
+ *{box-sizing: border-box;}
+ html,body,div,h1,h2,h3,h4,p,form,fieldset,legend,ul,li,input,button,a,img,select,option,footer{
+ 	margin:0; padding:0;
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_pwd.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"EUC-KR\";\r\n#login {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n\t\r\n}\r\n#login h1, #login h2 {text-align:center;}\r\n#login h1 {margin-top:20px;}\r\n#login h1:nth-child(2) {margin-top:20px; font-size:30px; font-weight:500;}\r\n#login h1 img {width:120px; height: 35px}\r\n#login #t {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  border: 1px solid #aaa;\r\n  border-radius: 100px;\r\n  text-align:center;\r\n  position: relative;\r\n  left: 50%;\r\n  transform: translateX(-50%);\r\n}\r\n#login #t img{\r\n\twidth:20px; \r\n\theight:20px; \r\n\tborder-radius:100px; \r\n\tpadding: auto;\r\n}\r\n#login #t #email{\r\n\tfont-size:14px; \r\n\tfont-weight:500;\r\n\tpadding: 5px;\r\n}\r\n#login #login_pwd_form #passwordDiv{\r\n\tpadding-top: 1xp;\r\n\tmargin-top: 1px;\r\n\tmargin-left: 30px;\r\n}\r\n#login #login_pwd_form {margin-bottom:30px;}\r\n#login #login_pwd_form .bottom {\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n\talign-items:center;\r\n\tpadding-left: 30px;\r\n\tpadding-right: 30px;\r\n\tmargin-top: 70px;\r\n}\r\n#login #login_pwd_form .bottom .search_password {\r\n\tcolor:#1a73e8;\r\n\ttext-decoration: none;\r\n}\r\n#login footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}\r\n.outBox {margin-top:30px;\r\n\t\t margin-bottom:5px;\r\n\t\t margin-right:auto;\r\n\t\t margin-left:auto;\t\r\n\t\t padding:1px; \r\n\t\t width:400px;\r\n}\r\n.outBox .inputBox {position:relative; height:50px;}\r\n.outBox .inputBox input[type=\"password\"] {padding:0 10px; width:100%; height:50px; font-size:14px; box-sizing:border-box; border:1px solid #999; outline:none; border-radius:6px;}\r\n.outBox .inputBox label {position:absolute; left:0; bottom:0; padding:0 6px; color:#999; font-size:14px; font-weight:normal; background:#fff; transform:scale(1) translate(4px, -18px); transition:all .15s; pointer-events:none;}\r\n.outBox .inputBox input[type=\"password\"]:focus,\r\n.outBox.existence .inputBox input[type=\"password\"] {border:2px solid blue;}\r\n.outBox .inputBox input[type=\"password\"]:focus + label,\r\n.outBox.existence .inputBox label {color:blue; transform:scale(.85) translate(-10px, -48px);}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_pwd.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_pwd.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_pwd.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/login_pwd.css	(date 1682413257173)
+@@ -1,4 +1,4 @@
+-@charset "EUC-KR";
++@charset "UTF-8";
+ #login {width:500px; margin:0 auto;}
+ #header{
+ 	border:1px solid #aaa; width:100%; height:550px;
+@@ -33,29 +33,24 @@
+ 	font-weight:500;
+ 	padding: 5px;
+ }
+-#login #login_pwd_form #passwordDiv{
+-	padding-top: 1xp;
++#login #passwordDiv{
++	padding-top: 1px;
+ 	margin-top: 1px;
+ 	margin-left: 30px;
+ }
+-#login #login_pwd_form {margin-bottom:30px;}
+-#login #login_pwd_form .bottom {
++#login .bottom {
+ 	display:flex; flex-flow:row nowrap;
+ 	justify-content:space-between;
+ 	align-items:center;
+-	padding-left: 30px;
+-	padding-right: 30px;
++	padding-left: 25px;
++	padding-right: 25px;
+ 	margin-top: 70px;
+ }
+-#login #login_pwd_form .bottom .search_password {
++#login .bottom .search_password {
++	cursor: pointer;
+ 	color:#1a73e8;
+ 	text-decoration: none;
+ }
+-#login footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+-}
+ .outBox {margin-top:30px;
+ 		 margin-bottom:5px;
+ 		 margin-right:auto;
+Index: out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email3.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@charset \"UTF-8\";\r\n#search {width:500px; margin:0 auto;}\r\n#header{\r\n\tborder:1px solid #aaa; width:100%; height:550px;\r\n\tpadding:15px 30px;\r\n\tborder-radius:5px; \r\n\tmargin-bottom:20px;\r\n\tmargin-top: 150px\r\n}\r\n#search h1{\r\n\ttext-align:center; \r\n\tmargin-top:20px;\r\n}\r\n#search h1:nth-child(2) {\r\n\tmargin-top:20px; \r\n\tmargin-bottom:40px; \r\n\tfont-size:30px; \r\n\tfont-weight:500;\r\n\t}\r\n#search h1 img {width:120px; height: 35px}\r\n#search #emailListTable{\r\n\tmargin: 0 auto;\r\n}\r\n#emailListTable td a {\r\n  \tfont-size: 30px;\r\n\tfont-weight: bold;\r\n\tline-height:1.5;\r\n\ttext-decoration:none;\r\n}\r\n#search footer {\r\n\tmargin-top:20px;\r\n\tdisplay:flex; flex-flow:row nowrap;\r\n\tjustify-content:space-between;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email3.css b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email3.css
+--- a/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email3.css	(revision 4a0cf53b7e2ed99e2e3d29b50aa2c23a4eef3dfa)
++++ b/out/artifacts/miniProject_war_exploded2/WEB-INF/css/search_email3.css	(date 1682413257174)
+@@ -26,9 +26,4 @@
+ 	font-weight: bold;
+ 	line-height:1.5;
+ 	text-decoration:none;
+-}
+-#search footer {
+-	margin-top:20px;
+-	display:flex; flex-flow:row nowrap;
+-	justify-content:space-between;
+ }
+\ No newline at end of file

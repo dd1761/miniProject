@@ -6,19 +6,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!--비디오 -->
 	<select id="getVideoById" parameterType="java.util.Map" resultType="video.bean.VideoDTO">
-<!--		SELECT Video.*,
-		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
-		Comment.comment_text, Comment.upload_date AS comment_date,
-		(SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
-		Channel.channel_name,
-		(SELECT COUNT(*) FROM Subscription WHERE channel_id = Channel.channel_id) AS subscriber_count,
-		CASE WHEN EXISTS (SELECT * FROM Subscription WHERE user_id = #{user_id} AND channel_id = Channel.channel_id) THEN 1 ELSE 0 END AS is_subscribed,
-		User.name as commenter_name, User.profile_url
-		FROM Video
-		LEFT JOIN Comment ON Video.video_id = Comment.video_id
-		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
-		LEFT JOIN User ON Comment.user_id = User.user_id
-		WHERE Video.video_id = #{video_id};-->
 
 		SELECT Video.*,
 		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
@@ -34,6 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
 		LEFT JOIN User ON Comment.user_id = User.user_id
 		WHERE Video.video_id = #{video_id}
+		order by comment_date desc
 
 	</select>
 	
@@ -48,4 +36,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from Video
 	</select>
 
+	<update id="addVideoView" parameterType="int">
+		UPDATE Video
+		SET views = views + 1
+		WHERE video_id = #{video_id}
+	</update>
 </mapper>

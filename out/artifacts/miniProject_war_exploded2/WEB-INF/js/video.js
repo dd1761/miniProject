@@ -1,6 +1,12 @@
 
 $(function(){
-    var user_id= 1;
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    else{
+        var user_id =  0;
+    }
+
     var query_string = window.location.search;
 // 쿼리 스트링을 파싱하여 객체로 변환합니다.
     var query_params = new URLSearchParams(query_string);
@@ -9,7 +15,27 @@ $(function(){
     console.log("video_id : "+video_id);
     console.log("user_id : "+user_id);
 
+    /*1.동적생성*/
     getVideoById(user_id, video_id);
+
+    /*2.조회수 + 1 */
+    addVideoView(video_id);
+
+    function addVideoView(video_id){
+       console.log(video_id);
+        $.ajax({
+            url: '/miniProject/video/addVideoView',
+            type: 'post',
+            data: {video_id: video_id },
+            success: function(result) {
+                console.log('Views updated successfully.');
+            },
+            error: function(xhr, status, error) {
+                console.log('Failed to update views.');
+            }
+        });
+    }
+
 
     function getVideoById(user_id, video_id) {
         $.ajax({
@@ -43,7 +69,7 @@ $(function(){
 
                 $('#play-video').html(`
                     <video controls autoplay width="1000" height="600">
-                        <source src="${video_url}" type="video/mp4">
+                        <source src="/miniProject/videoFileUseByVideoId/${video_id}.mp4" type="video/mp4">
                     </video>
                     
                     <h3>${video_title}</h3>
@@ -53,8 +79,12 @@ $(function(){
                         <br>
                         ${video_description}
                         <div>
+
+                            <a href="" id="likeBtn"><img src="/miniProject/image/like.png">${video_like_count}</a>
+
                             <a href=""><img src="/miniProject/image/like.png">${video_like_count}</a>
                  
+
                         </div>
                     </div>
                     <hr>
@@ -69,15 +99,25 @@ $(function(){
                             <p>${channel_name}</p>
                             <span>구독자 ${subscriber_count}명</span>
                         </div>
+                        <!--히든-->
+                        <div id="hiddenDiv" style="display: none;">
+                          <input type="hidden" name="channel_id" id="channel_id" value="${data[0].channel_id}">
+                        </div>
+                         <div id="hiddenDiv" style="display: none;">
+                          <input type="hidden" name="video_id" id="video_id" value="${data[0].video_id}">
+                        </div>
+                        <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
+                                  ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
+                        </button>
                         
-                        <button type="button">구독</button>
                     </div>
                     <div class="video-description">
                         <hr>
                         <!--댓글이 0 개 면 댓글 0 출력 아니면 숫자출력-->
                         <h4>댓글 ${data[0].comment_text ? comments : '0'} 개</h4>
                         
-                        <div id="comment">
+                            <!--댓글시작-->
+                           <div id="comment">
                               <div id="img">
                                  <!--null 이면 기본이미지-->
                                  <img src="${data[0].user_profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
@@ -93,12 +133,13 @@ $(function(){
                                     <div id="down-right">
                                        <div id="commentBtn">
                                           <button id="cancel" onclick="hideButtons()">취소</button>
-                                          <button id="uploadcomment">댓글</button>
+                                          <button id="uploadcomment" onclick="commentSubmit()">댓글</button>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                           </div>                  
+                           </div>      
+                           <!--댓글은 끝-->            
                     </div>
                 `);
 
@@ -152,3 +193,60 @@ $(function(){
     }
 
 });
+
+
+$('#likeBtn').click(function(){
+	$.ajax({
+		type:'post',
+		url: '/miniProject/like/likePlus',
+		data: 'user_id=' + user_id + 'video_id=' + video_id,
+		success: function(data){
+			console.log(data);
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+
+/*댓글 작성했을시 실행되는 함수입니다.*/
+function commentSubmit() {
+    // input 요소에서 댓글 내용을 가져옵니다.
+    const commentInput = document.querySelector('#up > input[type="text"]');
+    const comment = commentInput.value;
+    const encodedComment = encodeURIComponent(comment);
+    var video_id = $('#video_id').val();
+
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    else{
+        alert("로그인을 해주세요");
+        window.location.href = "/miniProject/member/login_id";
+        return;
+    }
+
+    // AJAX 요청을 보냅니다.
+    $.ajax({
+        type: "POST",
+        url: "/miniProject/comment/commentSubmit",
+        contentType: 'application/json',
+        data: JSON.stringify({
+            user_id: user_id,
+            video_id: video_id,
+            comment: encodedComment
+        }),
+        success: function() {
+            console.log("ajax 시작");
+            alert("댓글이 성공적으로 저장되었습니다.");
+            location.reload();
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+            alert("댓글 저장에 실패했습니다. 다시 시도해주세요.");
+        }
+    });
+}

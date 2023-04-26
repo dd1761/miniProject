@@ -3,6 +3,7 @@ package subscribe.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,16 +27,20 @@ public class SubscribeController {
 	}
 
 	@PostMapping(value="subscribeOn")
-	public void subscribeOn(@RequestParam int user_id,@RequestParam int channel_id){
+	@ResponseBody
+	public void subscribeOn(@RequestParam int user_id, @RequestParam int channel_id){
 		System.out.println("userid : "+user_id);
 		System.out.println("channelid : "+channel_id);
-		subscribeService.subscribeOn(user_id);
+		subscribeService.subscribeOn(user_id,channel_id);
 	}
+
 
 	@PostMapping(value="subscribeOff")
-	public void subscribeOff(@RequestParam int user_id){
+	@ResponseBody
+	public void subscribeOff(@RequestParam int user_id, @RequestParam int channel_id){
+		System.out.println("userid : "+user_id);
+		System.out.println("channelid : "+channel_id);
+		subscribeService.subscribeOff(user_id,channel_id);
 
-		subscribeService.subscribeOff(user_id);
 	}
-
 }

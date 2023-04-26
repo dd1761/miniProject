@@ -1,6 +1,8 @@
 package subscribe.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +25,26 @@ public class SubscribeDAOMyBatis implements SubscribeDAO {
 	}
 
 	@Override
-	public void subscribeOff(int userId) {
-		sqlSession.update("subscribeSQL.subscribeOff", userId);
-	}
+	public void subscribeOff(int userId,int channelId){
 
+		int user_id = userId;
+		int channel_id = channelId;
+		Map<String, Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("channel_id", channel_id);
+
+		sqlSession.delete("subscribeSQL.subscribeOff", map);
+	}
 	@Override
-	public void subscribeOn(int userId) {
-		sqlSession.update("subscribeSQL.subscribeOn", userId);
+	public void subscribeOn(int userId,int channelId){
+
+		int user_id = userId;
+		int channel_id = channelId;
+ 		Map<String, Object> map = new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("channel_id", channel_id);
+
+		sqlSession.update("subscribeSQL.subscribeOn", map);
 	}
 
 }

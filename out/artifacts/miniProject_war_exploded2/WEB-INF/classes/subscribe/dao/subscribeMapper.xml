@@ -11,14 +11,14 @@
 		WHERE s.user_id = #{user_id};
  	</select>
 
-	<update id ="subscribeOff" parameterType="int">
+	<delete id ="subscribeOff" parameterType="int">
+		DELETE FROM Subscription
+		WHERE user_id = #{user_id} AND channel_id = #{channel_id}
+	</delete>
 
-
-	</update>
-
-	<update id ="subscribeOn" parameterType="int">
-
-
+	<update id ="subscribeOn" parameterType="java.util.Map">
+		INSERT INTO Subscription(user_id, channel_id)
+		VALUES(#{user_id}, #{channel_id})
 	</update>
  		
  </mapper>

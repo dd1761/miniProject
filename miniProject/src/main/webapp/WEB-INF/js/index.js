@@ -30,7 +30,8 @@ function showButtons() {
    }
 
 function hideButtons() {
- document.getElementById("down").classList.remove('show');
+	document.getElementById("down").classList.remove('show');
+	document.querySelector('#up > input[type="text"]').value = "";
 }
 
 
@@ -157,32 +158,40 @@ $(document).on('click', '#subBtn', () => {
 	$.ajax({
 		url: '/miniProject/subscribe/subscribeOn',
 		type: 'POST',
-		dataType: 'json',
+
 		data: { user_id: user_id, channel_id: channel_id },
-		success: (response) => {
-			console.log(response);
-			$('#subBtn').removeClass('subBtn').addClass('dissubBtn').text('구독취소');
+		success: () => {
+
+			$('#subBtn').prop('id', 'dissubBtn').removeClass('subBtn').text('구독중');
+			/*리로드 작동 안함 */
+			/*location.href = "/miniProject/channel/main?channel_id="+channel_id;*/
 		},
-		error: (jqXHR, textStatus, errorThrown) => {
-			console.log(textStatus, errorThrown);
+		error: function(err){
+			console.log(err);
 		}
 	});
 });
 
-/* 구독 취소 */
+/* 구독 취소 버튼 클릭*/
 $(document).on('click', '#dissubBtn', () => {
+	var channel_id = $('#channel_id').val();
+	var user_id = $('#user_id').val();
+
+	console.log("userid : "+user_id+"  channelid : "+channel_id);
 	console.log("구독 Off");
 	$.ajax({
 		url: '/miniProject/subscribe/subscribeOff',
 		type: 'POST',
-		data: 'user_id=' + $('#user_id').val(),
-		success: (response) => {
-			console.log(response);
-			$('#dissubBtn').removeClass('dissubBtn').addClass('subBtn').text('구독');
+		data: { user_id: user_id, channel_id: channel_id },
+		success: () => {
+
+			$('#dissubBtn').prop('id', 'subBtn').removeClass('dissubBtn').text('구독');
+
+			/*리로드 작동 안함 */
+			/*location.href = "/miniProject/channel/main?channel_id="+channel_id;*/
 		},
-		error: (jqXHR, textStatus, errorThrown) => {
-			console.log(textStatus, errorThrown);
+		error: function(err){
+			console.log(err);
 		}
 	});
 });
-

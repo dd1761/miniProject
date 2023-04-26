@@ -41,6 +41,11 @@ public class VideoController {
 
         return videoService.getVideoById(user_id,video_id);
     }
+    @PostMapping(value="addVideoView")
+    @ResponseBody
+    public void addVideoView(@RequestParam("video_id") int video_id) {
+        videoService.addVideoView(video_id);
+    }
 
 }
 

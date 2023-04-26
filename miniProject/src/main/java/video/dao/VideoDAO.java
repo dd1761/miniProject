@@ -15,4 +15,5 @@ public interface VideoDAO {
 
 	public List<VideoDTO> mainContainerVideo();
 
+	public void addVideoView(int video_id);
 }

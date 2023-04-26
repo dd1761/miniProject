@@ -36,6 +36,10 @@
 			<img src="/miniProject/image/upload.png">
 			<img src="/miniProject/image/more.png">
 			<img src="/miniProject/image/notification.png" id="noti">
+
+
+			<img src="/miniProject/image/dongbeen.jpg" id="user-icon" class="user-icon">
+
 			
  			<img id="user-icon" src="/miniProject/image/dongbeen.jpg" class="user-icon"> 
 			

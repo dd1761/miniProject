@@ -31,7 +31,11 @@
 	<context:component-scan base-package="video.controller" />
 	<context:component-scan base-package="channel.controller" />
 	<context:component-scan base-package="subscribe.controller" />
+
 	<context:component-scan base-package="like.controller" />
+
+
+	<context:component-scan base-package="comment.controller" />
 
 	<!-- Spring Web MVC를 하기 위해서 설정해야 하는 값들을 자동으로 추가해준다. -->
 	<mvc:annotation-driven />
@@ -42,5 +46,6 @@
 	<mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
 	<mvc:resources location="/WEB-INF/storage/" mapping="/storage/**" />
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+	<mvc:resources location="/WEB-INF/videoFileUseByVideoId/" mapping="/videoFileUseByVideoId/**" />
 
 </beans>

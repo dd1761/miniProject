@@ -21,13 +21,13 @@ public class SubscribeServiceImpl implements SubscribeService {
 	}
 
 	@Override
-	public void subscribeOff(int userId) {
-		subscribeDAO.subscribeOff(userId);
+	public void subscribeOff(int userId ,int channelId) {
+		subscribeDAO.subscribeOff(userId,channelId);
 	}
 
 	@Override
-	public void subscribeOn(int userId) {
-		subscribeDAO.subscribeOn(userId);
+	public void subscribeOn(int userId ,int channelId) {
+		subscribeDAO.subscribeOn(userId,channelId);
 	}
 
 }

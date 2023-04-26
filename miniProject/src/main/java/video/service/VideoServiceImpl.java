@@ -33,4 +33,9 @@ public class VideoServiceImpl implements VideoService {
 		return videoDAO.mainContainerVideo();
 	}
 
+    @Override
+    public void addVideoView(int video_id) {
+        videoDAO.addVideoView(video_id);
+    }
+
 }

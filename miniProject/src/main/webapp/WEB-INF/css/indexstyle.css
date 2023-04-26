@@ -446,9 +446,30 @@ li a {
    color: #5a5a5a;
 }
 
+/*
 .plublisher button{
    background: red;
    color: #fff;
+   padding: 8px 30px;
+   border: 0;
+   outline: 0;
+   border-radius: 4px;
+   cursor: pointer;
+}
+*/
+#subBtn {
+   background-color: red;
+   color: #fff;
+   padding: 8px 30px;
+   border: 0;
+   outline: 0;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+#dissubBtn {
+   background-color: #b2b2b2;
+   color: black;
    padding: 8px 30px;
    border: 0;
    outline: 0;

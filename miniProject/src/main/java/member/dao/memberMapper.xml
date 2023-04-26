@@ -29,6 +29,7 @@
  	
  	<select id="loginOk" parameterType="Int" resultType="member">
  		select * from User where user_id=#{user_id}
+
  	</select>
  	
  	<insert id="insertMember" parameterType="java.util.Map">

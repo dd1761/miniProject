@@ -9,7 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="구독버튼이 사용자에 맞게끔 변화하도록 변경" />
+
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="예제 동영상 추가해봄">
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/10.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/11.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/12.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/4.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/5.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/6.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/7.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/8.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/9.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +35,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -42,6 +59,24 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="af35f507-594b-4e16-9b25-9a02592074de" />
+        <option name="url" value="https://github.com/dd1761/miniProject.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_1_SubscribeDTO.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_2_SubscribeDTO.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp__SubscribeDTO.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -77,7 +112,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/img",
+    "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,17 +121,19 @@
     "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.16015625",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "settings.editor.selected.configurable": "File.Encoding",
     "spring.configuration.checksum": "d5e314dc8cb8182f28d9b62435538297",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\videoFileUseByVideoId" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\img" />
       <recent name="D:\miniProject\miniProject\src\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\videoFileUseByVideoId" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\img" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\image" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\channel" />
@@ -106,6 +143,7 @@
   <component name="RunManager">
     <configuration name="Tomcat 9.0.73" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.73" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
       <option name="UPDATING_POLICY" value="update-resources" />
       <deployment>
         <artifact name="miniProject:war exploded2">
@@ -204,7 +242,11 @@
       <workItem from="1682325123799" duration="1350000" />
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
+
       <workItem from="1682382465507" duration="25962000" />
+      <workItem from="1682382465507" duration="25098000" />
+      <workItem from="1682469406130" duration="18673000" />
+
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -304,6 +346,7 @@
       <option name="project" value="LOCAL" />
       <updated>1682410489530</updated>
     </task>
+
     <task id="LOCAL-00015" summary="구독버튼이 사용자에 맞게끔 변화하도록 변경">
       <created>1682412466874</created>
       <option name="number" value="00015" />
@@ -312,6 +355,65 @@
       <updated>1682412466874</updated>
     </task>
     <option name="localTasksCounter" value="16" />
+
+    <task id="LOCAL-00015" summary="새로운 브랜치">
+      <created>1682413781187</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682413781187</updated>
+    </task>
+    <task id="LOCAL-00016" summary="새로운 브랜치">
+      <created>1682415852440</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682415852440</updated>
+    </task>
+    <task id="LOCAL-00017" summary="구독버튼 css 적용하고 video 랑 channel 에서 둘다 적용">
+      <created>1682472343806</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682472343806</updated>
+    </task>
+    <task id="LOCAL-00018" summary="조회수 기능 추가">
+      <created>1682473669519</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682473669519</updated>
+    </task>
+    <task id="LOCAL-00019" summary="구독 버튼 css 수정">
+      <created>1682476386630</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682476386630</updated>
+    </task>
+    <task id="LOCAL-00020" summary="댓글 로그 찍기">
+      <created>1682477717199</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1682477717199</updated>
+    </task>
+    <task id="LOCAL-00021" summary="댓글기능 완성">
+      <created>1682488725267</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1682488725267</updated>
+    </task>
+    <task id="LOCAL-00022" summary="예제 동영상 추가해봄">
+      <created>1682498226086</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1682498226086</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -340,6 +442,17 @@
     <MESSAGE value="test" />
     <MESSAGE value="구독버튼 css 변경하고 js 적용" />
     <MESSAGE value="구독버튼이 사용자에 맞게끔 변화하도록 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="구독버튼이 사용자에 맞게끔 변화하도록 변경" />
+    <MESSAGE value="새로운 브랜치" />
+    <MESSAGE value="구독버튼 css 적용하고 video 랑 channel 에서 둘다 적용" />
+    <MESSAGE value="조회수 기능 추가" />
+    <MESSAGE value="구독 버튼 css 수정" />
+    <MESSAGE value="댓글 로그 찍기" />
+    <MESSAGE value="댓글기능 완성" />
+    <MESSAGE value="예제 동영상 추가해봄" />
+    <option name="LAST_COMMIT_MESSAGE" value="예제 동영상 추가해봄" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
