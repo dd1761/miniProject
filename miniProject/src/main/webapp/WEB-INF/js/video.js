@@ -15,7 +15,28 @@ $(function(){
     console.log("video_id : "+video_id);
     console.log("user_id : "+user_id);
 
+    /*1.동적생성*/
     getVideoById(user_id, video_id);
+
+    /*2.조회수 + 1 */
+    addVideoView(video_id);
+
+    function addVideoView(video_id){
+       console.log(video_id);
+        $.ajax({
+            url: '/miniProject/video/addVideoView',
+            type: 'post',
+            dataType: 'json',
+            data: {video_id: video_id },
+            success: function(result) {
+                console.log('Views updated successfully.');
+            },
+            error: function(xhr, status, error) {
+                console.log('Failed to update views.');
+            }
+        });
+    }
+
 
     function getVideoById(user_id, video_id) {
         $.ajax({

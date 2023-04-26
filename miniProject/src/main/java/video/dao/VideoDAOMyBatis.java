@@ -41,5 +41,10 @@ public class VideoDAOMyBatis implements VideoDAO {
 		
 		return sqlSession.selectList("videoSQL.mainContainerVideo");
 	}
-    
+
+    @Override
+    public void addVideoView(int video_id) {
+        sqlSession.update("videoSQL.addVideoView",video_id);
+    }
+
 }

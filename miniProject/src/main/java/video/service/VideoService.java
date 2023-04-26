@@ -14,4 +14,6 @@ public interface VideoService {
 	public List<VideoDTO> searchVideo(String videotitle);
 
 	public List<VideoDTO> mainContainerVideo();
+
+	void addVideoView(int video_id);
 }

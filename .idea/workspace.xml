@@ -9,31 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="새로운 브랜치">
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="구독버튼 css 적용하고 video 랑 channel 에서 둘다 적용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/member/dao/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/member/dao/memberMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/controller/SubscribeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/controller/SubscribeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/dao/SubscribeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/dao/SubscribeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/dao/SubscribeDAOMyBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/dao/SubscribeDAOMyBatis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/dao/subscribeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/dao/subscribeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/service/SubscribeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/service/SubscribeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/service/SubscribeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/subscribe/service/SubscribeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/member/dao/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/member/dao/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/controller/VideoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/VideoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/VideoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/VideoDAOMyBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/VideoDAOMyBatis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/service/VideoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/service/VideoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/service/VideoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/service/VideoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/subscribe/controller/SubscribeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/subscribe/controller/SubscribeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/subscribe/dao/SubscribeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/subscribe/dao/SubscribeDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/subscribe/dao/SubscribeDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/subscribe/dao/SubscribeDAOMyBatis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/subscribe/dao/subscribeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/subscribe/dao/subscribeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/subscribe/service/SubscribeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/subscribe/service/SubscribeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/subscribe/service/SubscribeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/subscribe/service/SubscribeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/member/dao/memberMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/controller/SubscribeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/controller/SubscribeController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/dao/SubscribeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/dao/SubscribeDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/dao/SubscribeDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/dao/SubscribeDAOMyBatis.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/dao/subscribeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/dao/subscribeMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/service/SubscribeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/service/SubscribeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/service/SubscribeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/subscribe/service/SubscribeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +67,11 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -248,6 +247,7 @@
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
       <workItem from="1682382465507" duration="25098000" />
+      <workItem from="1682469406130" duration="4086000" />
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -354,7 +354,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682413781187</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="새로운 브랜치">
+      <created>1682415852440</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682415852440</updated>
+    </task>
+    <task id="LOCAL-00017" summary="구독버튼 css 적용하고 video 랑 channel 에서 둘다 적용">
+      <created>1682472343806</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682472343806</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,6 +398,7 @@
     <MESSAGE value="구독버튼 css 변경하고 js 적용" />
     <MESSAGE value="구독버튼이 사용자에 맞게끔 변화하도록 변경" />
     <MESSAGE value="새로운 브랜치" />
-    <option name="LAST_COMMIT_MESSAGE" value="새로운 브랜치" />
+    <MESSAGE value="구독버튼 css 적용하고 video 랑 channel 에서 둘다 적용" />
+    <option name="LAST_COMMIT_MESSAGE" value="구독버튼 css 적용하고 video 랑 channel 에서 둘다 적용" />
   </component>
 </project>

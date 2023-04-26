@@ -1,6 +1,12 @@
 
 $(function(){
-    var user_id= 1;
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    else{
+        var user_id =  0;
+    }
+
     var query_string = window.location.search;
 // 쿼리 스트링을 파싱하여 객체로 변환합니다.
     var query_params = new URLSearchParams(query_string);
@@ -9,7 +15,28 @@ $(function(){
     console.log("video_id : "+video_id);
     console.log("user_id : "+user_id);
 
+    /*1.동적생성*/
     getVideoById(user_id, video_id);
+
+    /*2.조회수 + 1 */
+    addVideoView(video_id);
+
+    function addVideoView(video_id){
+       console.log(video_id);
+        $.ajax({
+            url: '/miniProject/video/addVideoView',
+            type: 'post',
+            dataType: 'json',
+            data: {video_id: video_id },
+            success: function(result) {
+                console.log('Views updated successfully.');
+            },
+            error: function(xhr, status, error) {
+                console.log('Failed to update views.');
+            }
+        });
+    }
+
 
     function getVideoById(user_id, video_id) {
         $.ajax({
@@ -73,8 +100,14 @@ $(function(){
                             <p>${channel_name}</p>
                             <span>구독자 ${subscriber_count}명</span>
                         </div>
+                        <!--히든-->
+                        <div id="hiddenDiv" style="display: none;">
+                          <input type="hidden" name="channel_id" id="channel_id" value="${data[0].channel_id}">
+                        </div>
+                        <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
+                                  ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
+                        </button>
                         
-                        <button type="button">구독</button>
                     </div>
                     <div class="video-description">
                         <hr>
