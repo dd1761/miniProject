@@ -26,7 +26,6 @@ $(function(){
         $.ajax({
             url: '/miniProject/video/addVideoView',
             type: 'post',
-
             data: {video_id: video_id },
             success: function(result) {
                 console.log('Views updated successfully.');
@@ -103,6 +102,9 @@ $(function(){
                         <!--히든-->
                         <div id="hiddenDiv" style="display: none;">
                           <input type="hidden" name="channel_id" id="channel_id" value="${data[0].channel_id}">
+                        </div>
+                         <div id="hiddenDiv" style="display: none;">
+                          <input type="hidden" name="video_id" id="video_id" value="${data[0].video_id}">
                         </div>
                         <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
                                   ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
@@ -211,7 +213,10 @@ $('#likeBtn').click(function(){
 /*댓글 작성했을시 실행되는 함수입니다.*/
 function commentSubmit() {
     // input 요소에서 댓글 내용을 가져옵니다.
-    const comment = document.querySelector('#up > input[type="text"]').value;
+    const commentInput = document.querySelector('#up > input[type="text"]');
+    const comment = commentInput.value;
+    const encodedComment = encodeURIComponent(comment);
+    var video_id = $('#video_id').val();
 
     if ($('#user_id').val()){
         var user_id =  $('#user_id').val();
@@ -222,31 +227,25 @@ function commentSubmit() {
         return;
     }
 
-    // 서버에 보낼 데이터를 만듭니다.
-    const data = {
-        comment: comment,
-        user_id : user_id
-    };
-
-    console.log(data);
-
     // AJAX 요청을 보냅니다.
     $.ajax({
         type: "POST",
-        url: "submit_comment.php", // 서버 URL을 여기에 입력합니다.
-        data: data,
-        success: function(response) {
-            // AJAX 요청이 성공적으로 완료되면, 서버에서 보내온 응답을 처리합니다.
-            console.log(response);
-            // 성공적으로 저장되었다는 알림 메시지를 사용자에게 보여줍니다.
+        url: "/miniProject/comment/commentSubmit",
+        contentType: 'application/json',
+        data: JSON.stringify({
+            user_id: user_id,
+            video_id: video_id,
+            comment: encodedComment
+        }),
+        success: function() {
+            console.log("ajax 시작");
             alert("댓글이 성공적으로 저장되었습니다.");
+            location.reload();
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            // AJAX 요청이 실패했을 때 에러를 처리합니다.
             console.log(jqXHR);
             console.log(textStatus);
             console.log(errorThrown);
-            // 실패 메시지를 사용자에게 보여줍니다.
             alert("댓글 저장에 실패했습니다. 다시 시도해주세요.");
         }
     });

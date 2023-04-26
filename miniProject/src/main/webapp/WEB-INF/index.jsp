@@ -35,7 +35,7 @@
 			<img src="/miniProject/image/upload.png">
 			<img src="/miniProject/image/more.png">
 			<img src="/miniProject/image/notification.png" id="noti">
-			<img src="/miniProject/image/dongbeen.jpg" class="user-icon">
+			<img src="/miniProject/image/dongbeen.jpg" id="user-icon" class="user-icon">
 			
 			<div class="menu-container">
 				<ul class="menu">

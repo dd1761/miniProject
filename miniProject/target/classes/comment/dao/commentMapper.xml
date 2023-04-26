@@ -3,8 +3,10 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="commentSQL">
- 	<select id="isExistEmail" parameterType="String" resultType="member">
- 		select * from User where email=#{email}
- 	</select>
+
+ 	<insert id="commentSubmit" parameterType="java.util.Map">
+		INSERT INTO Comment (user_id, video_id, comment_text)
+		VALUES ( #{user_id},  #{video_id},  #{comment_text})
+	</insert>
  	
  </mapper>
