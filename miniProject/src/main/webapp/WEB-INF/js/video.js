@@ -26,7 +26,6 @@ $(function(){
         $.ajax({
             url: '/miniProject/video/addVideoView',
             type: 'post',
-            dataType: 'json',
             data: {video_id: video_id },
             success: function(result) {
                 console.log('Views updated successfully.');
@@ -114,7 +113,8 @@ $(function(){
                         <!--댓글이 0 개 면 댓글 0 출력 아니면 숫자출력-->
                         <h4>댓글 ${data[0].comment_text ? comments : '0'} 개</h4>
                         
-                        <div id="comment">
+                            <!--댓글시작-->
+                           <div id="comment">
                               <div id="img">
                                  <!--null 이면 기본이미지-->
                                  <img src="${data[0].user_profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
@@ -130,12 +130,13 @@ $(function(){
                                     <div id="down-right">
                                        <div id="commentBtn">
                                           <button id="cancel" onclick="hideButtons()">취소</button>
-                                          <button id="uploadcomment">댓글</button>
+                                          <button id="uploadcomment" onclick="commentSubmit()">댓글</button>
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                           </div>                  
+                           </div>      
+                           <!--댓글은 끝-->            
                     </div>
                 `);
 
@@ -204,3 +205,45 @@ $('#likeBtn').click(function(){
 		}
 	});
 });
+
+
+/*댓글 작성했을시 실행되는 함수입니다.*/
+function commentSubmit() {
+    // input 요소에서 댓글 내용을 가져옵니다.
+    const comment = document.querySelector('#up > input[type="text"]').value;
+
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    else{
+        alert("로그인을 해주세요");
+        window.location.href = "/miniProject/member/login_id";
+        return;
+    }
+
+    // 서버에 보낼 데이터를 만듭니다.
+    const data = {
+        comment: comment,
+        user_id : user_id
+    };
+
+    console.log(data);
+
+    // AJAX 요청을 보냅니다.
+    $.ajax({
+        type: "POST",
+        url: "/miniProject/comment/commentSubmit", // 서버 URL을 여기에 입력합니다.
+        data: data,
+        success: function() {
+            alert("댓글이 성공적으로 저장되었습니다.");
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // AJAX 요청이 실패했을 때 에러를 처리합니다.
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+            // 실패 메시지를 사용자에게 보여줍니다.
+            alert("댓글 저장에 실패했습니다. 다시 시도해주세요.");
+        }
+    });
+}

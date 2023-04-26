@@ -30,7 +30,8 @@ function showButtons() {
    }
 
 function hideButtons() {
- document.getElementById("down").classList.remove('show');
+	document.getElementById("down").classList.remove('show');
+	document.querySelector('#up > input[type="text"]').value = "";
 }
 
 
