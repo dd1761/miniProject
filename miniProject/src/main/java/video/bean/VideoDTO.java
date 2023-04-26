@@ -22,12 +22,13 @@ public class VideoDTO {
 	private String comment_text;
 	private int comment_like_count;
 
-	/*´ñ±Û¾´»ç¶÷ ÀÌ¸§*/
+	/*ï¿½ï¿½Û¾ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½*/
+	private int comment_id;
 	private String commenter_name;
 	private String profile_url;
 	private Timestamp comment_date;
 
-	//Ãß°¡
+	//ï¿½ß°ï¿½
 	private String user_name;
 	private String user_profile_url;
 	private int is_subscribed;

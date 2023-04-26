@@ -13,6 +13,7 @@
 
 	<div class="container play-container">
 		<div class="row">
+		<input type="hidden" id="video_id" value="${param.video_id}">
 			<%--<div class="play-video">
 				<video controls autoplay>
 					<source src="/miniProject/image/video.mp4" type="video/mp4">

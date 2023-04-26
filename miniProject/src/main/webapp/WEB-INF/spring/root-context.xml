@@ -50,6 +50,11 @@
 	<context:component-scan base-package="subscribe.dao" />
 	<context:component-scan base-package="subscribe.service" />
 	
+	<!-- like -->
+	<context:component-scan base-package="like.bean" />
+	<context:component-scan base-package="like.dao" />
+	<context:component-scan base-package="like.service" />
+	
 	
 	
 	<!-- 이메일 인증 관련 빈 등록 -->
