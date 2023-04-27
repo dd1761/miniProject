@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
-  padding-top: 0px; /* �׺���̼� �� ���� ��ŭ ���� ������ �̵��ϵ��� ���� */
+  padding-top: 60px; /* �׺���̼� �� ���� ��ŭ ���� ������ �̵��ϵ��� ���� */
 }
 
 h1 {
@@ -13,7 +13,7 @@ h1 {
 
 nav {
   position: fixed; /* �׺���̼� �� ���� */
-  top: 0;
+  top: 60;
   right: 0;
   left: 0;
 
@@ -114,12 +114,23 @@ position: relative;
   position: absolute;
   top: 0;
   right: 0;
-  width: 20px;
-  height: 20px;
-  background-image: url("../image/x.png");
+  width: 30px;
+  height: 30px;
+  background-image: url("../image/history_X.png");
   background-size: cover;
   opacity: 0;
 }
+.close-button:hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url("../image/history_X_hover.png");
+  background-size: cover;
+  opacity: 0;
+}
+
 .thumbnail-container:hover .close-button {
   opacity: 1;
 }
@@ -163,7 +174,7 @@ position: relative;
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 60px;
   right: 0;
   background-color: #fff;
   width: 200px;
@@ -218,4 +229,29 @@ position: relative;
 
 .navbar .bi-search {
   font-size: 1.25rem;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ccc;
+  position: relative;
+}
+
+.circle:hover {
+  background-color: #aaa;
+}
+
+.close-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+}
+
+.close-btn:hover {
+  cursor: pointer;
 }

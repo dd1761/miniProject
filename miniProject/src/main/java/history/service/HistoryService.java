@@ -6,5 +6,11 @@ import java.util.List;
 
 public interface HistoryService {
 
-    public List<HistoryDTO> getVideoHistory(int page, int count);
+    public List<HistoryDTO> getVideoHistory(int page, int count,int user_id);
+
+    void addHistoryVideo_id(int user_id, int video_id);
+
+    void deleteHistory(int user_id, int video_id);
+
+    void deleteAllHistory(int user_id);
 }

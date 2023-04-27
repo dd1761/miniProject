@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Baboob</title>
 <link rel="stylesheet" href="/miniProject/css/indexstyle.css">
+
 </head>
 <body>
 <!-- flex-div -->
@@ -21,7 +22,7 @@
 			<input type="text" placeholder="검색" id="searchVideo">
 			<img alt="검색" src="/miniProject/image/search.png" id="searchbtn">
 		</div><!-- search-box flex-div -->
-		<input type="text" name="user_id" id="user_id" value="${user_id }" >
+		<input type="text" name="user_id" id="user_id" value="${user_id }" style="display:none">
 	</div><!-- nav-middel flex-div -->
 	
 	<div class="nav-right flex-div">
@@ -35,9 +36,13 @@
 			<img src="/miniProject/image/upload.png">
 			<img src="/miniProject/image/more.png">
 			<img src="/miniProject/image/notification.png" id="noti">
+
+
 			<img src="/miniProject/image/dongbeen.jpg" id="user-icon" class="user-icon">
+
 			
-			<div class="menu-container">
+			
+			<div class="menu-container" id="menu-container">
 				<ul class="menu">
 					<div id="nav-header">
 						<div id="user-img">
@@ -56,8 +61,8 @@
 					
 					<div id="nav-main">
 						<div id="nav-top">
-							<li id="mychannel"><img src="/miniProject/image/mychannel.png" >내 채널</li>
-							<li id="logout"><img src="/miniProject/image/logout.png">로그아웃</li>
+							<li id="mychannel"><img src="/miniProject/image/mychannel.png"><a href="#">내 채널</a></li>
+							<li id="logout"><img src="/miniProject/image/logout.png"><a href="#">로그아웃</a></li>
 						</div> <!-- nav-top -->
 						<div id="nav-bottom">
 							<li><img src="/miniProject/image/designtema.png"
@@ -68,9 +73,12 @@
 					</div><!-- nav-main -->
 				</ul> <!-- menu -->
 			</div> <!-- menu-container -->
+			
+			
+			
+			
 		</c:if> <!-- user_id != null -->
 	</div><!-- nav-right flex-div -->
-	
 </nav>
 <!-- flex-div -->
 	<!-- sidebar -->
@@ -107,7 +115,7 @@
 
 	<!-- 메인화면 -->
 	<div class="container">
-		<div class="display">
+		<div class="display_main">
 	  		<c:if test="${empty display && empty display3 && empty display4 && empty display5}">
 	    		<jsp:include page="./main/container.jsp" />
 	  		</c:if>

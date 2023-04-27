@@ -11,16 +11,29 @@ searchInput.addEventListener('keypress', function(event) {
 });
 
 $(function(){
+    /* 로그인 했을때*/
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    /* 로그인을 안했을때는 로그인창으로 이동*/
+    else {
+        alert("로그인을 해주세요");
+        window.location.href = "/miniProject/member/login_id";
+        return;
+    }
+
     var currentPage = 1;
     var itemsPerPage = 10;
-    getVideoHistory(currentPage, itemsPerPage);
 
-    function getVideoHistory(page, count) {
+    getVideoHistory(currentPage, itemsPerPage,user_id);
+    console.log(user_id);
+
+    function getVideoHistory(page, count,user_id) {
         $.ajax({
             type: 'post',
             url: '/miniProject/history/getVideoHistory',
             dataType: 'json',
-            data: { page: page, count: count },
+            data: { page: page, count: count ,user_id : user_id},
             success: function(data){
 
                 var historyTable = $("#historyTable_tbody");
@@ -65,32 +78,95 @@ $(function(){
                         var thumbnail_url = videos[i].thumbnail_url;
                         var views = videos[i].views;
                         var watch_date = videos[i].watch_date;
+                        var video_id = videos[i].video_id;
 
+                        // 썸네일 클릭 시 실행될 함수
+
+
+// 동적 생성된 html 코드
                         var row = '<tr>';
                         row += '<td>';
-                        row += '<div class="thumbnail-container">';
+                        row += '<div class="thumbnail-container thumbnail-container_' + i+ '">';
                         row += '<div class="close-button"></div>';
                         row += '<div class="thumbnail">';
                         row += '<img src="' + thumbnail_url + '" alt="영상 섬네일" />';
                         row += '<div class="play-button"></div>';
-                        row += '</div>';
+                        row += '</div> ';
                         row += '<div class="info">';
                         row += '<h3 class="title">' + video_title + '</h3>';
                         row += '<p class="creator">'+ channel_name +' • 조회수 ' + views + '회</p>';
                         row += '<p class="description">' + video_description + '</p>';
+                        row += '<div id="hiddenDiv" style="display: none;">' +
+                       /* row += '<div id="hiddenDiv">' +
+*/                            ' <input type="text" name="video_id" class="video_id" value="'+video_id+'">' +
+                            ' </div>'
                         row += '</div>';
                         row += '</div>';
                         row += '</td>';
                         row += '</tr>';
 
                         historyTable.append(row); // 테이블에 추가
-                    }
-                }
+                            
+                        /* 썸내일 클릭하면 비디오로 넘어가짐*/
+                        $('.thumbnail-container_' + i).click(function(event){
+
+                            console.log($(this).find(".video_id").val());
+                            location.href='/miniProject/video/main?video_id='+$(this).find(".video_id").val();
+
+                        })
+
+                        /*  X 버튼 클릭하면 비디오기록 삭제 넘어가짐*/
+                        $('.thumbnail-container_'+i+' .close-button').click (function(event) {
+                            event.stopPropagation()
+                            console.log("자식")
+                            var video_id = $(this).next().next().find(".video_id").val();
+                            console.log($(this).next().next().find(".video_id").val());
+                            console.log(user_id);
+                            $.ajax({
+                                url: '/miniProject/history/deleteHistory',
+                                type: 'post',
+                                data: {video_id: video_id ,user_id :user_id },
+                                success: function(result) {
+                                    console.log('deleteHistory successfully.');
+                                    location.reload();
+                                },
+                                error: function(xhr, status, error) {
+                                    console.log('Failed to deleteHistory.');
+                                }
+                            });
+
+
+                        });
+                        // 이벤트 핸들러 등록
+
+                    }// for i
+                }// for
             },
             error: function(err){
                 console.log(err);
             }
         });
     }
+
+});
+
+$(".deleteAllHistory").on("click", function() {
+    var user_id =  $('#user_id').val();
+
+    console.log(user_id);
+
+    $.ajax({
+        url: '/miniProject/history/deleteAllHistory',
+        type: 'post',
+        data: {user_id : user_id},
+        success: function() {
+            console.log('history updated successfully.');
+            location.reload();
+        },
+        error: function() {
+            console.log('history to update views.');
+        }
+    });
+
 
 });

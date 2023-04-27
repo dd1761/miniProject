@@ -11,11 +11,16 @@ pageEncoding="UTF-8"%>
 	  <ul>
 	    <li>
 	      <div class="input-group">
-	        <input type="text" class="form-control" placeholder="시청기록 검색" aria-label="시청기록 검색" id="search-input">
+	        <input type="hidden" class="form-control" placeholder="시청기록 검색" aria-label="시청기록 검색" id="search-input">
 	        <span class="input-group-text"><i class="bi bi-search"></i></span>
 	      </div>
 	    </li>
-	    <li><a href="#">시청기록 모두 지우기</a></li>
+
+	    <li>
+			<div class="deleteAllHistory">
+				시청기록 모두 지우기
+			</div>
+		</li>
 
 	  </ul>
 	</div>

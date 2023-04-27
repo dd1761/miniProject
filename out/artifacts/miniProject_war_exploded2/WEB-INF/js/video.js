@@ -1,11 +1,13 @@
 
 $(function(){
-    if ($('#user_id').val()){
-        var user_id =  $('#user_id').val();
-    }
-    else{
-        var user_id =  0;
-    }
+
+	if($('#user_id').val()) {
+		var user_id= $('#user_id').val();
+	}
+	else {
+		var user_id = 0;
+	}
+
 
     var query_string = window.location.search;
 // 쿼리 스트링을 파싱하여 객체로 변환합니다.
@@ -20,20 +22,10 @@ $(function(){
 
     /*2.조회수 + 1 */
     addVideoView(video_id);
-
-    function addVideoView(video_id){
-       console.log(video_id);
-        $.ajax({
-            url: '/miniProject/video/addVideoView',
-            type: 'post',
-            data: {video_id: video_id },
-            success: function(result) {
-                console.log('Views updated successfully.');
-            },
-            error: function(xhr, status, error) {
-                console.log('Failed to update views.');
-            }
-        });
+    
+    /*3.히스토리 기록 남기기*/
+    if($('#user_id').val()) {
+        addHistoryVideo_id(user_id,video_id);
     }
 
 
@@ -80,10 +72,8 @@ $(function(){
                         ${video_description}
                         <div>
 
-                            <a href="" id="likeBtn"><img src="/miniProject/image/like.png">${video_like_count}</a>
+                            <img id="likeVideoBtn" src="/miniProject/image/like.png">${video_like_count}
 
-                            <a href=""><img src="/miniProject/image/like.png">${video_like_count}</a>
-                 
 
                         </div>
                     </div>
@@ -158,17 +148,19 @@ $(function(){
                         var commenter_name = data[i].commenter_name;
                         var profile_url = data[i].profile_url;
                         var comment_like_count = data[i].comment_like_count;
+                        
 
                         var row = `
                                     <div class="old-comment">
                                        <img src="${data[i].profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
-                                      
+                      
                                       <div>
                                         <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
-                                          
-                                          <img src="/miniProject/image/like.png">
+                                          <input type="hidden" id="comment_id" value="${comment_id}">
+                        				  
+                                          <img src="/miniProject/image/like.png" id="likeCommentBtn">
                                           <span>${comment_like_count} 좋아요 수</span>
                                         </div>
                                       </div>
@@ -177,12 +169,6 @@ $(function(){
                         $("#play-video").append(row);
                     }
                 }
-
-
-
-
-
-
 
 
             }
@@ -195,18 +181,28 @@ $(function(){
 });
 
 
-$('#likeBtn').click(function(){
-	$.ajax({
-		type:'post',
-		url: '/miniProject/like/likePlus',
-		data: 'user_id=' + user_id + 'video_id=' + video_id,
-		success: function(data){
-			console.log(data);
-		},
-		error: function(err){
-			console.log(err);
-		}
-	});
+$(document).on('click', '#likeVideoBtn', () => {
+	if($('#user_id').val()) {
+		console.log('로그인되어있어요~');
+		$.ajax({
+			type: 'post',
+			url: '/miniProject/like/likeVideoPlus',
+			data: {user_id: $('#user_id').val(),
+				   video_id: parseInt($('#video_id').val())
+			},
+			success: function(data){
+				console.log(data);
+				alert('값이 들어 갔다~');
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+		
+	}
+	else {
+		console.log('로그인해주세요');
+	}
 });
 
 
@@ -247,6 +243,40 @@ function commentSubmit() {
             console.log(textStatus);
             console.log(errorThrown);
             alert("댓글 저장에 실패했습니다. 다시 시도해주세요.");
+        }
+    });
+}
+
+
+/*조회수를 올리는 함수입니다*/
+function addVideoView(video_id){
+    console.log(video_id);
+    $.ajax({
+        url: '/miniProject/video/addVideoView',
+        type: 'post',
+        data: {video_id: video_id },
+        success: function(result) {
+            console.log('Views updated successfully.');
+        },
+        error: function(xhr, status, error) {
+            console.log('Failed to update views.');
+        }
+    });
+}
+
+/*History 에 시청기록을 올리는 함수입니다*/
+function addHistoryVideo_id(user_id,video_id){
+    /*console.log("히스토리"+user_id);
+    console.log("히스토리"+video_id);*/
+    $.ajax({
+        url: '/miniProject/history/addHistoryVideo_id',
+        type: 'post',
+        data: {video_id: video_id ,user_id : user_id},
+        success: function() {
+            console.log('history updated successfully.');
+        },
+        error: function() {
+            console.log('history to update views.');
         }
     });
 }

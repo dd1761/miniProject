@@ -13,6 +13,7 @@
 
 	<div class="container play-container">
 		<div class="row">
+		<input type="hidden" id="video_id" value="${param.video_id}">
 			<%--<div class="play-video">
 				<video controls autoplay>
 					<source src="/miniProject/image/video.mp4" type="video/mp4">
@@ -193,4 +194,4 @@
 	<%-- 제이쿼리 --%>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 	<%--내 js --%>
-	<script type="text/javascript" src = "../js/video.js"></script>
+	<script type="text/javascript" src = "/miniProject/js/video.js"></script>

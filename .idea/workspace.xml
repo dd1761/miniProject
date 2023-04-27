@@ -9,23 +9,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="구독버튼이 사용자에 맞게끔 변화하도록 변경" />
-
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="예제 동영상 추가해봄">
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/10.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/11.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/12.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/4.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/5.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/6.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/7.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/8.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/9.mp4" afterDir="false" />
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="시청기록 삭제 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/controller/HistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAOMyBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAOMyBatis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/historyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/history/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/history/history.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/historyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/controller/HistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/historyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +119,7 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId",
+    "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/image",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -128,14 +135,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\image" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\videoFileUseByVideoId" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\img" />
       <recent name="D:\miniProject\miniProject\src\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\image" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\videoFileUseByVideoId" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\img" />
-      <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\image" />
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\channel" />
       <recent name="D:\miniProject\miniProject\src\main\resources" />
     </key>
@@ -242,11 +250,9 @@
       <workItem from="1682325123799" duration="1350000" />
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
-
       <workItem from="1682382465507" duration="25962000" />
       <workItem from="1682382465507" duration="25098000" />
       <workItem from="1682469406130" duration="18673000" />
-
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -346,16 +352,6 @@
       <option name="project" value="LOCAL" />
       <updated>1682410489530</updated>
     </task>
-
-    <task id="LOCAL-00015" summary="구독버튼이 사용자에 맞게끔 변화하도록 변경">
-      <created>1682412466874</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1682412466874</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
-
     <task id="LOCAL-00015" summary="새로운 브랜치">
       <created>1682413781187</created>
       <option name="number" value="00015" />
@@ -412,8 +408,105 @@
       <option name="project" value="LOCAL" />
       <updated>1682498226086</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
-
+    <task id="LOCAL-00023" summary="04-27-01 브랜치 생성">
+      <created>1682556518654</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1682556518654</updated>
+    </task>
+    <task id="LOCAL-00024" summary="04-27-01 브랜치 생성">
+      <created>1682556527683</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1682556527683</updated>
+    </task>
+    <task id="LOCAL-00025" summary="댓글 최근날짜 순으로 정렬">
+      <created>1682556945070</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1682556945070</updated>
+    </task>
+    <task id="LOCAL-00026" summary="history.css 수정">
+      <created>1682557124123</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1682557124123</updated>
+    </task>
+    <task id="LOCAL-00027" summary="history 에 div 클릭시 해당 비디오로 이동">
+      <created>1682557849733</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1682557849733</updated>
+    </task>
+    <task id="LOCAL-00028" summary="조회수 변경">
+      <created>1682559930390</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1682559930390</updated>
+    </task>
+    <task id="LOCAL-00029" summary="영상 시청기록">
+      <created>1682562144152</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1682562144152</updated>
+    </task>
+    <task id="LOCAL-00030" summary="영상 시청기록 저장완료">
+      <created>1682563146901</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1682563146901</updated>
+    </task>
+    <task id="LOCAL-00031" summary="영상 기록 삭제할 x 이미지 추가">
+      <created>1682564049944</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1682564049944</updated>
+    </task>
+    <task id="LOCAL-00032" summary="영상 기록 삭제할 x 이미지 추가">
+      <created>1682564059806</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1682564059806</updated>
+    </task>
+    <task id="LOCAL-00033" summary="x 이미지 수정">
+      <created>1682573641640</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1682573641640</updated>
+    </task>
+    <task id="LOCAL-00034" summary="x 이미지 추가">
+      <created>1682573657616</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1682573657616</updated>
+    </task>
+    <task id="LOCAL-00035" summary="영상 삭제 이벤트 걸기">
+      <created>1682581564470</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1682581564470</updated>
+    </task>
+    <task id="LOCAL-00036" summary="시청기록 삭제 기능 추가">
+      <created>1682585259843</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1682585259843</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,10 +525,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="리소스 추가" />
-    <MESSAGE value="인덱스의 채널 명 링크 변경" />
-    <MESSAGE value="채널페이지 동적으로 수정완료" />
-    <MESSAGE value="a 테그로 url 링크걸기" />
     <MESSAGE value="댓글 if 문걸어서 null 값 출력 방지" />
     <MESSAGE value="css 수정해보기" />
     <MESSAGE value="ㄹㄹ" />
@@ -449,7 +538,19 @@
     <MESSAGE value="댓글 로그 찍기" />
     <MESSAGE value="댓글기능 완성" />
     <MESSAGE value="예제 동영상 추가해봄" />
-    <option name="LAST_COMMIT_MESSAGE" value="예제 동영상 추가해봄" />
+    <MESSAGE value="04-27-01 브랜치 생성" />
+    <MESSAGE value="댓글 최근날짜 순으로 정렬" />
+    <MESSAGE value="history.css 수정" />
+    <MESSAGE value="history 에 div 클릭시 해당 비디오로 이동" />
+    <MESSAGE value="조회수 변경" />
+    <MESSAGE value="영상 시청기록" />
+    <MESSAGE value="영상 시청기록 저장완료" />
+    <MESSAGE value="영상 기록 삭제할 x 이미지 추가" />
+    <MESSAGE value="x 이미지 수정" />
+    <MESSAGE value="x 이미지 추가" />
+    <MESSAGE value="영상 삭제 이벤트 걸기" />
+    <MESSAGE value="시청기록 삭제 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="시청기록 삭제 기능 추가" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

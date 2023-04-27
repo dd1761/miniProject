@@ -17,8 +17,8 @@ public class HistoryDAOMyBatis implements HistoryDAO {
     private SqlSession sqlSession;
 
     @Override
-    public List<HistoryDTO> getVideoHistory(int start, int count) {
-        int user_id = 4;
+    public List<HistoryDTO> getVideoHistory(int start, int count,int user_id) {
+
         System.out.println("DAO");
 
         Map<String, Object> map = new HashMap<>();
@@ -27,5 +27,29 @@ public class HistoryDAOMyBatis implements HistoryDAO {
         map.put("user_id", user_id);
         return sqlSession.selectList("historySQL.getVideoHistory",map);
     }
-    
+
+    @Override
+    public void addHistoryVideo_id(int user_id, int video_id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("video_id", video_id);
+        map.put("user_id", user_id);
+        sqlSession.selectList("historySQL.addHistoryVideo_id",map);
+    }
+
+    @Override
+    public void deleteHistory(int user_id, int video_id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("video_id", video_id);
+        map.put("user_id", user_id);
+        sqlSession.delete("historySQL.deleteHistory",map);
+    }
+
+    @Override
+    public void deleteAllHistory(int user_id) {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("user_id", user_id);
+        sqlSession.delete("historySQL.deleteAllHistory",map);
+    }
+
 }
