@@ -36,6 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
 		LEFT JOIN User ON Comment.user_id = User.user_id
 		WHERE Video.video_id = #{video_id}
+		order by comment_date desc
 
 
 	</select>
