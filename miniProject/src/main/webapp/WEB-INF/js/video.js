@@ -219,7 +219,8 @@ $(document).on('click', '#likeVideoBtn', () => {
 		
 	}
 	else {
-		console.log('로그인해주세요');
+		alert('로그인해주세요');
+		location.href='/miniProject/member/login_id';
 	}
 });
 
