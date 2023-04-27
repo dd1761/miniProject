@@ -2,7 +2,21 @@ $(function(){
 	const eamil = $('#email').text(); // 이메일 주소값 얻어오기!
 	console.log('완성된 이메일 : ' + eamil); // 이메일 오는지 확인
 	const checkInput = $('#email_code') // 인증번호 입력하는곳 
-	
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/member/isExistEmail',
+	   	data: 'email='+$('#email').text(),
+		success: function(data){
+			if(data.profile_url == null) {
+				$('#profile').attr("src", '../img/p.jpg');
+			}else {
+				$('#profile').attr("src", '../storage/' + data.profile_url);
+			}
+		},
+	   	error: function(err){
+	   		console.log(err);
+	   	}
+	});
 	$.ajax({
 		type : 'get',
 		url : '/miniProject/member/mailCheck',

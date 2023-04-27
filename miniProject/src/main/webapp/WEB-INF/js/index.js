@@ -191,4 +191,21 @@ $('#account-management').click(function(){
 	location.href='/miniProject/member/account?user_id=' + $('input[name="user_id"]').val();
 });
 
-
+/*프로필 이미지*/
+$(function(){
+	$.ajax({
+		type: 'post',
+        url: '/miniProject/member/getAccount',
+        data: 'user_id=' + $('#user_id').val(),
+        success: function(data){
+			if(data.profile_url == null) {
+				$('#user-icon').attr("src", './img/p.jpg');
+			}else {
+				$('#user-icon').attr("src", './storage/' + data.profile_url);
+			}
+		},
+        error: function(err){
+            console.log(err);
+        }
+	});
+});

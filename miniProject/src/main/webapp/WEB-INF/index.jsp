@@ -35,7 +35,7 @@
 			<img src="/miniProject/image/upload.png">
 			<img src="/miniProject/image/more.png">
 			<img src="/miniProject/image/notification.png" id="noti">
-			<img src="/miniProject/image/dongbeen.jpg" class="user-icon">
+			<img src="" class="user-icon" id="user-icon">
 			
 			<div class="menu-container">
 				<ul class="menu">
@@ -126,7 +126,14 @@
 	  </div>
 	</div>
 
-	
+<script>
+window.onpageshow = function(event) {
+  // 브라우저의 뒤로가기 버튼을 클릭하여 이전 페이지에서 돌아온 경우
+  if (event.persisted) {
+    location.reload();
+  }
+};
+</script>	
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript" src="/miniProject/js/index.js"></script>
 </body>

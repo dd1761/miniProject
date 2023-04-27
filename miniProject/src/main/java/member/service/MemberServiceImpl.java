@@ -97,6 +97,12 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.DeleteMember(user_id);
 	}
 
+	@Override
+	public void upload(String profile_url, int user_id) {
+		memberDAO.upload(profile_url, user_id);
+		
+	}
+
 
 
 }

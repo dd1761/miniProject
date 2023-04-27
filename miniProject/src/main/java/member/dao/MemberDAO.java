@@ -35,6 +35,8 @@ public interface MemberDAO {
 
 	public void DeleteMember(int user_id);
 
+	public void upload(String profile_url, int user_id);
+
 	
 
 	

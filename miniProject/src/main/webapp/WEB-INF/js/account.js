@@ -5,13 +5,17 @@ $(function(){
         data: 'user_id=' + $('#user_id').val(),
         success: function(data){
 			 console.log(data);
-			 $('#profile_url').val(data.profile_url);
 			 $('#name').val(data.name);
 			 $('#year').val(data.year);
 			 $('#gender').val(data.gender);
 			 $('#password').val(data.password);
 			 $('#phone').val(data.phone);
 			 $('#email').val(data.email);
+			if(data.profile_url == null) {
+				$('#profile').attr("src", '../img/p.jpg');
+			}else {
+				$('#profile').attr("src", '../storage/' + data.profile_url);
+			}
 		},
         error: function(err){
             console.log(err);
@@ -58,6 +62,22 @@ $('#updateBtn').click(function(){
 		$('#nameDiv').css('font-size', '12px');
 		$('#nameDiv').css('font-weight', 'bold');
 	}else {
+		var formData = new FormData($('#uploadForm')[0]);
+		$.ajax({
+			type : 'post',
+			url : '/miniProject/member/upload',
+			enctype : "multipart/form-data",
+			processData : false,
+			contentType : false,
+			data : formData,
+			success : function(data){
+			},
+			error: function(err){
+				console.log(err)
+				;
+			}
+		});
+		
 		$.ajax({
 			type: 'post',
 		   	url: '/miniProject/member/updateAccount',
@@ -75,7 +95,8 @@ $('#updateBtn').click(function(){
 		   		console.log(err);
 		   	}
 		});
-	}	
+	}
+	
 });
 
 $('#deleteBtn').click(function(){

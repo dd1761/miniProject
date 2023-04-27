@@ -117,7 +117,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="email
 #main-logo img {
   margin-left: 10%;
   width: 150px;
-  height: 50px;
+  height: 40px;
 }
 
 /* 수정취소버튼 */
@@ -156,7 +156,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="email
 </head>
 <body>
    <div id="main-logo">
-      <a href="javascript:history.back()"> <img src="../img/logo.png" alt="youtube">
+      <a href="javascript:history.back()"><img src="../img/logo.png" alt="youtube">
       </a>
    </div>
    <header>
@@ -182,7 +182,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="email
          <div id="inheader">
             <h3>기본 정보</h3>
          </div>
-	
+	<form id="uploadForm">
          <div class="info-box" id="pic">
             <div class="info-label">사진</div>
             <h5>사진을 추가하여 계정을 맞춤설정합니다.</h5>
@@ -195,7 +195,9 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="email
                </div>
             </div>
          </div>
-
+         <input type="hidden" id="user_id" name="user_id" value="${user_id }">
+	</form>
+	
          <div class="info-box">
             <div class="info-label">비밀번호</div>
             <div class="info-input">
@@ -266,7 +268,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="email
 		  	document.getElementById('photo-input').click();
 		});
 
-		<!-- 업로드 버튼을 누르기 전에 카메라 아이콘을 통해서 선택한 이미지가 맞는지 확인하기 위해서 이미지를 보이게 한다. -->
+		<!-- 업로드 버튼을 누르기 전에 아이콘을 통해서 선택한 이미지가 맞는지 확인하기 위해서 이미지를 보이게 한다. -->
 		$('#photo-input').change(function(){
 		     readURL(this);
 		   });

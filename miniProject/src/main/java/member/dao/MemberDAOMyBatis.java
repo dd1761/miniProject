@@ -99,6 +99,14 @@ public class MemberDAOMyBatis implements MemberDAO {
 	public void DeleteMember(int user_id) {
 		sqlSession.delete("memberSQL.DeleteMember", user_id);
 	}
+
+	@Override
+	public void upload(String profile_url, int user_id) {
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		map.put("profile_url", profile_url);
+		map.put("user_id", user_id);
+		sqlSession.update("memberSQL.upload", map);
+	}
 	
 	
 }
