@@ -11,16 +11,29 @@ searchInput.addEventListener('keypress', function(event) {
 });
 
 $(function(){
+    /* 로그인 했을때*/
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    /* 로그인을 안했을때는 로그인창으로 이동*/
+    else {
+        alert("로그인을 해주세요");
+        window.location.href = "/miniProject/member/login_id";
+        return;
+    }
+
     var currentPage = 1;
     var itemsPerPage = 10;
-    getVideoHistory(currentPage, itemsPerPage);
 
-    function getVideoHistory(page, count) {
+    getVideoHistory(currentPage, itemsPerPage,user_id);
+    console.log(user_id);
+
+    function getVideoHistory(page, count,user_id) {
         $.ajax({
             type: 'post',
             url: '/miniProject/history/getVideoHistory',
             dataType: 'json',
-            data: { page: page, count: count },
+            data: { page: page, count: count ,user_id : user_id},
             success: function(data){
 
                 var historyTable = $("#historyTable_tbody");

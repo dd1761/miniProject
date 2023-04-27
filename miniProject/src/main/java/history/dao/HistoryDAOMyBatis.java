@@ -17,8 +17,8 @@ public class HistoryDAOMyBatis implements HistoryDAO {
     private SqlSession sqlSession;
 
     @Override
-    public List<HistoryDTO> getVideoHistory(int start, int count) {
-        int user_id = 4;
+    public List<HistoryDTO> getVideoHistory(int start, int count,int user_id) {
+
         System.out.println("DAO");
 
         Map<String, Object> map = new HashMap<>();

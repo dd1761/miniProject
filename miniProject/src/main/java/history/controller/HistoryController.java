@@ -27,11 +27,12 @@ public class HistoryController {
 	// sql 을 실행시킴
 	@PostMapping(value="getVideoHistory")
 	@ResponseBody
-	public List<HistoryDTO> getVideoHistory(@RequestParam(value ="page",required=false) Integer page, @RequestParam(value ="count",required=false) Integer count) {
+	public List<HistoryDTO> getVideoHistory(@RequestParam(value ="page",required=false) Integer page, @RequestParam(value ="count",required=false) Integer count,@RequestParam int user_id) {
 		page = Optional.ofNullable(page).orElse(1);
 		count = Optional.ofNullable(count).orElse(5);
+		System.out.println("user_id : " + user_id);
 		System.out.println("controller");
-		return historyService.getVideoHistory(page,count);
+		return historyService.getVideoHistory(page,count,user_id);
 	}
 
 

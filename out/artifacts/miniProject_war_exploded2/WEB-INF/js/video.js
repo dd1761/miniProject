@@ -7,14 +7,6 @@ $(function(){
 	else {
 		var user_id = 0;
 	}
-    
-
-    if ($('#user_id').val()){
-        var user_id =  $('#user_id').val();
-    }
-    else{
-        var user_id =  0;
-    }
 
 
     var query_string = window.location.search;
@@ -31,20 +23,7 @@ $(function(){
     /*2.조회수 + 1 */
     addVideoView(video_id);
 
-    function addVideoView(video_id){
-       console.log(video_id);
-        $.ajax({
-            url: '/miniProject/video/addVideoView',
-            type: 'post',
-            data: {video_id: video_id },
-            success: function(result) {
-                console.log('Views updated successfully.');
-            },
-            error: function(xhr, status, error) {
-                console.log('Failed to update views.');
-            }
-        });
-    }
+
 
 
     function getVideoById(user_id, video_id) {
@@ -261,6 +240,23 @@ function commentSubmit() {
             console.log(textStatus);
             console.log(errorThrown);
             alert("댓글 저장에 실패했습니다. 다시 시도해주세요.");
+        }
+    });
+}
+
+
+/*조회수를 올리는 함수입니다*/
+function addVideoView(video_id){
+    console.log(video_id);
+    $.ajax({
+        url: '/miniProject/video/addVideoView',
+        type: 'post',
+        data: {video_id: video_id },
+        success: function(result) {
+            console.log('Views updated successfully.');
+        },
+        error: function(xhr, status, error) {
+            console.log('Failed to update views.');
         }
     });
 }

@@ -11,16 +11,29 @@ searchInput.addEventListener('keypress', function(event) {
 });
 
 $(function(){
+    /* 로그인 했을때*/
+    if ($('#user_id').val()){
+        var user_id =  $('#user_id').val();
+    }
+    /* 로그인을 안했을때는 로그인창으로 이동*/
+    else {
+        alert("로그인을 해주세요");
+        window.location.href = "/miniProject/member/login_id";
+        return;
+    }
+
     var currentPage = 1;
     var itemsPerPage = 10;
-    getVideoHistory(currentPage, itemsPerPage);
 
-    function getVideoHistory(page, count) {
+    getVideoHistory(currentPage, itemsPerPage,user_id);
+    console.log(user_id);
+
+    function getVideoHistory(page, count,user_id) {
         $.ajax({
             type: 'post',
             url: '/miniProject/history/getVideoHistory',
             dataType: 'json',
-            data: { page: page, count: count },
+            data: { page: page, count: count ,user_id : user_id},
             success: function(data){
 
                 var historyTable = $("#historyTable_tbody");
@@ -65,10 +78,12 @@ $(function(){
                         var thumbnail_url = videos[i].thumbnail_url;
                         var views = videos[i].views;
                         var watch_date = videos[i].watch_date;
+                        var video_id = videos[i].video_id;
 
                         var row = '<tr>';
                         row += '<td>';
-                        row += '<div class="thumbnail-container">';
+                        row += '<div class="thumbnail-container" onclick="location.href=\'/miniProject/video/main?video_id='+video_id+'\'">';
+                       /* row += '<div class="thumbnail-container">';*/
                         row += '<div class="close-button"></div>';
                         row += '<div class="thumbnail">';
                         row += '<img src="' + thumbnail_url + '" alt="영상 섬네일" />';
