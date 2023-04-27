@@ -83,7 +83,7 @@ $(function(){
                         var row = '<tr>';
                         row += '<td>';
                         row += '<div class="thumbnail-container" onclick="location.href=\'/miniProject/video/main?video_id='+video_id+'\'">';
-                       /* row += '<div class="thumbnail-container">';*/
+
                         row += '<div class="close-button"></div>';
                         row += '<div class="thumbnail">';
                         row += '<img src="' + thumbnail_url + '" alt="영상 섬네일" />';
@@ -108,4 +108,12 @@ $(function(){
         });
     }
 
+});
+/* 영상의 x 버튼 클릭*/
+$(document).on('click', '.thumbnail-container', function() {
+    // 클릭한 .thumbnail-container 요소 안에 있는 .close-button 요소에 대한 이벤트 리스너 추가
+    $(this).find('.close-button').on('click', function(event) {
+        event.stopPropagation(); // 이벤트 전파 중지
+        console.log('Close button clicked!');
+    });
 });
