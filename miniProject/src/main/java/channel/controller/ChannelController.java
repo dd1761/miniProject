@@ -35,6 +35,21 @@ public class ChannelController {
 
         return channelService.getChannelForm(user_id,channel_id);
     }
+    
+    /**/
+    @GetMapping(value="youtubestudio")
+    public String youtubestudio(Model model) {
+
+        model.addAttribute("display","./youtube_studio/youtubestudio.jsp");
+        return "index";
+    }
+    
+    @PostMapping(value="myChannel")
+    @ResponseBody
+    public ChannelDTO myChannel(@RequestParam int user_id) {
+    	
+    	return channelService.myChannel(user_id);
+    }
 }
 
 

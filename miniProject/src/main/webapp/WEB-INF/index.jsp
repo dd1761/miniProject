@@ -43,36 +43,37 @@
 			
 			
 			<div class="menu-container" id="menu-container">
-				<ul class="menu">
-					<div id="nav-header">
-						<div id="user-img">
-							
-						</div> <!-- user-img -->
-						
-						<div id="user-details">
-							
-							<span id="user-name"></span> <!-- user-name -->
-							<span id="user-email"></span> <!-- user-email -->
-		                    <div id="account-management-container">
-		                       <a id="account-management" href="#">Google 계정 관리</a>
-		                    </div> <!-- account-management-container -->
-						</div> <!-- user-details -->
-					</div> <!-- nav-header -->
-					
-					<div id="nav-main">
-						<div id="nav-top">
-							<li id="mychannel"><img src="/miniProject/image/mychannel.png"><a href="#">내 채널</a></li>
-							<li id="logout"><img src="/miniProject/image/logout.png"><a href="#">로그아웃</a></li>
-						</div> <!-- nav-top -->
-						<div id="nav-bottom">
-							<li><img src="/miniProject/image/designtema.png"
+            <ul class="menu">
+               <div id="nav-header">
+                  <div id="user-img">
+                     
+                  </div> <!-- user-img -->
+                  
+                  <div id="user-details">
+                     
+                     <span id="user-name"></span> <!-- user-name -->
+                     <span id="user-email"></span> <!-- user-email -->
+                          <div id="account-management-container">
+                             <a id="account-management" href="#">Google 계정 관리</a>
+                          </div> <!-- account-management-container -->
+                  </div> <!-- user-details -->
+               </div> <!-- nav-header -->
+               
+               <div id="nav-main">
+                  <div id="nav-top">
+                     <li id="mystudio"><img src="/miniProject/image/youtube-studio.png"><a href="/miniProject/channel/youtubestudio">유튜브 스튜디오</a></li>
+                     <li id="mychannel"><img src="/miniProject/image/mychannel.png"><a href="#">내 채널</a></li>
+                     <li id="logout"><img src="/miniProject/image/logout.png"><a href="#">로그아웃</a></li>
+                  </div> <!-- nav-top -->
+                  <div id="nav-bottom">
+                     <li><img src="/miniProject/image/designtema.png"
                            id="designtema"><a href="#">디자인: 기기 테마</a></li>
                         <li><img src="/miniProject/image/setting.png"
                            id="setting"><a href="#">설정</a></li>
-						</div> <!-- nav-bottom -->
-					</div><!-- nav-main -->
-				</ul> <!-- menu -->
-			</div> <!-- menu-container -->
+                  </div> <!-- nav-bottom -->
+               </div><!-- nav-main -->
+            </ul> <!-- menu -->
+         </div> <!-- menu-container -->
 			
 			
 			

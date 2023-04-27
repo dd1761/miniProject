@@ -20,4 +20,11 @@ public class ChannelServiceImpl implements ChannelService {
         List<ChannelDTO> list = channelDAO.getChannelForm(user_id, channel_id);
         return list;
     }
+
+
+	@Override
+	public ChannelDTO myChannel(int user_id) {
+		
+		return channelDAO.myChannel(user_id);
+	}
 }

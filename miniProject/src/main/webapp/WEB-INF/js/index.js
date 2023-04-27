@@ -195,3 +195,31 @@ $(document).on('click', '#dissubBtn', () => {
 		}
 	});
 });
+
+// 내 channel_id를 가지고 와서 mystudio를 들어갈 때 주소값에 넣기 위한 코드
+$(function(){
+    $.ajax({
+        type: 'post',
+        url: '/miniProject/channel/myChannel',
+        data: 'user_id=' + $('#user_id').val(),
+        success: function(data){
+            console.log(data);
+            console.log('채널 id의 값은 = ' + data.channel_id);
+            
+            // channel_id 값을 추출하여 동적으로 URL을 생성
+            var channelUrl = '/miniProject/channel/youtubestudio?channel_id=' + data.channel_id;
+            
+            // 생성한 URL을 이용하여 href 속성 값을 설정
+            $('#mystudio > a').attr('href', channelUrl);
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+});
+
+
+
+
+
+
