@@ -266,8 +266,8 @@ function addVideoView(video_id){
 
 /*History 에 시청기록을 올리는 함수입니다*/
 function addHistoryVideo_id(user_id,video_id){
-    console.log("히스토리"+user_id);
-    console.log("히스토리"+video_id);
+    /*console.log("히스토리"+user_id);
+    console.log("히스토리"+video_id);*/
     $.ajax({
         url: '/miniProject/history/addHistoryVideo_id',
         type: 'post',
