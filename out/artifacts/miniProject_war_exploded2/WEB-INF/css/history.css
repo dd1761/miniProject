@@ -2,7 +2,7 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
-  padding-top: 0px; /* �׺���̼� �� ���� ��ŭ ���� ������ �̵��ϵ��� ���� */
+  padding-top: 60px; /* �׺���̼� �� ���� ��ŭ ���� ������ �̵��ϵ��� ���� */
 }
 
 h1 {
@@ -13,7 +13,7 @@ h1 {
 
 nav {
   position: fixed; /* �׺���̼� �� ���� */
-  top: 0;
+  top: 60;
   right: 0;
   left: 0;
 
@@ -163,7 +163,7 @@ position: relative;
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 60px;
   right: 0;
   background-color: #fff;
   width: 200px;

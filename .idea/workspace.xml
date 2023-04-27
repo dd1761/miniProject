@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="04-27-01 브랜치 생성">
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="댓글 최근날짜 순으로 정렬">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/history.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/history.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682556527683</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="댓글 최근날짜 순으로 정렬">
+      <created>1682556945070</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1682556945070</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +446,8 @@
     <MESSAGE value="댓글기능 완성" />
     <MESSAGE value="예제 동영상 추가해봄" />
     <MESSAGE value="04-27-01 브랜치 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="04-27-01 브랜치 생성" />
+    <MESSAGE value="댓글 최근날짜 순으로 정렬" />
+    <option name="LAST_COMMIT_MESSAGE" value="댓글 최근날짜 순으로 정렬" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
