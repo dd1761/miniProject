@@ -150,3 +150,23 @@ $(function(){
 
 });
 
+$(".deleteAllHistory").on("click", function() {
+    var user_id =  $('#user_id').val();
+
+    console.log(user_id);
+
+    $.ajax({
+        url: '/miniProject/history/deleteAllHistory',
+        type: 'post',
+        data: {user_id : user_id},
+        success: function() {
+            console.log('history updated successfully.');
+            location.reload();
+        },
+        error: function() {
+            console.log('history to update views.');
+        }
+    });
+
+
+});

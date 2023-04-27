@@ -11,4 +11,6 @@ public interface HistoryService {
     void addHistoryVideo_id(int user_id, int video_id);
 
     void deleteHistory(int user_id, int video_id);
+
+    void deleteAllHistory(int user_id);
 }

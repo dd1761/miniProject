@@ -32,4 +32,9 @@ public class HistoryServiceImpl implements HistoryService {
     public void deleteHistory(int user_id, int video_id) {
         historyDAO.deleteHistory(user_id,video_id);
     }
+
+    @Override
+    public void deleteAllHistory(int user_id) {
+        historyDAO.deleteAllHistory(user_id);
+    }
 }
