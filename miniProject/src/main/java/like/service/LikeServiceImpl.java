@@ -33,4 +33,16 @@ public class LikeServiceImpl implements LikeService {
 		likeDAO.likeVideoDelete(user_id, video_id);
 	}
 
+	@Override
+	public void likeCommentPlus(int user_id, int comment_id) {
+		
+		likeDAO.likeCommentPlus(user_id, comment_id);
+	}
+
+	@Override
+	public void likeCommentDelete(int user_id, int comment_id) {
+		
+		likeDAO.likeCommentDelete(user_id, comment_id);
+	}
+
 }

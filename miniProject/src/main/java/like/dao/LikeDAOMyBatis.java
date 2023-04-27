@@ -45,4 +45,26 @@ public class LikeDAOMyBatis implements LikeDAO {
 		
 	}
 
+	@Override
+	public void likeCommentPlus(int user_id, int comment_id) {
+		
+		Map<String, Object> map = new HashedMap<>();
+		map.put("user_id", user_id);
+		map.put("comment_id", comment_id);
+		
+		sqlSession.insert("likeSQL.likeCommentPlus", map);
+		
+	}
+
+	@Override
+	public void likeCommentDelete(int user_id, int comment_id) {
+		
+		Map<String, Object> map = new HashedMap<>();
+		map.put("user_id", user_id);
+		map.put("comment_id", comment_id);
+		
+		sqlSession.delete("likeSQL.likeCommentDelete", map);
+		
+	}
+
 }

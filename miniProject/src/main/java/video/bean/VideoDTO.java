@@ -32,4 +32,7 @@ public class VideoDTO {
 	private String user_name;
 	private String user_profile_url;
 	private int is_subscribed;
+	
+	//영상의 댓글들 좋아요 수
+	private int user_liked_comment;
 }

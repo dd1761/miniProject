@@ -13,4 +13,8 @@ public interface LikeDAO {
 
 	void likeVideoDelete(int user_id, int video_id);
 
+	void likeCommentPlus(int user_id, int comment_id);
+
+	void likeCommentDelete(int user_id, int comment_id);
+
 }

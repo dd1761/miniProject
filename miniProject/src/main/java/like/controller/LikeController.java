@@ -1,5 +1,6 @@
 package like.controller;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,4 +56,27 @@ public class LikeController {
 		
 		likeService.likeVideoDelete(user_id, video_id);
 	}
+	
+	@PostMapping(value="likeCommentPlus")
+	@ResponseBody
+	public void likeCommentPlus(@RequestParam int user_id, @RequestParam int comment_id) {
+	    System.out.println("댓글의 user_id의 값" + user_id);
+	    System.out.println("댓글의 comment_id의 값" + comment_id);
+	    
+	    likeService.likeCommentPlus(user_id, comment_id);
+	}
+
+	@PostMapping(value="likeCommentDelete")
+	@ResponseBody
+	public void likeCommentDelete(@RequestParam int user_id, @RequestParam int comment_id) {
+		
+		likeService.likeCommentDelete(user_id, comment_id);
+	}
+
+
+
+
+
+
+
 }

@@ -16,5 +16,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="likeVideoDelete" parameterType="java.util.Map">
 		DELETE FROM like_count WHERE user_id = #{user_id} AND video_id = #{video_id}
 	</delete>
+	
+	<insert id="likeCommentPlus" parameterType="java.util.Map">
+		INSERT INTO Like_count (user_id, comment_id)
+		VALUES (#{user_id}, #{comment_id});
+	</insert>
+	
+	<delete id="likeCommentDelete" parameterType="java.util.Map">
+		DELETE FROM like_count WHERE user_id = #{user_id} AND comment_id = #{comment_id}
+	</delete>
 
 </mapper>
