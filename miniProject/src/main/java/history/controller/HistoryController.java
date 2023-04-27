@@ -35,6 +35,14 @@ public class HistoryController {
 		return historyService.getVideoHistory(page,count,user_id);
 	}
 
+	@PostMapping(value="addHistoryVideo_id")
+	@ResponseBody
+	public void addHistoryVideo_id(@RequestParam int user_id,@RequestParam int video_id) {
+		System.out.println("his"+user_id);
+		System.out.println("his"+video_id);
+		historyService.addHistoryVideo_id(user_id,video_id);
+	}
+
 
 
 

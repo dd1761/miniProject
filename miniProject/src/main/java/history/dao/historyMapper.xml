@@ -20,4 +20,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER by watch_date desc
 	</select>
 
+	<!--히스토리 기록 저장 -->
+	<select id="addHistoryVideo_id" parameterType="java.util.Map">
+		INSERT INTO History (user_id, video_id, watch_date)
+		VALUES (#{user_id}, #{video_id}, CURRENT_TIMESTAMP)
+		ON DUPLICATE KEY UPDATE watch_date = CURRENT_TIMESTAMP
+	</select>
+
+
 </mapper>

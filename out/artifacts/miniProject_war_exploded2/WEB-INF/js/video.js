@@ -22,8 +22,11 @@ $(function(){
 
     /*2.조회수 + 1 */
     addVideoView(video_id);
-
-
+    
+    /*3.히스토리 기록 남기기*/
+    if($('#user_id').val()) {
+        addHistoryVideo_id(user_id,video_id);
+    }
 
 
     function getVideoById(user_id, video_id) {
@@ -257,6 +260,23 @@ function addVideoView(video_id){
         },
         error: function(xhr, status, error) {
             console.log('Failed to update views.');
+        }
+    });
+}
+
+/*History 에 시청기록을 올리는 함수입니다*/
+function addHistoryVideo_id(user_id,video_id){
+    console.log("히스토리"+user_id);
+    console.log("히스토리"+video_id);
+    $.ajax({
+        url: '/miniProject/history/addHistoryVideo_id',
+        type: 'post',
+        data: {video_id: video_id ,user_id : user_id},
+        success: function() {
+            console.log('history updated successfully.');
+        },
+        error: function() {
+            console.log('history to update views.');
         }
     });
 }

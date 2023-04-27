@@ -22,4 +22,9 @@ public class HistoryServiceImpl implements HistoryService {
         System.out.println(list);
         return list;
     }
+
+    @Override
+    public void addHistoryVideo_id(int user_id, int video_id) {
+        historyDAO.addHistoryVideo_id(user_id,video_id);
+    }
 }
