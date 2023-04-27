@@ -30,6 +30,12 @@ public class ChannelDAOMyBatis implements ChannelDAO {
 
     }
 
+	@Override
+	public ChannelDTO myChannel(int user_id) {
+		
+		return sqlSession.selectOne("channelSQL.myChannel", user_id);
+	}
+
 /*    @Override
     public List<ChannelDTO> getVideoById(int user_id, int video_id) {
 

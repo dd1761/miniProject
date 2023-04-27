@@ -198,6 +198,33 @@ $(function(){
 
 });
 
+// 비디오 보러 들어왔을 때 비디오 아이디와 유저 아이디의 값을 가지고 좋아요가 있는지 확인하러 가기.
+$(function(){
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/like/getUserLikeInfo',
+		data: {user_id: $('#user_id').val(),
+			   video_id: parseInt($('#video_id').val())
+		},
+		success: function(data){
+			if (data.length > 0) {
+			      // 좋아요 데이터가 있으면
+			      console.log('User liked this video');
+			      $('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+			      
+			    } else {
+			      // 좋아요 데이터가 없으면
+			      console.log('User did not like this video');
+			      $('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+			    }
+		},
+		error: function(err){
+			console.log(err);
+			
+		}
+	});
+});
+
 
 $(document).on('click', '#likeVideoBtn', () => {
 	if($('#user_id').val()) {
@@ -211,6 +238,8 @@ $(document).on('click', '#likeVideoBtn', () => {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
+				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+				location.reload();
 			},
 			error: function(err){
 				console.log(err);
@@ -219,9 +248,39 @@ $(document).on('click', '#likeVideoBtn', () => {
 		
 	}
 	else {
-		console.log('로그인해주세요');
+		alert('로그인해주세요');
+		location.href='/miniProject/member/login_id';
 	}
 });
+
+//좋아요 버튼이 눌려있을 때 좋아요 취소하는 기능
+$(document).on('click', '#likeVideoON', () => {
+	if($('#user_id').val()) {
+		console.log('로그인되어있어요~');
+		$.ajax({
+			type: 'post',
+			url: '/miniProject/like/likeVideoDelete',
+			data: {user_id: $('#user_id').val(),
+				   video_id: parseInt($('#video_id').val())
+			},
+			success: function(data){
+				console.log(data);
+				alert('값이 들어 갔다~');
+				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+				location.reload();
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+		
+	}
+	else {
+		alert('로그인해주세요');
+		location.href='/miniProject/member/login_id';
+	}
+});
+
 
 
 /*댓글 작성했을시 실행되는 함수입니다.*/
