@@ -9,15 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="영상 기록 삭제할 x 이미지 추가">
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/image/history_X.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/image/history_X_hover.png" afterDir="false" />
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="x 이미지 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/indexstyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/history.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/history.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -465,7 +459,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682564059806</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="x 이미지 수정">
+      <created>1682573641640</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1682573641640</updated>
+    </task>
+    <task id="LOCAL-00034" summary="x 이미지 추가">
+      <created>1682573657616</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1682573657616</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -484,8 +492,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="리소스 추가" />
-    <MESSAGE value="인덱스의 채널 명 링크 변경" />
     <MESSAGE value="채널페이지 동적으로 수정완료" />
     <MESSAGE value="a 테그로 url 링크걸기" />
     <MESSAGE value="댓글 if 문걸어서 null 값 출력 방지" />
@@ -509,7 +515,9 @@
     <MESSAGE value="영상 시청기록" />
     <MESSAGE value="영상 시청기록 저장완료" />
     <MESSAGE value="영상 기록 삭제할 x 이미지 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="영상 기록 삭제할 x 이미지 추가" />
+    <MESSAGE value="x 이미지 수정" />
+    <MESSAGE value="x 이미지 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="x 이미지 추가" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

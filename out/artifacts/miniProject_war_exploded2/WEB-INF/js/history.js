@@ -80,27 +80,50 @@ $(function(){
                         var watch_date = videos[i].watch_date;
                         var video_id = videos[i].video_id;
 
+                        // 썸네일 클릭 시 실행될 함수
+
+
+// 동적 생성된 html 코드
                         var row = '<tr>';
                         row += '<td>';
-                        row += '<div class="thumbnail-container" onclick="location.href=\'/miniProject/video/main?video_id='+video_id+'\'">';
-
+                        row += '<div class="thumbnail-container thumbnail-container_' + i+ '">';
                         row += '<div class="close-button"></div>';
                         row += '<div class="thumbnail">';
                         row += '<img src="' + thumbnail_url + '" alt="영상 섬네일" />';
                         row += '<div class="play-button"></div>';
-                        row += '</div>';
+                        row += '</div> ';
                         row += '<div class="info">';
                         row += '<h3 class="title">' + video_title + '</h3>';
                         row += '<p class="creator">'+ channel_name +' • 조회수 ' + views + '회</p>';
                         row += '<p class="description">' + video_description + '</p>';
+                       /* row += '<div id="hiddenDiv" style="display: none;">' +*/
+                        row += '<div id="hiddenDiv">' +
+                            ' <input type="text" name="video_id" class="video_id" value="'+video_id+'">' +
+                            ' </div>'
                         row += '</div>';
                         row += '</div>';
                         row += '</td>';
                         row += '</tr>';
 
                         historyTable.append(row); // 테이블에 추가
-                    }
-                }
+
+                        $('.thumbnail-container_' + i).click(function(event){
+
+                            console.log($(this).find(".video_id").val());
+                            location.href='/miniProject/video/main?video_id='+$(this).find(".video_id").val();
+
+                        })
+
+                        $('.thumbnail-container_'+i+' .close-button').click (function(event) {
+                            event.stopPropagation()
+                            console.log("자식")
+                            console.log($(this).next().next().find(".video_id").val());
+
+                        });
+                        // 이벤트 핸들러 등록
+
+                    }// for i
+                }// for
             },
             error: function(err){
                 console.log(err);
@@ -109,11 +132,31 @@ $(function(){
     }
 
 });
-/* 영상의 x 버튼 클릭*/
-$(document).on('click', '.thumbnail-container', function() {
-    // 클릭한 .thumbnail-container 요소 안에 있는 .close-button 요소에 대한 이벤트 리스너 추가
-    $(this).find('.close-button').on('click', function(event) {
-        event.stopPropagation(); // 이벤트 전파 중지
-        console.log('Close button clicked!');
-    });
+
+/*부모*/
+
+/*$(document).on('click', '.thumbnail-container', function(event) {
+    event.stopPropagation();
+    console.log('부모');
+
+});*/
+
+/*function thumbnailClick(event) {
+    event.stopPropagation();
+   /!* console.log('Thumbnail clicked! Video ID:', videoId);*!/
+    /!*location.href='/miniProject/video/main?video_id='+videoId;*!/
+    return false
+}*/
+
+
+/*자식*/
+/*
+$(document).on('click', '.thumbnail-container .close-button', function(event) {
+
+    var video_id = $(this).siblings('.info').find('.video_id').val();
+    console.log('Close button clicked! Video ID:', video_id);
+    $(this).parents("#historyTable_tbody").prop('tagName');
+    /!*console.log( $(this).parents("#historyTable_tbody").prop('tagName'));*!/
+
 });
+*/
