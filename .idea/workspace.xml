@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="예제 동영상 추가해봄">
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/1.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/10.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/11.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/12.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/4.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/5.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/6.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/7.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/8.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/videoFileUseByVideoId/9.mp4" afterDir="false" />
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="예제 동영상 추가2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +229,7 @@
       <workItem from="1682326830835" duration="1328000" />
       <workItem from="1682328614994" duration="759000" />
       <workItem from="1682382465507" duration="25098000" />
-      <workItem from="1682469406130" duration="18673000" />
+      <workItem from="1682469406130" duration="19215000" />
     </task>
     <task id="LOCAL-00001" summary="리소스 추가">
       <created>1682329100565</created>
@@ -395,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682498226086</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="예제 동영상 추가2">
+      <created>1682499362752</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1682499362752</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +428,8 @@
     <MESSAGE value="댓글 로그 찍기" />
     <MESSAGE value="댓글기능 완성" />
     <MESSAGE value="예제 동영상 추가해봄" />
-    <option name="LAST_COMMIT_MESSAGE" value="예제 동영상 추가해봄" />
+    <MESSAGE value="예제 동영상 추가2" />
+    <option name="LAST_COMMIT_MESSAGE" value="예제 동영상 추가2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
