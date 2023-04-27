@@ -96,9 +96,9 @@ $(function(){
                         row += '<h3 class="title">' + video_title + '</h3>';
                         row += '<p class="creator">'+ channel_name +' • 조회수 ' + views + '회</p>';
                         row += '<p class="description">' + video_description + '</p>';
-                       /* row += '<div id="hiddenDiv" style="display: none;">' +*/
-                        row += '<div id="hiddenDiv">' +
-                            ' <input type="text" name="video_id" class="video_id" value="'+video_id+'">' +
+                        row += '<div id="hiddenDiv" style="display: none;">' +
+                       /* row += '<div id="hiddenDiv">' +
+*/                            ' <input type="text" name="video_id" class="video_id" value="'+video_id+'">' +
                             ' </div>'
                         row += '</div>';
                         row += '</div>';
@@ -106,7 +106,8 @@ $(function(){
                         row += '</tr>';
 
                         historyTable.append(row); // 테이블에 추가
-
+                            
+                        /* 썸내일 클릭하면 비디오로 넘어가짐*/
                         $('.thumbnail-container_' + i).click(function(event){
 
                             console.log($(this).find(".video_id").val());
@@ -114,10 +115,26 @@ $(function(){
 
                         })
 
+                        /*  X 버튼 클릭하면 비디오기록 삭제 넘어가짐*/
                         $('.thumbnail-container_'+i+' .close-button').click (function(event) {
                             event.stopPropagation()
                             console.log("자식")
+                            var video_id = $(this).next().next().find(".video_id").val();
                             console.log($(this).next().next().find(".video_id").val());
+                            console.log(user_id);
+                            $.ajax({
+                                url: '/miniProject/history/deleteHistory',
+                                type: 'post',
+                                data: {video_id: video_id ,user_id :user_id },
+                                success: function(result) {
+                                    console.log('deleteHistory successfully.');
+                                    location.reload();
+                                },
+                                error: function(xhr, status, error) {
+                                    console.log('Failed to deleteHistory.');
+                                }
+                            });
+
 
                         });
                         // 이벤트 핸들러 등록

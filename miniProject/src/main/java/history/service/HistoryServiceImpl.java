@@ -27,4 +27,9 @@ public class HistoryServiceImpl implements HistoryService {
     public void addHistoryVideo_id(int user_id, int video_id) {
         historyDAO.addHistoryVideo_id(user_id,video_id);
     }
+
+    @Override
+    public void deleteHistory(int user_id, int video_id) {
+        historyDAO.deleteHistory(user_id,video_id);
+    }
 }

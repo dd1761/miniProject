@@ -27,5 +27,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ON DUPLICATE KEY UPDATE watch_date = CURRENT_TIMESTAMP
 	</select>
 
+	<!--히스토리 기록 저장 -->
+	<select id="deleteHistory" parameterType="java.util.Map">
+		DELETE FROM History
+		WHERE user_id = #{user_id} AND video_id =  #{video_id}
+	</select>
 
 </mapper>

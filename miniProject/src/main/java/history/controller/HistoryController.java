@@ -43,6 +43,13 @@ public class HistoryController {
 		historyService.addHistoryVideo_id(user_id,video_id);
 	}
 
+	@PostMapping(value="deleteHistory")
+	@ResponseBody
+	public void deleteHistory(@RequestParam int user_id,@RequestParam int video_id) {
+		System.out.println("his"+user_id);
+		System.out.println("his"+video_id);
+		historyService.deleteHistory(user_id,video_id);
+	}
 
 
 

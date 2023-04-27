@@ -9,9 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="x 이미지 추가">
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="영상 삭제 이벤트 걸기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/controller/HistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAOMyBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAOMyBatis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/historyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/historyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/controller/HistoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/historyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -473,7 +491,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682573657616</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="영상 삭제 이벤트 걸기">
+      <created>1682581564470</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1682581564470</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +517,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="채널페이지 동적으로 수정완료" />
     <MESSAGE value="a 테그로 url 링크걸기" />
     <MESSAGE value="댓글 if 문걸어서 null 값 출력 방지" />
     <MESSAGE value="css 수정해보기" />
@@ -517,7 +541,8 @@
     <MESSAGE value="영상 기록 삭제할 x 이미지 추가" />
     <MESSAGE value="x 이미지 수정" />
     <MESSAGE value="x 이미지 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="x 이미지 추가" />
+    <MESSAGE value="영상 삭제 이벤트 걸기" />
+    <option name="LAST_COMMIT_MESSAGE" value="영상 삭제 이벤트 걸기" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -36,4 +36,12 @@ public class HistoryDAOMyBatis implements HistoryDAO {
         sqlSession.selectList("historySQL.addHistoryVideo_id",map);
     }
 
+    @Override
+    public void deleteHistory(int user_id, int video_id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("video_id", video_id);
+        map.put("user_id", user_id);
+        sqlSession.delete("historySQL.deleteHistory",map);
+    }
+
 }
