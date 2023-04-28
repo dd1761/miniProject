@@ -53,9 +53,7 @@ $(function(){
                     <div id='box-right'>
                       <div class="subcribe">
                         
-                        <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
-                          ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
-                        </button>
+ 
 
                       </div>
                     </div>
@@ -226,6 +224,7 @@ $(function(){
                 				append($('<a/>', {href: '#'})).
                 				append(dapBtn.attr('src', '/miniProject/img/messages.png')).
                 				append(dapsu);
+
        
                 article.append(head_div).append(content_info).append(btn);
                 

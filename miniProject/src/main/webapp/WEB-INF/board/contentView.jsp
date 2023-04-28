@@ -37,14 +37,22 @@
 					<p class="content-1-view"></p>
 				</div>
 				<div class="btn-view">
-					<a href="#"> <img src="/miniProject/img/like.png" id="likeBtn">
-					</a><span id="likesu"></span> <a href="#"> <img
-						src="/miniProject/img/dislike.png" id="dislikeBtn">
-					</a> <a href="#"> <img src="/miniProject/img/share.png"
-						id="shareBtn">
-					</a> <a href="#"> <img src="/miniProject/img/messages.png"
-						id="dapBtn">
-					</a><span id="dapsu"></span>
+					<a href="#">
+						<img src="/miniProject/img/like.png" id="likeBtn">
+					</a>
+					<span id="likesu"></span>
+					<a href="#">
+						<img src="/miniProject/img/dislike.png" id="dislikeBtn">
+					</a>
+					<a href="#">
+						<img src="/miniProject/img/share.png" id="shareBtn">
+					</a>
+					<a href="#">
+						<img src="/miniProject/img/messages.png" id="dapBtn">
+					</a>
+					<span id="dapsu"></span>
+
+
 				</div>
 			</article>
 		</section>
