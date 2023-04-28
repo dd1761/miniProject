@@ -16,9 +16,6 @@ $(function(){
 			}else {
 				$('#profile').attr("src", '../storage/' + data.profile_url);
 			}
-			
-			// 기존 이미지 파일의 URL을 저장합니다.
-			$('#profile').data('profile_url', data.profile_url);
 		},
         error: function(err){
             console.log(err);
@@ -75,32 +72,28 @@ $('#updateBtn').click(function(){
 			data : formData,
 			success : function(data){
 				$('#profile').attr("src", '../storage/' + data.profile_url);	
-				
-				// 업로드한 이미지 파일의 URL을 저장합니다.
-				$('#profile').data('profile_url', data.profile_url);
+
+				$.ajax({
+					type: 'post',
+				   	url: '/miniProject/member/updateAccount',
+				   	data: 'name=' + $('#name').val()
+						 +'&email=' + $('#email').val()
+						 +'&password=' + $('#password').val()
+						 +'&year=' + $('#year').val()
+						 +'&gender=' + $('#gender').val()
+						 +'&phone=' + $('#phone').val(),
+				   	success: function(){
+						alert("회원정보 수정완료!");
+						location.reload();
+					},
+				   	error: function(err){
+				   		console.log(err);
+				   	}
+				});
 			},
 			error: function(err){
 				console.log(err);
 			}
-		});
-		
-		$.ajax({
-			type: 'post',
-		   	url: '/miniProject/member/updateAccount',
-		   	data: 'name=' + $('#name').val()
-				 +'&email=' + $('#email').val()
-				 +'&password=' + $('#password').val()
-				 +'&year=' + $('#year').val()
-				 +'&gender=' + $('#gender').val()
-				 +'&phone=' + $('#phone').val()
-				 +'&profile_url=' + $('#profile').data('profile_url'),
-		   	success: function(){
-				alert("회원정보 수정완료!");
-				location.reload();
-			},
-		   	error: function(err){
-		   		console.log(err);
-		   	}
 		});
 	}
 });

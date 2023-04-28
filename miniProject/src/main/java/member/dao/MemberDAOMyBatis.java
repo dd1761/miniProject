@@ -105,6 +105,11 @@ public class MemberDAOMyBatis implements MemberDAO {
 		Map<Object, Object> map = new HashMap<Object, Object>();
 		map.put("profile_url", profile_url);
 		map.put("user_id", user_id);
+		System.out.println("user_id = " + user_id+"_");
+		System.out.println("profile_url = " + profile_url);
+		if(profile_url.equals(user_id+"_")) {
+			return;
+		}
 		sqlSession.update("memberSQL.upload", map);
 	}
 

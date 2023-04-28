@@ -288,8 +288,6 @@ public class MemberController {
 		
 		memberService.upload(profile_url, user_id);
 		
-		
-		
 		return "<img src='../storage/" + filePath + "' width='300' height='300' />";
 	}
 	
