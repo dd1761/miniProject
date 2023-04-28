@@ -162,7 +162,7 @@ $(function(){
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
                                           <input type="hidden" class = "comment_id" id="comment_id" value="${comment_id}">
-                        				  <img src="${data[i].user_liked_comment ? '/miniProject/storage'+profile_url : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
+                        				 <img src="${data[i].user_liked_comment ? '/miniProject/image/likeOn.png' : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
 
                         				  
                                           <span>${comment_like_count}</span>
