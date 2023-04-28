@@ -59,6 +59,16 @@ $(function() {
 
 	      // 데이터 처리 부분
 	      $.each(data, function(index, items){
+		  const timestamp = items.upload_date;
+		  const date = new Date(timestamp);
+
+		  const year = date.getFullYear();
+		  const month = date.getMonth() + 1;
+		  const day = date.getDate();
+
+		  const formattedDate = `${year}년 ${month}월 ${day}일`;
+
+			  console.log(formattedDate); // "2022년 3월 8일"
 	        // 새로운 video-list 요소를 생성합니다.
 	        var videoList = $('<div>', {class: 'video-list'});
 	        // a 요소를 생성합니다.
@@ -76,7 +86,7 @@ $(function() {
 	        // p 요소를 생성합니다.
 	        var channelName = $('<p>', {text: items.channel_name});
 	        // p 요소를 생성합니다.
-	        var views = $('<p>', {text: '조회수 ' + items.views + ' &bull; ' + items.upload_date});
+	        var views = $('<p>', {text: '조회수 ' + items.views + ' • ' + formattedDate});
 
 	        // 생성한 요소들을 조합합니다.
 	        link.append(thumbnail);
@@ -242,8 +252,7 @@ $('#mychannel_1').click(function(){
 			}
 			/*채널이 없다면 */
 			else{
-				confirm("내 채널이 없습니다. 채널을 만들까요?")
-					window.location.href = "/miniProject/channel/makeChannel?user_id="+user_id; // 삭제된 페이지 URL을 넣어주세요
+				confirm("내 채널이 없습니다.")
 			}
 
 

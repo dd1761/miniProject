@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="/miniProject/css/history.css">
   </head>
   <body>
-	<div class="navbar">
+	<div class="navbar2">
 	  <ul>
 	    <li>
 	      <div class="input-group">
