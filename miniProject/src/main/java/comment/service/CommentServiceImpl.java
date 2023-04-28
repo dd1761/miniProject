@@ -21,4 +21,9 @@ public class CommentServiceImpl implements CommentService {
     public void commentSubmit(Integer userId, Integer videoId, String comment) {
         commentDAO.commentSubmit(userId,videoId,comment);
     }
+
+    @Override
+    public void deleteCommentUseByCommentId(int comment_id) {
+        commentDAO.deleteCommentUseByCommentId(comment_id);
+    }
 }

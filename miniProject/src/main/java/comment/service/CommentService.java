@@ -8,4 +8,6 @@ public interface CommentService {
 
 
     void commentSubmit(Integer userId, Integer videoId, String comment);
+
+    void deleteCommentUseByCommentId(int comment_id);
 }

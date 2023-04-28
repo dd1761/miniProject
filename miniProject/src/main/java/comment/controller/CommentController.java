@@ -1,6 +1,7 @@
 package comment.controller;
 
 import comment.service.CommentService;
+import history.bean.HistoryDTO;
 import history.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +33,13 @@ public class CommentController {
         System.out.println(comment);
 
         commentService.commentSubmit(user_id,video_id,comment);
+    }
+
+    @PostMapping(value="deleteCommentUseByCommentId")
+    @ResponseBody
+    public void deleteCommentUseByCommentId(@RequestParam int comment_id) {
+
+        commentService.deleteCommentUseByCommentId(comment_id);
     }
 }
 

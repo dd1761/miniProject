@@ -408,8 +408,20 @@ function addHistoryVideo_id(user_id,video_id){
 }
 
 /*자신이 쓴 댓글을 삭제하는 함수입니다. */
-
 $(document).on('click', '.comment_delete_btn', function(e) {
-    const commentId = $(this).parent().find('#comment_id').val();
-    console.log(`삭제할 댓글의 ID: ${commentId}`);
+    
+    const comment_id = $(this).parent().find('#comment_id').val();
+    $.ajax({
+        url: '/miniProject/comment/deleteCommentUseByCommentId',
+        type: 'post',
+        data: {comment_id: comment_id},
+        success: function() {
+            alert("댓글삭제완료");
+            location.reload();
+            console.log('history updated successfully.');
+        },
+        error: function() {
+            console.log('history to update views.');
+        }
+    });
 });

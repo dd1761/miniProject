@@ -28,4 +28,12 @@ public class CommentDAOMyBatis implements CommentDAO {
             System.out.println(map);
             sqlSession.insert("commentSQL.commentSubmit", map);
     }
+
+    @Override
+    public void deleteCommentUseByCommentId(int comment_id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("comment_id", comment_id);
+        System.out.println(map);
+        sqlSession.delete("commentSQL.deleteCommentUseByCommentId", map);
+    }
 }
