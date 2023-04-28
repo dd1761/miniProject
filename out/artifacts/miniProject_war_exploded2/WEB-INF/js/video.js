@@ -155,14 +155,14 @@ $(function(){
 
                         var row = `
                                     <div class="old-comment">
-                                       <img src="${data[i].profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
+                                       <img src="${data[i].profile_url ? '/miniProject/storage/' + profile_url : '/miniProject/img/p.jpg'}">
                       
                                       <div>
                                         <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
                                           <input type="hidden" class = "comment_id" id="comment_id" value="${comment_id}">
-                        				  <img src="${data[i].user_liked_comment ? '/miniProject/storage'+profile_url : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
+                        				 <img src="${data[i].user_liked_comment ? '/miniProject/image/likeOn.png' : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
 
                         				  
                                           <span>${comment_like_count}</span>
@@ -227,7 +227,7 @@ $(document).on('click', '#likeVideoBtn', () => {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
-				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+//				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
 				location.reload();
 			},
 			error: function(err){
@@ -255,7 +255,7 @@ $(document).on('click', '#likeVideoON', () => {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
-				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+//				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
 			error: function(err){
@@ -327,7 +327,7 @@ $(document).on('click', '#commentlikedOff', function() {
             success: function(data) {
                 console.log(data);
                 alert('값이 들어 갔다~');
-                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
+//                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
                 location.reload();
             },
             error: function(err) {
@@ -352,7 +352,7 @@ $(document).on('click', '#commentlikedOn', function() {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
-				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
+//				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
 			error: function(err){

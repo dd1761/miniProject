@@ -59,7 +59,7 @@
 						<a href="#" class="current-page">홈</a>
 						<%--<a href="#">동영상</a>
 						<a href="#" class="co">재생목록</a>--%>
-						<a href="" id="co" class="co">커뮤니티</a>
+						<a href="/miniProject/user/boardList?channel_id=${param.channel_id }" id="co" class="co">커뮤니티</a>
 						<%--<a href="">채널</a>--%>
 						<a href="#">정보</a>
 <%--						<div class="search-container">

@@ -4,36 +4,76 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userSQL">
 
-	<select id="getBoardList" resultType="board">
+	<select id="getBoardList" parameterType="int" resultType="board">
 		SELECT
 		    c.channel_name,
 		    b.board_text,
-		    COUNT(DISTINCT l.like_id) AS like_count,
-		    COUNT(DISTINCT cm.comment_id) AS comment_count,
 		    b.upload_date,
 		    ch.channel_profile_url,
-		    u.user_id
+		    u.user_id,
+		    b.board_id,
+		    ch.channel_id,
+		    ch.channel_description
 		FROM
-   		    Community_Board b
+		    Community_Board b 
 		JOIN
-   			Like_count l ON b.board_id = l.board_id
+		    Channel c ON b.channel_id = c.channel_id
 		JOIN
-   			Comment cm ON b.board_id = cm.board_id
+		    Channel ch ON b.channel_id = ch.channel_id
 		JOIN
-   			Channel c ON b.channel_id = c.channel_id
-		JOIN
-   			Channel ch ON b.channel_id = ch.channel_id
-		JOIN
-   			User u ON ch.user_id = u.user_id
+		    User u ON ch.user_id = u.user_id
 		WHERE
-   			c.channel_id = 1 -- 수정된 부분: channel_id가 1인 것만 조회
+		    c.channel_id = #{channel_id}
 		GROUP BY
 		    c.channel_name,
 		    b.board_text,
 		    b.upload_date,
 		    ch.channel_profile_url,
-		    u.user_id;
+		    u.user_id,
+		    b.board_id, 
+		    ch.channel_id
+		ORDER BY
+		    b.board_id DESC
 	</select>
-
+	
+	<delete id="boardDelete" parameterType="int">
+		delete from Community_Board where board_id=#{board_id}
+	</delete>
+	
+	
+	<update id="boardUpdate" parameterType="java.util.Map">
+		UPDATE Community_Board
+	    SET board_text = #{board_text}
+	    WHERE board_id = #{board_id} AND channel_id = #{channel_id}
+	</update>
+ 
+	<select id="channelUser_id" parameterType="int" resultType="channel.bean.ChannelDTO">
+		select * from Channel where user_id = #{user_id}
+	</select>
+	
+	<insert id="boardWrite" parameterType="java.util.Map">
+		<!-- 커뮤니티 보드 테이블에 데이터 삽입 -->
+	    INSERT INTO Community_Board (channel_id, user_id, board_text)
+	    VALUES (#{channel_id}, #{user_id}, #{board_text})
+	</insert>
+	
+	<select id="getBoardView" parameterType="int" resultType="board.bean.BoardDTO">
+		SELECT cb.board_id, cb.board_text, cb.upload_date, c.channel_id, c.channel_name, c.channel_profile_url
+		FROM Community_Board cb
+		JOIN Channel c ON cb.channel_id = c.channel_id
+		WHERE cb.board_id = #{board_id}
+	</select>
+	
+	<select id="getBoardCount" parameterType="java.util.Map" resultType="board.bean.BoardDTO">
+		SELECT Board.board_id, Board.channel_id, Board.user_id, Board.board_text,
+		       COUNT(Like_count.like_id) AS like_count, 
+		       COUNT(DISTINCT Comment.comment_id) AS comment_count
+		FROM Community_Board Board
+		LEFT JOIN Like_count ON Board.board_id = Like_count.board_id
+		LEFT JOIN Comment ON Board.board_id = Comment.board_id
+		WHERE Board.channel_id = #{channel_id}
+		GROUP BY Board.board_id
+		ORDER BY Board.board_id DESC
+	</select>
 
 </mapper>
