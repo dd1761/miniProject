@@ -16,6 +16,9 @@ $(function(){
 			}else {
 				$('#profile').attr("src", '../storage/' + data.profile_url);
 			}
+			
+			// 기존 이미지 파일의 URL을 저장합니다.
+			$('#profile').data('profile_url', data.profile_url);
 		},
         error: function(err){
             console.log(err);
@@ -61,7 +64,7 @@ $('#updateBtn').click(function(){
 		$('#nameDiv').css('color', 'red');
 		$('#nameDiv').css('font-size', '12px');
 		$('#nameDiv').css('font-weight', 'bold');
-	}else {
+	}else {	
 		var formData = new FormData($('#uploadForm')[0]);
 		$.ajax({
 			type : 'post',
@@ -71,10 +74,13 @@ $('#updateBtn').click(function(){
 			contentType : false,
 			data : formData,
 			success : function(data){
+				$('#profile').attr("src", '../storage/' + data.profile_url);	
+				
+				// 업로드한 이미지 파일의 URL을 저장합니다.
+				$('#profile').data('profile_url', data.profile_url);
 			},
 			error: function(err){
-				console.log(err)
-				;
+				console.log(err);
 			}
 		});
 		
@@ -86,7 +92,8 @@ $('#updateBtn').click(function(){
 				 +'&password=' + $('#password').val()
 				 +'&year=' + $('#year').val()
 				 +'&gender=' + $('#gender').val()
-				 +'&phone=' + $('#phone').val(),
+				 +'&phone=' + $('#phone').val()
+				 +'&profile_url=' + $('#profile').data('profile_url'),
 		   	success: function(){
 				alert("회원정보 수정완료!");
 				location.reload();
@@ -96,7 +103,6 @@ $('#updateBtn').click(function(){
 		   	}
 		});
 	}
-	
 });
 
 $('#deleteBtn').click(function(){

@@ -59,10 +59,36 @@ $('#nextBtn').click(function(){
 				 +'&rrn=' + $('#rrn_1').val() + $('#rrn_2').val()
 				 +'&year=' + $('#year').val() + $('#month').val() + $('#date').val()
 				 +'&gender=' + $('#gender').val()
-				 +'&phone=' + $('#phone').val(),
+				 +'&phone=' + $('#phone').val()
+				 +'&channel_name=' + $('#last_name').val() + $('#first_name').val(),
 			success: function(){
 				alert("회원가입 완료!!");
-				location.href='/miniProject/member/login_id';
+				
+				$.ajax({
+					type: 'post',
+					url: '/miniProject/member/getChannelMember',
+					data: 'email=' + $('#email').val(),
+					success: function(data){
+						var user_id = data.user_id;
+						
+						$.ajax({
+							type: 'post',
+							url: '/miniProject/member/insertChannelMember',
+							data: 'channel_name=' + $('#last_name').val() + $('#first_name').val()
+							 	+ '&user_id=' + user_id,
+							success: function(data){
+								location.href='/miniProject/member/login_id';
+							},
+							error: function(err){
+						   		console.log(err);
+						   	}
+						});
+					},
+					error: function(err){
+				   		console.log(err);
+				   	}
+				});
+				
 			},
 		   	error: function(err){
 		   		console.log(err);

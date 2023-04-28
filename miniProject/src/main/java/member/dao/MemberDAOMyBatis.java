@@ -107,6 +107,11 @@ public class MemberDAOMyBatis implements MemberDAO {
 		map.put("user_id", user_id);
 		sqlSession.update("memberSQL.upload", map);
 	}
+
+	@Override
+	public MemberDTO getChannelMember(String email) {
+		return sqlSession.selectOne("memberSQL.getChannelMember", email);
+	}
 	
 	
 }

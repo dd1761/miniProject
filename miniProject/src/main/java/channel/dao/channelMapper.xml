@@ -20,8 +20,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		GROUP BY channel_id
 		) subscriber_cnt ON subscriber_cnt.channel_id = Channel.channel_id
 		WHERE Channel.channel_id = #{channel_id};
-
-
 	</select>
+	
+	<insert id="insertChannelMember" parameterType="java.util.Map">
+ 		insert into Channel(channel_name, user_id) values(#{channel_name}, #{user_id})
+ 	</insert>
+	
+
 
 </mapper>
