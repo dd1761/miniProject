@@ -31,14 +31,30 @@ $(function(){
           // 날짜 값이 유효하지 않은 경우, 기본값을 설정합니다.
           uploadDate = new Date();
         }
-        var $uploadDate = $('<div>').addClass('upload_date').text(uploadDate.toLocaleDateString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\./g, ''));
+        var $uploadDate = $('<div>').addClass('upload_date').text(uploadDate.getFullYear() + '년 ' + (uploadDate.getMonth()+1) + '월 ' + uploadDate.getDate() + '일');
         $textWrapper.append($uploadDate);
 
-        // channel name
-        var $channelName = $('<div>').addClass('channel_name');
-        var $channelProfileUrl = $('<a>').attr('href', items.channel_profile_url).text(items.channel_name);
-        $channelName.append($channelProfileUrl);
-        $textWrapper.append($channelName);
+
+        // channel info
+        var $channelInfo = $('<div>').addClass('channel_info');
+        var $channelImg = $('<img>')
+                .attr('src', '/miniProject/storage/'+ items.profile_url)
+                .attr('alt', 'channel profile image')
+                .addClass('user-icon')
+                .css({
+                  'width': '35px',
+                  'height': '35px',
+                  'border-radius': '50%',
+                  'margin-right': '0',
+                  'cursor': 'pointer' // 추가: 마우스 커서를 포인터로 변경
+                })
+                .on('click', function() {
+                  window.location.href = '/miniProject/channel/main?channel_id=' + items.channel_id;
+                });
+
+        var $channelName = $('<a>').attr('href', items.channel_profile_url).text(items.channel_name);
+        $channelInfo.append($channelImg).append($channelName);
+        $textWrapper.append($channelInfo);
 
         // video description
         var $videoDescription = $('<div>').addClass('video_description').text(items.video_description);
@@ -49,6 +65,9 @@ $(function(){
 
         // append video link to searchVideoContainer
         $('.searchVideoConatiner').append($videoLink);
+        
+        
+        
       });
     },
     error: function(err){

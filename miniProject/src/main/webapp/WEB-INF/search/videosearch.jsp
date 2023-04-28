@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <style type="text/css"> 
+/* VideoContainer의 배치 방향을 가로에서 세로로 변경하고 간격을 조금 더 벌립니다. */
 .searchVideoConatiner {
   display: flex;
   flex-direction: column;
@@ -55,6 +56,10 @@
   color: #606060;
   line-height: 20px;
 }
+
+
+
+
 
 
 </style>
