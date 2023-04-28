@@ -87,13 +87,13 @@
 	<div class="sidebar">
 		<div class="shortcut-links">
 			<a href="/miniProject/"><img src="/miniProject/image/home.png" ><p>홈</p></a>
-			<a href=""><img src="/miniProject/image/explore.png" ><p>인기 급상승</p></a>
+			<%--<a href=""><img src="/miniProject/image/explore.png" ><p>인기 급상승</p></a>
 			<a href=""><img src="/miniProject/image/subscriprion.png" ><p>구독</p></a>
-			<a href=""><img src="/miniProject/image/library.png" ><p>보관함</p></a>
+			<a href=""><img src="/miniProject/image/library.png" ><p>보관함</p></a>--%>
 			<a href="/miniProject/history/historyList"><img src="/miniProject/image/history.png" ><p>시청 기록</p></a>
-			<a href=""><img src="/miniProject/image/playlist.png" ><p>홈</p></a>
+		<%--	<a href=""><img src="/miniProject/image/playlist.png" ><p>홈</p></a>
 			<a href=""><img src="/miniProject/image/messages.png" ><p>메시지</p></a>
-			<a href=""><img src="/miniProject/image/show-more.png" ><p>더보기</p></a>
+			<a href=""><img src="/miniProject/image/show-more.png" ><p>더보기</p></a>--%>
 			<hr>
 		</div>
 		<div class="subscribed-list">

@@ -55,15 +55,18 @@
 
 				<div>
 					<div class="navigation">
-						<input type="text" id="c_id" class="c_id" value="${param.channel_id }">
-						<a href="#" class="current-page">홈</a> <a href="#">동영상</a> <a
-							href="#" class="co">재생목록</a><a href="" id="co" class="co">커뮤니티</a> <a href="">채널</a> <a
-							href="#">정보</a>
-						<div class="search-container">
+						<input type="hidden" id="c_id" class="c_id" value="${param.channel_id }">
+						<a href="#" class="current-page">홈</a>
+						<%--<a href="#">동영상</a>
+						<a href="#" class="co">재생목록</a>--%>
+						<a href="" id="co" class="co">커뮤니티</a>
+						<%--<a href="">채널</a>--%>
+						<a href="#">정보</a>
+<%--						<div class="search-container">
 							<input type="text" class="search-input" placeholder="검색">
 							<img src="/miniProject/img/search.png" id="search-icon" alt="검색"
 								class="search-icon">
-						</div>
+						</div>--%>
 					</div>
 				</div>
 				
