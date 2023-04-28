@@ -12,4 +12,7 @@ public class MemberDTO {
 	private String password;
 	private String profile_url;
 	private String rrn;
+	private String year;
+	private String gender;
+	private String phone;
 }

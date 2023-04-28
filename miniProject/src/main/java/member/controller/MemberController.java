@@ -1,5 +1,8 @@
 package member.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -8,11 +11,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import mail.service.MailService;
 import member.bean.MemberDTO;
@@ -199,4 +204,89 @@ public class MemberController {
 		return "index";
 	}
 	
-}
+	//**************update******************
+		@GetMapping(value="account")
+		public String account(@RequestParam int user_id, Model model) {
+			System.out.println(user_id);
+			model.addAttribute("user_id", user_id);
+			return "member/account";
+		}
+		
+		@PostMapping(value="getAccount")
+		@ResponseBody
+		public MemberDTO getAccount(@RequestParam int user_id) {
+			return memberService.getAccount(user_id);
+		}
+		
+		@PostMapping(value="updateAccount")
+		@ResponseBody 
+		public void updateAccount(@RequestParam Map<String, Object> map) {
+			System.out.println(map);
+			memberService.updateAccount(map);
+		}
+		
+		//**************delete******************
+		
+		@GetMapping(value="delete")
+		public String delete(@RequestParam int user_id, Model model) {
+			System.out.println(user_id);
+			model.addAttribute("user_id", user_id);
+			return "member/delete";
+		}
+		
+		@PostMapping(value="getDeleteMember")
+		@ResponseBody
+		public MemberDTO getDeleteMember(@RequestParam Map<Object, Object> map) {
+			System.out.println(map);
+			return memberService.getDeleteMember(map);
+		}
+		
+		@PostMapping(value="DeleteMember")
+		@ResponseBody 
+		public void DeleteMember(@RequestParam int user_id) {
+			memberService.DeleteMember(user_id);
+		}
+		
+		@GetMapping(value="logout2")
+		public String logout2(HttpSession session) {
+			session.invalidate();
+			return "index";
+		}
+		
+		//**************image******************
+		@PostMapping(value="upload", produces = "text/html; charset=UTF-8")
+		@ResponseBody
+		public String upload(@RequestParam MultipartFile photo, 
+							 @RequestParam int user_id,				
+							 HttpSession session) 
+		{
+			//가상폴더
+			String filePath_lier = "C:/miniProject/miniProject/src/main/webapp/WEB-INF/storage";
+			
+			System.out.println(user_id+"확인");
+			String filePath = session.getServletContext().getRealPath("/WEB-INF/storage");
+			System.out.println("실제 폴더 = " + filePath);
+			
+			String fileName = user_id + "_" + photo.getOriginalFilename();
+			System.out.println("파일명 = " + fileName);
+			
+			File file = new File(filePath, fileName); //파일 생성
+			File file_lier = new File(filePath_lier, fileName);
+			
+			String profile_url = fileName;
+			try {
+				FileCopyUtils.copy(photo.getInputStream(), new FileOutputStream(file_lier));
+				photo.transferTo(file);
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}		
+			
+			memberService.upload(profile_url, user_id);
+			
+			return "<img src='../storage/" + filePath + "' width='300' height='300' />";
+		}
+		
+	}
+	
+

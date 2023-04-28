@@ -26,5 +26,15 @@ public interface MemberService {
 	public MemberDTO isExistPwd2(String email);
 
 	public void UpdatePwd(String email, String password);
+	
+	public MemberDTO getAccount(int user_id);
+
+	public void updateAccount(Map<String, Object> map);
+
+	public MemberDTO getDeleteMember(Map<Object, Object> map);
+
+	public void DeleteMember(int user_id);
+
+	public void upload(String profile_url, int user_id);
 
 }

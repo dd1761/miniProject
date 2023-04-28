@@ -80,5 +80,32 @@ public class MemberDAOMyBatis implements MemberDAO {
 		sqlSession.update("memberSQL.UpdatePwd", map);
 	}
 	
+	@Override
+	public MemberDTO getAccount(int user_id) {
+		return sqlSession.selectOne("memberSQL.getAccount", user_id);
+	}
+
+	@Override
+	public void updateAccount(Map<String, Object> map) {
+		sqlSession.update("memberSQL.updateAccount", map);
+	}
+
+	@Override
+	public MemberDTO getDeleteMember(Map<Object, Object> map) {
+		return sqlSession.selectOne("memberSQL.getDeleteMember", map);
+	}
+
+	@Override
+	public void DeleteMember(int user_id) {
+		sqlSession.delete("memberSQL.DeleteMember", user_id);
+	}
+
+	@Override
+	public void upload(String profile_url, int user_id) {
+		Map<Object, Object> map = new HashMap<Object, Object>();
+		map.put("profile_url", profile_url);
+		map.put("user_id", user_id);
+		sqlSession.update("memberSQL.upload", map);
+	}
 	
 }
