@@ -161,11 +161,14 @@ $(function(){
                                         <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
-                                          <input type="hidden" id="comment_id" value="${comment_id}">
+                                          <input type="hidden" class = "comment_id" id="comment_id" value="${comment_id}">
                         				  <img src="${data[i].user_liked_comment ? '/miniProject/storage'+profile_url : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
 
                         				  
-                                          <span>${comment_like_count} 좋아요 수</span>
+                                          <span>${comment_like_count}</span>
+                                          <!--댓글 쓴 사림이 본인일때만 보이는 댓글 삭제 -->
+                                           <div class="comment_delete_btn" ${data[i].commenter_id == user_id ? '' : 'hidden'} >삭제하기</div>
+
                                         </div>
                                       </div>
                                     </div>`;
@@ -404,3 +407,8 @@ function addHistoryVideo_id(user_id,video_id){
     });
 }
 
+/*자신이 쓴 댓글을 삭제하는 함수입니다. */
+$(document).on('click', '.comment_delete_btn', function(e) {
+    const commentId = $(this).parent().find('#comment_id').val();
+
+});

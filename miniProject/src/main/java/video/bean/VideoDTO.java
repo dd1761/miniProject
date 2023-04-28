@@ -35,4 +35,6 @@ public class VideoDTO {
 	
 	//영상의 댓글들 좋아요 수
 	private int user_liked_comment;
+
+	private int commenter_id;
 }

@@ -11,14 +11,16 @@
   <component name="ChangeListManager">
     <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="날짜 형식 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/bean/VideoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/video/dao/videoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/css/indexstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/video/bean/VideoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/video/dao/videoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/dao/videoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682650801108</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="날짜 형식 수정">
+      <created>1682657709565</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1682657709565</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
