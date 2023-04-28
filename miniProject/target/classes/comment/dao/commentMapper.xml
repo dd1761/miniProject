@@ -8,5 +8,10 @@
 		INSERT INTO Comment (user_id, video_id, comment_text)
 		VALUES ( #{user_id},  #{video_id},  #{comment_text})
 	</insert>
- 	
- </mapper>
+	<!--내가쓴 댓글  삭제 -->
+	<select id="deleteCommentUseByCommentId" parameterType="java.util.Map">
+		DELETE FROM Comment WHERE comment_id = #{comment_id}
+	</select>
+
+
+</mapper>
