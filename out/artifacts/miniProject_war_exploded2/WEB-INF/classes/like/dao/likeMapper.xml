@@ -8,5 +8,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO Like_count (user_id, video_id)
 		VALUES (#{user_id}, #{video_id});
 	</insert>
+	
+	<select id="getUserLikeInfo" parameterType="java.util.Map" resultType="like.bean.LikeDTO">
+		SELECT * FROM Like_count where user_id=#{user_id} and video_id=#{video_id}
+	</select>
+	
+	<delete id="likeVideoDelete" parameterType="java.util.Map">
+		DELETE FROM Like_count WHERE user_id = #{user_id} AND video_id = #{video_id}
+	</delete>
+	
+	<insert id="likeCommentPlus" parameterType="java.util.Map">
+		INSERT INTO Like_count (user_id, comment_id)
+		VALUES (#{user_id}, #{comment_id});
+	</insert>
+	
+	<delete id="likeCommentDelete" parameterType="java.util.Map">
+		DELETE FROM Like_count WHERE user_id = #{user_id} AND comment_id = #{comment_id}
+	</delete>
 
 </mapper>

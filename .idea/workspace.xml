@@ -11,27 +11,46 @@
   <component name="ChangeListManager">
     <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="시청기록 삭제 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/controller/HistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/controller/HistoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAOMyBatis.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/HistoryDAOMyBatis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/dao/historyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/history/service/HistoryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/history/history.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/history/history.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/like/dao/likeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/like/dao/likeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/controller/ChannelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/historyMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/controller/HistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/historyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/dao/historyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/controller/LikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/controller/LikeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/dao/likeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/dao/likeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/video/bean/VideoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/controller/ChannelController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/channelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/channelMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/controller/LikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/controller/LikeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAOMyBatis.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/likeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/likeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/dao/videoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/image/dongbeen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +81,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="sunguk04-27-1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,29 +129,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/miniProject/miniProject/src/main/webapp/WEB-INF/image",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.16015625",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "File.Encoding",
-    "spring.configuration.checksum": "d5e314dc8cb8182f28d9b62435538297",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/miniProject/miniProject/src/main/webapp/WEB-INF/image&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.16015625&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d5e314dc8cb8182f28d9b62435538297&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\miniProject\miniProject\src\main\webapp\WEB-INF\image" />

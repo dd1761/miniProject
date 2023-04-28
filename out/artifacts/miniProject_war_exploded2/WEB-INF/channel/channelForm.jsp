@@ -2,31 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
-	<style>
-
-		#box-right .subcribe #subBtn1 {
-			background-color: red;
-			color: #fff;
-			padding: 8px 30px;
-			border: 0;
-			outline: 0;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-		#box-right .subcribe #dissubBtn1 {
-			background-color: #b2b2b2;
-			color: black;
-			padding: 8px 30px;
-			border: 0;
-			outline: 0;
-			border-radius: 4px;
-			cursor: pointer;
-		}
-
-
-	</style>
 	<link rel="stylesheet" href="/miniProject/css/channel.css">
 	<header>
 
