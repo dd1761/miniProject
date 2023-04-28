@@ -221,5 +221,40 @@ $(function(){
 
 
 
+/* 내 채널을 클릭했을떄*/
+$('#mychannel_1').click(function(){
+	console.log("내 채널 클릭")
 
+	var user_id =  $('#user_id').val();
+
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/channel/myChannel',
+		data: 'user_id=' + user_id,
+		success: function(data){
+			/*유저아이디에 해당하는 채널이 있다면 채널이동*/
+			if(data.channel_id){
+				console.log(data);
+				console.log('채널 id의 값은 = ' + data.channel_id);
+				// channel_id 값을 추출하여 동적으로 URL을 생성
+				var channelUrl = '/miniProject/channel/main?channel_id=' + data.channel_id;
+				location.href=channelUrl;
+			}
+			/*채널이 없다면 */
+			else{
+				confirm("내 채널이 없습니다. 채널을 만들까요?")
+					window.location.href = "/miniProject/channel/makeChannel?user_id="+user_id; // 삭제된 페이지 URL을 넣어주세요
+
+			}
+
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+
+
+
+});
 

@@ -61,8 +61,9 @@
                
                <div id="nav-main">
                   <div id="nav-top">
+					  <li id="mychannel_1"><img src="/miniProject/image/mychannel.png">내 채널</li>
                      <li id="mystudio"><img src="/miniProject/image/youtube-studio.png"><a href="/miniProject/channel/youtubestudio">유튜브 스튜디오</a></li>
-                     <li id="mychannel"><img src="/miniProject/image/mychannel.png"><a href="#">내 채널</a></li>
+
                      <li id="logout"><img src="/miniProject/image/logout.png"><a href="#">로그아웃</a></li>
                   </div> <!-- nav-top -->
                   <div id="nav-bottom">
@@ -104,12 +105,11 @@
 			<a href=""><img src="/miniProject/image/cameron.png"><p>이지현</p></a> -->	<!-- index.js에서 동적처리함 -->	
 
 			<h3>${email} ${password}</h3>
-			<a href="/miniProject/channel/main?channel_id=1"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
+<%--			<a href="/miniProject/channel/main?channel_id=1"><img src="/miniProject/image/dongbeen.jpg" id="channel"><p>김동빈</p></a>
 			<a href="/miniProject/channel/main?channel_id=2"><img src="/miniProject/image/kwonyongjun.png"><p>권용준</p></a>
 			<a href="/miniProject/channel/main?channel_id=3"><img src="/miniProject/image/tom.png"><p>강성욱</p></a>
 			<a href="/miniProject/channel/main?channel_id=4"><img src="/miniProject/image/megan.png"><p>송성근</p></a>
-			<a href="/miniProject/channel/main?channel_id=5"><img src="/miniProject/image/cameron.png"><p>이지현</p></a>
-			
+			<a href="/miniProject/channel/main?channel_id=5"><img src="/miniProject/image/cameron.png"><p>이지현</p></a>--%>
 
 		</div>
 	</div>
