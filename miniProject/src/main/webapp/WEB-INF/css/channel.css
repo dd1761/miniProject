@@ -1,185 +1,272 @@
+/* 글로벌 스타일 */
 @charset "UTF-8";
 
+/* 컨테이너 */
 #container {
-	display: flex;
-	width: 100%;
-	height: 170px;
+  display: flex;
+  width: 100%;
+  height: 170px;
 }
 
+/* 왼쪽 박스 */
 #box-left {
-	background: white;
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background: white;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* 가운데 박스 */
 #box-center {
-	background: white;
-	flex: 3;
-	display: flex;
-	align-items: flex-start;
-	text-align: left;
-	
+  background: white;
+  flex: 3;
+  display: flex;
+  align-items: flex-start;
+  text-align: left;
 }
 
+/* 오른쪽 박스 */
 #box-right {
-	background: white;
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+  background: white;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
+/* 채널 로고 */
 .channel-logo {
-	width: 100%;
-	max-height: 180px;
-	overflow: hidden;
-	transition: max-height 0.5s ease;
+  width: 100%;
+  max-height: 180px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
 }
 
 .channel-logo img {
-	width: 100%;
-	height: auto;
-	object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
+/* 채널 프로필 */
 .channel-profile {
-	width: 115px;
-	height: 115px;
-	border-radius: 50%;
-	overflow: hidden;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .channel-profile img {
-	width: 100%;
-	height: auto;
-	display: block;
-	margin: 0 auto;
-	transform: scale(1.4); /* 이미지를 140% 크기로 확대합니다 */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  transform: scale(1.4);
 }
 
+/* 구독 버튼 */
 .subcribe img {
-	width: 125px;
-	height: 30px;
-	display: block;
-	/* 초기 이미지 설정 */
-	background-image: url('image/subcribe.png');
-	/* 다른 이미지로 변경할 때의 설정 */
-	transition: background-image 0.3s ease;
-	/* 커서 변경 */
-	cursor: pointer;
-	/* 왼쪽 위로 약간 이동 */
-	position: relative;
-	top: -20px;
-	left: -10px;
+  width: 125px;
+  height: 30px;
+  display: block;
+  background: url('image/subcribe.png') no-repeat;
+  background-size: 100% 100%;
+  transition: background-image 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  top: -20px;
+  left: -10px;
 }
 
-/* 호버 상태일 때 이미지 변경 */
 .subcribe img:hover {
-	background-image: url('image/hoversubcribe.png');
+  background-image: url('image/hoversubcribe.png');
 }
 
-.subcribe #subBtn {
-	background-color: red;
-	color: #fff;
-	padding: 8px 30px;
-	border: 0;
-	outline: 0;
-	border-radius: 4px;
-	cursor: pointer;
+.subcribe button {
+  padding: 8px 30px;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.subcribe #dissubBtn {
-	background-color: #b2b2b2;
-	color: black;
-	padding: 8px 30px;
-	border: 0;
-	outline: 0;
-	border-radius: 4px;
-	cursor: pointer;
+#subBtn {
+  background-color: red;
+  color: #fff;
 }
 
-/* -navigation */
+#dissubBtn {
+  background-color: #b2b2b2;
+  color: black;
+}
+
+/* 네비게이션 */
 .navigation {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background: white;
-	padding: 10px;
-	border-bottom: none;
-	border-bottom: 1px #000;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  border-bottom: none;
+  border-bottom: 1px solid #000;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 }
 
 .navigation a {
-	color: #666;
-	text-decoration: none;
-	margin-right: 10px;
-	position: relative; /* 상대 위치 설정 */
-	transition: color 0.3s ease;
+color: #666;
+text-decoration: none;
+margin-right: 10px;
+position: relative;
+transition: color 0.3s ease;
 }
 
 .navigation a::before {
-	content: "";
-	position: absolute;
-	bottom: -2px; /* 아래쪽으로 2px만큼 위치 */
-	left: 0;
-	right: 0;
-	height: 2px;
-	background-color: #888; /* 선 색상 설정 (변경) */
-	transform: scaleX(0); /* 초기에 선을 가로로 0으로 설정 */
-	transition: transform 0.3s ease-in-out;
+content: "";
+position: absolute;
+bottom: -2px;
+left: 0;
+right: 0;
+height: 2px;
+background-color: #888;
+transform: scaleX(0);
+transition: transform 0.3s ease-in-out;
 }
 
 .navigation a:hover {
-	color: #666;
-	font-weight: bold;
+color: #666;
+font-weight: bold;
 }
 
 .navigation a:hover::before {
-	transform: scaleX(1); /* 마우스 호버 시 선 가로로 펴지도록 설정 */
+transform: scaleX(1);
 }
 
-/* 현재페이지 */
 .navigation .current-page {
-	font-weight: bold; /* 폰트 굵게 변경 */
+font-weight: bold;
 }
 
-/* 이미지에 마우스 포인터를 변경 */
+/* 검색 아이콘 */
 .search-icon {
-	cursor: pointer;
+cursor: pointer;
 }
 
-/* section */
+/* 섹션 */
 section {
-	margin-top: 20px; /* 섹션과의 간격 조정 */
-	display: flex; /* 동영상 섹션 내의 요소들을 가로로 배열 */
-	justify-content: center; /* 가로 방향으로 중앙 정렬 */
-	flex-direction: column; /* 요소들을 세로로 배열 */
+margin-top: 20px;
+display: flex;
+justify-content: center;
+flex-direction: column;
 }
 
 section .video {
-	display: flex; /* 동영상과 정보를 가로로 배열 */
-	align-items: center; /* 세로 방향으로 중앙 정렬 */
-	margin-bottom: 20px; /* 동영상과 정보 사이의 간격 조정 */
-	margin-top: 30px; /* 동영상의 상단 간격을 30px로 조정 */
+display: flex;
+align-items: center;
+margin-bottom: 20px;
+margin-top: 30px;
 }
 
 section .video iframe {
-	margin-right: 25px; /* 동영상과 정보 사이의 간격 조정 */
+margin-right: 25px;
 }
 
-#middle {
-	display: flex;
+/* 컨테이너 */
+#container {
+display: flex;
+width: 100%;
+height: 170px;
 }
 
-#middle-left {
-	background: white;
-	flex-basis: 300px;
+/* 왼쪽 박스 */
+#box-left {
+background: white;
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
-#middle-right {
-	text-align: center;
+/* 중간 박스 */
+#box-center {
+background: white;
+flex: 3;
+display: flex;
+align-items: flex-start;
+text-align: left;
 }
+
+/* 오른쪽 박스 */
+#box-right {
+background: white;
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+/* 채널 로고 */
+.channel-logo {
+width: 100%;
+max-height: 180px;
+overflow: hidden;
+transition: max-height 0.5s ease;
+}
+
+.channel-logo img {
+width: 100%;
+height: auto;
+object-fit: cover;
+}
+
+/* 채널 프로필 */
+.channel-profile {
+width: 115px;
+height: 115px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.channel-profile img {
+width: 100%;
+height: auto;
+display: block;
+margin: 0 auto;
+transform: scale(1.4);
+}
+
+/* 구독 버튼 */
+.subcribe img {
+width: 125px;
+height: 30px;
+display: block;
+background-image: url('image/subcribe.png');
+transition: background-image 0.3s ease;
+cursor: pointer;
+position: relative;
+top: -20px;
+left: -10px;
+}
+
+.subcribe img:hover {
+background-image: url('image/hoversubcribe.png');
+}
+
+.subcribe #subBtn {
+background-color: red;
+color: #fff;
+padding: 8px 30px;
+border: 0;
+outline: 0;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.subcribe #dissubBtn {
+background-color: #b2b2b2;
+color: black;
+padding: 8px 30px;
+border: 0;
+outline: 0;
+border-radius
