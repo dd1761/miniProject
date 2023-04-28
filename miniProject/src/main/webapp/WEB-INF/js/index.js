@@ -237,6 +237,7 @@ $('#account-management').click(function(){
 	location.href='/miniProject/member/account?user_id=' + $('input[name="user_id"]').val();
 });
 
+
 /*프로필 이미지*/
 $(function(){
 	$.ajax({
@@ -245,16 +246,16 @@ $(function(){
         data: 'user_id=' + $('#user_id').val(),
         success: function(data){
 			if(data.profile_url == null) {
-				$('#user-icon').attr("src", './img/p.jpg');
+				$('#user-icon').attr("src", '/miniProject/img/p.jpg');
 			}else {
-				$('#user-icon').attr("src", './storage/' + data.profile_url);
+				$('#user-icon').attr("src", '/miniProject/storage/' + data.profile_url);
 			}
 		},
         error: function(err){
             console.log(err);
         }
 	});
-});
+})
 
 
 /* 내 채널을 클릭했을떄*/

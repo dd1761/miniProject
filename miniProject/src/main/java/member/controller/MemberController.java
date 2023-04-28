@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import channel.service.ChannelService;
 import mail.service.MailService;
 import member.bean.MemberDTO;
 import member.service.MemberService;
@@ -28,6 +29,9 @@ import member.service.MemberService;
 public class MemberController {
 	@Autowired
 	private MemberService memberService;
+	
+	@Autowired
+	private ChannelService channelService;
 	
 	@Autowired
 	private MailService mailService;
@@ -285,6 +289,20 @@ public class MemberController {
 			memberService.upload(profile_url, user_id);
 			
 			return "<img src='../storage/" + filePath + "' width='300' height='300' />";
+		}
+		
+		//**************Channel******************
+		@PostMapping(value="getChannelMember")
+		@ResponseBody 
+		public MemberDTO getChannelMember(@RequestParam String email) {
+			return memberService.getChannelMember(email);
+		}
+		
+		@PostMapping(value="insertChannelMember")
+		@ResponseBody 
+		public void insertChannelMember(@RequestParam Map<String, Object> map) {
+			System.out.println(map);
+			channelService.insertChannelMember(map);
 		}
 		
 	}

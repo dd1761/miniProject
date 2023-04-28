@@ -27,5 +27,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="myChannel" parameterType="int" resultType="channel.bean.ChannelDTO">
 		SELECT * FROM Channel where user_id=#{user_id}
 	</select>
+	
+	<insert id="insertChannelMember" parameterType="java.util.Map">
+ 		insert into Channel(channel_name, user_id) values(#{channel_name}, #{user_id})
+ 	</insert>
 
 </mapper>

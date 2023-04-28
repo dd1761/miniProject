@@ -36,6 +36,12 @@ public class ChannelDAOMyBatis implements ChannelDAO {
 		return sqlSession.selectOne("channelSQL.myChannel", user_id);
 	}
 
+	@Override
+	public void insertChannelMember(Map<String, Object> map) {
+		sqlSession.insert("channelSQL.insertChannelMember",map);
+		
+	}
+
 /*    @Override
     public List<ChannelDTO> getVideoById(int user_id, int video_id) {
 

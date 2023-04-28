@@ -37,6 +37,8 @@ public interface MemberDAO {
 
 	public void upload(String profile_url, int user_id);
 
+	public MemberDTO getChannelMember(String email);
+
 
 	
 

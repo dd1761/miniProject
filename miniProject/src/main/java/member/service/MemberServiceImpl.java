@@ -105,4 +105,9 @@ public class MemberServiceImpl implements MemberService {
 		
 	}
 
+	@Override
+	public MemberDTO getChannelMember(String email) {
+		return memberDAO.getChannelMember(email);
+	}
+
 }

@@ -16,7 +16,7 @@ $('#nextBtn').click(function(){
 		   	data: 'email='+$('#email').val(), 
 		   	success: function(data){
 				if(data == "") {
-					$('#emailDiv').text('잘못된 이메일 입니다.');
+					$('#emailDiv').text('존재하지 않는 이메일 입니다.');
 					$('#emailDiv').css('color', 'red');
 					$('#emailDiv').css('font-size', '14px');
 					$('#emailDiv').css('font-weight', 'bold');

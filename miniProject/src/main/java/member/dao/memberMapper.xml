@@ -63,5 +63,9 @@
  	<update id="upload" parameterType="java.util.Map">
  		update User set profile_url=#{profile_url} where user_id=#{user_id}
  	</update>
+ 	
+ 	<select id="getChannelMember" parameterType="String" resultType="member">
+ 		select * from User where email=#{email}
+ 	</select>
  		
  </mapper>

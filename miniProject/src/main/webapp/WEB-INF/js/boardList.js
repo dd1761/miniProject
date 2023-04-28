@@ -510,9 +510,7 @@ $(function(){
 //    alert($('#user_id').val());
 //    
     
-    
 
-        	
     $.ajax({
     	type:'post',
     	url: '/miniProject/user/getBoardCount',

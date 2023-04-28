@@ -8,6 +8,7 @@ import channel.bean.ChannelDTO;
 import video.bean.VideoDTO;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ChannelServiceImpl implements ChannelService {
@@ -27,4 +28,11 @@ public class ChannelServiceImpl implements ChannelService {
 		
 		return channelDAO.myChannel(user_id);
 	}
+	
+	@Override
+	public void insertChannelMember(Map<String, Object> map) {
+		channelDAO.insertChannelMember(map);
+		
+	}
+	
 }
