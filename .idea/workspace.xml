@@ -9,48 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="시청기록 삭제 기능 추가">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/java/like/dao/likeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/java/like/dao/likeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/channel/channelForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/controller/ChannelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/channel/service/ChannelServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/controller/HistoryController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/dao/HistoryDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/history/service/HistoryServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/controller/LikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/controller/LikeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/dao/LikeDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/dao/likeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/dao/likeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/like/service/LikeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniProject/target/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/target/classes/video/bean/VideoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/channel/channelForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/controller/ChannelController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/controller/ChannelController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/ChannelDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/channelMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/dao/channelMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/channel/service/ChannelServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/controller/LikeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/controller/LikeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAOMyBatis.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/LikeDAOMyBatis.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/likeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/dao/likeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/like/service/LikeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/bean/VideoDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/dao/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/classes/video/dao/videoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/css/indexstyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/image/dongbeen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/js/video.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/miniProject_war_exploded2/WEB-INF/video/video.jsp" afterDir="false" />
+    <list default="true" id="5b9aeb58-8558-4b23-ac75-8fc5c4d0aaa4" name="변경" comment="새브런치 생성">
+      <change beforePath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniProject/src/main/webapp/WEB-INF/js/video.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +41,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="sunguk04-27-1" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -525,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682585259843</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="새브런치 생성">
+      <created>1682644772431</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1682644772431</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +511,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="댓글 if 문걸어서 null 값 출력 방지" />
     <MESSAGE value="css 수정해보기" />
     <MESSAGE value="ㄹㄹ" />
     <MESSAGE value="test" />
@@ -569,7 +535,8 @@
     <MESSAGE value="x 이미지 추가" />
     <MESSAGE value="영상 삭제 이벤트 걸기" />
     <MESSAGE value="시청기록 삭제 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="시청기록 삭제 기능 추가" />
+    <MESSAGE value="새브런치 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="새브런치 생성" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -87,7 +87,9 @@ $(function(){
                         
                         </a>
                         <div>
+                             <a href="/miniProject/channel/main?channel_id=${channel_id}">
                             <p>${channel_name}</p>
+                            </a>
                             <span>구독자 ${subscriber_count}명</span>
                         </div>
                         <!--히든-->
