@@ -322,7 +322,7 @@ $(document).on('click', '#commentlikedOff', function() {
             success: function(data) {
                 console.log(data);
                 alert('값이 들어 갔다~');
-                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
+//                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
                 location.reload();
             },
             error: function(err) {
@@ -347,7 +347,7 @@ $(document).on('click', '#commentlikedOn', function() {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
-				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
+//				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
 			error: function(err){

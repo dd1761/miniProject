@@ -208,9 +208,11 @@ $(function(){
             
             // channel_id 값을 추출하여 동적으로 URL을 생성
             var channelUrl = '/miniProject/channel/youtubestudio?channel_id=' + data.channel_id;
+            var mychannel = '/miniProject/channel/main?channel_id=' + data.channel_id;
             
             // 생성한 URL을 이용하여 href 속성 값을 설정
             $('#mystudio > a').attr('href', channelUrl);
+            $('#mychannel > a').attr('href', mychannel);
         },
         error: function(err){
             console.log(err);
