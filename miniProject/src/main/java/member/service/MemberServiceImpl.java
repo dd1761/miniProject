@@ -79,5 +79,30 @@ public class MemberServiceImpl implements MemberService {
 		memberDAO.UpdatePwd(email, password);	
 	}
 
+	@Override
+	public MemberDTO getAccount(int user_id) {
+		return memberDAO.getAccount(user_id);
+	}
+
+	@Override
+	public void updateAccount(Map<String, Object> map) {
+		memberDAO.updateAccount(map);
+	}
+
+	@Override
+	public MemberDTO getDeleteMember(Map<Object, Object> map) {
+		return memberDAO.getDeleteMember(map);
+	}
+
+	@Override
+	public void DeleteMember(int user_id) {
+		memberDAO.DeleteMember(user_id);
+	}
+
+	@Override
+	public void upload(String profile_url, int user_id) {
+		memberDAO.upload(profile_url, user_id);
+		
+	}
 
 }
