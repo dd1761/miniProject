@@ -6,9 +6,9 @@ $(function(){
     success: function(data){
       $('#name').text(data.name);
       if(data.profile_url == null) {
-        $('#profile').attr("src", '../img/p.jpg');
+        $('#profile').attr("src", '/miniProject/img/p.jpg');
       }else {
-        $('#profile').attr("src", '../storage/' + data.profile_url);
+        $('#profile').attr("src", '/miniProject/storage/' + data.profile_url);
       }
       
     },
