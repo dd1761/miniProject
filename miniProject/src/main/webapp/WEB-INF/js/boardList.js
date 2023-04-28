@@ -403,8 +403,8 @@ $(function(){
  	                   // 수정 완료 버튼 
  	                   
  	                   $('.update_post').click(function() {
- 	                	  if(originalContent == $(this).parent().prev().children().val()) {
- 	                		  alert('원글에서 수정된 내역이 없습니다. 수정할 내용을 확인하세요.');
+ 	                	  if(originalContent == $(this).parent().prev().children().val() || $(this).parent().prev().children().val().trim()=='') {
+ 	                		  alert('원글에서 수정된 내역이 없거나, 입력된 내용이 없습니다. 수정할 내용을 확인하세요.');
  	                	  }
  	                	  
  	                	  else {
@@ -470,7 +470,11 @@ $(function(){
     
     $('#write_post').click(function() {
     	var writeBoard = $(this).parent().prev().children().val();
-//    	alert(writeBoard);
+    	
+    	if(writeBoard.trim() == '') {
+    		alert('입력된 내용이 없습니다. 작성할 내용을 입력하세요.');
+    	}
+    	else {
     	$.ajax({
              type: 'post',
              url: '/miniProject/user/boardWrite',
@@ -490,7 +494,7 @@ $(function(){
                  console.log(err);
              }
          }); //ajax 3
-    
+    	}
     }); //write_post
     
 //    var channel_id = $('#channel_id').val()
