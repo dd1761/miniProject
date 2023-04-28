@@ -153,7 +153,7 @@ $(function(){
 
                         var row = `
                                     <div class="old-comment">
-                                       <img src="${data[i].profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
+                                       <img src="${data[i].profile_url ? '/miniProject/storage/' + profile_url : '/miniProject/img/p.jpg'}">
                       
                                       <div>
                                         <h3>${commenter_name} <span>${year}.${month}.${day}</span></h3>
