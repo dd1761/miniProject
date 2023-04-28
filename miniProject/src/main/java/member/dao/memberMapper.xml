@@ -44,7 +44,7 @@
  		update User set password=#{password} where email=#{email}
  	</update>
  	
- 	<select id="getAccount" parameterType="int" resultType="member">
+ 	<select id="getAccount" parameterType="int" resultType="user.bean.UserDTO">
  		select * from User where user_id=#{user_id}
  	</select>
  	
@@ -67,5 +67,12 @@
  	<select id="getChannelMember" parameterType="String" resultType="member">
  		select * from User where email=#{email}
  	</select>
+ 	
+ 	<insert id="write" parameterType="member">
+ 		insert into user (name, password, email, profile_url, gender)
+		values(#{name}, #{password}, #{email}, #{profile_url}, #{gender})
+ 	</insert>
+ 	
+ 	
  		
  </mapper>

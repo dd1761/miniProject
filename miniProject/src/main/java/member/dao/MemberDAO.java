@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import member.bean.MemberDTO;
+import user.bean.UserDTO;
 
 public interface MemberDAO {
 
@@ -39,8 +40,7 @@ public interface MemberDAO {
 
 	public MemberDTO getChannelMember(String email);
 
-
-	
+	public void write(MemberDTO memberDTO);
 
 
 }
