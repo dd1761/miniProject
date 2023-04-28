@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.bean.BoardDTO;
+import channel.bean.ChannelDTO;
 import community.service.CommunityService;
 import video.bean.VideoDTO;
 import video.service.VideoService;
@@ -51,8 +52,9 @@ public class UserController {
 	
 	@PostMapping(value = "getBoardList")
 	@ResponseBody
-	public List<BoardDTO> getBoardList(){
-		return communityService.getBoardList();
+	public List<BoardDTO> getBoardList(@RequestParam("channel_id") int channel_id){
+		System.out.println("getboardlist");
+		return communityService.getBoardList(channel_id);
 	}
 	
 	@GetMapping(value = "videosearch")
@@ -78,6 +80,57 @@ public class UserController {
 	public List<VideoDTO> mainContainerVideo(){
 		
 		return videoService.mainContainerVideo();
+	}
+	
+	@PostMapping(value = "boardDelete")
+	@ResponseBody
+	public void boardDelete(@RequestParam(required = true) int board_id) {
+		communityService.boardDelete(board_id);
+	}
+	
+	@PostMapping(value = "boardUpdate")
+	@ResponseBody
+	public void boardUpdate(@RequestParam(required = true) String board_text, @RequestParam int board_id, @RequestParam int channel_id) {
+		System.out.println(board_text + " " + board_id + " " + channel_id);
+		communityService.boardUpdate(board_text, board_id, channel_id);
+	}
+	
+	@GetMapping(value = "boardView")
+	public String boardView(@RequestParam int board_id,
+							Model model) {
+		model.addAttribute("board_id", board_id);
+		model.addAttribute("display","./board/contentView.jsp");
+		return "index";
+	}
+	
+	@PostMapping(value = "getBoardView")
+	@ResponseBody
+	public BoardDTO getBoardView(@RequestParam int board_id) {
+		System.out.println(board_id);
+		return communityService.getBoardView(board_id);
+	}
+	
+	
+	@PostMapping(value="channelUser_id")
+	@ResponseBody
+	public ChannelDTO channelUser_id(@RequestParam int user_id){
+		System.out.println("dfsfd " + user_id);
+		return communityService.channelUser_id(user_id);
+	}
+	
+	@PostMapping(value = "boardWrite")
+	@ResponseBody
+	public void boardWrite(@RequestParam int channel_id, @RequestParam int user_id, @RequestParam(required = true) String board_text) {
+		System.out.println(channel_id + " " + user_id + " " + board_text);
+		communityService.boardWrite(channel_id, user_id, board_text);
+	}
+	
+	@PostMapping(value = "getBoardCount")
+	@ResponseBody
+	public List<BoardDTO> getBoardCount(@RequestParam("channel_id") int channel_id, @RequestParam("user_id") int user_id){
+		System.out.println("controller: channel_id : " + channel_id + "user_id : " + user_id);
+		System.out.println("바보");
+		return communityService.getBoardCount(channel_id, user_id);
 	}
 }
 
