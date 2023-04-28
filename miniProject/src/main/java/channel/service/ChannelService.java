@@ -1,11 +1,13 @@
 package channel.service;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+
+import channel.bean.ChannelDTO;
+
+import java.util.List;
 
 public interface ChannelService {
 
-	@Bean
-	public String display();
+    List<ChannelDTO> getChannelForm(int userId, int channelId);
 
+	ChannelDTO myChannel(int user_id);
 }
