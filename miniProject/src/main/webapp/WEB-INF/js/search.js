@@ -14,9 +14,9 @@ $(function(){
         var $videoLink = $('<a>').attr('href', '/miniProject/video/main?video_id=' + items.video_id);
         $videoLink.append($videoContainer);
 
-        // thumbnail
-        var $thumbnail = $('<img>').attr('src', items.thumbnail_url).attr('alt', 'video thumbnail');
-        $videoContainer.append($thumbnail);
+        // thumnail
+        var $thumnail = $('<img>').attr('src', '/miniProject/storage/'+ items.thumnail_url).attr('alt', 'video thumnail');
+        $videoContainer.append($thumnail);
 
         // text wrapper
         var $textWrapper = $('<div>').addClass('text-wrapper');

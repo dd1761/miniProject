@@ -62,7 +62,7 @@ $(function(){
 
                 $('#play-video').html(`
                     <video controls autoplay width="1000" height="600">
-                        <source src="/miniProject/videoFileUseByVideoId/${video_id}.mp4" type="video/mp4">
+                        <source src="/miniProject/storage/${video_url}" type="video/mp4">
                     </video>
                     
                     <h3>${video_title}</h3>
