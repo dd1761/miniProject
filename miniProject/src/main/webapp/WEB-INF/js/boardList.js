@@ -33,6 +33,42 @@ $(function(){
             console.log(JSON.stringify(data));
             console.log(data);
             
+            var comments = data.length;
+            const html = `
+                    <div id='box-left'>
+                      <div class="channel-profile">
+                        <!-- null 이면 기본이미지인 p.jpg -->
+                        <img src="${data[0].thumnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}" alt="Profile Picture">
+                      </div>
+                    </div>
+                    <div id='box-center'>
+                      <div class="channel-details">
+                        <h1>&nbsp${data[0].channel_name}</h1>
+                        <p>&nbsp구독자 ${data[0].subscriber_count}명 동영상 ${comments}개</p>
+                        <p>
+                          <a href="#">&nbsp${data[0].channel_description}</a>
+                        </p>
+                      </div>
+                    </div>
+                    <div id='box-right'>
+                      <div class="subcribe">
+                        
+                        <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
+                          ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
+                        </button>
+
+                      </div>
+                    </div>
+                    <!--히든-->
+                    <div id="hiddenDiv" style="display: none;">
+                      <input type="hidden" name="channel_id" id="channel_id" value="${data[0].channel_id}">
+                    </div>
+
+                    `;
+
+                    // #container 안에 HTML 코드 삽입
+            document.getElementById("container").innerHTML = html;
+            
 //            alert($('#user_id').val());
             console.log('666666666'+ data[0].user_id);
             

@@ -12,7 +12,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		    ch.channel_profile_url,
 		    u.user_id,
 		    b.board_id,
-		    ch.channel_id
+		    ch.channel_id,
+		    ch.channel_description
 		FROM
 		    Community_Board b 
 		JOIN

@@ -17,4 +17,5 @@ public class BoardDTO {
 	private int like_count;
 	private int comment_count;
 	private String channel_profile_url;
+	private String channel_description;
 }
