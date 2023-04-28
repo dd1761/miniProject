@@ -1,16 +1,23 @@
 package user.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import java.util.UUID;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import board.bean.BoardDTO;
@@ -27,6 +34,60 @@ public class UserController {
 	
 	@Autowired
 	VideoService videoService;
+	
+	@PostMapping(value="upload", produces = "text/html; charset=UTF-8")
+	@ResponseBody
+	public String upload(@RequestParam("inputvideo_url") MultipartFile inputvideo_url,
+			@RequestParam("inputimage_url") MultipartFile inputimage_url,
+            @ModelAttribute VideoDTO videoDTO,
+            HttpSession session) {
+		
+		 
+		
+		//진짜 폴더
+		String filePath = session.getServletContext().getRealPath("/WEB-INF/storage");
+		
+		System.out.println("실제 폴더 = " + filePath);
+		
+		
+		String videoFileName = UUID.randomUUID().toString() + "_" + inputvideo_url.getOriginalFilename();
+		String imageFileName = UUID.randomUUID().toString() + "_" + inputimage_url.getOriginalFilename();
+		
+		
+			
+		File videoFile = new File(filePath, videoFileName);
+		File imageFile = new File(filePath, imageFileName);
+		
+		try {
+			inputvideo_url.transferTo(videoFile);
+			inputimage_url.transferTo(imageFile);
+		} catch (IllegalStateException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		//DB
+		videoDTO.setVideo_url(videoFileName);
+		videoDTO.setThumnail_url(imageFileName);
+			
+	
+		
+		 communityService.upload(videoDTO); // channel_id 값을 추가적으로 전달
+		
+		return "동영상 업로드 완료";
+	}
+	
+	
+	
+	@GetMapping(value="uploadvideoForm")
+	public String playvideo(Model model) {
+	    return "youtube_studio/uploadvideoForm";
+	}
+	
+	
+	
+	
+	
 	
 /*	@GetMapping(value="playvideo")
 	public String playvideo(Model model) {

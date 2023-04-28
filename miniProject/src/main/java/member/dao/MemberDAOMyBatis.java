@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import member.bean.MemberDTO;
+import user.bean.UserDTO;
 
 @Repository
 @Transactional
@@ -117,5 +118,10 @@ public class MemberDAOMyBatis implements MemberDAO {
 	public MemberDTO getChannelMember(String email) {
 		return sqlSession.selectOne("memberSQL.getChannelMember", email);
 	}
+
+	
+	
+	
+	
 	
 }

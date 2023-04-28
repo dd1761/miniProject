@@ -43,5 +43,25 @@
  	<update id="UpdatePwd" parameterType="java.util.Map">
  		update User set password=#{password} where email=#{email}
  	</update>
+ 	
+ 	<select id="getAccount" parameterType="int" resultType="member">
+ 		select * from User where user_id=#{user_id}
+ 	</select>
+ 	
+ 	<update id="updateAccount" parameterType="java.util.Map">
+ 		update User set name=#{name}, password=#{password}, profile_url=#{profile_url}, year=#{year}, gender=#{gender}, phone=#{phone} where email=#{email}
+ 	</update>
+ 	
+ 	<select id="getDeleteMember" parameterType="java.util.Map" resultType="member">
+ 		select * from User where user_id=#{user_id} and password=#{password}
+ 	</select>
+ 	
+ 	<delete id="DeleteMember" parameterType="int">
+ 		delete from User where user_id=#{user_id}
+ 	</delete>
+ 	
+ 	<update id="upload" parameterType="java.util.Map">
+ 		update User set profile_url=#{profile_url} where user_id=#{user_id}
+ 	</update>
  		
  </mapper>

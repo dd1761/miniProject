@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import board.bean.BoardDTO;
 import channel.bean.ChannelDTO;
+import video.bean.VideoDTO;
 
 @Repository
 @Transactional //sql문의 커밋과 클로즈를 대신 해줌 
@@ -76,6 +77,12 @@ public class BoardDAOMyBatis implements BoardDAO {
         map.put("channel_id", channel_id);
 		
 		return sqlSession.selectList("userSQL.getBoardCount", map);
+	}
+
+	@Override
+	public void upload(VideoDTO videoDTO) {
+		sqlSession.insert("userSQL.upload", videoDTO);
+		
 	}
 
 	

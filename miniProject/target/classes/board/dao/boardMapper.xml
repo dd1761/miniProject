@@ -4,36 +4,45 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userSQL">
 
+	<insert id="upload" parameterType="video.bean.VideoDTO">
+		INSERT INTO Video(channel_id, video_title, video_url, video_description, thumnail_url)
+		VALUES (#{channel_id}, #{video_title}, #{video_url}, #{video_description}, #{thumnail_url})
+	</insert>
+	
+	
+	
 	<select id="getBoardList" parameterType="int" resultType="board">
 		SELECT
-		    c.channel_name,
-		    b.board_text,
-		    b.upload_date,
-		    ch.channel_profile_url,
-		    u.user_id,
-		    b.board_id,
-		    ch.channel_id,
-		    ch.channel_description
+		c.channel_name,
+		b.board_text,
+		b.upload_date,
+		ch.channel_profile_url,
+		u.user_id,
+		b.board_id,
+		ch.channel_id,
+		ch.channel_description,
+		(SELECT COUNT(*) FROM Subscription WHERE channel_id = c.channel_id) AS subscriber_count
 		FROM
-		    Community_Board b 
+		Community_Board b
 		JOIN
-		    Channel c ON b.channel_id = c.channel_id
+		Channel c ON b.channel_id = c.channel_id
 		JOIN
-		    Channel ch ON b.channel_id = ch.channel_id
+		Channel ch ON b.channel_id = ch.channel_id
 		JOIN
-		    User u ON ch.user_id = u.user_id
+		User u ON ch.user_id = u.user_id
 		WHERE
-		    c.channel_id = #{channel_id}
+		c.channel_id = #{channel_id}
 		GROUP BY
-		    c.channel_name,
-		    b.board_text,
-		    b.upload_date,
-		    ch.channel_profile_url,
-		    u.user_id,
-		    b.board_id, 
-		    ch.channel_id
+		c.channel_name,
+		b.board_text,
+		b.upload_date,
+		ch.channel_profile_url,
+		u.user_id,
+		b.board_id,
+		ch.channel_id,
+		ch.channel_description
 		ORDER BY
-		    b.board_id DESC
+		b.board_id DESC
 	</select>
 	
 	<delete id="boardDelete" parameterType="int">

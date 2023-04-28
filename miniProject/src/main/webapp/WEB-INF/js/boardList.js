@@ -44,7 +44,7 @@ $(function(){
                     <div id='box-center'>
                       <div class="channel-details">
                         <h1>&nbsp${data[0].channel_name}</h1>
-                        <p>&nbsp구독자 ${data[0].subscriber_count}명 동영상 ${comments}개</p>
+                        <p>&nbsp구독자 ${data[0].subscriber_count}명 글 ${comments}개</p>
                         <p>
                           <a href="#">&nbsp${data[0].channel_description}</a>
                         </p>
@@ -53,9 +53,7 @@ $(function(){
                     <div id='box-right'>
                       <div class="subcribe">
                         
-                        <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
-                          ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
-                        </button>
+ 
 
                       </div>
                     </div>
@@ -226,6 +224,7 @@ $(function(){
                 				append($('<a/>', {href: '#'})).
                 				append(dapBtn.attr('src', '/miniProject/img/messages.png')).
                 				append(dapsu);
+
        
                 article.append(head_div).append(content_info).append(btn);
                 

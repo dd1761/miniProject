@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import member.bean.MemberDTO;
+import user.bean.UserDTO;
 
 public interface MemberDAO {
 
@@ -38,7 +39,6 @@ public interface MemberDAO {
 	public void upload(String profile_url, int user_id);
 
 	public MemberDTO getChannelMember(String email);
-
 
 	
 

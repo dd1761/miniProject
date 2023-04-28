@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import member.bean.MemberDTO;
 import member.dao.MemberDAO;
+import user.bean.UserDTO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -22,6 +23,8 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private HttpSession session;
 
+	
+	
 	@Override
 	public MemberDTO isExistEmail(String email) {
 		return memberDAO.isExistEmail(email);
@@ -110,4 +113,10 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.getChannelMember(email);
 	}
 
+
+	
+
+	
+	
+	
 }

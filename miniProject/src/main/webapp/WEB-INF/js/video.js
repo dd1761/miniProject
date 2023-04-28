@@ -62,7 +62,7 @@ $(function(){
 
                 $('#play-video').html(`
                     <video controls autoplay width="1000" height="600">
-                        <source src="/miniProject/videoFileUseByVideoId/${video_id}.mp4" type="video/mp4">
+                        <source src="/miniProject/storage/${video_url}" type="video/mp4">
                     </video>
                     
                     <h3>${video_title}</h3>
@@ -165,7 +165,6 @@ $(function(){
                                           <input type="hidden" class = "comment_id" id="comment_id" value="${comment_id}">
                         				 <img src="${data[i].user_liked_comment ? '/miniProject/image/likeOn.png' : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
 
-                        				  
                                           <span>${comment_like_count}</span>
                                           <!--댓글 쓴 사림이 본인일때만 보이는 댓글 삭제 -->
                                            <div class="comment_delete_btn" ${data[i].commenter_id == user_id ? '' : 'hidden'} >삭제하기</div>
@@ -227,7 +226,7 @@ $(document).on('click', '#likeVideoBtn', () => {
 			},
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
 				location.reload();
 			},
@@ -255,7 +254,7 @@ $(document).on('click', '#likeVideoON', () => {
 			},
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
@@ -327,7 +326,7 @@ $(document).on('click', '#commentlikedOff', function() {
             data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
             success: function(data) {
                 console.log(data);
-                alert('값이 들어 갔다~');
+//                alert('값이 들어 갔다~');
 //                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
                 location.reload();
             },
@@ -352,7 +351,7 @@ $(document).on('click', '#commentlikedOn', function() {
 			data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},

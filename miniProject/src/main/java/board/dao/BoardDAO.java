@@ -4,6 +4,7 @@ import java.util.List;
 
 import board.bean.BoardDTO;
 import channel.bean.ChannelDTO;
+import video.bean.VideoDTO;
 
 public interface BoardDAO {
 
@@ -20,6 +21,8 @@ public interface BoardDAO {
 	public BoardDTO getBoardView(int board_id);
 
 	public List<BoardDTO> getBoardCount(int channel_id, int user_id);
+
+	public void upload(VideoDTO videoDTO);
 
 //	public List<ChannelDTO> boardWrite(int user_id);
 

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +24,7 @@ import channel.service.ChannelService;
 import mail.service.MailService;
 import member.bean.MemberDTO;
 import member.service.MemberService;
+import user.bean.UserDTO;
 
 @Controller
 @RequestMapping(value="member")
@@ -35,6 +37,8 @@ public class MemberController {
 	
 	@Autowired
 	private MailService mailService;
+	
+	
 	
 	//**************login******************
 	@GetMapping(value="login_id")
@@ -304,6 +308,9 @@ public class MemberController {
 			System.out.println(map);
 			channelService.insertChannelMember(map);
 		}
+		
+		
+		
 		
 	}
 	
