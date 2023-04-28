@@ -172,7 +172,7 @@ position: relative;
   text-overflow: ellipsis;
 }
 
-.navbar {
+.navbar2 {
   position: fixed;
   top: 60px;
   right: 0;
@@ -186,33 +186,33 @@ position: relative;
   padding: 20px;
 }
 
-.navbar ul {
+.navbar2 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.navbar li {
+.navbar2 li {
   margin-bottom: 20px;
   border-bottom: 1px solid #ccc;
 }
 
-.navbar li:last-child {
+.navbar2 li:last-child {
   margin-bottom: 0;
 }
 
-.navbar a {
+.navbar2 a {
   text-decoration: none;
   color: #333;
   font-size: 16px;
   font-weight: bold;
 }
 
-.navbar a:hover {
+.navbar2 a:hover {
   text-decoration: underline;
 }
 
-.navbar .form-control {
+.navbar2 .form-control {
   background-color: #f1f1f1;
   border: none;
   border-radius: 0;
@@ -222,12 +222,12 @@ position: relative;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.navbar .input-group-text {
+.navba2 .input-group-text {
   background-color: #f1f1f1;
   border: none;
 }
 
-.navbar .bi-search {
+.navbar2 .bi-search {
   font-size: 1.25rem;
 }
 .circle {

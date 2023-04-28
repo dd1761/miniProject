@@ -2,6 +2,8 @@ var menuIcon = document.querySelector(".menu-icon");
 var sidebar = document.querySelector(".sidebar");
 var container= document.querySelector(".container");
 
+
+
 menuIcon.onclick = function(){
   sidebar.classList.toggle("small-sidebar");
   container.classList.toggle("large-container");
@@ -59,6 +61,16 @@ $(function() {
 
 	      // 데이터 처리 부분
 	      $.each(data, function(index, items){
+		  const timestamp = items.upload_date;
+		  const date = new Date(timestamp);
+
+		  const year = date.getFullYear();
+		  const month = date.getMonth() + 1;
+		  const day = date.getDate();
+
+		  const formattedDate = `${year}년 ${month}월 ${day}일`;
+
+			  console.log(formattedDate); // "2022년 3월 8일"
 	        // 새로운 video-list 요소를 생성합니다.
 	        var videoList = $('<div>', {class: 'video-list'});
 	        // a 요소를 생성합니다.
@@ -76,7 +88,7 @@ $(function() {
 	        // p 요소를 생성합니다.
 	        var channelName = $('<p>', {text: items.channel_name});
 	        // p 요소를 생성합니다.
-	        var views = $('<p>', {text: '조회수 ' + items.views + ' &bull; ' + items.upload_date});
+	        var views = $('<p>', {text: '조회수 ' + items.views + ' • ' + formattedDate});
 
 	        // 생성한 요소들을 조합합니다.
 	        link.append(thumbnail);
@@ -245,5 +257,38 @@ $(function(){
 });
 
 
+/* 내 채널을 클릭했을떄*/
+$('#mychannel_1').click(function(){
+	console.log("내 채널 클릭")
 
+	var user_id =  $('#user_id').val();
+
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/channel/myChannel',
+		data: 'user_id=' + user_id,
+		success: function(data){
+			/*유저아이디에 해당하는 채널이 있다면 채널이동*/
+			if(data.channel_id){
+				console.log(data);
+				console.log('채널 id의 값은 = ' + data.channel_id);
+				// channel_id 값을 추출하여 동적으로 URL을 생성
+				var channelUrl = '/miniProject/channel/main?channel_id=' + data.channel_id;
+				location.href=channelUrl;
+			}
+			/*채널이 없다면 */
+			else{
+				confirm("내 채널이 없습니다.")
+			}
+
+
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+
+
+
+});
 

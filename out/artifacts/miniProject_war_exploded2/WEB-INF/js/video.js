@@ -27,6 +27,7 @@ $(function(){
     if($('#user_id').val()) {
         addHistoryVideo_id(user_id,video_id);
     }
+    
 
 
     function getVideoById(user_id, video_id) {
@@ -86,7 +87,9 @@ $(function(){
                         
                         </a>
                         <div>
+                             <a href="/miniProject/channel/main?channel_id=${channel_id}">
                             <p>${channel_name}</p>
+                            </a>
                             <span>구독자 ${subscriber_count}명</span>
                         </div>
                         <!--히든-->
@@ -159,8 +162,9 @@ $(function(){
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
                                           <input type="hidden" id="comment_id" value="${comment_id}">
+                        				  <img src="${data[i].user_liked_comment ? '/miniProject/storage'+profile_url : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
+
                         				  
-                                          <img src="/miniProject/image/like.png" id="likeCommentBtn">
                                           <span>${comment_like_count} 좋아요 수</span>
                                         </div>
                                       </div>
@@ -180,6 +184,33 @@ $(function(){
 
 });
 
+// 비디오 보러 들어왔을 때 비디오 아이디와 유저 아이디의 값을 가지고 좋아요가 있는지 확인하러 가기.
+$(function(){
+	$.ajax({
+		type: 'post',
+		url: '/miniProject/like/getUserLikeInfo',
+		data: {user_id: $('#user_id').val(),
+			   video_id: parseInt($('#video_id').val())
+		},
+		success: function(data){
+			if (data.length > 0) {
+			      // 좋아요 데이터가 있으면
+			      console.log('User liked this video');
+			      $('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+			      
+			    } else {
+			      // 좋아요 데이터가 없으면
+			      console.log('User did not like this video');
+			      $('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+			    }
+		},
+		error: function(err){
+			console.log(err);
+			
+		}
+	});
+});
+
 
 $(document).on('click', '#likeVideoBtn', () => {
 	if($('#user_id').val()) {
@@ -193,6 +224,8 @@ $(document).on('click', '#likeVideoBtn', () => {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
+				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+				location.reload();
 			},
 			error: function(err){
 				console.log(err);
@@ -201,9 +234,39 @@ $(document).on('click', '#likeVideoBtn', () => {
 		
 	}
 	else {
-		console.log('로그인해주세요');
+		alert('로그인해주세요');
+		location.href='/miniProject/member/login_id';
 	}
 });
+
+//좋아요 버튼이 눌려있을 때 좋아요 취소하는 기능
+$(document).on('click', '#likeVideoON', () => {
+	if($('#user_id').val()) {
+		console.log('로그인되어있어요~');
+		$.ajax({
+			type: 'post',
+			url: '/miniProject/like/likeVideoDelete',
+			data: {user_id: $('#user_id').val(),
+				   video_id: parseInt($('#video_id').val())
+			},
+			success: function(data){
+				console.log(data);
+				alert('값이 들어 갔다~');
+				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+				location.reload();
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+		
+	}
+	else {
+		alert('로그인해주세요');
+		location.href='/miniProject/member/login_id';
+	}
+});
+
 
 
 /*댓글 작성했을시 실행되는 함수입니다.*/
@@ -248,6 +311,66 @@ function commentSubmit() {
 }
 
 
+//<input type="text" id="comment_id" value="${comment_id}">
+
+$(document).on('click', '#commentlikedOff', function() {
+    if ($('#user_id').val()) {
+        console.log('로그인되어있어요~');
+        const commentId = parseInt($(this).parent().find('#comment_id').val()); // commentId 가져오기
+        $.ajax({
+            type: 'post',
+            url: '/miniProject/like/likeCommentPlus',
+            data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
+            success: function(data) {
+                console.log(data);
+                alert('값이 들어 갔다~');
+                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
+                location.reload();
+            },
+            error: function(err) {
+                console.log(err);
+            }
+        });
+    } else {
+        alert('로그인해주세요');
+        location.href = '/miniProject/member/login_id';
+    }
+});
+
+//좋아요 버튼이 눌려있을 때 좋아요 취소하는 기능
+$(document).on('click', '#commentlikedOn', function() {
+	if($('#user_id').val()) {
+		console.log('로그인되어있어요~');
+		const commentId = parseInt($(this).parent().find('#comment_id').val()); // commentId 가져오기
+		$.ajax({
+			type: 'post',
+			url: '/miniProject/like/likeCommentDelete',
+			data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
+			success: function(data){
+				console.log(data);
+				alert('값이 들어 갔다~');
+				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
+				location.reload();
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+		
+	}
+	else {
+		alert('로그인해주세요');
+		location.href='/miniProject/member/login_id';
+	}
+});
+
+
+
+
+
+
+
+
 /*조회수를 올리는 함수입니다*/
 function addVideoView(video_id){
     console.log(video_id);
@@ -280,3 +403,4 @@ function addHistoryVideo_id(user_id,video_id){
         }
     });
 }
+

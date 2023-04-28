@@ -87,7 +87,9 @@ $(function(){
                         
                         </a>
                         <div>
+                             <a href="/miniProject/channel/main?channel_id=${channel_id}">
                             <p>${channel_name}</p>
+                            </a>
                             <span>구독자 ${subscriber_count}명</span>
                         </div>
                         <!--히든-->
@@ -160,7 +162,7 @@ $(function(){
                                         <p>${comment_text}</p>
                                         <div class="acomment-action">
                                           <input type="hidden" id="comment_id" value="${comment_id}">
-                        				  <img src="${data[i].user_liked_comment ? '/miniProject/image/likeOn.png' : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
+                        				  <img src="${data[i].user_liked_comment ? '/miniProject/storage'+profile_url : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
 
                         				  
                                           <span>${comment_like_count} 좋아요 수</span>
