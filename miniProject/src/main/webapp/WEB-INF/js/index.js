@@ -76,7 +76,7 @@ $(function() {
 	        // a 요소를 생성합니다.
 	        var link = $('<a>', {href: '/miniProject/video/main?video_id=' + items.video_id});
 	        // img 요소를 생성합니다.
-	        var thumbnail = $('<img>', {class: 'thumbnail', src: items.thumnail_url});
+	        var thumbnail = $('<img>', {class: 'thumbnail', src: '/miniProject/storage/'+items.thumnail_url});
 	        // img 요소를 생성합니다.
 	        var channelProfile = $('<img>', {src: items.profile_url, id: 'channel'});
 	        // div 요소를 생성합니다.

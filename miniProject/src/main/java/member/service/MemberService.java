@@ -40,7 +40,6 @@ public interface MemberService {
 
 	public MemberDTO getChannelMember(String email);
 
-	public void write(MemberDTO memberDTO);
 	
 	
 

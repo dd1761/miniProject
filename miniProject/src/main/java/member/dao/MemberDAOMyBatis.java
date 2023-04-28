@@ -119,11 +119,7 @@ public class MemberDAOMyBatis implements MemberDAO {
 		return sqlSession.selectOne("memberSQL.getChannelMember", email);
 	}
 
-	@Override
-	public void write(MemberDTO memberDTO) {
-		sqlSession.insert("memberSQL.write", memberDTO);
-		
-	}
+	
 	
 	
 	

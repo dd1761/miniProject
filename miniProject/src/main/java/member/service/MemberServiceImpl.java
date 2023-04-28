@@ -23,14 +23,6 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private HttpSession session;
 
-//	카카오
-	@Override
-	public void write(MemberDTO memberDTO) {
-
-	    
-	        memberDAO.write(memberDTO);
-	    
-	}
 	
 	
 	@Override

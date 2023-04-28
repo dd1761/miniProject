@@ -39,11 +39,6 @@ public class MemberController {
 	private MailService mailService;
 	
 	
-	// 카카오 로그인
-	@PostMapping(value="write")
-	public void write(@ModelAttribute MemberDTO memberDTO) {
-		memberService.write(memberDTO);
-	}
 	
 	//**************login******************
 	@GetMapping(value="login_id")

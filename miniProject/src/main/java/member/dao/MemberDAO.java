@@ -40,7 +40,7 @@ public interface MemberDAO {
 
 	public MemberDTO getChannelMember(String email);
 
-	public void write(MemberDTO memberDTO);
+	
 
 
 }

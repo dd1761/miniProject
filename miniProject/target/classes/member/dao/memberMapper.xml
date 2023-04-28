@@ -68,11 +68,6 @@
  		select * from User where email=#{email}
  	</select>
  	
- 	<insert id="write" parameterType="member">
- 		insert into user (name, password, email, profile_url, gender)
-		values(#{name}, #{password}, #{email}, #{profile_url}, #{gender})
- 	</insert>
- 	
  	
  		
  </mapper>
