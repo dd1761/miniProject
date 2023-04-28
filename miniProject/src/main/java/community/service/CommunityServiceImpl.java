@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import board.bean.BoardDTO;
 import board.dao.BoardDAO;
 import channel.bean.ChannelDTO;
+import video.bean.VideoDTO;
 
 @Service
 public class CommunityServiceImpl implements CommunityService {
@@ -53,6 +54,12 @@ public class CommunityServiceImpl implements CommunityService {
 	public List<BoardDTO> getBoardCount(int channel_id, int user_id) {
 		List<BoardDTO> list = boardDAO.getBoardCount(channel_id, user_id);
 		return list;
+	}
+
+	@Override
+	public void upload(VideoDTO videoDTO) {
+		boardDAO.upload(videoDTO);
+		
 	}
 
 
