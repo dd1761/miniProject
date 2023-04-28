@@ -165,7 +165,6 @@ $(function(){
                                           <input type="hidden" class = "comment_id" id="comment_id" value="${comment_id}">
                         				 <img src="${data[i].user_liked_comment ? '/miniProject/image/likeOn.png' : '/miniProject/image/like.png'}" id="${data[i].user_liked_comment != 0 ? 'commentlikedOn' : 'commentlikedOff'}">
 
-                        				  
                                           <span>${comment_like_count}</span>
                                           <!--댓글 쓴 사림이 본인일때만 보이는 댓글 삭제 -->
                                            <div class="comment_delete_btn" ${data[i].commenter_id == user_id ? '' : 'hidden'} >삭제하기</div>

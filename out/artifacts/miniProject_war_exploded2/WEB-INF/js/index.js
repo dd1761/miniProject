@@ -220,9 +220,11 @@ $(function(){
             
             // channel_id 값을 추출하여 동적으로 URL을 생성
             var channelUrl = '/miniProject/channel/youtubestudio?channel_id=' + data.channel_id;
+            var mychannel = '/miniProject/channel/main?channel_id=' + data.channel_id;
             
             // 생성한 URL을 이용하여 href 속성 값을 설정
             $('#mystudio > a').attr('href', channelUrl);
+            $('#mychannel > a').attr('href', mychannel);
         },
         error: function(err){
             console.log(err);
@@ -230,7 +232,29 @@ $(function(){
     });
 });
 
+/* 개인정보 */
+$('#account-management').click(function(){
+	location.href='/miniProject/member/account?user_id=' + $('input[name="user_id"]').val();
+});
 
+/*프로필 이미지*/
+$(function(){
+	$.ajax({
+		type: 'post',
+        url: '/miniProject/member/getAccount',
+        data: 'user_id=' + $('#user_id').val(),
+        success: function(data){
+			if(data.profile_url == null) {
+				$('#user-icon').attr("src", './img/p.jpg');
+			}else {
+				$('#user-icon').attr("src", './storage/' + data.profile_url);
+			}
+		},
+        error: function(err){
+            console.log(err);
+        }
+	});
+});
 
 
 /* 내 채널을 클릭했을떄*/
