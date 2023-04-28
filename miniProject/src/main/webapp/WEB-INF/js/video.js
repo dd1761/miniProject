@@ -254,7 +254,7 @@ $(document).on('click', '#likeVideoON', () => {
 			},
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
@@ -326,7 +326,7 @@ $(document).on('click', '#commentlikedOff', function() {
             data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
             success: function(data) {
                 console.log(data);
-                alert('값이 들어 갔다~');
+//                alert('값이 들어 갔다~');
 //                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
                 location.reload();
             },
@@ -351,7 +351,7 @@ $(document).on('click', '#commentlikedOn', function() {
 			data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
