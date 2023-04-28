@@ -40,4 +40,7 @@ public class VideoDTO {
 	private int commenter_id;
 	
 	private int user_liked_video;
+	
+	private String channel_profile_url;
+	
 }

@@ -101,7 +101,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="mainContainerVideo" resultType="video.bean.VideoDTO">
-		select * from Video
+		SELECT *
+		FROM Channel
+		JOIN Video ON Channel.channel_id = Video.channel_id
+		JOIN User ON Channel.user_id = User.user_id;
 	</select>
 
 	<update id="addVideoView" parameterType="int">
