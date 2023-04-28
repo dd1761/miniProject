@@ -37,4 +37,6 @@ public class VideoDTO {
 	private int user_liked_comment;
 
 	private int commenter_id;
+	
+	private int user_liked_video;
 }
