@@ -4,6 +4,7 @@
   <artifactId>miniProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+ 
   <build>
     <plugins>
       <plugin>
@@ -18,8 +19,51 @@
         <version>3.2.3</version>
       </plugin>
     </plugins>
+	  <!--리소스 추가 했습니다~ -->
+	  <resources>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.xml</include>
+			  </includes>
+		  </resource>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.properties</include>
+			  </includes>
+		  </resource>
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <includes>
+				  <include>**/*</include>
+			  </includes>
+		  </resource>
+		  <resource>
+			  <directory>src/main/java</directory>
+			  <includes>
+				  <include>**/*.properties</include>
+			  </includes>
+			  <filtering>true</filtering>
+		  </resource>
+		  <resource>
+			  <directory>src/main/resources</directory>
+			  <includes>
+				  <include>**/*.xml</include>
+			  </includes>
+		  </resource>
+
+	  </resources>
   </build>
   <dependencies>
+
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>javax.servlet-api</artifactId>
+		  <version>3.0.1</version>
+		  <scope>provided</scope>
+	  </dependency>
+
   	<!-- Spring -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -82,12 +126,12 @@
 	</dependency>
 	
 	<!-- JSTL -->
-	<dependency>
-	    <groupId>javax.servlet</groupId>
-	    <artifactId>jstl</artifactId>
-	    <version>1.2</version>
-	</dependency>
-	
+	  <dependency>
+		  <groupId>javax.servlet</groupId>
+		  <artifactId>jstl</artifactId>
+		  <version>1.2</version>
+	  </dependency>
+
 	<!-- JSON -->
 	<dependency>
 	    <groupId>net.sf.json-lib</groupId>
@@ -130,5 +174,26 @@
 	    <scope>provided</scope>
 	</dependency>
 	
+	<!-- 날짜 직렬화 -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.datatype</groupId>
+	    <artifactId>jackson-datatype-jsr310</artifactId>
+	    <version>2.13.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+	<dependency>
+	    <groupId>javax.mail</groupId>
+	    <artifactId>mail</artifactId>
+	    <version>1.4.7</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context-support</artifactId>
+	    <version>5.3.9</version>
+	</dependency>
+
   </dependencies>
 </project>

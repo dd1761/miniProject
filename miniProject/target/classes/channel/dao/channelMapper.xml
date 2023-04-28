@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="channelSQL">
+
+	<!--비디오 -->
+	<select id="getChannelForm" parameterType="java.util.Map" resultType="channel.bean.ChannelDTO">
+		SELECT
+		IFNULL(Subscription.subscription_id, 0) AS is_subscribed,
+		Video.*,
+		Channel.channel_name, Channel.channel_description ,
+		COALESCE(subscriber_cnt.subscriber_count, 0) as subscriber_count
+		FROM Video
+		INNER JOIN Channel ON Video.channel_id = Channel.channel_id
+		LEFT JOIN Subscription ON Subscription.channel_id = Channel.channel_id AND Subscription.user_id = #{user_id}
+		LEFT JOIN (
+		SELECT channel_id, COUNT(*) as subscriber_count
+		FROM Subscription
+		GROUP BY channel_id
+		) subscriber_cnt ON subscriber_cnt.channel_id = Channel.channel_id
+		WHERE Channel.channel_id = #{channel_id};
+
+
+	</select>
+	
+	<select id="myChannel" parameterType="int" resultType="channel.bean.ChannelDTO">
+		SELECT * FROM Channel where user_id=#{user_id}
+	</select>
+
+</mapper>
