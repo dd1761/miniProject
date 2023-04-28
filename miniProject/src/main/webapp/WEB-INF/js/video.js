@@ -222,7 +222,7 @@ $(document).on('click', '#likeVideoBtn', () => {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
-				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+//				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
 				location.reload();
 			},
 			error: function(err){
@@ -250,7 +250,7 @@ $(document).on('click', '#likeVideoON', () => {
 			success: function(data){
 				console.log(data);
 				alert('값이 들어 갔다~');
-				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+//				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
 			error: function(err){
