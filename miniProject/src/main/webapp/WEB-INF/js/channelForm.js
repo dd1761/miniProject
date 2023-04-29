@@ -78,9 +78,7 @@ $(function(){
                               <div class="channel-details">
                                 <h1>&nbsp${data[0].channel_name}</h1>
                                 <p>&nbsp구독자 ${data[0].subscriber_count}명 동영상 ${comments}개</p>
-                                <p>
-                                  <a href="#">&nbsp${data[0].channel_description}</a>
-                                </p>
+                                
                               </div>
                             </div>
                             <div id='box-right'>
