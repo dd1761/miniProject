@@ -24,7 +24,7 @@ import channel.service.ChannelService;
 import mail.service.MailService;
 import member.bean.MemberDTO;
 import member.service.MemberService;
-import user.bean.UserDTO;
+
 
 @Controller
 @RequestMapping(value="member")

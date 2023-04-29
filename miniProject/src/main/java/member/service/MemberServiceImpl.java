@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import member.bean.MemberDTO;
 import member.dao.MemberDAO;
-import user.bean.UserDTO;
 
 @Service
 public class MemberServiceImpl implements MemberService {

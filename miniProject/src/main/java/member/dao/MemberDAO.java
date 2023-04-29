@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import member.bean.MemberDTO;
-import user.bean.UserDTO;
+
 
 public interface MemberDAO {
 

@@ -156,7 +156,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="email
 </head>
 <body>
    <div id="main-logo">
-      <a href="javascript:history.back()"><img src="../img/logo.png" alt="youtube">
+      <a href="javascript:history.back()"><img src="/miniProject/img/logo.png" alt="youtube">
       </a>
    </div>
    <header>

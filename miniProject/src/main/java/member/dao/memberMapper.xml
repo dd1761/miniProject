@@ -29,7 +29,6 @@
  	
  	<select id="loginOk" parameterType="Int" resultType="member">
  		select * from User where user_id=#{user_id}
-
  	</select>
  	
  	<insert id="insertMember" parameterType="java.util.Map">
@@ -44,12 +43,12 @@
  		update User set password=#{password} where email=#{email}
  	</update>
  	
- 	<select id="getAccount" parameterType="int" resultType="user.bean.UserDTO">
+ 	<select id="getAccount" parameterType="int" resultType="member">
  		select * from User where user_id=#{user_id}
  	</select>
  	
  	<update id="updateAccount" parameterType="java.util.Map">
- 		update User set name=#{name}, password=#{password}, profile_url=#{profile_url}, year=#{year}, gender=#{gender}, phone=#{phone} where email=#{email}
+ 		update User set name=#{name}, password=#{password}, year=#{year}, gender=#{gender}, phone=#{phone} where email=#{email}
  	</update>
  	
  	<select id="getDeleteMember" parameterType="java.util.Map" resultType="member">
@@ -67,7 +66,5 @@
  	<select id="getChannelMember" parameterType="String" resultType="member">
  		select * from User where email=#{email}
  	</select>
- 	
- 	
  		
  </mapper>

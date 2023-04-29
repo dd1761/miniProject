@@ -36,9 +36,6 @@
 	<context:component-scan base-package="member.dao" />
 	<context:component-scan base-package="member.service" />
 	
-	<!-- user -->
-	<context:component-scan base-package="user.dao" />
-	<context:component-scan base-package="user.bean" />
 	
 	<!-- video -->
 	<context:component-scan base-package="video.bean" />
@@ -55,6 +52,8 @@
 	<context:component-scan base-package="like.dao" />
 	<context:component-scan base-package="like.service" />
 	
+	<!-- user -->
+	<context:component-scan base-package="user.bean" />
 	
 	
 	<!-- 이메일 인증 관련 빈 등록 -->
