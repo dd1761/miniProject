@@ -13,7 +13,7 @@ $(function(){
 
 	            if($('#channel_id').val()==data.channel_id) {
 	            	$('.write').css('display', 'block');
-	            	$('.profile-img').attr('src', data.channel_profile_url);
+	            	$('.profile-img').attr('src', '/miniProject/storage/'+data.profile_url);
 	            	$('.subject').text(data.channel_name);
 	            }
 			},
@@ -35,7 +35,7 @@ $(function(){
                     <div id='box-left'>
                       <div class="channel-profile">
                         <!-- null 이면 기본이미지인 p.jpg -->
-                        <img src="${data[0].thumnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}" alt="Profile Picture">
+                        <img src="${data[0].profile_url ? '/miniProject/storage/' + data[0].profile_url : '/miniProject/img/p.jpg'}" alt="Profile Picture">
                       </div>
                     </div>
                     <div id='box-center'>
@@ -162,7 +162,7 @@ $(function(){
                              text: items.upload_date})).append(channel_profile_url).append(board_text).append(dropBox);
                 
                 
-                $('.profile_img').attr('src', items.channel_profile_url);
+                $('.profile_img').attr('src', '/miniProject/storage/'+items.profile_url);
                 
 //                로그인 안했을 때나, 자신의 채널이 아닐 때, 수정 삭제 막기 
                 if($('#user_id').val()=='' || $('#user_id').val() != data[0].user_id) {

@@ -38,4 +38,3 @@ pageEncoding="UTF-8"%>
   <%--내 js --%>
 <script type="text/javascript" src = "/miniProject/js/history.js"></script>
 </html>
-

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 public class HistoryDTO {
 	/*private int video_id;*/
-	// Video Å×ÀÌºí Ä®·³
+	// Video í…Œì´ë¸” ì¹¼ëŸ¼
 	private String video_title;
 	private String video_description;
 	private LocalDateTime upload_date;
@@ -18,13 +18,13 @@ public class HistoryDTO {
 	private String thumnail_url;
 	private int views;
 	
-	// History Å×ÀÌºí Ä®·³ 
+	// History í…Œì´ë¸” ì¹¼ëŸ¼ 
 	private int history_id;
 	private int user_id;
 	private int video_id;
 	private LocalDateTime watch_date;
 	
-	// Channel Å×ÀÌºí Ä®·³
+	// Channel í…Œì´ë¸” ì¹¼ëŸ¼
 
 	private String channel_name;
 	private String channel_profile_url;

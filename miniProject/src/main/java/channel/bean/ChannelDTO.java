@@ -23,4 +23,5 @@ public class ChannelDTO {
 	private String channel_name;
 	private String channel_description;
 	private int subscriber_count;
+	private String profile_url;
 }
