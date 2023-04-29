@@ -142,7 +142,7 @@ $(function(){
 		success: function(data){
 			console.log(data);
 			$.each(data, function(index, items){
-				let channel = '<a href="/miniProject/channel/main?channel_id=' + items.channel_id + '"><img src="' + items.channel_profile_url + '" id="channel"><p>' + items.channel_name + '</p></a>';
+				let channel = '<a href="/miniProject/channel/main?channel_id=' + items.channel_id + '"><img src="' + (items.profile_url ? '/miniProject/storage/' + items.profile_url : '/miniProject/img/p.jpg') + '" id="channel"><p>' + items.channel_name + '</p></a>';
 				$('.subscribed-list').append(channel);
 			});
 		},

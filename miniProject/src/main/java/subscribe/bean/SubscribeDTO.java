@@ -17,4 +17,6 @@ public class SubscribeDTO {
 	
 	private String channel_profile_url;
 	private String channel_banner_url;
+	
+	private String profile_url;
 }
