@@ -38,7 +38,7 @@
 			<img src="/miniProject/image/notification.png" id="noti">
 
 
-			<img src="/miniProject/image/dongbeen.jpg" id="user-icon" class="user-icon">
+			<!-- <img src="/miniProject/image/dongbeen.jpg" id="user-icon" class="user-icon"> -->
 
 			
 			
@@ -62,16 +62,16 @@
                <div id="nav-main">
                   <div id="nav-top">
 					  <li id="mychannel_1"><img src="/miniProject/image/mychannel.png">내 채널</li>
-                     <li id="mystudio"><img src="/miniProject/image/youtube-studio.png"><a href="/miniProject/channel/youtubestudio">유튜브 스튜디오</a></li>
+                     <li id="mystudio"><img src="/miniProject/image/youtubestudio.png"><a href="/miniProject/channel/youtubestudio">유튜브 스튜디오</a></li>
 
                      <li id="logout"><img src="/miniProject/image/logout.png"><a href="#">로그아웃</a></li>
                   </div> <!-- nav-top -->
-                  <div id="nav-bottom">
+                  <!-- <div id="nav-bottom">
                      <li><img src="/miniProject/image/designtema.png"
                            id="designtema"><a href="#">디자인: 기기 테마</a></li>
                         <li><img src="/miniProject/image/setting.png"
                            id="setting"><a href="#">설정</a></li>
-                  </div> <!-- nav-bottom -->
+                  </div> nav-bottom -->
                </div><!-- nav-main -->
             </ul> <!-- menu -->
          </div> <!-- menu-container -->

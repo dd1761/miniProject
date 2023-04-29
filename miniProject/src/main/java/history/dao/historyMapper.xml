@@ -6,6 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!--비디오 -->
 	<select id="getVideoHistory" parameterType="java.util.Map" resultType="history.bean.HistoryDTO">
+<!--
 		SELECT v.*, h.*, c.channel_name, c.channel_profile_url
 		FROM (
 		SELECT ROW_NUMBER() OVER () AS rnum, h.video_id
@@ -18,6 +19,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		JOIN Channel c ON v.channel_id = c.channel_id
 		WHERE rnum BETWEEN #{start} AND #{start} + #{count} - 1 AND h.user_id =  #{user_id}
 		ORDER by watch_date desc
+-->
+
+
+		SELECT v.*, h.*,c.channel_name, c.channel_profile_url
+		FROM (
+		SELECT ROW_NUMBER() OVER () AS rnum, h.video_id
+		FROM History h
+		WHERE user_id = 12
+		ORDER BY h.history_id DESC
+		) AS numbered
+		JOIN Video v ON numbered.video_id = v.video_id
+		JOIN History h ON numbered.video_id = h.video_id
+		JOIN Channel c ON v.channel_id = c.channel_id
+		WHERE rnum BETWEEN #{start} AND #{start} + #{count} - 1 AND h.user_id =  #{user_id}
+		ORDER by watch_date desc
+
 	</select>
 
 	<!--히스토리 기록 저장 -->

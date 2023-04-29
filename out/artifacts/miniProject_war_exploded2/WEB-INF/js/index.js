@@ -76,9 +76,10 @@ $(function() {
 	        // a 요소를 생성합니다.
 	        var link = $('<a>', {href: '/miniProject/video/main?video_id=' + items.video_id});
 	        // img 요소를 생성합니다.
-	        var thumbnail = $('<img>', {class: 'thumbnail', src: items.thumnail_url});
+	        var thumbnail = $('<img>', {class: 'thumbnail', src: '/miniProject/storage/'+items.thumnail_url, width: '300px', height: '200px'});
+
 	        // img 요소를 생성합니다.
-	        var channelProfile = $('<img>', {src: items.profile_url, id: 'channel'});
+	        var channelProfile = $('<img>', {src: '/miniProject/storage/'+items.profile_url, id: 'channel'});
 	        // div 요소를 생성합니다.
 	        var flexDiv = $('<div>', {class: 'flex-div'});
 	        // div 요소를 생성합니다.
@@ -89,6 +90,9 @@ $(function() {
 	        var channelName = $('<p>', {text: items.channel_name});
 	        // p 요소를 생성합니다.
 	        var views = $('<p>', {text: '조회수 ' + items.views + ' • ' + formattedDate});
+	        
+	        
+	        
 
 	        // 생성한 요소들을 조합합니다.
 	        link.append(thumbnail);
@@ -237,6 +241,7 @@ $('#account-management').click(function(){
 	location.href='/miniProject/member/account?user_id=' + $('input[name="user_id"]').val();
 });
 
+
 /*프로필 이미지*/
 $(function(){
 	$.ajax({
@@ -245,16 +250,16 @@ $(function(){
         data: 'user_id=' + $('#user_id').val(),
         success: function(data){
 			if(data.profile_url == null) {
-				$('#user-icon').attr("src", './img/p.jpg');
+				$('#user-icon').attr("src", '/miniProject/img/p.jpg');
 			}else {
-				$('#user-icon').attr("src", './storage/' + data.profile_url);
+				$('#user-icon').attr("src", '/miniProject/storage/' + data.profile_url);
 			}
 		},
         error: function(err){
             console.log(err);
         }
 	});
-});
+})
 
 
 /* 내 채널을 클릭했을떄*/

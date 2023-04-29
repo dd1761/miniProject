@@ -68,6 +68,7 @@ $(function(){
                     // 하위 테이블 생성
                     var videos = videoHistoryByDate[watchDate];
                     for (var i = 0; i < videos.length; i++) {
+
                         var channel_name = videos[i].channel_name;
                         var channel_profile_url = videos[i].channel_profile_url;
                         var video_title = videos[i].video_title;
@@ -75,11 +76,11 @@ $(function(){
                         var upload_date = videos[i].upload_date;
                         var channel_id = videos[i].channel_id;
                         var video_url = videos[i].video_url;
-                        var thumbnail_url = videos[i].thumbnail_url;
+                        var thumnail_url = videos[i].thumnail_url;
                         var views = videos[i].views;
                         var watch_date = videos[i].watch_date;
                         var video_id = videos[i].video_id;
-
+                        console.log(thumnail_url)
                         // 썸네일 클릭 시 실행될 함수
 
 
@@ -89,7 +90,7 @@ $(function(){
                         row += '<div class="thumbnail-container thumbnail-container_' + i+ '">';
                         row += '<div class="close-button"></div>';
                         row += '<div class="thumbnail">';
-                        row += '<img src="' + thumbnail_url + '" alt="영상 섬네일" />';
+                        row += `<img src="/miniProject/storage/${thumnail_url}" alt="영상 섬네일" />`;
                         row += '<div class="play-button"></div>';
                         row += '</div> ';
                         row += '<div class="info">';

@@ -38,7 +38,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE Video.video_id = #{video_id}
 		ORDER BY comment_date DESC-->
 
+<!--
 		SELECT Video.*,
+	   (SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
+	   Comment.comment_text, Comment.upload_date AS comment_date, Comment.comment_id ,
+	   (SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
+	   Channel.channel_name,
+	   (SELECT COUNT(*) FROM Subscription WHERE channel_id = Channel.channel_id) AS subscriber_count,
+	   CASE WHEN EXISTS (SELECT * FROM Subscription WHERE user_id = #{user_id} AND channel_id = Channel.channel_id) THEN 1 ELSE 0 END AS is_subscribed,
+	   User.name as commenter_name, User.profile_url,
+	   (SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id AND user_id = #{user_id}) AS user_like_count,
+	   CASE WHEN EXISTS (SELECT * FROM Like_count WHERE video_id = Video.video_id AND user_id = #{user_id}) THEN 1 ELSE 0 END AS user_liked_video
+	FROM Video
+	LEFT JOIN Comment ON Video.video_id = Comment.video_id
+	LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
+	LEFT JOIN User ON Comment.user_id = User.user_id
+	WHERE Video.video_id = #{video_id}
+	ORDER BY comment_date DESC;
+
+
+
 		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
 		Comment.comment_text, Comment.upload_date AS comment_date, Comment.comment_id ,
 		(SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
@@ -53,20 +72,41 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		LEFT JOIN User ON Comment.user_id = User.user_id
 		WHERE Video.video_id = #{video_id}
 		ORDER BY comment_date DESC;
-
+-->
+		SELECT Video.*,
+		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id) AS video_like_count,
+		Comment.comment_text, Comment.upload_date AS comment_date, Comment.comment_id ,
+		(SELECT COUNT(*) FROM Like_count WHERE comment_id = Comment.comment_id) AS comment_like_count,
+		Channel.channel_name,
+		(SELECT COUNT(*) FROM Subscription WHERE channel_id = Channel.channel_id) AS subscriber_count,
+		CASE WHEN EXISTS (SELECT * FROM Subscription WHERE user_id = #{user_id} AND channel_id = Channel.channel_id) THEN 1 ELSE 0 END AS is_subscribed,
+		User.name as commenter_name, User.profile_url,
+		(SELECT COUNT(*) FROM Like_count WHERE video_id = Video.video_id AND user_id = #{user_id}) AS user_like_count,
+		CASE WHEN EXISTS (SELECT * FROM Like_count WHERE video_id = Video.video_id AND user_id = #{user_id}) THEN 1 ELSE 0 END AS user_liked_video
+		FROM Video
+		LEFT JOIN Comment ON Video.video_id = Comment.video_id
+		LEFT JOIN Channel ON Video.channel_id = Channel.channel_id
+		LEFT JOIN User ON Comment.user_id = User.user_id
+		WHERE Video.video_id = #{video_id}
+		ORDER BY comment_date DESC;
 
 
 	</select>
 	
 	<select id="searchVideo" parameterType="java.util.Map" resultType="video.bean.VideoDTO">
 		SELECT *
-    FROM Video
-    INNER JOIN Channel ON Video.channel_id = Channel.channel_id
-    WHERE Video.video_title LIKE '%${video_title}%' OR Channel.channel_name LIKE '%${video_title}%'
+		FROM Video
+		INNER JOIN Channel ON Video.channel_id = Channel.channel_id
+		INNER JOIN User ON Channel.user_id = User.user_id
+		WHERE Video.video_title LIKE '%${video_title}%' OR Channel.channel_name LIKE '%${video_title}%'
+
 	</select>
 	
 	<select id="mainContainerVideo" resultType="video.bean.VideoDTO">
-		select * from Video
+		SELECT *
+		FROM Channel
+		JOIN Video ON Channel.channel_id = Video.channel_id
+		JOIN User ON Channel.user_id = User.user_id;
 	</select>
 
 	<update id="addVideoView" parameterType="int">
