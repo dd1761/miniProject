@@ -62,7 +62,7 @@ $(function(){
 
                 $('#play-video').html(`
                     <video controls autoplay width="1000" height="600">
-                        <source src="/miniProject/videoFileUseByVideoId/${video_id}.mp4" type="video/mp4">
+                        <source src="/miniProject/storage/${video_url}" type="video/mp4">
                     </video>
                     
                     <h3>${video_title}</h3>
@@ -72,9 +72,10 @@ $(function(){
                         <br>
                         ${video_description}
                         <div>
-
-                            <img id="likeVideoBtn" src="/miniProject/image/like.png">${video_like_count}
-
+                			
+                			
+                            <img src="${data[0].user_liked_video ? '/miniProject/image/likeOn.png' : '/miniProject/image/like.png'}" id="${data[0].user_liked_video != 0 ? 'likeVideoON' : 'likeVideoBtn'}">${video_like_count}
+                			
 
                         </div>
                     </div>
@@ -187,31 +188,31 @@ $(function(){
 });
 
 // 비디오 보러 들어왔을 때 비디오 아이디와 유저 아이디의 값을 가지고 좋아요가 있는지 확인하러 가기.
-$(function(){
-	$.ajax({
-		type: 'post',
-		url: '/miniProject/like/getUserLikeInfo',
-		data: {user_id: $('#user_id').val(),
-			   video_id: parseInt($('#video_id').val())
-		},
-		success: function(data){
-			if (data.length > 0) {
-			      // 좋아요 데이터가 있으면
-			      console.log('User liked this video');
-			      $('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
-			      
-			    } else {
-			      // 좋아요 데이터가 없으면
-			      console.log('User did not like this video');
-			      $('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
-			    }
-		},
-		error: function(err){
-			console.log(err);
-			
-		}
-	});
-});
+//$(function(){
+//	$.ajax({
+//		type: 'post',
+//		url: '/miniProject/like/getUserLikeInfo',
+//		data: {user_id: $('#user_id').val(),
+//			   video_id: parseInt($('#video_id').val())
+//		},
+//		success: function(data){
+//			if (data.length > 0) {
+//			      // 좋아요 데이터가 있으면
+//			      console.log('User liked this video');
+//			      $('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
+//			      
+//			    } else {
+//			      // 좋아요 데이터가 없으면
+//			      console.log('User did not like this video');
+//			      $('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
+//			    }
+//		},
+//		error: function(err){
+//			console.log(err);
+//			
+//		}
+//	});
+//});
 
 
 $(document).on('click', '#likeVideoBtn', () => {
@@ -225,7 +226,7 @@ $(document).on('click', '#likeVideoBtn', () => {
 			},
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#likeVideoBtn').attr('id', 'likeVideoON').attr('src', '/miniProject/image/likeOn.png');
 				location.reload();
 			},
@@ -253,7 +254,7 @@ $(document).on('click', '#likeVideoON', () => {
 			},
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#likeVideoON').attr('id', 'likeVideoBtn').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},
@@ -325,7 +326,7 @@ $(document).on('click', '#commentlikedOff', function() {
             data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
             success: function(data) {
                 console.log(data);
-                alert('값이 들어 갔다~');
+//                alert('값이 들어 갔다~');
 //                $('#commentlikedOff').attr('id', 'commentlikedOn').attr('src', '/miniProject/image/likeOn.png');
                 location.reload();
             },
@@ -350,7 +351,7 @@ $(document).on('click', '#commentlikedOn', function() {
 			data: { user_id: $('#user_id').val(), comment_id: commentId }, // commentId를 int형으로 변환해서 보내기
 			success: function(data){
 				console.log(data);
-				alert('값이 들어 갔다~');
+//				alert('값이 들어 갔다~');
 //				$('#commentlikedOn').attr('id', 'commentlikedOff').attr('src', '/miniProject/image/like.png');
 				location.reload();
 			},

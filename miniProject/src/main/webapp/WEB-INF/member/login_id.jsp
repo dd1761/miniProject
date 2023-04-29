@@ -37,8 +37,9 @@
 			</div>
 
 			<ul>
-				<li onclick="kakaoLogin();"><a href="javascript:void(0)"> <img
-						src="../image/kakao_login_medium_wide.png">
+				<li onclick="kakaoLogin();"><a href="javascript:void(0)"> 
+					<!-- <imgsrc="../image/kakao_login_medium_wide.png"> -->
+						<img src="../image/kakaologin.png">
 				</a></li>
 				<li onclick="kakaoLogout();"><a href="javascript:void(0)">
 						<span>카카오 로그아웃</span>

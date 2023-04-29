@@ -61,7 +61,7 @@ $('#updateBtn').click(function(){
     $('#nameDiv').css('color', 'red');
     $('#nameDiv').css('font-size', '12px');
     $('#nameDiv').css('font-weight', 'bold');
-  }else {
+  }else { 
     var formData = new FormData($('#uploadForm')[0]);
     $.ajax({
       type : 'post',
@@ -71,32 +71,31 @@ $('#updateBtn').click(function(){
       contentType : false,
       data : formData,
       success : function(data){
+        $('#profile').attr("src", '../storage/' + data.profile_url);  
+
+        $.ajax({
+          type: 'post',
+            url: '/miniProject/member/updateAccount',
+            data: 'name=' + $('#name').val()
+             +'&email=' + $('#email').val()
+             +'&password=' + $('#password').val()
+             +'&year=' + $('#year').val()
+             +'&gender=' + $('#gender').val()
+             +'&phone=' + $('#phone').val(),
+            success: function(){
+            alert("회원정보 수정완료!");
+            location.reload();
+          },
+            error: function(err){
+              console.log(err);
+            }
+        });
       },
       error: function(err){
-        console.log(err)
-        ;
+        console.log(err);
       }
     });
-    
-    $.ajax({
-      type: 'post',
-        url: '/miniProject/member/updateAccount',
-        data: 'name=' + $('#name').val()
-         +'&email=' + $('#email').val()
-         +'&password=' + $('#password').val()
-         +'&year=' + $('#year').val()
-         +'&gender=' + $('#gender').val()
-         +'&phone=' + $('#phone').val(),
-        success: function(){
-        alert("회원정보 수정완료!");
-        location.reload();
-      },
-        error: function(err){
-          console.log(err);
-        }
-    });
   }
-  
 });
 
 $('#deleteBtn').click(function(){
