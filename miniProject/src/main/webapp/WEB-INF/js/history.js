@@ -2,7 +2,7 @@ const searchInput = document.getElementById('search-input');
 
 searchInput.addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
-  	console.log("enter입력");
+    console.log("enter입력");
 
     const query = searchInput.value;
     window.location.href = `/miniProject/history/main?query=${query}`;
