@@ -13,7 +13,7 @@ $(function(){
 
 	            if($('#channel_id').val()==data.channel_id) {
 	            	$('.write').css('display', 'block');
-	            	$('.profile-img').attr('src', data.channel_profile_url);
+	            	$('.profile-img').attr('src', data.profile_url);
 	            	$('.subject').text(data.channel_name);
 	            }
 			},
@@ -30,12 +30,16 @@ $(function(){
             console.log(JSON.stringify(data));
             console.log(data);
             
+            $('.profile-img').attr('src', '/miniProject/storage/' + data.profile_url);
+            
+            
             var comments = data.length;
             const html = `
                     <div id='box-left'>
                       <div class="channel-profile">
                         <!-- null 이면 기본이미지인 p.jpg -->
-                        <img src="${data[0].thumnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}" alt="Profile Picture">
+                        <img src="${data[0].profile_url ? '/miniProject/storage/' + data[0].profile_url : '/miniProject/img/p.jpg'}" alt="Profile Picture">
+
                       </div>
                     </div>
                     <div id='box-center'>
@@ -66,6 +70,7 @@ $(function(){
             
 
             $.each(data, function(index, items){
+            	$('.profile-img').attr('src', '/miniProject/storage/'+items.profile_url);
             	var article = $('<article/>', {
                     'class': 'article'
                 });
@@ -132,11 +137,12 @@ $(function(){
                 var content_info = $('<div/>').addClass('content-info').css('cursor', 'pointer');
                   
                 var profile_img = $('<img/>', {
-                    'class': 'profile-img'
+                    'class': 'profile-img',
+                    'src': '/miniProject/storage/' + items.profile_url
                 });
                 
                 
-//                var profile_img = $('<img>').addClass('profile-img').attr('src', items.channel_profile_url);
+//                var profile_img = $('<img>').addClass('profile-img').attr('src', items.profile_url);
          dropBox.append(
                 	    $('<ul/>').append(
                 	        $('<li/>').append(
@@ -156,15 +162,16 @@ $(function(){
                 	        )
                 	    )
                 	);
-              var channel_profile_url = $('<img>').attr('value', items.channel_profile_url).css('display', 'none');
+         
+              var profile_url = $('<img>').attr('value', items.profile_url).css('display', 'none');
                 var board_text = $('<input>').attr('type', 'text').attr('value', items.board_text).css('display', 'none');
                 
               head_div.append(profile_img).append(show_more_img).append(subject_p.text(items.channel_name)).
                 		 append($('<span/>', {
-                             text: items.upload_date})).append(channel_profile_url).append(board_text).append(dropBox);
+                             text: items.upload_date})).append(profile_url).append(board_text).append(dropBox);
                 
                 
-                $('.profile_img').attr('src', items.channel_profile_url);
+                
                 
 //                로그인 안했을 때나, 자신의 채널이 아닐 때, 수정 삭제 막기 
                 if($('#user_id').val()=='' || $('#user_id').val() != data[0].user_id) {

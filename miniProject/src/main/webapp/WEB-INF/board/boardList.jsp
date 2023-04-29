@@ -24,7 +24,7 @@
 			<section>
 				<article>
 					<div class="write_head">
-						<img src="" class="profile-img">
+						<img src="" class="profile-img" id="channel_profile">
 						<p class="subject"></p>
 						<span>공개 상태 공개</span>
 					</div>

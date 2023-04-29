@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		b.board_text,
 		b.upload_date,
 		ch.channel_profile_url,
-		u.user_id,
+		u.*,
 		b.board_id,
 		ch.channel_id,
 		ch.channel_description,

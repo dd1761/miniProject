@@ -33,7 +33,7 @@
 			<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 			<script type="text/javascript" src="/miniProject/js/loginOk.js"></script>
 		
-			<img src="/miniProject/image/upload.png">
+			<img src="/miniProject/image/upload.png" onclick="location.href='/miniProject/channel/youtubestudio'">
 			<img src="/miniProject/image/more.png">
 			<img src="/miniProject/image/notification.png" id="noti">
 
