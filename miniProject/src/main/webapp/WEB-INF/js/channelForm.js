@@ -31,7 +31,7 @@ $(function(){
                 var videos = data;
 
                 var template = '<div class="video">' +
-                    '<iframe width="250" height="150" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>' +
+                    '<img src="" alt="영상 섬네일" style="width: 300px; height: 200px;"/>' +
                     '<div class="video-info">' +
                     '<h2></h2>' +
                     '<p></p>' +
@@ -50,8 +50,8 @@ $(function(){
                     var $newVideo = $(template); //새로운 video element 생성
 
                     // video_id와 channel_id를 이용해 iframe src 설정
-                    var src = "https://www.youtube.com/embed/" + video.video_id + "?rel=0";
-                    $newVideo.find("iframe").attr("src", src);
+                    var src = "/miniProject/storage/"+video.thumnail_url;
+                    $newVideo.find("img").attr("src", src);
 
                     // 제목 설정
                     $newVideo.find("h2").html("<a href='/miniProject/video/main?video_id="+video.video_id+"'>"+video.video_title+"</a>");
@@ -72,16 +72,13 @@ $(function(){
                               <div class="channel-profile">
                                 <!-- null 이면 기본이미지인 p.jpg -->
                                 <img src="${data[0].profile_url ? '/miniProject/storage/' + data[0].profile_url : '/miniProject/img/p.jpg'}" alt="Profile Picture">
-
                               </div>
                             </div>
                             <div id='box-center'>
                               <div class="channel-details">
                                 <h1>&nbsp${data[0].channel_name}</h1>
                                 <p>&nbsp구독자 ${data[0].subscriber_count}명 동영상 ${comments}개</p>
-                                <p>
-                                  <a href="#">&nbsp${data[0].channel_description}</a>
-                                </p>
+                                
                               </div>
                             </div>
                             <div id='box-right'>
@@ -90,7 +87,6 @@ $(function(){
                                 <button id="${data[0].is_subscribed !=0 ? 'dissubBtn' : 'subBtn'}">
                                   ${data[0].is_subscribed !=0 ? '구독중' : '구독'}
                                 </button>
-
                               </div>
                             </div>
                             <!--히든-->
