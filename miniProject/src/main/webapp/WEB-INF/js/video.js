@@ -84,7 +84,7 @@ $(function(){
                         
                         <a href="/miniProject/channel/main?channel_id=${channel_id}">
                         <!--null 이면 기본이미지-->
-                        <img src="${data[0].thumbnail_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
+                        <img src="${data[0].profile_url ? '/miniProject/storage/' + profile_url : '/miniProject/img/p.jpg'}">
                         
                         </a>
                         <div>
@@ -114,7 +114,7 @@ $(function(){
                            <div id="comment">
                               <div id="img">
                                  <!--null 이면 기본이미지-->
-                                 <img src="${data[0].user_profile_url ? '/miniProject/img/p.jpg' : '/miniProject/img/p.jpg'}">
+                                 <img src="${data[0].profile_url ? '/miniProject/storage/' + profile_url : '/miniProject/img/p.jpg'}">
                               </div>
                               <div id="addcomment">
                                  <div id="up">
