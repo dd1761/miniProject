@@ -327,7 +327,7 @@ scale
 
 	<!-- filter -->
 	<div id="filter">
-		<img src="/miniProject/image/filter.png" alt="필터"> <input
+		<img src="/miniProject/image/hi.png" alt="필터"> <input
 			type="text" id="filterInput" placeholder="필터">
 	</div>
 	<!-- filter end -->
@@ -354,10 +354,10 @@ scale
 	
 
 	<div id="contents">
-		<img src="/miniProject/image/noncontents2.png" alt="배경 이미지">
+		<img src="/miniProject/image/picture.png" alt="배경 이미지">
 	<button id="open">동영상 업로드</button>
 	</div>
-
+<!-- gd -->
 
 	<script type="text/javascript"
 		src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
