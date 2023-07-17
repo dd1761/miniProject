@@ -61,3 +61,5 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 - Pigma
 
+### 개인별 기능 구현 내용
+
