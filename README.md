@@ -1,16 +1,3 @@
----
-layout: single
-title: "[Spring] 유튜브 클론코딩"
-excerpt: "[Spring] 유튜브 클론코딩"
-categories:
-  - Blog
-
-toc: ture
-toc_sticky: true
----
-
-<!-- 위는 머릿말임 아래부터 포스트 본문 -->
-
 ## **Project overview**
 
 2주간의 미니프로젝트 주제를 고르면서
