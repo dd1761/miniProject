@@ -55,7 +55,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 - Pigma
 
-## 개인별 기능 구현 사항
+## 개인역할별 기능 구현 사항
 - [권용준](https://github.com/kwonyongjun9978)
 
    1. Pigma 설계
@@ -76,13 +76,22 @@ https://www.youtube.com/embed/Uop4cV5By24
    3. 회원가입 기능(+이메일 인증)
  
       ![2.png](assets/images/Youtube/2.png) ![3.png](assets/images/Youtube/3.png)
+      
       페이지마다 Form 태그로 input데이터를 submit 한 후 controller에서 map으로 담아 다음페이지로 넘겨준다.
 그리고 다음페이지에 map으로 담은 데이터를 뿌려준 후 다시 Form 태그로 input 데이터(전 페이지의 데이터포함)를 submit 한 후 controller에서 map으로 담아 다음페이지에 뿌려준다(이 과정 계속 반복)
       그렇게 마지막 페이지(비밀번호 입력 창)에서 모든 데이터 넘겨받은 후 ajax를 써서 모든 데이터를 DB에 insert 한다.
 
       cf) Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동
 
-   4. Email 찾기 기능
+   5. Email 찾기 기능
+ 
+      Email을 입력하는 로그인 화면에서 “이메일을 잊으셧나요?” 클릭 후 진행
+      
+      이름을 입력하면 입력 받은 이름값을 가지고 DB로 가서 select를 진행 한 후 DB에 등록되어 있는 이름인지 확인한 후 DTO값을 return 받아서 이름값을 다음페이지로 넘겨준다.
+다음페이지(주민번호입력)에서 입력 받은 주민번호와 전 페이지에서 넘겨받은 이름값을 가지고 DB에 가서 select를 진행한후 DB에 해당 이름과 주민번호가 일치하는 데이터가 있으면 DTO로 return받아서 name값을 다음페이지로 넘겨준다.
+넘겨받은 name값을 가지고 DB로 가서 select를 진행한후 DTO로 return받아서 email데이터를 동적처리를 사용해서 화면에 뿌려줍니다.
+
+      cf) 이메일 확인창에서 해당 Email을 클릭하면 Password를 입력하는 로그인 화면으로 이동
 
       
 - [강성욱](https://github.com/ksqrt)
