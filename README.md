@@ -62,7 +62,7 @@ toc_sticky: true
 - Mybatis
 - JDBC
 - MySQL
-- Docker
+- Spring
 
 ### 협업도구
 
