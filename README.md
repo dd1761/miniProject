@@ -95,6 +95,15 @@ https://www.youtube.com/embed/Uop4cV5By24
 
       cf) 이메일 확인창에서 해당 Email을 클릭하면 Password를 입력하는 로그인 화면으로 이동
 
+   5. Password 찾기 기능
+
+      ![5.png](assets/images/Youtube/5.png)
+
+      Password를 입력하는 로그인 화면에서 좌측 하단의 “비밀번호 찾기“ 클릭 후 진행
+
+
+      
+
       
 - [강성욱](https://github.com/ksqrt)
   
