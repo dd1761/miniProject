@@ -83,7 +83,9 @@ https://www.youtube.com/embed/Uop4cV5By24
 
       cf) Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동
 
-   5. Email 찾기 기능
+   4. Email 찾기 기능
+ 
+      ![4.png](assets/images/Youtube/4.png)
  
       Email을 입력하는 로그인 화면에서 “이메일을 잊으셧나요?” 클릭 후 진행
       
