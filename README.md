@@ -134,12 +134,6 @@ https://www.youtube.com/embed/Uop4cV5By24
    
 
 
-      
-
-
-      
-
-      
 - [강성욱](https://github.com/ksqrt)
   
    1. DB 설계
