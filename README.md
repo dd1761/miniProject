@@ -61,7 +61,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 - Pigma
 
-### 개인별 기능 구현 사항
+## 개인별 기능 구현 사항
 - 권용준 :
 - 강성욱 :
 - 김동빈 :
