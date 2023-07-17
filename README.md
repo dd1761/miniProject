@@ -56,11 +56,9 @@ https://www.youtube.com/embed/Uop4cV5By24
 - git
 - github
 - Notion
-- Discord
 
 ### 개발보조도구
 
-- ChatGPT
 - Pigma
 
 ## 구현한 사항
