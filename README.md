@@ -63,7 +63,8 @@ https://www.youtube.com/embed/Uop4cV5By24
       각 페이지별 기능과 특성을 정리해놓은 피그마입니다.
       
       [https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0](https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0)
-   
+
+
    2. 로그인 기능
         
       ![1.png](assets/images/Youtube/1.png)
@@ -72,6 +73,7 @@ https://www.youtube.com/embed/Uop4cV5By24
    Password를 입력하는 로그인 창에서는 넘겨받은 email과 입력 받은 password를 가지고 DB에 가서 select를 진행한후 DTO로 값이 넘어오면 user_id라는 session값이 생성되면서 메인페이지로 이동을 합니다.
    
       cf) Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 email데이터를 가지고 DB에서 select를 진행 후 DTO로 값을 넘겨받아서 이름값과 프로필 사진, email값을 화면에 뿌려준다.
+
 
    3. 회원가입 기능(+이메일 인증)
  
@@ -82,6 +84,7 @@ https://www.youtube.com/embed/Uop4cV5By24
       그렇게 마지막 페이지(비밀번호 입력 창)에서 모든 데이터 넘겨받은 후 ajax를 써서 모든 데이터를 DB에 insert 한다.
 
       cf) Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동
+
 
    4. Email 찾기 기능
  
@@ -95,11 +98,39 @@ https://www.youtube.com/embed/Uop4cV5By24
 
       cf) 이메일 확인창에서 해당 Email을 클릭하면 Password를 입력하는 로그인 화면으로 이동
 
-   5. Password 찾기 기능
+
+   5. Password 찾기 기능(+이메일 인증)
 
       ![5.png](assets/images/Youtube/5.png)
 
       Password를 입력하는 로그인 화면에서 좌측 하단의 “비밀번호 찾기“ 클릭 후 진행
+
+
+   6. 회원정보 수정 기능
+
+      ![6.png](assets/images/Youtube/6.png)
+
+      메인 페이지에서 계정 관리 클릭 후 진행
+
+      “user_id”라는 session값으로  DB에서 데이터를 select한 후 DTO에 담아서 회원정보 수정창에 뿌려준다.
+      
+      프로필 사진 등록, 비밀번호, 이름, 생년월일, 성별, 휴대전화번호 변경 가능
+      
+      Email은 변경X(readonly)
+
+
+   7. 회원탈퇴 기능
+
+      ![7.png](assets/images/Youtube/7.png)
+
+      회원정보 수정창에서 회원탈퇴 버튼 클릭 후 진행
+
+      비밀번호를 입력한 후 회원탈퇴 진행 
+
+   
+
+
+      
 
 
       
