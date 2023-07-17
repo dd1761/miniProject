@@ -28,12 +28,6 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 2023.04.17 ~ 2023.05.01
 
-## 피그마
-
-각 페이지별 기능과 특성을 정리해놓은 피그마입니다.
-
-[https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0](https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0)
-
 ## 기술스택
 
 ### 프론트엔드
@@ -63,7 +57,14 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 ## 개인별 기능 구현 사항
 - [권용준](https://github.com/kwonyongjun9978)
+
+1. 피그마
+
+각 페이지별 기능과 특성을 정리해놓은 피그마입니다.
+
+[https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0](https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0)
 - [강성욱](https://github.com/ksqrt)
+  
 1. DB 설계
 
    프로젝트를 위해 철저한 분석과 계획을 거쳐 데이터베이스의 구조와 관계를 결정하고, 이를 시각적으로 표현하는 DB 설계를 완료했습니다. 이를 통해 미니프로젝트의 데이터 관리와 처리, 그리고 안정적인 시스템 운영을 지원할 수 있도록 하였습니다.
