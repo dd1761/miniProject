@@ -113,7 +113,7 @@ https://www.youtube.com/embed/Uop4cV5By24
       ![Untitled6.png](assets/images/Youtube/Untitled6.png)
 
    2. 시청 기록 삭제: 유튜브의 시청 기록에서는 사용자가 시청한 동영상 목록이 저장되어 있습니다. 사용자는 이를 삭제할 수 있어서 다른 사람이 자신의 시청 기 록을 보지 못하도록 할 수 있습니다. 이때 호버링시 X 표시가 보이며 누를시 삭제됩니다.
-> - [김동빈]
-> - [이지현]
-> - [송성근]
+> - [김동빈](https://github.com/dd1761)
+> - [이지현](https://github.com/jihyunah)
+> - [송성근](https://github.com/gkdltjdrms)
 
