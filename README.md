@@ -65,7 +65,7 @@ https://www.youtube.com/embed/Uop4cV5By24
       [https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0](https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0)
 
 
-   2. 로그인 기능
+   2. 로그인 기능 구현
         
       ![1.png](assets/images/Youtube/1.png)
    
@@ -75,7 +75,7 @@ https://www.youtube.com/embed/Uop4cV5By24
       cf) Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 email데이터를 가지고 DB에서 select를 진행 후 DTO로 값을 넘겨받아서 이름값과 프로필 사진, email값을 화면에 뿌려준다.
 
 
-   3. 회원가입 기능(+이메일 인증)
+   3. 회원가입 기능(+이메일 인증) 구현
  
       ![2.png](assets/images/Youtube/2.png) ![3.png](assets/images/Youtube/3.png)
       
@@ -86,7 +86,7 @@ https://www.youtube.com/embed/Uop4cV5By24
       cf) Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동
 
 
-   4. Email 찾기 기능
+   4. Email 찾기 기능 구현
  
       ![4.png](assets/images/Youtube/4.png)
  
@@ -99,14 +99,14 @@ https://www.youtube.com/embed/Uop4cV5By24
       cf) 이메일 확인창에서 해당 Email을 클릭하면 Password를 입력하는 로그인 화면으로 이동
 
 
-   5. Password 찾기 기능(+이메일 인증)
+   5. Password 찾기 기능(+이메일 인증) 구현
 
       ![5.png](assets/images/Youtube/5.png)
 
       Password를 입력하는 로그인 화면에서 좌측 하단의 “비밀번호 찾기“ 클릭 후 진행
 
 
-   6. 회원정보 수정 기능
+   6. 회원정보 수정 기능 구현
 
       ![6.png](assets/images/Youtube/6.png)
 
@@ -119,13 +119,17 @@ https://www.youtube.com/embed/Uop4cV5By24
       Email은 변경X(readonly)
 
 
-   7. 회원탈퇴 기능
+   7. 회원탈퇴 기능 구현
 
       ![7.png](assets/images/Youtube/7.png)
 
       회원정보 수정창에서 회원탈퇴 버튼 클릭 후 진행
 
-      비밀번호를 입력한 후 회원탈퇴 진행 
+      비밀번호를 입력한 후 회원탈퇴 진행
+
+   8. 이미지 업로드 기능 구현
+
+      프로필 사진 및 썸네일 등록, 변경이 가능하다
 
    
 
