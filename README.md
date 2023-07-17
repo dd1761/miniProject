@@ -55,7 +55,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 - Pigma
 
-## 개인역할별 기능 구현 사항
+## 개인 역할별 기능 구현 사항
 - [권용준](https://github.com/kwonyongjun9978)
 
    1. Pigma 설계
