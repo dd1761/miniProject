@@ -58,11 +58,14 @@ https://www.youtube.com/embed/Uop4cV5By24
 ## 개인별 기능 구현 사항
 - [권용준](https://github.com/kwonyongjun9978)
 
-1. 피그마
+1. Pigma 설계
 
-각 페이지별 기능과 특성을 정리해놓은 피그마입니다.
+   각 페이지별 기능과 특성을 정리해놓은 피그마입니다.
+   
+   [https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0](https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0)
 
-[https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0](https://www.figma.com/file/I4QHHICr4rTxX3Mioc4Z4c/minProject?type=design&node-id=0-1&t=oqo07FQJ0Vughpze-0)
+
+   
 - [강성욱](https://github.com/ksqrt)
   
 1. DB 설계
