@@ -66,21 +66,25 @@ https://www.youtube.com/embed/Uop4cV5By24
    
    2. 로그인 기능
         
-      ![Untitled.png](assets/images/Youtube/1.png)
+      ![1.png](assets/images/Youtube/1.png)
    
       입력 받은 email값을 가지고 DB로 가서 select후 일치하는 email이 있을 경우 DTO에 담아 return한 후 입력 받은 email값을 다음페이지(Controller에서 Model을 사용) 로 넘겨준다.
    Password를 입력하는 로그인 창에서는 넘겨받은 email과 입력 받은 password를 가지고 DB에 가서 select를 진행한후 DTO로 값이 넘어오면 user_id라는 session값이 생성되면서 메인페이지로 이동을 합니다.
    
       cf) Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 email데이터를 가지고 DB에서 select를 진행 후 DTO로 값을 넘겨받아서 이름값과 프로필 사진, email값을 화면에 뿌려준다.
 
-   3. 회원가입 기능
-
+   3. 회원가입 기능(+이메일 인증)
+ 
+      ![2.png](assets/images/Youtube/2.png) ![3.png](assets/images/Youtube/3.png)
       페이지마다 Form 태그로 input데이터를 submit 한 후 controller에서 map으로 담아 다음페이지로 넘겨준다.
 그리고 다음페이지에 map으로 담은 데이터를 뿌려준 후 다시 Form 태그로 input 데이터(전 페이지의 데이터포함)를 submit 한 후 controller에서 map으로 담아 다음페이지에 뿌려준다(이 과정 계속 반복)
       그렇게 마지막 페이지(비밀번호 입력 창)에서 모든 데이터 넘겨받은 후 ajax를 써서 모든 데이터를 DB에 insert 한다.
 
       cf) Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동
-   
+
+   4. Email 찾기 기능
+
+      
 - [강성욱](https://github.com/ksqrt)
   
    1. DB 설계
