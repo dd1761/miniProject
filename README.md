@@ -31,7 +31,9 @@
       <sub><b>팀장: 김동빈</b></sub>
     </td>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/87400924?v=4" width="100px" alt="hyunjuchoi" /><br />
+       <a href="https://github.com/ksqrt">
+         <img src="https://avatars.githubusercontent.com/u/87400924?v=4" width="100px" alt="hyunjuchoi" />
+       </a><br />
       <sub><b>팀원: 강성욱</b></sub>
     </td>
     <td align="center">
