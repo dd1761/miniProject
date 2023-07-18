@@ -119,7 +119,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 
    5. Password 찾기 기능(+이메일 인증) 구현
 
-      ![5.png](assets/images/Youtube/5.png)
+      ![8.png](assets/images/Youtube/8.png)
 
       Password를 입력하는 로그인 화면에서 좌측 하단의 “비밀번호 찾기“ 클릭 후 진행
       
