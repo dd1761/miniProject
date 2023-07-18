@@ -20,6 +20,33 @@
 
 하지만 완전히 똑같은 기능의 유튜브 가 아닌 기존 유튜브에 부족한 부분의 여러가지 기능을 추가하거나 변경 하고자 노력 하였습니다.
 
+## 팀원
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/97274814?v=4" width="100px" alt="kimdongbeen" /><br />
+      <sub><b>팀장: 김동빈</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/87400924?v=4" width="100px" alt="hyunjuchoi" /><br />
+      <sub><b>팀원: 강성욱</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/121778189?v=4" width="100px" alt="jihyekim" /><br />
+      <sub><b>팀원: 권용준</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/121652350?v=4" width="100px" alt="dodamchoi" /><br />
+      <sub><b>팀원: 이지현</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://avatars.githubusercontent.com/u/121652277?v=4" width="100px" alt="sohunlee" /><br />
+      <sub><b>팀원: 송성근</b></sub>
+    </td>
+  </tr>
+</table>
+
 ## 시연영상
 
 https://www.youtube.com/embed/Uop4cV5By24
