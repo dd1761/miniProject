@@ -243,21 +243,16 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 Video 페이지는 동영상을 시청하는 데 중요한 기능을 많이 제공합니다. 기능은 다음과 같습니다.
 
-![Video Page](assets/images/Youtube/Untitled1.png)
-
 1. 동영상 플레이어(동빈, 성욱): Video 페이지의 핵심 기능은 동영상을 시청할 수 있는 플레이어입니다. 플레이어는 영상을 재생, 일시 중지, 전체 화면 모드, 볼륨 조절 등 다양한 기능을 제공합니다.
-
-   ![Video Player](assets/images/Youtube/Untitled2.png)
+<img src="assets/images/Youtube/Untitled1.png" alt="index" width="600px">
 
 2. 동영상 정보(동빈, 성욱): 해당 동영상의 정보를 확인할 수 있습니다. 이를 통해 사용자는 해당 동영상의 타이틀, 조회수, 업로드일, 동영상 세부 설명, 동영상의 좋아요 수 등을 알 수 있습니다.
+3. 구독 (성욱) : Video 페이지에서는 해당 비디오를 업로드한 채널을 구독할 수 있습니다. 해당 채널을 구독하면 오른쪽 네비게이션 바에 구독 목록이 활성화됩니다.
+<img src="assets/images/Youtube/Untitled2.png" alt="index" width="800px">
 
-   ![Video Information](assets/images/Youtube/Untitled3.png)
-
-3. 댓글 (성욱) : 사용자는 Video 페이지에서 동영상에 대한 댓글을 작성할 수 있습니다. 이를 통해 사용자는 다른 사람들과 의견을 공유하고, 동영상과 관련된 질문을 하거나 대화를 할 수 있습니다.
-
-4. 좋아요 (동빈) : 사용자는 Video 페이지에서 동영상에 대한 좋아요를 눌러 자신의 의견을 표시할 수 있습니다. 이를 통해 다른 사용자들은 동영상의 평판을 알 수 있습니다.
-
-5. 구독 (성욱) : Video 페이지에서는 해당 비디오를 업로드한 채널을 구독할 수 있습니다. 해당 채널을 구독하면 오른쪽 네비게이션 바에 구독 목록이 활성화됩니다.
+4. 댓글 (성욱) : 사용자는 Video 페이지에서 동영상에 대한 댓글을 작성할 수 있습니다. 이를 통해 사용자는 다른 사람들과 의견을 공유하고, 동영상과 관련된 질문을 하거나 대화를 할 수 있습니다.
+5. 좋아요 (동빈) : 사용자는 Video 페이지에서 동영상에 대한 좋아요를 눌러 자신의 의견을 표시할 수 있습니다. 이를 통해 다른 사용자들은 동영상의 평판을 알 수 있습니다.
+<img src="assets/images/Youtube/Untitled3.png" alt="index" width="300px">
 
 - [이지현](https://github.com/jihyunah)
 - [송성근](https://github.com/gkdltjdrms)
