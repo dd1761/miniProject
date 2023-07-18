@@ -38,7 +38,7 @@
     </td>
     <td align="center">
        <a href="https://github.com/kwonyongjun9978">
-         <img src="https://avatars.githubusercontent.com/u/121778189?v=4" width="100px" alt="jihyekim" />
+         <img src="https://avatars.githubusercontent.com/u/102017821?v=4" width="100px" alt="kwonyongjun" />
        </a><br />
       <sub><b>팀원: 권용준</b></sub>
     </td>
