@@ -75,8 +75,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 - Pigma
 
 ## 개인 역할별 기능 구현 사항
-- [권용준](https://github.com/kwonyongjun9978) (Pigma설계, 로그인, 회원가입, 회원정보수정, 회원탈퇴, Email찾기, Password찾기, 이메일인증, 이미지 업로드)
-
+- [권용준](https://github.com/kwonyongjun9978)
    1. Pigma 설계
    
       각 페이지별 기능과 특성을 정리해놓은 피그마입니다.
