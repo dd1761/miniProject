@@ -90,21 +90,20 @@ https://www.youtube.com/embed/Uop4cV5By24
    
       로그인은 Email을 입력하는 페이지와 Password를 입력하는 페이지를 Google로그인 형식에 맞게 페이지를 따로 분리하여 구현했습니다.
    
-      cf) Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 email데이터를 이름값과 프로필 사진, email값을 화면에 뿌려준다.
+      Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 Email데이터를 이름값과 프로필 사진, Email값을 화면에 뿌려줍니다.
 
 
    3. 회원가입 기능(+이메일 인증) 구현
  
       ![2.png](assets/images/Youtube/2.png) ![3.png](assets/images/Youtube/3.png)
-      
-      페이지마다 Form 태그로 input데이터를 submit 한 후 controller에서 map으로 담아 다음페이지로 넘겨준다.
-그리고 다음페이지에 map으로 담은 데이터를 뿌려준 후 다시 Form 태그로 input 데이터(전 페이지의 데이터포함)를 submit 한 후 controller에서 map으로 담아 다음페이지에 뿌려준다(이 과정 계속 반복)
-      그렇게 마지막 페이지(비밀번호 입력 창)에서 모든 데이터 넘겨받은 후 ajax를 써서 모든 데이터를 DB에 insert 한다.
+ 
+      회원가입을 진행할때 아이디는 기존의 이메일을 사용합니다.
+      이메일 인증 기능을 추가하여 보안성을 강화하였습니다. 
+      주민번호는 Email을 찾는데 사용됩니다.
+      Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동합니다.
 
-      cf) Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동
 
-
-   4. Email 찾기 기능 구현
+   5. Email 찾기 기능 구현
  
       ![4.png](assets/images/Youtube/4.png)
  
@@ -117,14 +116,14 @@ https://www.youtube.com/embed/Uop4cV5By24
       cf) 이메일 확인창에서 해당 Email을 클릭하면 Password를 입력하는 로그인 화면으로 이동
 
 
-   5. Password 찾기 기능(+이메일 인증) 구현
+   6. Password 찾기 기능(+이메일 인증) 구현
 
       ![5.png](assets/images/Youtube/5.png)
 
       Password를 입력하는 로그인 화면에서 좌측 하단의 “비밀번호 찾기“ 클릭 후 진행
 
 
-   6. 회원정보 수정 기능 구현
+   7. 회원정보 수정 기능 구현
 
       ![6.png](assets/images/Youtube/6.png)
 
@@ -137,7 +136,7 @@ https://www.youtube.com/embed/Uop4cV5By24
       Email은 변경X(readonly)
 
 
-   7. 회원탈퇴 기능 구현
+   8. 회원탈퇴 기능 구현
 
       ![7.png](assets/images/Youtube/7.png)
 
@@ -145,7 +144,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 
       비밀번호를 입력한 후 회원탈퇴 진행
 
-   8. 이미지 업로드 기능 구현
+   9. 이미지 업로드 기능 구현
 
       프로필 사진 및 썸네일 등록, 변경이 가능하다
 
