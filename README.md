@@ -88,10 +88,9 @@ https://www.youtube.com/embed/Uop4cV5By24
         
       ![1.png](assets/images/Youtube/1.png)
    
-      입력 받은 email값을 가지고 DB로 가서 select후 일치하는 email이 있을 경우 DTO에 담아 return한 후 입력 받은 email값을 다음페이지(Controller에서 Model을 사용) 로 넘겨준다.
-   Password를 입력하는 로그인 창에서는 넘겨받은 email과 입력 받은 password를 가지고 DB에 가서 select를 진행한후 DTO로 값이 넘어오면 user_id라는 session값이 생성되면서 메인페이지로 이동을 합니다.
+      로그인은 Email을 입력하는 페이지와 Password를 입력하는 페이지를 Google로그인 형식에 맞게 페이지를 따로 분리하여 구현했습니다.
    
-      cf) Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 email데이터를 가지고 DB에서 select를 진행 후 DTO로 값을 넘겨받아서 이름값과 프로필 사진, email값을 화면에 뿌려준다.
+      cf) Password를 입력하는 로그인 창에서 전 페이지에서 넘겨받은 email데이터를 이름값과 프로필 사진, email값을 화면에 뿌려준다.
 
 
    3. 회원가입 기능(+이메일 인증) 구현
