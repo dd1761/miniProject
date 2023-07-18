@@ -37,15 +37,21 @@
       <sub><b>팀원: 강성욱</b></sub>
     </td>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/121778189?v=4" width="100px" alt="jihyekim" /><br />
+       <a href="https://github.com/kwonyongjun9978">
+         <img src="https://avatars.githubusercontent.com/u/121778189?v=4" width="100px" alt="jihyekim" />
+       </a><br />
       <sub><b>팀원: 권용준</b></sub>
     </td>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/121652350?v=4" width="100px" alt="dodamchoi" /><br />
+       <a href="https://github.com/jihyunah">
+         <img src="https://avatars.githubusercontent.com/u/121652350?v=4" width="100px" alt="dodamchoi" />
+       </a><br />
       <sub><b>팀원: 이지현</b></sub>
     </td>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/121652277?v=4" width="100px" alt="sohunlee" /><br />
+       <a href="https://github.com/gkdltjdrms">
+         <img src="https://avatars.githubusercontent.com/u/121652277?v=4" width="100px" alt="sohunlee" />
+       </a><br />
       <sub><b>팀원: 송성근</b></sub>
     </td>
   </tr>
