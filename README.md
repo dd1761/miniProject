@@ -25,7 +25,9 @@
 <table>
   <tr>
     <td align="center">
-      <img src="https://avatars.githubusercontent.com/u/97274814?v=4" width="100px" alt="kimdongbeen" /><br />
+      <a href="https://github.com/dd1761">
+        <img src="https://avatars.githubusercontent.com/u/97274814?v=4" width="100px" alt="kimdongbeen" />
+      </a><br />
       <sub><b>팀장: 김동빈</b></sub>
     </td>
     <td align="center">
