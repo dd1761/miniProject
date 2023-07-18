@@ -57,7 +57,8 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 ## 기술스택
 
-<img src="https://drive.google.com/file/d/18trelNwyfb7DUYopu-3GH6xebt1vSS16/view">
+<img src="https://lh3.googleusercontent.com/u/0/drive-viewer/AITFw-wi-aeG86j5gk6v_fNp-IJ8vyxTHuOOzlP3BqPeJvbat_oZSBRl2MUtaZEDYTAbh-o7p5LDbls8CcXvO7G8hWDbTbaLHw=w2560-h1422" alt="프로젝트 구조" width="500">
+
 
 ### 개발보조도구
 
