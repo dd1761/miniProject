@@ -98,8 +98,11 @@ https://www.youtube.com/embed/Uop4cV5By24
       ![2.png](assets/images/Youtube/2.png) ![3.png](assets/images/Youtube/3.png)
  
       회원가입을 진행할때 아이디는 기존의 이메일을 사용합니다.
-      이메일 인증 기능을 추가하여 보안성을 강화하였습니다. 
+      
+      이메일 인증 기능을 추가하여 보안성을 강화하였습니다.
+      
       주민번호는 Email을 찾는데 사용됩니다.
+      
       Email은 중복값 허용X, 회원가입이 완료되면 Email을 입력하는 로그인 창으로 이동합니다.
 
 
