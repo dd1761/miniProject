@@ -57,26 +57,7 @@ https://www.youtube.com/embed/Uop4cV5By24
 
 ## 기술스택
 
-### 프론트엔드
-
-- HTML/CSS
-- JavaScript
-- BootStrap
-
-### 백앤드
-
-- JQuery
-- Ajax
-- Mybatis
-- JDBC
-- MySQL
-- Spring
-
-### 협업도구
-
-- git
-- github
-- Notion
+<img src="https://drive.google.com/file/d/18trelNwyfb7DUYopu-3GH6xebt1vSS16/view">
 
 ### 개발보조도구
 
